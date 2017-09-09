@@ -19,12 +19,12 @@ namespace JustERP.Migrator
     {
         public Log Log { get; private set; }
 
-        private readonly AbpZeroDbMigrator<JustERPDbContext> _migrator;
+        private readonly AbpZeroDbMigrator _migrator;
         private readonly IRepository<Tenant> _tenantRepository;
         private readonly IDbPerTenantConnectionStringResolver _connectionStringResolver;
 
         public MultiTenantMigrateExecuter(
-            AbpZeroDbMigrator<JustERPDbContext> migrator,
+            AbpZeroDbMigrator migrator,
             IRepository<Tenant> tenantRepository,
             Log log,
             IDbPerTenantConnectionStringResolver connectionStringResolver)

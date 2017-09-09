@@ -16,14 +16,20 @@ namespace JustERP.EntityFrameworkCore
 
         public bool SkipDbSeed { get; set; }
 
-
         public override void PreInitialize()
         {
             if (!SkipDbContextRegistration)
             {
-                Configuration.Modules.AbpEfCore().AddDbContext<JustERPDbContext>(configuration =>
+                Configuration.Modules.AbpEfCore().AddDbContext<JustERPDbContext>(options =>
                 {
-                    JustERPDbContextConfigurer.Configure(configuration.DbContextOptions, configuration.ConnectionString);
+                    if (options.ExistingConnection != null)
+                    {
+                        JustERPDbContextConfigurer.Configure(options.DbContextOptions, options.ExistingConnection);
+                    }
+                    else
+                    {
+                        JustERPDbContextConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
+                    }
                 });
             }
         }

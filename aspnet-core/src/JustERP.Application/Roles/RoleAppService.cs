@@ -75,7 +75,7 @@ namespace JustERP.Roles
             var role = await _roleManager.FindByIdAsync(input.Id.ToString());
             if (role.IsStatic)
             {
-                throw new UserFriendlyException("CannotDeleteAStaticRole");
+                throw new UserFriendlyException(L("CanNotDeleteStaticRole"));
             }
 
             var users = await _userManager.GetUsersInRoleAsync(role.NormalizedName);

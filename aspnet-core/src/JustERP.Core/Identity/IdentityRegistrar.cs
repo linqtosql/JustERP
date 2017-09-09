@@ -3,17 +3,18 @@ using JustERP.Authorization.Roles;
 using JustERP.Authorization.Users;
 using JustERP.Editions;
 using JustERP.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JustERP.Identity
 {
     public static class IdentityRegistrar
     {
-        public static void Register(IServiceCollection services)
+        public static IdentityBuilder Register(IServiceCollection services)
         {
             services.AddLogging();
 
-            services.AddAbpIdentity<Tenant, User, Role>()
+            return services.AddAbpIdentity<Tenant, User, Role>()
                 .AddAbpTenantManager<TenantManager>()
                 .AddAbpUserManager<UserManager>()
                 .AddAbpRoleManager<RoleManager>()
@@ -24,6 +25,7 @@ namespace JustERP.Identity
                 .AddAbpSignInManager<SignInManager>()
                 .AddAbpSecurityStampValidator<SecurityStampValidator>()
                 .AddAbpUserClaimsPrincipalFactory<UserClaimsPrincipalFactory>()
+                .AddPermissionChecker<PermissionChecker>()
                 .AddDefaultTokenProviders();
         }
     }

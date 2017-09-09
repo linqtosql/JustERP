@@ -4,7 +4,7 @@ using Abp.Domain.Uow;
 using JustERP.Authorization.Roles;
 using JustERP.Authorization.Users;
 using JustERP.MultiTenancy;
-using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
@@ -21,7 +21,8 @@ namespace JustERP.Identity
             IOptions<IdentityOptions> optionsAccessor, 
             ILogger<SignInManager<User>> logger,
             IUnitOfWorkManager unitOfWorkManager,
-            ISettingManager settingManager
+            ISettingManager settingManager,
+            IAuthenticationSchemeProvider schemes
             ) : base(
                 userManager, 
                 contextAccessor, 
@@ -29,7 +30,8 @@ namespace JustERP.Identity
                 optionsAccessor, 
                 logger,
                 unitOfWorkManager,
-                settingManager)
+                settingManager,
+                schemes)
         {
         }
     }
