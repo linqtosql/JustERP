@@ -91,6 +91,22 @@ namespace JustERP.Users
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
         }
 
+        public async Task<MetronicPagedResultDto<UserDto>> GetAllWithSort(MetronicPagedResultRequestDto input)
+        {
+            var users = await GetAll(input);
+            input.Total = users.TotalCount;
+            return new MetronicPagedResultDto<UserDto>()
+            {
+                Data = users.Items,
+                Meta = input
+            };
+        }
+
+        public override Task<PagedResultDto<UserDto>> GetAll(PagedResultRequestDto input)
+        {
+            return base.GetAll(input);
+        }
+
         protected override User MapToEntity(CreateUserDto createInput)
         {
             var user = ObjectMapper.Map<User>(createInput);

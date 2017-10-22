@@ -9,5 +9,7 @@ namespace JustERP.Users
     public interface IUserAppService : IAsyncCrudAppService<UserDto, long, PagedResultRequestDto, CreateUserDto, UserDto>
     {
         Task<ListResultDto<RoleDto>> GetRoles();
+
+        Task<MetronicPagedResultDto<UserDto>> GetAllWithSort(MetronicPagedResultRequestDto input);
     }
 }
