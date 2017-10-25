@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 
-namespace JustERP.Users.Dto
+namespace JustERP.MetronicTable.Dto
 {
     public class MetronicPagedResultRequestDto : PagedResultRequestDto
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JustERP.Users.Dto
+namespace JustERP.MetronicTable.Dto
 {
     public class MetronicPagedResultDto<T>
     {

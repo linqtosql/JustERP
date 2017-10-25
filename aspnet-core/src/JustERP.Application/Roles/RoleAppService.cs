@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using System.Linq;
@@ -13,11 +12,12 @@ using Abp.IdentityFramework;
 using JustERP.Authorization.Users;
 using JustERP.Authorization;
 using Abp.UI;
+using JustERP.MetronicTable;
 
 namespace JustERP.Roles
 {
     [AbpAuthorize(PermissionNames.Pages_Roles)]
-    public class RoleAppService : AsyncCrudAppService<Role, RoleDto, int, PagedResultRequestDto, CreateRoleDto, RoleDto>, IRoleAppService
+    public class RoleAppService : BaseMetronicTableAppService<Role, RoleDto, int, CreateRoleDto, RoleDto>, IRoleAppService
     {
         private readonly RoleManager _roleManager;
         private readonly UserManager _userManager;

@@ -9,16 +9,17 @@ using JustERP.Users.Dto;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using Abp.Authorization;
-using Abp.Authorization.Users;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
 using JustERP.Authorization.Roles;
+using JustERP.MetronicTable;
+using JustERP.MetronicTable.Dto;
 using JustERP.Roles.Dto;
 
 namespace JustERP.Users
 {
     [AbpAuthorize(PermissionNames.Pages_Users)]
-    public class UserAppService : AsyncCrudAppService<User, UserDto, long, PagedResultRequestDto, CreateUserDto, UserDto>, IUserAppService
+    public class UserAppService : BaseMetronicTableAppService<User, UserDto, long, CreateUserDto, UserDto>, IUserAppService
     {
         private readonly UserManager _userManager;
         private readonly RoleManager _roleManager;
@@ -89,22 +90,6 @@ namespace JustERP.Users
         {
             var roles = await _roleRepository.GetAllListAsync();
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
-        }
-
-        public async Task<MetronicPagedResultDto<UserDto>> GetAllWithSort(MetronicPagedResultRequestDto input)
-        {
-            var users = await GetAll(input);
-            input.Total = users.TotalCount;
-            return new MetronicPagedResultDto<UserDto>()
-            {
-                Data = users.Items,
-                Meta = input
-            };
-        }
-
-        public override Task<PagedResultDto<UserDto>> GetAll(PagedResultRequestDto input)
-        {
-            return base.GetAll(input);
         }
 
         protected override User MapToEntity(CreateUserDto createInput)

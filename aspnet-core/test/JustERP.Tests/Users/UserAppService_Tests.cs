@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 
 using Abp.Application.Services.Dto;
-
+using JustERP.MetronicTable.Dto;
 using JustERP.Users;
 using JustERP.Users.Dto;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +23,7 @@ namespace JustERP.Tests.Users
         public async Task GetUsers_Test()
         {
             //Act
-            var output = await _userAppService.GetAll(new PagedResultRequestDto{MaxResultCount=20, SkipCount=0} );
+            var output = await _userAppService.GetAll(new MetronicPagedResultRequestDto { MaxResultCount=20, SkipCount=0} );
 
             //Assert
             output.Items.Count.ShouldBeGreaterThan(0);

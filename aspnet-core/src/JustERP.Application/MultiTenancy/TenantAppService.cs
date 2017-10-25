@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
@@ -14,11 +13,12 @@ using JustERP.Editions;
 using JustERP.MultiTenancy.Dto;
 using Microsoft.AspNetCore.Identity;
 using Abp.IdentityFramework;
+using JustERP.MetronicTable;
 
 namespace JustERP.MultiTenancy
 {
     [AbpAuthorize(PermissionNames.Pages_Tenants)]
-    public class TenantAppService : AsyncCrudAppService<Tenant, TenantDto, int, PagedResultRequestDto, CreateTenantDto, TenantDto>, ITenantAppService
+    public class TenantAppService : BaseMetronicTableAppService<Tenant, TenantDto, int, CreateTenantDto, TenantDto>, ITenantAppService
     {
         private readonly TenantManager _tenantManager;
         private readonly EditionManager _editionManager;
@@ -28,25 +28,25 @@ namespace JustERP.MultiTenancy
         private readonly IPasswordHasher<User> _passwordHasher;
 
         public TenantAppService(
-            IRepository<Tenant, int> repository, 
+            IRepository<Tenant, int> repository,
 
-            TenantManager tenantManager, 
+            TenantManager tenantManager,
             EditionManager editionManager,
             UserManager userManager,
-            
-            RoleManager roleManager, 
-            IAbpZeroDbMigrator abpZeroDbMigrator, 
+
+            RoleManager roleManager,
+            IAbpZeroDbMigrator abpZeroDbMigrator,
             IPasswordHasher<User> passwordHasher
             ) : base(repository)
         {
-            _tenantManager = tenantManager; 
+            _tenantManager = tenantManager;
             _editionManager = editionManager;
             _roleManager = roleManager;
             _abpZeroDbMigrator = abpZeroDbMigrator;
             _passwordHasher = passwordHasher;
             _userManager = userManager;
         }
-        
+
         public override async Task<TenantDto> Create(CreateTenantDto input)
         {
             CheckCreatePermission();
