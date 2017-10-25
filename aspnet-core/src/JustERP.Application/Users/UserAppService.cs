@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using JustERP.Authorization;
@@ -13,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
 using JustERP.Authorization.Roles;
 using JustERP.MetronicTable;
-using JustERP.MetronicTable.Dto;
 using JustERP.Roles.Dto;
 
 namespace JustERP.Users
