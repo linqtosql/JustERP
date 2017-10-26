@@ -10,8 +10,10 @@ using System.Linq;
 using Abp.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
+using Abp.Organizations;
 using JustERP.Authorization.Roles;
 using JustERP.MetronicTable;
+using JustERP.MetronicTable.Dto;
 using JustERP.Roles.Dto;
 
 namespace JustERP.Users
@@ -23,12 +25,14 @@ namespace JustERP.Users
         private readonly RoleManager _roleManager;
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly IRepository<Role> _roleRepository;
+        private readonly IRepository<OrganizationUnit, long> _organizationUnitRepository;
 
         public UserAppService(
             IRepository<User, long> repository,
             UserManager userManager,
             IPasswordHasher<User> passwordHasher,
             IRepository<Role> roleRepository,
+            IRepository<OrganizationUnit, long> organizationUnitRepository,
             RoleManager roleManager)
             : base(repository)
         {
@@ -36,6 +40,7 @@ namespace JustERP.Users
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
             _roleManager = roleManager;
+            _organizationUnitRepository = organizationUnitRepository;
         }
 
         public override async Task<UserDto> Create(CreateUserDto input)
@@ -88,6 +93,23 @@ namespace JustERP.Users
         {
             var roles = await _roleRepository.GetAllListAsync();
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
+        }
+
+        public async Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(UsersInOUnitRequestDto input)
+        {
+            var userOrg = await _organizationUnitRepository.GetAsync(input.OrganizationUnitId);
+            var userOrgs = await _userManager.GetUsersInOrganizationUnit(userOrg);
+
+            return new MetronicPagedResultDto<UserOUnitDto>
+            {
+                Data = ObjectMapper.Map<List<UserOUnitDto>>(userOrgs),
+                Meta = input
+            };
+        }
+
+        public async Task AddToOUnit(UserOUnitDto input)
+        {
+            await _userManager.AddToOrganizationUnitAsync(input.UserId, input.OrganizationUnitId);
         }
 
         protected override User MapToEntity(CreateUserDto createInput)

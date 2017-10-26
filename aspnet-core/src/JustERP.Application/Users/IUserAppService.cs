@@ -11,5 +11,9 @@ namespace JustERP.Users
     public interface IUserAppService : IAsyncCrudAppService<UserDto, long, PagedResultRequestDto, CreateUserDto, UserDto>, IMetronicTableAppService<UserDto, MetronicPagedResultRequestDto>
     {
         Task<ListResultDto<RoleDto>> GetRoles();
+
+        Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(UsersInOUnitRequestDto input);
+
+        Task AddToOUnit(UserOUnitDto input);
     }
 }
