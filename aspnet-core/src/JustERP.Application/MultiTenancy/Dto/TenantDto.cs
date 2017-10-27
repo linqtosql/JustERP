@@ -5,7 +5,7 @@ using Abp.MultiTenancy;
 
 namespace JustERP.MultiTenancy.Dto
 {
-    [AutoMapTo(typeof(Tenant)), AutoMapFrom(typeof(Tenant))]
+    [AutoMap(typeof(Tenant))]
     public class TenantDto : EntityDto
     {
         [Required]
@@ -15,8 +15,8 @@ namespace JustERP.MultiTenancy.Dto
 
         [Required]
         [StringLength(Tenant.MaxNameLength)]
-        public string Name { get; set; }        
-        
-        public bool IsActive {get; set;}
+        public string Name { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

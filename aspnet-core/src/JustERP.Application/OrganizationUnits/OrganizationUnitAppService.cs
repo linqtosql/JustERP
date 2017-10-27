@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+﻿using System.Threading.Tasks;
+using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Organizations;
 using JustERP.Authorization;
@@ -16,6 +17,13 @@ namespace JustERP.OrganizationUnits
             OrganizationUnitManager organizationUnitManager) : base(repository)
         {
             _organizationUnitManager = organizationUnitManager;
+        }
+
+        public override async Task<OrganizationUnitDto> Create(CreateOrganizationUnitDto input)
+        {
+            var orgazitionUnit = ObjectMapper.Map<OrganizationUnit>(input);
+            await _organizationUnitManager.CreateAsync(orgazitionUnit);
+            return ObjectMapper.Map<OrganizationUnitDto>(orgazitionUnit);
         }
     }
 }
