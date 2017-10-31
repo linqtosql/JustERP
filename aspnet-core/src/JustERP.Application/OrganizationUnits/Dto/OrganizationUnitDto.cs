@@ -8,5 +8,8 @@ namespace JustERP.OrganizationUnits.Dto
     public class OrganizationUnitDto : EntityDto<long>
     {
         public string DisplayName { get; set; }
+        public string Code { get; set; }
+        public long? ParentId { get; set; }
+        public int MemberCount { get; set; }
     }
 }

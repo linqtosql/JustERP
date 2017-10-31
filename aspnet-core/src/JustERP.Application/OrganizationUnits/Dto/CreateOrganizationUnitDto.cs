@@ -12,6 +12,8 @@ namespace JustERP.OrganizationUnits.Dto
         [StringLength(128)]
         public string DisplayName { get; set; }
 
+        public long? ParentId { get; set; }
+
         public void Normalize()
         {
 
