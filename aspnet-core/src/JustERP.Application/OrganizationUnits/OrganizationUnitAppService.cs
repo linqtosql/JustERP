@@ -30,7 +30,7 @@ namespace JustERP.OrganizationUnits
 
         public async Task<List<OrganizationUnitDto>> GetOrganizationUnits()
         {
-            return ObjectMapper.Map<List<OrganizationUnitDto>>(await _organizationUnitManager.FindChildrenAsync(null));
+            return ObjectMapper.Map<List<OrganizationUnitDto>>(await _organizationUnitManager.FindChildrenAsync(null, true));
         }
     }
 }
