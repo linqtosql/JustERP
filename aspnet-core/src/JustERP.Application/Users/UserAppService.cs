@@ -8,6 +8,7 @@ using JustERP.Users.Dto;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using Abp.Authorization;
+using Abp.Authorization.Users;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
 using Abp.Organizations;
@@ -19,12 +20,13 @@ using JustERP.Roles.Dto;
 namespace JustERP.Users
 {
     [AbpAuthorize(PermissionNames.Pages_Users)]
-    public class UserAppService : BaseMetronicTableAppService<User, UserDto, long, CreateUserDto, UserDto>, IUserAppService
+    public class UserAppService : BaseMetronicTableAppService<User, UserDto, long, GetUsersRequestDto, CreateUserDto, UserDto>, IUserAppService
     {
         private readonly UserManager _userManager;
         private readonly RoleManager _roleManager;
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly IRepository<Role> _roleRepository;
+        private IRepository<UserOrganizationUnit, long> _userOrganizationUnit;
         private readonly IRepository<OrganizationUnit, long> _organizationUnitRepository;
 
         public UserAppService(
@@ -33,6 +35,7 @@ namespace JustERP.Users
             IPasswordHasher<User> passwordHasher,
             IRepository<Role> roleRepository,
             IRepository<OrganizationUnit, long> organizationUnitRepository,
+            IRepository<UserOrganizationUnit, long> userOrganizationUnit,
             RoleManager roleManager)
             : base(repository)
         {
@@ -41,6 +44,7 @@ namespace JustERP.Users
             _roleRepository = roleRepository;
             _roleManager = roleManager;
             _organizationUnitRepository = organizationUnitRepository;
+            _userOrganizationUnit = userOrganizationUnit;
         }
 
         public override async Task<UserDto> Create(CreateUserDto input)
@@ -95,7 +99,7 @@ namespace JustERP.Users
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
         }
 
-        public async Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(UsersInOUnitRequestDto input)
+        public async Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersRequestDto input)
         {
             var userOrg = await _organizationUnitRepository.GetAsync(input.OrganizationUnitId);
             var userOrgs = await _userManager.GetUsersInOrganizationUnit(userOrg);
@@ -107,9 +111,12 @@ namespace JustERP.Users
             };
         }
 
-        public async Task AddToOUnit(UserOUnitDto input)
+        public async Task AddToOUnit(UserOUnitDto[] input)
         {
-            await _userManager.AddToOrganizationUnitAsync(input.UserId, input.OrganizationUnitId);
+            foreach (var userOUnitDto in input)
+            {
+                await _userManager.AddToOrganizationUnitAsync(userOUnitDto.UserId, userOUnitDto.OrganizationUnitId);
+            }
         }
 
         protected override User MapToEntity(CreateUserDto createInput)
@@ -133,9 +140,10 @@ namespace JustERP.Users
             return userDto;
         }
 
-        protected override IQueryable<User> CreateFilteredQuery(PagedResultRequestDto input)
+        protected override IQueryable<User> CreateFilteredQuery(GetUsersRequestDto input)
         {
-            return Repository.GetAllIncluding(x => x.Roles);
+            var query = Repository.GetAllIncluding(x => x.Roles);
+            return query;
         }
 
         protected override async Task<User> GetEntityByIdAsync(long id)
@@ -143,7 +151,7 @@ namespace JustERP.Users
             return await Repository.GetAllIncluding(x => x.Roles).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        protected override IQueryable<User> ApplySorting(IQueryable<User> query, PagedResultRequestDto input)
+        protected override IQueryable<User> ApplySorting(IQueryable<User> query, GetUsersRequestDto input)
         {
             return query.OrderBy(r => r.UserName);
         }

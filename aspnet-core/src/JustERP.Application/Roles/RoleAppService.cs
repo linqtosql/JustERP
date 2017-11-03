@@ -13,6 +13,7 @@ using JustERP.Authorization.Users;
 using JustERP.Authorization;
 using Abp.UI;
 using JustERP.MetronicTable;
+using JustERP.MetronicTable.Dto;
 
 namespace JustERP.Roles
 {
@@ -97,7 +98,7 @@ namespace JustERP.Roles
             ));
         }
 
-        protected override IQueryable<Role> CreateFilteredQuery(PagedResultRequestDto input)
+        protected override IQueryable<Role> CreateFilteredQuery(MetronicPagedResultRequestDto input)
         {
             return Repository.GetAllIncluding(x => x.Permissions);
         }
@@ -107,7 +108,7 @@ namespace JustERP.Roles
             return await Repository.GetAllIncluding(x => x.Permissions).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        protected override IQueryable<Role> ApplySorting(IQueryable<Role> query, PagedResultRequestDto input)
+        protected override IQueryable<Role> ApplySorting(IQueryable<Role> query, MetronicPagedResultRequestDto input)
         {
             return query.OrderBy(r => r.DisplayName);
         }

@@ -8,8 +8,7 @@ using JustERP.MetronicTable.Dto;
 namespace JustERP.MetronicTable
 {
     public abstract class BaseMetronicTableAppService<TEntity, TEntityDto, TPrimaryKey, TCreateInput, TUpdateInput> :
-        AsyncCrudAppService<TEntity, TEntityDto, TPrimaryKey, PagedResultRequestDto, TCreateInput, TUpdateInput>,
-        IMetronicTableAppService<TEntityDto, MetronicPagedResultRequestDto>
+        BaseMetronicTableAppService<TEntity, TEntityDto, TPrimaryKey, MetronicPagedResultRequestDto, TCreateInput, TUpdateInput>
         where TEntity : class, IEntity<TPrimaryKey>
         where TEntityDto : IEntityDto<TPrimaryKey>
         where TUpdateInput : IEntityDto<TPrimaryKey>
@@ -17,8 +16,21 @@ namespace JustERP.MetronicTable
         protected BaseMetronicTableAppService(IRepository<TEntity, TPrimaryKey> repository) : base(repository)
         {
         }
+    }
 
-        public async Task<MetronicPagedResultDto<TEntityDto>> GetMetronicTable(MetronicPagedResultRequestDto input)
+    public abstract class BaseMetronicTableAppService<TEntity, TEntityDto, TPrimaryKey, TGetAllInput, TCreateInput, TUpdateInput> :
+        AsyncCrudAppService<TEntity, TEntityDto, TPrimaryKey, TGetAllInput, TCreateInput, TUpdateInput>,
+        IMetronicTableAppService<TEntityDto, TGetAllInput>
+        where TEntity : class, IEntity<TPrimaryKey>
+        where TEntityDto : IEntityDto<TPrimaryKey>
+        where TUpdateInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : MetronicPagedResultRequestDto
+    {
+        protected BaseMetronicTableAppService(IRepository<TEntity, TPrimaryKey> repository) : base(repository)
+        {
+        }
+
+        public async Task<MetronicPagedResultDto<TEntityDto>> GetMetronicTable(TGetAllInput input)
         {
             var roles = await GetAll(input);
             input.Total = roles.TotalCount;
