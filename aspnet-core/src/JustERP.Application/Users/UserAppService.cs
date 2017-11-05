@@ -103,6 +103,7 @@ namespace JustERP.Users
         {
             var userOrg = await _organizationUnitRepository.GetAsync(input.OrganizationUnitId);
             var userOrgs = await _userManager.GetUsersInOrganizationUnit(userOrg);
+            input.Total = userOrgs.Count;
 
             return new MetronicPagedResultDto<UserOUnitDto>
             {
