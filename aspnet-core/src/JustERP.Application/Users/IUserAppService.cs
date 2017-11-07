@@ -15,5 +15,7 @@ namespace JustERP.Users
         Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersRequestDto input);
 
         Task AddToOUnit(UserOUnitDto[] input);
+
+        Task RemoveFromOUnit(UserOUnitDto[] input);
     }
 }

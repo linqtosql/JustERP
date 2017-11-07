@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
@@ -104,10 +105,14 @@ namespace JustERP.Users
             var userOrg = await _organizationUnitRepository.GetAsync(input.OrganizationUnitId);
             var userOrgs = await _userManager.GetUsersInOrganizationUnit(userOrg);
             input.Total = userOrgs.Count;
-
+            var data = ObjectMapper.Map<List<UserOUnitDto>>(userOrgs);
+            data.ForEach(d =>
+            {
+                d.OrganizationUnitId = input.OrganizationUnitId;
+            });
             return new MetronicPagedResultDto<UserOUnitDto>
             {
-                Data = ObjectMapper.Map<List<UserOUnitDto>>(userOrgs),
+                Data = data,
                 Meta = input
             };
         }
@@ -116,9 +121,19 @@ namespace JustERP.Users
         {
             foreach (var userOUnitDto in input)
             {
-                await _userManager.AddToOrganizationUnitAsync(userOUnitDto.UserId, userOUnitDto.OrganizationUnitId);
+                await _userManager.AddToOrganizationUnitAsync(userOUnitDto.Id, userOUnitDto.OrganizationUnitId);
             }
         }
+
+        public async Task RemoveFromOUnit(UserOUnitDto[] input)
+        {
+            foreach (var userOUnitDto in input)
+            {
+                await _userManager.RemoveFromOrganizationUnitAsync(userOUnitDto.Id,
+                    userOUnitDto.OrganizationUnitId);
+            }
+        }
+
 
         protected override User MapToEntity(CreateUserDto createInput)
         {
