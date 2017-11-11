@@ -159,12 +159,12 @@ namespace JustERP.Users
         protected override IQueryable<User> CreateFilteredQuery(GetUsersRequestDto input)
         {
             var query = Repository.GetAllIncluding(x => x.Roles);
-            if (!string.IsNullOrWhiteSpace(input.Keyword))
+            if (!string.IsNullOrWhiteSpace(input.Search))
             {
                 query = query.Where(u =>
-                    u.UserName.Contains(input.Keyword) ||
-                    u.FullName.Contains(input.Keyword) ||
-                    u.EmailAddress.Contains(input.Keyword));
+                    u.UserName.Contains(input.Search) ||
+                    u.FullName.Contains(input.Search) ||
+                    u.EmailAddress.Contains(input.Search));
             }
             return query;
         }

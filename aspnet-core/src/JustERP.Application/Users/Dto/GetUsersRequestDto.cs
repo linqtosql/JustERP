@@ -4,7 +4,7 @@ namespace JustERP.Users.Dto
 {
     public class GetUsersRequestDto : MetronicPagedResultRequestDto
     {
-        public string Keyword { get; set; }
+        public string Search { get; set; }
         public long OrganizationUnitId { get; set; }
     }
 }
