@@ -2,7 +2,6 @@
 using Abp.AutoMapper;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
-using JustERP.Authorization;
 
 namespace JustERP
 {
@@ -13,7 +12,7 @@ namespace JustERP
     {
         public override void PreInitialize()
         {
-            Configuration.Authorization.Providers.Add<JustERPAuthorizationProvider>();
+            
         }
 
         public override void Initialize()
