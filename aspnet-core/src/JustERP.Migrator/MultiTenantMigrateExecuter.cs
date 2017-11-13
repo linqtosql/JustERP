@@ -7,10 +7,8 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
-using Abp.Zero.EntityFrameworkCore;
 using JustERP.EntityFrameworkCore;
 using JustERP.EntityFrameworkCore.Seed;
-using JustERP.Migrator;
 using JustERP.MultiTenancy;
 
 namespace JustERP.Migrator

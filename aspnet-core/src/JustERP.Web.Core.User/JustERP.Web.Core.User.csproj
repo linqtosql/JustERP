@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JustERP.Application.User\JustERP.Application.User.csproj" />
-    <ProjectReference Include="..\JustERP.EntityFrameworkCore\JustERP.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\JustERP.Web.Core\JustERP.Web.Core.csproj" />
   </ItemGroup>
 
 </Project>

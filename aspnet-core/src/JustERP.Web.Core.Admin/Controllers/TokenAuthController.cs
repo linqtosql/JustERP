@@ -6,7 +6,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.Authorization.Users;
-using Abp.AutoMapper;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
 using Abp.UI;
@@ -19,7 +18,7 @@ using JustERP.MultiTenancy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JustERP.Controllers
+namespace JustERP.Web.Core.Admin.Controllers
 {
     [Route("api/[controller]/[action]")]
     public class TokenAuthController : JustERPControllerBase

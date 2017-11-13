@@ -1,4 +1,4 @@
-using JustERP.Controllers;
+using JustERP.Web.Core.Admin.Controllers;
 using Microsoft.AspNetCore.Antiforgery;
 
 namespace JustERP.Web.Host.Controllers

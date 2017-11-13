@@ -1,7 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using JustERP.Authorization.Users;
-using JustERP.Users;
 
 namespace JustERP.Sessions.Dto
 {

@@ -1,13 +1,13 @@
-﻿using Abp.AspNetCore.Mvc.Controllers;
+﻿using JustERP.Web.Core.User.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JustERP.Web.Host.User.Controllers
 {
-    public class HomeController : AbpController
+    public class HomeController : JustERPControllerBase
     {
-        //public IActionResult Index()
-        //{
-        //    return Content("hello word");
-        //}
+        public IActionResult Index()
+        {
+            return Redirect("/swagger");
+        }
     }
 }

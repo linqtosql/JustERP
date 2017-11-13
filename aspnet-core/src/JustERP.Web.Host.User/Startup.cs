@@ -3,7 +3,6 @@ using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
 using Castle.Facilities.Logging;
 using JustERP.Identity;
-using JustERP.Web.Core.User.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
@@ -12,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Linq;
 using Abp.Extensions;
+using JustERP.Configuration;
 
 namespace JustERP.Web.Host.User
 {
@@ -93,9 +93,10 @@ namespace JustERP.Web.Host.User
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "defaultWithArea",
-                    template: "{area}/{controller=Home}/{action=Index}/{id?}");
+                // disabled when none application services
+                //routes.MapRoute(
+                //    name: "defaultWithArea",
+                //    template: "{area}/{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(
                     name: "default",

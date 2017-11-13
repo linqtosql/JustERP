@@ -2,7 +2,7 @@ using Abp.AspNetCore.Mvc.Controllers;
 using Abp.IdentityFramework;
 using Microsoft.AspNetCore.Identity;
 
-namespace JustERP.Controllers
+namespace JustERP.Web.Core.Admin.Controllers
 {
     public abstract class JustERPControllerBase: AbpController
     {

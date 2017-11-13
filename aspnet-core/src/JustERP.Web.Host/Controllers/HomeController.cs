@@ -2,9 +2,9 @@ using System.Threading.Tasks;
 using Abp;
 using Abp.Notifications;
 using Abp.Timing;
-using JustERP.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Abp.Extensions;
+using JustERP.Web.Core.Admin.Controllers;
 
 namespace JustERP.Web.Host.Controllers
 {

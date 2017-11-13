@@ -1,6 +1,6 @@
 ﻿using Abp.Modules;
 using Abp.Reflection.Extensions;
-using JustERP.Web.Core.User.Configuration;
+using JustERP.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 

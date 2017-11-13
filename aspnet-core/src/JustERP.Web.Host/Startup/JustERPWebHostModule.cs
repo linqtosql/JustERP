@@ -1,14 +1,14 @@
-﻿using System.Reflection;
-using Abp.Modules;
+﻿using Abp.Modules;
 using Abp.Reflection.Extensions;
 using JustERP.Configuration;
+using JustERP.Web.Core.Admin;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
 namespace JustERP.Web.Host.Startup
 {
     [DependsOn(
-       typeof(JustERPWebCoreModule))]
+       typeof(JustERPWebCoreAdminModule))]
     public class JustERPWebHostModule: AbpModule
     {
         private readonly IHostingEnvironment _env;

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Reflection;
 using System.Text;
 using Abp.AspNetCore;
-using Abp.AspNetCore.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.Configuration;
@@ -20,7 +18,6 @@ using Abp.Web.SignalR;
 namespace JustERP
 {
     [DependsOn(
-         typeof(JustERPApplicationModule),
          typeof(JustERPEntityFrameworkModule),
          typeof(AbpAspNetCoreModule)
 #if FEATURE_SIGNALR 
@@ -46,11 +43,6 @@ namespace JustERP
 
             //Use database for language management
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
-
-            Configuration.Modules.AbpAspNetCore()
-                 .CreateControllersForAppServices(
-                     typeof(JustERPApplicationModule).GetAssembly()
-                 );
 
             ConfigureTokenAuth();
         }

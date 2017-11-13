@@ -1,7 +1,4 @@
 ﻿using System.Threading.Tasks;
-
-using Abp.Application.Services.Dto;
-using JustERP.MetronicTable.Dto;
 using JustERP.Users;
 using JustERP.Users.Dto;
 using Microsoft.EntityFrameworkCore;

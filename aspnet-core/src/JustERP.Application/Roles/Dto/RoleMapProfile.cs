@@ -1,8 +1,5 @@
 ﻿using Abp.Authorization;
 using Abp.Authorization.Roles;
-using Abp.Authorization.Users;
-using Abp.Dependency;
-using Abp.Domain.Repositories;
 using JustERP.Authorization.Roles;
 using AutoMapper;
 

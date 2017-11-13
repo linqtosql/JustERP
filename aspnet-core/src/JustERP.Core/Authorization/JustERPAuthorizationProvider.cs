@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Abp.Authorization;
+﻿using Abp.Authorization;
 using Abp.Localization;
 using Abp.MultiTenancy;
 
