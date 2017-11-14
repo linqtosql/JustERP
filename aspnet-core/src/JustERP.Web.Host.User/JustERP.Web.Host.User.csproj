@@ -17,4 +17,6 @@
     <ProjectReference Include="..\JustERP.Web.Core.User\JustERP.Web.Core.User.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>
