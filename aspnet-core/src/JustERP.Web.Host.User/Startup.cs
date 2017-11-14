@@ -13,6 +13,14 @@ using System.Linq;
 using Abp.Extensions;
 using JustERP.Configuration;
 
+#if FEATURE_SIGNALR
+using Owin;
+using Microsoft.Owin.Cors;
+using Microsoft.AspNet.SignalR;
+using JustERP.Owin;
+using Abp.Owin;
+#endif
+
 namespace JustERP.Web.Host.User
 {
     public class Startup
@@ -78,7 +86,7 @@ namespace JustERP.Web.Host.User
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseAbp(); //Initializes ABP framework.
+            app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); //Initializes ABP framework.
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 
             app.UseStaticFiles();
@@ -112,6 +120,26 @@ namespace JustERP.Web.Host.User
                 options.InjectOnCompleteJavaScript("/swagger/ui/on-complete.js");
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "JustERP API V1");
             });
+
         }
+
+#if FEATURE_SIGNALR
+        private static void ConfigureOwinServices(IAppBuilder app)
+        {
+            app.Properties["host.AppName"] = "JustERP";
+
+            app.UseAbp();
+            
+            app.Map("/signalr", map =>
+            {
+                map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration
+                {
+                    EnableJSONP = true
+                };
+                map.RunSignalR(hubConfiguration);
+            });
+        }
+#endif
     }
 }

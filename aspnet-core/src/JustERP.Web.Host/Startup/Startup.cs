@@ -91,7 +91,7 @@ namespace JustERP.Web.Host.Startup
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseAbp(); //Initializes ABP framework.
+            app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); //Initializes ABP framework.
 
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 

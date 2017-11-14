@@ -11,7 +11,9 @@ using Abp.Authorization;
 using Abp.Authorization.Users;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
+using Abp.Localization;
 using Abp.Organizations;
+using Abp.Runtime.Session;
 using JustERP.Authorization.Roles;
 using JustERP.MetronicTable;
 using JustERP.MetronicTable.Dto;
@@ -131,6 +133,15 @@ namespace JustERP.Users
                 await _userManager.RemoveFromOrganizationUnitAsync(userOUnitDto.Id,
                     userOUnitDto.OrganizationUnitId);
             }
+        }
+
+        public async Task ChangeLanguage(ChangeUserLanguageDto input)
+        {
+            await SettingManager.ChangeSettingForUserAsync(
+                AbpSession.ToUserIdentifier(),
+                LocalizationSettingNames.DefaultLanguage,
+                input.LanguageName
+            );
         }
 
 

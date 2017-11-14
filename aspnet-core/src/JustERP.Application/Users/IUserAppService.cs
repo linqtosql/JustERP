@@ -17,5 +17,7 @@ namespace JustERP.Users
         Task AddToOUnit(UserOUnitDto[] input);
 
         Task RemoveFromOUnit(UserOUnitDto[] input);
+
+        Task ChangeLanguage(ChangeUserLanguageDto input);
     }
 }
