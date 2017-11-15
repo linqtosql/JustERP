@@ -22,7 +22,7 @@ using JustERP.Roles.Dto;
 namespace JustERP.Users
 {
     [AbpAuthorize(PermissionNames.Pages_Users)]
-    public class UserAppService : BaseMetronicTableAppService<User, UserDto, long, GetUsersRequestDto, CreateUserDto, UserDto>, IUserAppService
+    public class UserAppService : BaseMetronicTableAppService<User, UserDto, long, GetUsersDto, CreateUserDto, UserDto>, IUserAppService
     {
         private readonly UserManager _userManager;
         private readonly RoleManager _roleManager;
@@ -101,16 +101,12 @@ namespace JustERP.Users
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
         }
 
-        public async Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersRequestDto input)
+        public async Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersDto input)
         {
             var userOrg = await _organizationUnitRepository.GetAsync(input.OrganizationUnitId);
             var userOrgs = await _userManager.GetUsersInOrganizationUnit(userOrg);
             input.Total = userOrgs.Count;
             var data = ObjectMapper.Map<List<UserOUnitDto>>(userOrgs);
-            data.ForEach(d =>
-            {
-                d.OrganizationUnitId = input.OrganizationUnitId;
-            });
             return new MetronicPagedResultDto<UserOUnitDto>
             {
                 Data = data,
@@ -118,19 +114,19 @@ namespace JustERP.Users
             };
         }
 
-        public async Task AddToOUnit(UserOUnitDto[] input)
+        public async Task AddToOUnit(CreateUserOUnitDto[] input)
         {
             foreach (var userOUnitDto in input)
             {
-                await _userManager.AddToOrganizationUnitAsync(userOUnitDto.Id, userOUnitDto.OrganizationUnitId);
+                await _userManager.AddToOrganizationUnitAsync(userOUnitDto.UserId, userOUnitDto.OrganizationUnitId);
             }
         }
 
-        public async Task RemoveFromOUnit(UserOUnitDto[] input)
+        public async Task RemoveFromOUnit(CreateUserOUnitDto[] input)
         {
             foreach (var userOUnitDto in input)
             {
-                await _userManager.RemoveFromOrganizationUnitAsync(userOUnitDto.Id,
+                await _userManager.RemoveFromOrganizationUnitAsync(userOUnitDto.UserId,
                     userOUnitDto.OrganizationUnitId);
             }
         }
@@ -166,7 +162,7 @@ namespace JustERP.Users
             return userDto;
         }
 
-        protected override IQueryable<User> CreateFilteredQuery(GetUsersRequestDto input)
+        protected override IQueryable<User> CreateFilteredQuery(GetUsersDto input)
         {
             var query = Repository.GetAllIncluding(x => x.Roles);
             if (!string.IsNullOrWhiteSpace(input.Search))
@@ -184,7 +180,7 @@ namespace JustERP.Users
             return await Repository.GetAllIncluding(x => x.Roles).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        protected override IQueryable<User> ApplySorting(IQueryable<User> query, GetUsersRequestDto input)
+        protected override IQueryable<User> ApplySorting(IQueryable<User> query, GetUsersDto input)
         {
             return query.OrderBy(r => r.UserName);
         }

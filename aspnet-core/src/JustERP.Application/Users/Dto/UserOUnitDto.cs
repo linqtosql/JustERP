@@ -10,7 +10,5 @@ namespace JustERP.Users.Dto
         public string UserName { get; set; }
 
         public string FullName { get; set; }
-
-        public long OrganizationUnitId { get; set; }
     }
 }
