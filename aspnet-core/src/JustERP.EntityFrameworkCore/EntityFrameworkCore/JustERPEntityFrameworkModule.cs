@@ -2,12 +2,13 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.EntityFrameworkCore;
+using JustERP.Core.User;
 using JustERP.EntityFrameworkCore.Seed;
 
 namespace JustERP.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(JustERPCoreModule), 
+        typeof(JustERPCoreUserModule),
         typeof(AbpZeroCoreEntityFrameworkCoreModule))]
     public class JustERPEntityFrameworkModule : AbpModule
     {

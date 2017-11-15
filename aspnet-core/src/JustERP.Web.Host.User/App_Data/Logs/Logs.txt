@@ -10164,3 +10164,287 @@ INFO  2017-11-14 20:34:33,010 [17   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2017-11-14 20:34:33,011 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
 INFO  2017-11-14 20:34:33,018 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.0769ms 200 application/javascript
 INFO  2017-11-14 20:34:33,018 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.4854ms 200 application/javascript
+DEBUG 2017-11-15 20:43:30,731 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-15 20:43:30,773 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-15 20:43:30,789 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,793 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,794 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,794 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,795 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,795 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,795 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,796 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,796 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,797 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,797 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,798 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,798 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,798 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,799 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,799 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:30,804 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-15 20:43:30,890 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 20:43:30,890 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 20:43:30,890 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 20:43:30,890 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 20:43:31,166 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 20:43:31,682 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-15 20:43:31,699 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-15 20:43:31,706 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-15 20:43:31,724 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-15 20:43:31,726 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-15 20:43:31,771 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-15 20:43:31,854 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 1 classes define auto mapping attributes
+DEBUG 2017-11-15 20:43:31,854 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-15 20:43:34,141 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2017-11-15 20:43:35,045 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-15 20:43:35,203 [5    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2017-11-15 20:43:35,209 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 211.2791ms
+INFO  2017-11-15 20:43:35,217 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1085.5595ms 302 
+INFO  2017-11-15 20:43:35,225 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-15 20:43:35,239 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-15 20:43:35,243 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.5418ms 200 text/html
+INFO  2017-11-15 20:43:35,256 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-15 20:43:35,259 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-15 20:43:35,261 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.1606ms 304 text/css
+INFO  2017-11-15 20:43:35,267 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-15 20:43:35,268 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-15 20:43:35,268 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5234ms 304 text/css
+INFO  2017-11-15 20:43:35,268 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-15 20:43:35,268 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-15 20:43:35,269 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-15 20:43:35,269 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1944ms 304 text/css
+INFO  2017-11-15 20:43:35,270 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-15 20:43:35,270 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.0072ms 304 application/javascript
+INFO  2017-11-15 20:43:35,278 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-15 20:43:35,279 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-15 20:43:35,280 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9061ms 304 application/javascript
+INFO  2017-11-15 20:43:35,280 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-15 20:43:35,281 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-15 20:43:35,281 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-15 20:43:35,281 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-15 20:43:35,281 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.324ms 304 application/javascript
+INFO  2017-11-15 20:43:35,282 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-15 20:43:35,282 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0598ms 304 application/javascript
+INFO  2017-11-15 20:43:35,283 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-15 20:43:35,283 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.3424ms 304 application/javascript
+INFO  2017-11-15 20:43:35,283 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-15 20:43:35,285 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-15 20:43:35,285 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.787ms 304 application/javascript
+INFO  2017-11-15 20:43:35,294 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-15 20:43:35,294 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-15 20:43:35,297 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-15 20:43:35,297 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-15 20:43:35,298 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-15 20:43:35,298 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-15 20:43:35,298 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.1295ms 304 application/javascript
+INFO  2017-11-15 20:43:35,299 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-15 20:43:35,299 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-15 20:43:35,299 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8565ms 304 application/javascript
+INFO  2017-11-15 20:43:35,299 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.816ms 304 application/javascript
+INFO  2017-11-15 20:43:35,299 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-15 20:43:35,300 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-15 20:43:35,300 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1331ms 304 application/javascript
+INFO  2017-11-15 20:43:35,303 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-15 20:43:35,303 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-15 20:43:35,303 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.3928ms 304 application/javascript
+INFO  2017-11-15 20:43:35,303 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.6256ms 304 application/javascript
+INFO  2017-11-15 20:43:35,312 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-15 20:43:35,314 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-15 20:43:35,316 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-15 20:43:35,316 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.3858ms 304 application/javascript
+INFO  2017-11-15 20:43:35,316 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-15 20:43:35,317 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.87ms 304 application/javascript
+INFO  2017-11-15 20:43:35,323 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-15 20:43:35,324 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-15 20:43:35,324 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2949ms 304 image/png
+INFO  2017-11-15 20:43:35,329 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-15 20:43:35,330 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-15 20:43:35,330 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1422ms 304 text/css
+INFO  2017-11-15 20:43:35,524 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-15 20:43:35,779 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 255.7524ms 200 application/json
+INFO  2017-11-15 20:43:35,983 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1510749815980  
+INFO  2017-11-15 20:43:35,983 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1510749815981  
+INFO  2017-11-15 20:43:35,984 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-15 20:43:35,984 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-15 20:43:35,993 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.0713ms 200 application/javascript
+INFO  2017-11-15 20:43:35,993 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.0713ms 200 application/javascript
+INFO  2017-11-15 20:43:37,759 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-15 20:43:37,760 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-15 20:43:37,761 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5149ms 200 text/html
+INFO  2017-11-15 20:43:37,790 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-15 20:43:37,791 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-15 20:43:37,791 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-15 20:43:37,791 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-15 20:43:37,792 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0196ms 304 application/javascript
+INFO  2017-11-15 20:43:37,792 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.3943ms 304 text/css
+INFO  2017-11-15 20:43:37,793 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-15 20:43:37,794 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-15 20:43:37,794 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-15 20:43:37,794 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-15 20:43:37,794 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7257ms 304 text/css
+INFO  2017-11-15 20:43:37,794 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1709ms 304 application/javascript
+INFO  2017-11-15 20:43:37,795 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-15 20:43:37,795 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-15 20:43:37,795 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-15 20:43:37,796 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7767ms 304 text/css
+INFO  2017-11-15 20:43:37,796 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-15 20:43:37,802 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.7684ms 304 application/javascript
+INFO  2017-11-15 20:43:37,809 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-15 20:43:37,810 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-15 20:43:37,810 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-15 20:43:37,811 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8172ms 304 application/javascript
+INFO  2017-11-15 20:43:37,811 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-15 20:43:37,811 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-15 20:43:37,811 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-15 20:43:37,812 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.4184ms 304 application/javascript
+INFO  2017-11-15 20:43:37,813 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-15 20:43:37,813 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-15 20:43:37,814 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9944ms 304 application/javascript
+INFO  2017-11-15 20:43:37,816 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.0967ms 304 application/javascript
+INFO  2017-11-15 20:43:37,826 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-15 20:43:37,827 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-15 20:43:37,827 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8545ms 304 application/javascript
+INFO  2017-11-15 20:43:37,828 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-15 20:43:37,828 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-15 20:43:37,829 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9861ms 304 application/javascript
+INFO  2017-11-15 20:43:37,826 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-15 20:43:37,829 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-15 20:43:37,829 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-15 20:43:37,829 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-15 20:43:37,830 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7243ms 304 application/javascript
+INFO  2017-11-15 20:43:37,830 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.616ms 304 application/javascript
+INFO  2017-11-15 20:43:37,830 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-15 20:43:37,831 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-15 20:43:37,831 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.102ms 304 application/javascript
+INFO  2017-11-15 20:43:37,845 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-15 20:43:37,846 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-15 20:43:37,846 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2524ms 304 application/javascript
+INFO  2017-11-15 20:43:37,855 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-15 20:43:37,856 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-15 20:43:37,856 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9709ms 304 application/javascript
+INFO  2017-11-15 20:43:37,860 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-15 20:43:37,861 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-15 20:43:37,861 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.3272ms 304 image/png
+INFO  2017-11-15 20:43:37,878 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-15 20:43:37,879 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-15 20:43:37,879 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.1899ms 304 text/css
+INFO  2017-11-15 20:43:37,941 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-15 20:43:37,945 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.1101ms 200 application/json
+INFO  2017-11-15 20:43:38,017 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1510749818013  
+INFO  2017-11-15 20:43:38,017 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-15 20:43:38,017 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1510749818014  
+INFO  2017-11-15 20:43:38,018 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-15 20:43:38,018 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0164ms 200 application/javascript
+INFO  2017-11-15 20:43:38,018 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7284ms 200 application/javascript
+INFO  2017-11-15 20:43:38,046 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-32x32.png  
+INFO  2017-11-15 20:43:38,046 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2017-11-15 20:43:38,047 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7196ms 200 image/png
+INFO  2017-11-15 20:43:38,053 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-16x16.png  
+INFO  2017-11-15 20:43:38,054 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-16x16.png'. Physical path: 'N/A'
+INFO  2017-11-15 20:43:38,054 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.6574ms 200 image/png
+DEBUG 2017-11-15 23:16:28,301 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-15 23:16:28,333 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-15 23:16:28,347 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,350 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,350 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,350 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,351 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,351 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,352 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,352 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,354 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,354 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,355 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,356 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,356 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,356 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,357 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,357 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:28,361 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-15 23:16:28,426 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 23:16:28,426 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 23:16:28,426 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 23:16:28,426 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-15 23:16:28,735 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-15 23:16:29,191 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-15 23:16:29,204 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-15 23:16:29,208 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-15 23:16:29,223 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-15 23:16:29,224 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-15 23:16:29,259 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-15 23:16:29,310 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 1 classes define auto mapping attributes
+DEBUG 2017-11-15 23:16:29,310 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-15 23:16:31,197 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2017-11-15 23:16:32,067 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-15 23:16:32,255 [6    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2017-11-15 23:16:32,262 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 252.7114ms
+INFO  2017-11-15 23:16:32,272 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1082.2891ms 302 
+INFO  2017-11-15 23:16:32,281 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-15 23:16:32,297 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-15 23:16:32,301 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.2342ms 200 text/html
+INFO  2017-11-15 23:16:32,314 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-15 23:16:32,317 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-15 23:16:32,318 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.2823ms 304 text/css
+INFO  2017-11-15 23:16:32,326 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-15 23:16:32,326 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-15 23:16:32,326 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-15 23:16:32,327 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-15 23:16:32,327 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-15 23:16:32,327 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-15 23:16:32,327 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1524ms 304 text/css
+INFO  2017-11-15 23:16:32,327 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2295ms 304 application/javascript
+INFO  2017-11-15 23:16:32,327 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2814ms 304 application/javascript
+INFO  2017-11-15 23:16:32,331 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-15 23:16:32,332 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-15 23:16:32,332 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-15 23:16:32,332 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0322ms 304 text/css
+INFO  2017-11-15 23:16:32,333 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-15 23:16:32,338 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-15 23:16:32,339 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.9546ms 304 application/javascript
+INFO  2017-11-15 23:16:32,339 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-15 23:16:32,339 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-15 23:16:32,340 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-15 23:16:32,340 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-15 23:16:32,340 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.4037ms 304 application/javascript
+INFO  2017-11-15 23:16:32,340 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8732ms 304 application/javascript
+INFO  2017-11-15 23:16:32,345 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-15 23:16:32,346 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.9346ms 304 application/javascript
+INFO  2017-11-15 23:16:32,346 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-15 23:16:32,354 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-15 23:16:32,354 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.8649ms 304 application/javascript
+INFO  2017-11-15 23:16:32,354 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-15 23:16:32,361 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-15 23:16:32,362 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-15 23:16:32,363 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-15 23:16:32,363 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.0443ms 304 application/javascript
+INFO  2017-11-15 23:16:32,363 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-15 23:16:32,364 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.6773ms 304 application/javascript
+INFO  2017-11-15 23:16:32,364 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-15 23:16:32,365 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-15 23:16:32,365 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9562ms 304 application/javascript
+INFO  2017-11-15 23:16:32,366 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-15 23:16:32,379 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-15 23:16:32,379 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.5788ms 304 application/javascript
+INFO  2017-11-15 23:16:32,388 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-15 23:16:32,379 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-15 23:16:32,389 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-15 23:16:32,390 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7102ms 304 application/javascript
+INFO  2017-11-15 23:16:32,390 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 23.3836ms 304 application/javascript
+INFO  2017-11-15 23:16:32,392 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-15 23:16:32,396 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-15 23:16:32,396 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.6412ms 304 application/javascript
+INFO  2017-11-15 23:16:32,401 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-15 23:16:32,402 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-15 23:16:32,402 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1779ms 304 image/png
+INFO  2017-11-15 23:16:32,407 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-15 23:16:32,407 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-15 23:16:32,407 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8474ms 304 text/css
+INFO  2017-11-15 23:16:32,592 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-15 23:16:32,794 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 203.7271ms 200 application/json
+INFO  2017-11-15 23:16:32,875 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1510758992872  
+INFO  2017-11-15 23:16:32,875 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1510758992871  
+INFO  2017-11-15 23:16:32,876 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-15 23:16:32,876 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-15 23:16:32,884 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.5783ms 200 application/javascript
+INFO  2017-11-15 23:16:32,884 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.5783ms 200 application/javascript
