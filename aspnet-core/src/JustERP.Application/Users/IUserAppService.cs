@@ -8,15 +8,15 @@ using JustERP.Users.Dto;
 
 namespace JustERP.Users
 {
-    public interface IUserAppService : IAsyncCrudAppService<UserDto, long, GetUsersRequestDto, CreateUserDto, UserDto>, IMetronicTableAppService<UserDto, GetUsersRequestDto>
+    public interface IUserAppService : IAsyncCrudAppService<UserDto, long, GetUsersDto, CreateUserDto, UserDto>, IMetronicTableAppService<UserDto, GetUsersDto>
     {
         Task<ListResultDto<RoleDto>> GetRoles();
 
-        Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersRequestDto input);
+        Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersDto input);
 
-        Task AddToOUnit(UserOUnitDto[] input);
+        Task AddToOUnit(CreateUserOUnitDto[] input);
 
-        Task RemoveFromOUnit(UserOUnitDto[] input);
+        Task RemoveFromOUnit(CreateUserOUnitDto[] input);
 
         Task ChangeLanguage(ChangeUserLanguageDto input);
     }
