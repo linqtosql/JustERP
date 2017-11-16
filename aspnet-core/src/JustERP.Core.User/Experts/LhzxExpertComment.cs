@@ -10,6 +10,7 @@ namespace JustERP.Core.User.Experts
         public long ExpertOrderId { get; set; }
         public double? Score { get; set; }
         public string Content { get; set; }
+        public virtual LhzxExpert Expert { get; set; }
     }
 }
 

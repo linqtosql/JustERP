@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Entities.Auditing;
+﻿using System.Collections.Generic;
+using Abp.Domain.Entities.Auditing;
 
 namespace JustERP.Core.User.Experts
 {
@@ -20,6 +21,8 @@ namespace JustERP.Core.User.Experts
         public int? ServicesCount { get; set; }
         public bool? IsChecked { get; set; }
         public bool? IsActive { get; set; }
+        public virtual LhzxExpertClass ExpertClass { get; set; }
+        public virtual IEnumerable<LhzxExpertComment> ExpertComments { get; set; }
         public virtual Authorization.Users.User CreatorUser { get; set; }
         public virtual Authorization.Users.User LastModifierUser { get; set; }
         public virtual Authorization.Users.User DeleterUser { get; set; }

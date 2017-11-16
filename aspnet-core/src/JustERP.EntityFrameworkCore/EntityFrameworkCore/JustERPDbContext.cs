@@ -30,5 +30,12 @@ namespace JustERP.EntityFrameworkCore
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LhzxExpert>().HasOne(e => e.ExpertClass).WithMany(c => c.Experts).HasForeignKey(e => e.ExpertClassId);
+            modelBuilder.Entity<LhzxExpertComment>().HasOne(e => e.Expert).WithMany(c => c.ExpertComments).HasForeignKey(e => e.ExpertId);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
