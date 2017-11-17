@@ -1,23 +1,15 @@
-﻿using System;
-using System.Threading.Tasks;
-using Abp.Application.Services;
-using Abp.Auditing;
+﻿using Abp.Auditing;
 using Abp.Domain.Repositories;
 using JustERP.AuditLogs.Dto;
+using JustERP.MetronicTable;
 using JustERP.MetronicTable.Dto;
 
 namespace JustERP.AuditLogs
 {
-    public class AuditLogAppService : ApplicationService, IAuditLogAppService
+    public class AuditLogAppService : BaseMetronicTableAppService<AuditLog, AuditLogDto, long, MetronicPagedResultRequestDto>, IAuditLogAppService
     {
-        private readonly IRepository<AuditLog, long> _auditLogRepository;
-        public AuditLogAppService(IRepository<AuditLog, long> auditLogRepository)
+        public AuditLogAppService(IRepository<AuditLog, long> repository) : base(repository)
         {
-            _auditLogRepository = auditLogRepository;
-        }
-        public Task<MetronicPagedResultDto<AuditLogDto>> GetMetronicTable(MetronicPagedResultRequestDto input)
-        {
-            throw new NotImplementedException();
         }
     }
 }

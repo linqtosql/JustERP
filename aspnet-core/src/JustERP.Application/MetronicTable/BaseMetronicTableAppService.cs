@@ -34,11 +34,22 @@ namespace JustERP.MetronicTable
         {
             var roles = await GetAll(input);
             input.Total = roles.TotalCount;
-            return new MetronicPagedResultDto<TEntityDto>()
+            return new MetronicPagedResultDto<TEntityDto>
             {
                 Data = roles.Items,
                 Meta = input
             };
+        }
+    }
+
+    public abstract class BaseMetronicTableAppService<TEntity, TEntityDto, TPrimaryKey, TGetAllInput> :
+        BaseMetronicTableAppService<TEntity, TEntityDto, TPrimaryKey, TGetAllInput, TEntityDto, TEntityDto>
+        where TEntity : class, IEntity<TPrimaryKey>
+        where TEntityDto : IEntityDto<TPrimaryKey>
+        where TGetAllInput : MetronicPagedResultRequestDto
+    {
+        protected BaseMetronicTableAppService(IRepository<TEntity, TPrimaryKey> repository) : base(repository)
+        {
         }
     }
 }

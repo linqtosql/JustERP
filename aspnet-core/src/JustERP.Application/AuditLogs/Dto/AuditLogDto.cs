@@ -6,7 +6,7 @@ using Abp.AutoMapper;
 namespace JustERP.AuditLogs.Dto
 {
     [AutoMapFrom(typeof(AuditLog))]
-    public class AuditLogDto : EntityDto<int>
+    public class AuditLogDto : EntityDto<long>
     {
         public string UserName { get; set; }
         public DateTime ExecutionTime { get; set; }
