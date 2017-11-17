@@ -1,8 +1,10 @@
-﻿using Abp.Auditing;
+﻿using System.Linq;
+using Abp.Auditing;
 using Abp.Domain.Repositories;
 using JustERP.AuditLogs.Dto;
 using JustERP.MetronicTable;
 using JustERP.MetronicTable.Dto;
+using Microsoft.EntityFrameworkCore;
 
 namespace JustERP.AuditLogs
 {
