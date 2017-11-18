@@ -33,9 +33,46 @@ namespace JustERP.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<LhzxExpert>().HasOne(e => e.ExpertClass).WithMany(c => c.Experts).HasForeignKey(e => e.ExpertClassId);
-            modelBuilder.Entity<LhzxExpertComment>().HasOne(e => e.Expert).WithMany(c => c.ExpertComments).HasForeignKey(e => e.ExpertId);
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<LhzxExpert>(b =>
+            {
+                b.HasOne(e => e.ExpertClass).WithMany().HasForeignKey(e => e.ExpertClassId);
+            });
+
+            modelBuilder.Entity<LhzxExpertComment>(b =>
+            {
+                b.HasOne(e => e.CommenterExpert).WithMany().HasForeignKey(e => e.CommenterExpertId);
+                b.HasOne(e => e.Expert).WithMany().HasForeignKey(e => e.ExpertId);
+                b.HasOne(e => e.ExpertOrder).WithMany().HasForeignKey(e => e.ExpertOrderId);
+                b.HasMany(e => e.ExpertCommentReplies).WithOne().HasForeignKey(e => e.ParentId);
+            });
+
+            modelBuilder.Entity<LhzxExpertOrder>(b =>
+            {
+                b.HasOne(e => e.Expert).WithMany().HasForeignKey(e => e.ExpertId);
+                b.HasOne(e => e.ServerExpert).WithMany().HasForeignKey(e => e.ServerExpertId);
+            });
+
+            modelBuilder.Entity<LhzxExpertOrderLog>(b =>
+            {
+                b.HasOne(e => e.ExpertOrder).WithMany().HasForeignKey(e => e.ExpertOrderId);
+            });
+
+            modelBuilder.Entity<LhzxExpertOrderChart>(b =>
+            {
+                b.HasOne(e => e.ExpertOrder).WithMany().HasForeignKey(e => e.ExpertOrderId);
+            });
+
+            modelBuilder.Entity<LhzxExpertWorkSetting>(b =>
+            {
+                b.HasOne(e => e.Expert).WithMany().HasForeignKey(e => e.ExpertId);
+            });
+
+            modelBuilder.Entity<LhzxExpertClass>(b =>
+            {
+                b.HasMany(e => e.ChildrenExpertClasses).WithOne().HasForeignKey(e => e.ParentId);
+            });
+
         }
     }
 }

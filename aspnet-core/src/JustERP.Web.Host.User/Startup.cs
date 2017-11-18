@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Linq;
 using Abp.Extensions;
+using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 
 #if FEATURE_SIGNALR
@@ -92,7 +93,7 @@ namespace JustERP.Web.Host.User
             app.UseStaticFiles();
 
             app.UseAuthentication();
-            //app.UseJwtTokenMiddleware();
+            app.UseJwtTokenMiddleware();
 
 #if FEATURE_SIGNALR
 //Integrate to OWIN
