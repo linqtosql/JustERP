@@ -6,6 +6,6 @@ namespace JustERP.AuditLogs
 {
     public interface IAuditLogAppService : IMetronicTableAppService<AuditLogDto, MetronicPagedResultRequestDto>
     {
-
+        
     }
 }

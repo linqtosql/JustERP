@@ -11,6 +11,7 @@ using Abp.Authorization;
 using Abp.Authorization.Users;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
+using Abp.Linq.Extensions;
 using Abp.Localization;
 using Abp.Organizations;
 using Abp.Runtime.Session;
@@ -164,14 +165,11 @@ namespace JustERP.Users
 
         protected override IQueryable<User> CreateFilteredQuery(GetUsersDto input)
         {
-            var query = Repository.GetAllIncluding(x => x.Roles);
-            if (!string.IsNullOrWhiteSpace(input.Search))
-            {
-                query = query.Where(u =>
-                    u.UserName.Contains(input.Search) ||
-                    u.FullName.Contains(input.Search) ||
-                    u.EmailAddress.Contains(input.Search));
-            }
+            var query = Repository.GetAllIncluding(x => x.Roles)
+                .WhereIf(!string.IsNullOrWhiteSpace(input.Search),
+                u => u.UserName.Contains(input.Search) ||
+                     u.FullName.Contains(input.Search) ||
+                     u.EmailAddress.Contains(input.Search));
             return query;
         }
 
