@@ -8,8 +8,4 @@
     <ProjectReference Include="..\JustERP.Core.User\JustERP.Core.User.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Experts\" />
-  </ItemGroup>
-
 </Project>
