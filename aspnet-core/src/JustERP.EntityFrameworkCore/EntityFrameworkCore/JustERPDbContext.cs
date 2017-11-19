@@ -36,36 +36,39 @@ namespace JustERP.EntityFrameworkCore
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<LhzxExpert>(b =>
             {
-                b.HasOne(e => e.ExpertClass).WithMany().HasForeignKey(e => e.ExpertClassId);
+                b.HasOne(e => e.ExpertClass).WithMany(e => e.Experts).HasForeignKey(e => e.ExpertClassId);
+                b.HasOne(e => e.ExpertFirstClass).WithMany(e => e.FirstClassExperts).HasForeignKey(e => e.ExpertFirstClassId);
             });
 
             modelBuilder.Entity<LhzxExpertComment>(b =>
             {
-                b.HasOne(e => e.CommenterExpert).WithMany().HasForeignKey(e => e.CommenterExpertId);
-                b.HasOne(e => e.Expert).WithMany().HasForeignKey(e => e.ExpertId);
-                b.HasOne(e => e.ExpertOrder).WithMany().HasForeignKey(e => e.ExpertOrderId);
+                b.HasOne(e => e.CommenterExpert).WithMany(e => e.CommenterComments).HasForeignKey(e => e.CommenterExpertId);
+                b.HasOne(e => e.Expert).WithMany(e => e.ExpertComments).HasForeignKey(e => e.ExpertId);
+                b.HasOne(e => e.ExpertOrder).WithMany(e => e.ExpertComments).HasForeignKey(e => e.ExpertOrderId);
                 b.HasMany(e => e.ExpertCommentReplies).WithOne().HasForeignKey(e => e.ParentId);
             });
 
             modelBuilder.Entity<LhzxExpertOrder>(b =>
             {
-                b.HasOne(e => e.Expert).WithMany().HasForeignKey(e => e.ExpertId);
-                b.HasOne(e => e.ServerExpert).WithMany().HasForeignKey(e => e.ServerExpertId);
+                b.HasOne(e => e.Expert).WithMany(e => e.ExpertOrders).HasForeignKey(e => e.ExpertId);
+                b.HasOne(e => e.ServerExpert).WithMany(e => e.ServerExpertOrders).HasForeignKey(e => e.ServerExpertId);
+
+                b.HasIndex(e => e.OrderNo);
             });
 
             modelBuilder.Entity<LhzxExpertOrderLog>(b =>
             {
-                b.HasOne(e => e.ExpertOrder).WithMany().HasForeignKey(e => e.ExpertOrderId);
+                b.HasOne(e => e.ExpertOrder).WithMany(e => e.ExpertOrderLogs).HasForeignKey(e => e.ExpertOrderId);
             });
 
             modelBuilder.Entity<LhzxExpertOrderChart>(b =>
             {
-                b.HasOne(e => e.ExpertOrder).WithMany().HasForeignKey(e => e.ExpertOrderId);
+                b.HasOne(e => e.ExpertOrder).WithMany(e => e.ExpertOrderCharts).HasForeignKey(e => e.ExpertOrderId);
             });
 
             modelBuilder.Entity<LhzxExpertWorkSetting>(b =>
             {
-                b.HasOne(e => e.Expert).WithMany().HasForeignKey(e => e.ExpertId);
+                b.HasOne(e => e.Expert).WithMany(e => e.ExpertWorkSettings).HasForeignKey(e => e.ExpertId);
             });
 
             modelBuilder.Entity<LhzxExpertClass>(b =>

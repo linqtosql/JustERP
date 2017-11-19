@@ -129,6 +129,7 @@ namespace JustERP.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    AlipayAccount = table.Column<string>(maxLength: 32, nullable: true),
                     Avatar = table.Column<string>(maxLength: 128, nullable: true),
                     AvgTime = table.Column<double>(nullable: true),
                     BackgroundImage = table.Column<string>(maxLength: 128, nullable: true),
@@ -136,22 +137,31 @@ namespace JustERP.Migrations
                     CreatorUserId = table.Column<long>(nullable: true),
                     DeleterUserId = table.Column<long>(nullable: true),
                     DeletionTime = table.Column<DateTime>(nullable: true),
+                    DurationPerTime = table.Column<int>(nullable: true),
                     ExpertClassId = table.Column<long>(nullable: false),
+                    ExpertFirstClassId = table.Column<long>(nullable: false),
+                    ExpertType = table.Column<int>(nullable: true),
+                    ExtensionData = table.Column<string>(nullable: true),
+                    Introduction = table.Column<string>(maxLength: 512, nullable: true),
                     IsActive = table.Column<bool>(nullable: true),
                     IsChecked = table.Column<bool>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    Job = table.Column<string>(maxLength: 32, nullable: true),
-                    JobOrg = table.Column<string>(maxLength: 32, nullable: true),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    LhzxExpertClassId = table.Column<long>(nullable: true),
-                    Name = table.Column<string>(maxLength: 16, nullable: true),
+                    Name = table.Column<string>(maxLength: 16, nullable: false),
+                    NickName = table.Column<string>(maxLength: 16, nullable: true),
+                    OnlineStatus = table.Column<int>(nullable: true),
+                    Organization = table.Column<string>(maxLength: 32, nullable: true),
                     Password = table.Column<string>(maxLength: 32, nullable: true),
-                    Phone = table.Column<string>(maxLength: 16, nullable: true),
-                    Profile = table.Column<string>(maxLength: 512, nullable: true),
+                    Phone = table.Column<string>(maxLength: 16, nullable: false),
+                    Post = table.Column<string>(maxLength: 32, nullable: true),
+                    Price = table.Column<decimal>(nullable: true),
+                    RegisterIpAddress = table.Column<string>(maxLength: 16, nullable: true),
                     Score = table.Column<double>(nullable: true),
                     ServicesCount = table.Column<int>(nullable: true),
+                    Speciality = table.Column<string>(maxLength: 512, nullable: true),
                     Tags = table.Column<string>(maxLength: 64, nullable: true),
+                    WeixinAccount = table.Column<string>(maxLength: 32, nullable: true),
                     WorkYears = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -176,15 +186,15 @@ namespace JustERP.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_Experts_ExpertClasses_ExpertFirstClassId",
+                        column: x => x.ExpertFirstClassId,
+                        principalTable: "ExpertClasses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Experts_AbpUsers_LastModifierUserId",
                         column: x => x.LastModifierUserId,
                         principalTable: "AbpUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Experts_ExpertClasses_LhzxExpertClassId",
-                        column: x => x.LhzxExpertClassId,
-                        principalTable: "ExpertClasses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -264,7 +274,6 @@ namespace JustERP.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    LhzxExpertId = table.Column<long>(nullable: true),
                     StartTime = table.Column<DateTime>(nullable: false),
                     Week = table.Column<int>(nullable: false)
                 },
@@ -277,12 +286,6 @@ namespace JustERP.Migrations
                         principalTable: "Experts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ExpertWorkSettings_Experts_LhzxExpertId",
-                        column: x => x.LhzxExpertId,
-                        principalTable: "Experts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -302,10 +305,8 @@ namespace JustERP.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    LhzxExpertId = table.Column<long>(nullable: true),
-                    LhzxExpertOrderId = table.Column<long>(nullable: true),
                     ParentId = table.Column<long>(nullable: true),
-                    Score = table.Column<double>(nullable: true)
+                    Score = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -328,18 +329,6 @@ namespace JustERP.Migrations
                         principalTable: "ExpertOrders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ExpertComments_Experts_LhzxExpertId",
-                        column: x => x.LhzxExpertId,
-                        principalTable: "Experts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ExpertComments_ExpertOrders_LhzxExpertOrderId",
-                        column: x => x.LhzxExpertOrderId,
-                        principalTable: "ExpertOrders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ExpertComments_ExpertComments_ParentId",
                         column: x => x.ParentId,
@@ -365,7 +354,6 @@ namespace JustERP.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    LhzxExpertOrderId = table.Column<long>(nullable: true),
                     ReceiverExpertId = table.Column<long>(nullable: true),
                     SenderExpertId = table.Column<long>(nullable: true)
                 },
@@ -378,12 +366,6 @@ namespace JustERP.Migrations
                         principalTable: "ExpertOrders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ExpertOrderCharts_ExpertOrders_LhzxExpertOrderId",
-                        column: x => x.LhzxExpertOrderId,
-                        principalTable: "ExpertOrders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ExpertOrderCharts_Experts_ReceiverExpertId",
                         column: x => x.ReceiverExpertId,
@@ -407,7 +389,6 @@ namespace JustERP.Migrations
                     CreationTime = table.Column<DateTime>(nullable: false),
                     CreatorUserId = table.Column<long>(nullable: true),
                     ExpertOrderId = table.Column<long>(nullable: false),
-                    LhzxExpertOrderId = table.Column<long>(nullable: true),
                     Title = table.Column<string>(maxLength: 64, nullable: true)
                 },
                 constraints: table =>
@@ -419,12 +400,6 @@ namespace JustERP.Migrations
                         principalTable: "ExpertOrders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ExpertOrderLogs_ExpertOrders_LhzxExpertOrderId",
-                        column: x => x.LhzxExpertOrderId,
-                        principalTable: "ExpertOrders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -463,16 +438,6 @@ namespace JustERP.Migrations
                 column: "ExpertOrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ExpertComments_LhzxExpertId",
-                table: "ExpertComments",
-                column: "LhzxExpertId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExpertComments_LhzxExpertOrderId",
-                table: "ExpertComments",
-                column: "LhzxExpertOrderId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ExpertComments_ParentId",
                 table: "ExpertComments",
                 column: "ParentId");
@@ -481,11 +446,6 @@ namespace JustERP.Migrations
                 name: "IX_ExpertOrderCharts_ExpertOrderId",
                 table: "ExpertOrderCharts",
                 column: "ExpertOrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExpertOrderCharts_LhzxExpertOrderId",
-                table: "ExpertOrderCharts",
-                column: "LhzxExpertOrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExpertOrderCharts_ReceiverExpertId",
@@ -501,11 +461,6 @@ namespace JustERP.Migrations
                 name: "IX_ExpertOrderLogs_ExpertOrderId",
                 table: "ExpertOrderLogs",
                 column: "ExpertOrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExpertOrderLogs_LhzxExpertOrderId",
-                table: "ExpertOrderLogs",
-                column: "LhzxExpertOrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExpertOrders_CreatorUserId",
@@ -528,6 +483,11 @@ namespace JustERP.Migrations
                 column: "LastModifierUserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ExpertOrders_OrderNo",
+                table: "ExpertOrders",
+                column: "OrderNo");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExpertOrders_ServerExpertId",
                 table: "ExpertOrders",
                 column: "ServerExpertId");
@@ -548,24 +508,19 @@ namespace JustERP.Migrations
                 column: "ExpertClassId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Experts_ExpertFirstClassId",
+                table: "Experts",
+                column: "ExpertFirstClassId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Experts_LastModifierUserId",
                 table: "Experts",
                 column: "LastModifierUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Experts_LhzxExpertClassId",
-                table: "Experts",
-                column: "LhzxExpertClassId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ExpertWorkSettings_ExpertId",
                 table: "ExpertWorkSettings",
                 column: "ExpertId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExpertWorkSettings_LhzxExpertId",
-                table: "ExpertWorkSettings",
-                column: "LhzxExpertId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -12,7 +12,7 @@ namespace JustERP.Core.User.Experts
         public long ExpertId { get; set; }
         public long CommenterExpertId { get; set; }
         public long ExpertOrderId { get; set; }
-        public double? Score { get; set; }
+        public double Score { get; set; }
         [MaxLength(512)]
         public string Content { get; set; }
         /// <summary>

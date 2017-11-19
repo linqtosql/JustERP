@@ -1,11 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Abp.Application.Services;
+using Abp.Authorization;
+using Abp.Domain.Repositories;
+using Abp.Linq;
+using Abp.Runtime.Session;
+using JustERP.Application.User.Experts.Dto;
+using JustERP.Core.User.Experts;
+using Microsoft.EntityFrameworkCore;
 
 namespace JustERP.Application.User.Experts
 {
-    public class ExpertAppService : IExpertAppService
+    public class ExpertAppService : ApplicationService, IExpertAppService
     {
+        public IRepository<LhzxExpert, long> ExpertRepository { get; set; }
+        public IRepository<LhzxExpertClass, long> ExpertClassRepository { get; set; }
+        public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
 
+        public ExpertAppService(IAbpSession abpSession)
+        {
+            AbpSession = abpSession;
+        }
+
+        public async Task<List<ExpertClassDto>> GetGroupedByClassExperts()
+        {
+            var query = ExpertClassRepository.GetAllIncluding(e => e.Experts).Where(e => e.ParentId != null);
+            var list = await AsyncQueryableExecuter.ToListAsync(query);
+            return ObjectMapper.Map<List<ExpertClassDto>>(list);
+        }
+
+        public async Task<ExpertDetailsDto> GetExpertDetail(long id)
+        {
+            var expert = await ExpertRepository.GetAllIncluding(
+                e => e.ExpertClass,
+                e => e.ExpertFirstClass,
+                e => e.ExpertComments,
+                e => e.ExpertWorkSettings).SingleOrDefaultAsync(e => e.Id == id);
+            
+            return ObjectMapper.Map<ExpertDetailsDto>(expert);
+        }
+
+        [AbpAuthorize]
+        public Task<bool> UpdateNonExpert(CreateNonExpertInput input)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        [AbpAuthorize]
+        public Task<bool> UpdateExpert(CreateExpertInput input)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
