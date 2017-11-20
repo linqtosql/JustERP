@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Abp.Domain.Entities;
 using AutoMapper;
 using JustERP.Core.User.Experts;
 
@@ -15,8 +14,7 @@ namespace JustERP.Application.User.Experts.Dto
 
             CreateMap<LhzxExpert, ExpertDetailsDto>()
                 .ForMember(e => e.ExpertWorkSettings, opt => opt.MapFrom(e => e.ExpertWorkSettings.Select(s => $"{s.Week} {s.StartTime:HH:mm}-{s.EndTime:HH:mm}")))
-                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.GetData<LhzxExpertPhoto[]>(LhzxExpert.PhotosKey, false)));
-
+                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => p.ImageUrl).ToArray()));
         }
     }
 }

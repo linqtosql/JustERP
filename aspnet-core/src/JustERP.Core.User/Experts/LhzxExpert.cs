@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using JetBrains.Annotations;
@@ -9,7 +10,7 @@ namespace JustERP.Core.User.Experts
 {
     public class LhzxExpert : FullAuditedEntity<long>, IFullAudited<Authorization.Users.User>, IExtendableObject
     {
-        public const string PhotosKey = "ExpertPhotos";
+        private const string PhotosKey = "ExpertPhotos";
         [Required]
         public long ExpertFirstClassId { get; set; }
         [Required]
@@ -55,6 +56,12 @@ namespace JustERP.Core.User.Experts
         public string RegisterIpAddress { get; set; }
         public bool? IsChecked { get; set; }
         public bool? IsActive { get; set; }
+        [NotMapped]
+        public LhzxExpertPhoto[] ExpertPhotos
+        {
+            get => this.GetData<LhzxExpertPhoto[]>(PhotosKey);
+            set => this.SetData(PhotosKey, value);
+        }
         public virtual LhzxExpertClass ExpertFirstClass { get; set; }
         public virtual LhzxExpertClass ExpertClass { get; set; }
         public virtual IEnumerable<LhzxExpertWorkSetting> ExpertWorkSettings { get; set; }
@@ -62,6 +69,7 @@ namespace JustERP.Core.User.Experts
         public virtual IEnumerable<LhzxExpertComment> CommenterComments { get; set; }
         public virtual IEnumerable<LhzxExpertOrder> ExpertOrders { get; set; }
         public virtual IEnumerable<LhzxExpertOrder> ServerExpertOrders { get; set; }
+        public virtual IEnumerable<LhzxExpertFriendShip> ExpertFriendShips { get; set; }
 
         [CanBeNull]
         public virtual Authorization.Users.User CreatorUser { get; set; }

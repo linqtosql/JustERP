@@ -57,73 +57,6 @@ namespace JustERP.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ExpertFriendShips",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CreationTime = table.Column<DateTime>(nullable: false),
-                    CreatorUserId = table.Column<long>(nullable: true),
-                    DeleterUserId = table.Column<long>(nullable: true),
-                    DeletionTime = table.Column<DateTime>(nullable: true),
-                    ExpertFriendId = table.Column<long>(nullable: false),
-                    ExpertId = table.Column<long>(nullable: false),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    LastModificationTime = table.Column<DateTime>(nullable: true),
-                    LastModifierUserId = table.Column<long>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ExpertFriendShips", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ExpertOrderPayments",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<decimal>(nullable: true),
-                    CreationTime = table.Column<DateTime>(nullable: false),
-                    CreatorUserId = table.Column<long>(nullable: true),
-                    DeleterUserId = table.Column<long>(nullable: true),
-                    DeletionTime = table.Column<DateTime>(nullable: true),
-                    ExpertId = table.Column<long>(nullable: true),
-                    ExpertOrderId = table.Column<long>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    LastModificationTime = table.Column<DateTime>(nullable: true),
-                    LastModifierUserId = table.Column<long>(nullable: true),
-                    PaymentTime = table.Column<DateTime>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ExpertOrderPayments", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ExpertOrderRefunds",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<decimal>(nullable: true),
-                    CreationTime = table.Column<DateTime>(nullable: false),
-                    CreatorUserId = table.Column<long>(nullable: true),
-                    DeleterUserId = table.Column<long>(nullable: true),
-                    DeletionTime = table.Column<DateTime>(nullable: true),
-                    ExpertId = table.Column<long>(nullable: true),
-                    ExpertOrderId = table.Column<long>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    LastModificationTime = table.Column<DateTime>(nullable: true),
-                    LastModifierUserId = table.Column<long>(nullable: true),
-                    RefundTime = table.Column<DateTime>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ExpertOrderRefunds", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Experts",
                 columns: table => new
                 {
@@ -167,6 +100,7 @@ namespace JustERP.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Experts", x => x.Id);
+                    table.UniqueConstraint("AK_Experts_Phone", x => x.Phone);
                     table.ForeignKey(
                         name: "FK_Experts_AbpUsers_CreatorUserId",
                         column: x => x.CreatorUserId,
@@ -200,6 +134,28 @@ namespace JustERP.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ExpertFriendShips",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CreationTime = table.Column<DateTime>(nullable: false),
+                    CreatorUserId = table.Column<long>(nullable: true),
+                    ExpertFriendId = table.Column<long>(nullable: false),
+                    ExpertId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExpertFriendShips", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ExpertFriendShips_Experts_ExpertFriendId",
+                        column: x => x.ExpertFriendId,
+                        principalTable: "Experts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ExpertOrders",
                 columns: table => new
                 {
@@ -215,7 +171,7 @@ namespace JustERP.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    OrderNo = table.Column<string>(maxLength: 16, nullable: true),
+                    OrderNo = table.Column<string>(maxLength: 16, nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Quantity = table.Column<decimal>(nullable: false),
                     QuestionRemark = table.Column<string>(nullable: true),
@@ -227,6 +183,7 @@ namespace JustERP.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ExpertOrders", x => x.Id);
+                    table.UniqueConstraint("AK_ExpertOrders_OrderNo", x => x.OrderNo);
                     table.ForeignKey(
                         name: "FK_ExpertOrders_AbpUsers_CreatorUserId",
                         column: x => x.CreatorUserId,
@@ -402,6 +359,58 @@ namespace JustERP.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ExpertOrderPayments",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Account = table.Column<string>(nullable: true),
+                    Amount = table.Column<decimal>(nullable: true),
+                    CreationTime = table.Column<DateTime>(nullable: false),
+                    CreatorUserId = table.Column<long>(nullable: true),
+                    ExpertId = table.Column<long>(nullable: true),
+                    ExpertOrderId = table.Column<long>(nullable: true),
+                    ExtensionData = table.Column<string>(nullable: true),
+                    PaymentTime = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExpertOrderPayments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ExpertOrderPayments_ExpertOrders_ExpertOrderId",
+                        column: x => x.ExpertOrderId,
+                        principalTable: "ExpertOrders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ExpertOrderRefunds",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Account = table.Column<string>(nullable: true),
+                    Amount = table.Column<decimal>(nullable: true),
+                    CreationTime = table.Column<DateTime>(nullable: false),
+                    CreatorUserId = table.Column<long>(nullable: true),
+                    ExpertId = table.Column<long>(nullable: true),
+                    ExpertOrderId = table.Column<long>(nullable: true),
+                    ExtensionData = table.Column<string>(nullable: true),
+                    RefundTime = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExpertOrderRefunds", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ExpertOrderRefunds_ExpertOrders_ExpertOrderId",
+                        column: x => x.ExpertOrderId,
+                        principalTable: "ExpertOrders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ExpertClasses_CreatorUserId",
                 table: "ExpertClasses",
@@ -443,6 +452,11 @@ namespace JustERP.Migrations
                 column: "ParentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ExpertFriendShips_ExpertFriendId",
+                table: "ExpertFriendShips",
+                column: "ExpertFriendId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExpertOrderCharts_ExpertOrderId",
                 table: "ExpertOrderCharts",
                 column: "ExpertOrderId");
@@ -463,6 +477,18 @@ namespace JustERP.Migrations
                 column: "ExpertOrderId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ExpertOrderPayments_ExpertOrderId",
+                table: "ExpertOrderPayments",
+                column: "ExpertOrderId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ExpertOrderRefunds_ExpertOrderId",
+                table: "ExpertOrderRefunds",
+                column: "ExpertOrderId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExpertOrders_CreatorUserId",
                 table: "ExpertOrders",
                 column: "CreatorUserId");
@@ -481,11 +507,6 @@ namespace JustERP.Migrations
                 name: "IX_ExpertOrders_LastModifierUserId",
                 table: "ExpertOrders",
                 column: "LastModifierUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExpertOrders_OrderNo",
-                table: "ExpertOrders",
-                column: "OrderNo");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExpertOrders_ServerExpertId",

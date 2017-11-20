@@ -38,6 +38,8 @@ namespace JustERP.EntityFrameworkCore
             {
                 b.HasOne(e => e.ExpertClass).WithMany(e => e.Experts).HasForeignKey(e => e.ExpertClassId);
                 b.HasOne(e => e.ExpertFirstClass).WithMany(e => e.FirstClassExperts).HasForeignKey(e => e.ExpertFirstClassId);
+
+                b.HasAlternateKey(e => e.Phone);
             });
 
             modelBuilder.Entity<LhzxExpertComment>(b =>
@@ -52,8 +54,12 @@ namespace JustERP.EntityFrameworkCore
             {
                 b.HasOne(e => e.Expert).WithMany(e => e.ExpertOrders).HasForeignKey(e => e.ExpertId);
                 b.HasOne(e => e.ServerExpert).WithMany(e => e.ServerExpertOrders).HasForeignKey(e => e.ServerExpertId);
+                b.HasOne(e => e.ExpertOrderPayment).WithOne(e => e.ExpertOrder)
+                    .HasForeignKey<LhzxExpertOrderPayment>(e => e.ExpertOrderId);
+                b.HasOne(e => e.ExpertOrderRefund).WithOne(e => e.ExpertOrder)
+                    .HasForeignKey<LhzxExpertOrderRefund>(e => e.ExpertOrderId);
 
-                b.HasIndex(e => e.OrderNo);
+                b.HasAlternateKey(e => e.OrderNo);
             });
 
             modelBuilder.Entity<LhzxExpertOrderLog>(b =>
@@ -74,6 +80,11 @@ namespace JustERP.EntityFrameworkCore
             modelBuilder.Entity<LhzxExpertClass>(b =>
             {
                 b.HasMany(e => e.ChildrenExpertClasses).WithOne().HasForeignKey(e => e.ParentId);
+            });
+
+            modelBuilder.Entity<LhzxExpertFriendShip>(b =>
+            {
+                b.HasOne(e => e.ExpertFriend).WithMany(e => e.ExpertFriendShips).HasForeignKey(e => e.ExpertFriendId);
             });
 
         }

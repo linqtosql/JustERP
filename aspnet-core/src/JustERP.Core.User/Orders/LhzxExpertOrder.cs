@@ -5,6 +5,7 @@ using Abp.Domain.Entities.Auditing;
 using JetBrains.Annotations;
 using JustERP.Core.User.Charts;
 using JustERP.Core.User.Experts;
+using JustERP.Core.User.Payments;
 
 namespace JustERP.Core.User.Orders
 {
@@ -34,6 +35,8 @@ namespace JustERP.Core.User.Orders
         public virtual IEnumerable<LhzxExpertOrderChart> ExpertOrderCharts { get; set; }
         public virtual IEnumerable<LhzxExpertComment> ExpertComments { get; set; }
         public virtual IEnumerable<LhzxExpertOrderLog> ExpertOrderLogs { get; set; }
+        public virtual LhzxExpertOrderPayment ExpertOrderPayment { get; set; }
+        public virtual LhzxExpertOrderRefund ExpertOrderRefund { get; set; }
         [CanBeNull]
         public virtual Authorization.Users.User CreatorUser { get; set; }
         [CanBeNull]

@@ -1016,6 +1016,8 @@ namespace JustERP.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasAlternateKey("Phone");
+
                     b.HasIndex("CreatorUserId");
 
                     b.HasIndex("DeleterUserId");
@@ -1125,21 +1127,13 @@ namespace JustERP.Migrations
 
                     b.Property<long?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
-
-                    b.Property<DateTime?>("DeletionTime");
-
                     b.Property<long>("ExpertFriendId");
 
                     b.Property<long>("ExpertId");
 
-                    b.Property<bool>("IsDeleted");
-
-                    b.Property<DateTime?>("LastModificationTime");
-
-                    b.Property<long?>("LastModifierUserId");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("ExpertFriendId");
 
                     b.ToTable("ExpertFriendShips");
                 });
@@ -1204,6 +1198,7 @@ namespace JustERP.Migrations
                     b.Property<long?>("LastModifierUserId");
 
                     b.Property<string>("OrderNo")
+                        .IsRequired()
                         .HasMaxLength(16);
 
                     b.Property<decimal>("Price");
@@ -1223,6 +1218,8 @@ namespace JustERP.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasAlternateKey("OrderNo");
+
                     b.HasIndex("CreatorUserId");
 
                     b.HasIndex("DeleterUserId");
@@ -1230,8 +1227,6 @@ namespace JustERP.Migrations
                     b.HasIndex("ExpertId");
 
                     b.HasIndex("LastModifierUserId");
-
-                    b.HasIndex("OrderNo");
 
                     b.HasIndex("ServerExpertId");
 
@@ -1264,29 +1259,26 @@ namespace JustERP.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Account");
+
                     b.Property<decimal?>("Amount");
 
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<long?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
-
-                    b.Property<DateTime?>("DeletionTime");
-
                     b.Property<long?>("ExpertId");
 
                     b.Property<long?>("ExpertOrderId");
 
-                    b.Property<bool>("IsDeleted");
-
-                    b.Property<DateTime?>("LastModificationTime");
-
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<string>("ExtensionData");
 
                     b.Property<DateTime?>("PaymentTime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ExpertOrderId")
+                        .IsUnique();
 
                     b.ToTable("ExpertOrderPayments");
                 });
@@ -1296,29 +1288,26 @@ namespace JustERP.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Account");
+
                     b.Property<decimal?>("Amount");
 
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<long?>("CreatorUserId");
 
-                    b.Property<long?>("DeleterUserId");
-
-                    b.Property<DateTime?>("DeletionTime");
-
                     b.Property<long?>("ExpertId");
 
                     b.Property<long?>("ExpertOrderId");
 
-                    b.Property<bool>("IsDeleted");
-
-                    b.Property<DateTime?>("LastModificationTime");
-
-                    b.Property<long?>("LastModifierUserId");
+                    b.Property<string>("ExtensionData");
 
                     b.Property<DateTime?>("RefundTime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ExpertOrderId")
+                        .IsUnique();
 
                     b.ToTable("ExpertOrderRefunds");
                 });
@@ -1589,6 +1578,14 @@ namespace JustERP.Migrations
                         .HasForeignKey("ParentId");
                 });
 
+            modelBuilder.Entity("JustERP.Core.User.Experts.LhzxExpertFriendShip", b =>
+                {
+                    b.HasOne("JustERP.Core.User.Experts.LhzxExpert", "ExpertFriend")
+                        .WithMany("ExpertFriendShips")
+                        .HasForeignKey("ExpertFriendId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("JustERP.Core.User.Experts.LhzxExpertWorkSetting", b =>
                 {
                     b.HasOne("JustERP.Core.User.Experts.LhzxExpert", "Expert")
@@ -1628,6 +1625,20 @@ namespace JustERP.Migrations
                         .WithMany("ExpertOrderLogs")
                         .HasForeignKey("ExpertOrderId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("JustERP.Core.User.Payments.LhzxExpertOrderPayment", b =>
+                {
+                    b.HasOne("JustERP.Core.User.Orders.LhzxExpertOrder", "ExpertOrder")
+                        .WithOne("ExpertOrderPayment")
+                        .HasForeignKey("JustERP.Core.User.Payments.LhzxExpertOrderPayment", "ExpertOrderId");
+                });
+
+            modelBuilder.Entity("JustERP.Core.User.Payments.LhzxExpertOrderRefund", b =>
+                {
+                    b.HasOne("JustERP.Core.User.Orders.LhzxExpertOrder", "ExpertOrder")
+                        .WithOne("ExpertOrderRefund")
+                        .HasForeignKey("JustERP.Core.User.Payments.LhzxExpertOrderRefund", "ExpertOrderId");
                 });
 
             modelBuilder.Entity("JustERP.MultiTenancy.Tenant", b =>
