@@ -14,8 +14,8 @@ namespace JustERP.Application.User.Experts
 
         Task<ExpertDetailsDto> GetExpertDetail(long id);
 
-        Task<bool> UpdateNonExpert(CreateNonExpertInput input);
+        Task UpdateNonExpert(CreateNonExpertInput input);
 
-        Task<bool> UpdateExpert(CreateExpertInput input);
+        Task UpdateExpert(CreateExpertInput input);
     }
 }

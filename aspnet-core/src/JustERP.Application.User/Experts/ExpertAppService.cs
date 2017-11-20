@@ -5,7 +5,6 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Linq;
-using Abp.Runtime.Session;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Core.User.Experts;
 using Microsoft.EntityFrameworkCore;
@@ -17,10 +16,11 @@ namespace JustERP.Application.User.Experts
         public IRepository<LhzxExpert, long> ExpertRepository { get; set; }
         public IRepository<LhzxExpertClass, long> ExpertClassRepository { get; set; }
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
+        private ExpertManager _expertManager;
 
-        public ExpertAppService(IAbpSession abpSession)
+        public ExpertAppService(ExpertManager expertManager)
         {
-            AbpSession = abpSession;
+            _expertManager = expertManager;
         }
 
         public async Task<List<ExpertClassDto>> GetGroupedByClassExperts()
@@ -37,20 +37,22 @@ namespace JustERP.Application.User.Experts
                 e => e.ExpertFirstClass,
                 e => e.ExpertComments,
                 e => e.ExpertWorkSettings).SingleOrDefaultAsync(e => e.Id == id);
-            
+
             return ObjectMapper.Map<ExpertDetailsDto>(expert);
         }
 
         [AbpAuthorize]
-        public Task<bool> UpdateNonExpert(CreateNonExpertInput input)
+        public async Task UpdateNonExpert(CreateNonExpertInput input)
         {
-            throw new System.NotImplementedException();
+            var expert = ObjectMapper.Map<LhzxExpert>(input);
+            await ExpertRepository.UpdateAsync(expert);
         }
 
         [AbpAuthorize]
-        public Task<bool> UpdateExpert(CreateExpertInput input)
+        public async Task UpdateExpert(CreateExpertInput input)
         {
-            throw new System.NotImplementedException();
+            var expert = ObjectMapper.Map<LhzxExpert>(input);
+            await ExpertRepository.UpdateAsync(expert);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Abp;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Microsoft.AspNetCore.Identity;
@@ -33,6 +35,15 @@ namespace JustERP.Core.User.Experts
                 logger)
         {
             ExpertRepository = expertRepository;
+        }
+
+        public override async Task<IdentityResult> CreateAsync(LhzxExpert user)
+        {
+            Check.NotNull(user, nameof(user));
+
+            await ExpertRepository.InsertAsync(user);
+
+            return IdentityResult.Success;
         }
     }
 }
