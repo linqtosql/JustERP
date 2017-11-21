@@ -11,16 +11,14 @@ namespace JustERP.Core.User.Experts
     public class LhzxExpert : FullAuditedEntity<long>, IFullAudited<Authorization.Users.User>, IExtendableObject
     {
         private const string PhotosKey = "ExpertPhotos";
-        [Required]
-        public long ExpertFirstClassId { get; set; }
-        [Required]
-        public long ExpertClassId { get; set; }
+        public long ExpertAccountId { get; set; }
+        public long? ExpertFirstClassId { get; set; }
+        public long? ExpertClassId { get; set; }
         public int? ExpertType { get; set; }
         [Required]
         [MaxLength(16)]
         public string Phone { get; set; }
-        [MaxLength(32)]
-        public string Password { get; set; }
+
         [Required]
         [MaxLength(16)]
         public string Name { get; set; }
@@ -62,6 +60,7 @@ namespace JustERP.Core.User.Experts
             get => this.GetData<LhzxExpertPhoto[]>(PhotosKey);
             set => this.SetData(PhotosKey, value);
         }
+        public virtual LhzxExpertAccount ExpertAccount { get; set; }
         public virtual LhzxExpertClass ExpertFirstClass { get; set; }
         public virtual LhzxExpertClass ExpertClass { get; set; }
         public virtual IEnumerable<LhzxExpertWorkSetting> ExpertWorkSettings { get; set; }

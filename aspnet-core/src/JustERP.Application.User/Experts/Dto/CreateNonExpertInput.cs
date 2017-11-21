@@ -6,12 +6,15 @@ using JustERP.Core.User.Experts;
 namespace JustERP.Application.User.Experts.Dto
 {
     [AutoMapTo(typeof(LhzxExpert))]
-    public class CreateNonExpertInput : RequiredPhoneDto, IEntityDto<long>
+    public class CreateNonExpertInput : IEntityDto<long>
     {
         [Required(ErrorMessage = "请选择您所在的领域")]
         public long ExpertFirstClassId { get; set; }
         [Required(ErrorMessage = "请选择您所在的细分领域")]
         public long ExpertClassId { get; set; }
+        [Required(ErrorMessage = "请输入您的手机号")]
+        [MaxLength(16)]
+        public string Phone { get; set; }
         [Required(ErrorMessage = "请输入您的姓名")]
         [MaxLength(16)]
         public string Name { get; set; }

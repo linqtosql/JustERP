@@ -951,9 +951,11 @@ namespace JustERP.Migrations
 
                     b.Property<int?>("DurationPerTime");
 
-                    b.Property<long>("ExpertClassId");
+                    b.Property<long>("ExpertAccountId");
 
-                    b.Property<long>("ExpertFirstClassId");
+                    b.Property<long?>("ExpertClassId");
+
+                    b.Property<long?>("ExpertFirstClassId");
 
                     b.Property<int?>("ExpertType");
 
@@ -982,9 +984,6 @@ namespace JustERP.Migrations
                     b.Property<int?>("OnlineStatus");
 
                     b.Property<string>("Organization")
-                        .HasMaxLength(32);
-
-                    b.Property<string>("Password")
                         .HasMaxLength(32);
 
                     b.Property<string>("Phone")
@@ -1016,7 +1015,7 @@ namespace JustERP.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAlternateKey("Phone");
+                    b.HasAlternateKey("ExpertAccountId");
 
                     b.HasIndex("CreatorUserId");
 
@@ -1029,6 +1028,33 @@ namespace JustERP.Migrations
                     b.HasIndex("LastModifierUserId");
 
                     b.ToTable("Experts");
+                });
+
+            modelBuilder.Entity("JustERP.Core.User.Experts.LhzxExpertAccount", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime>("LastLoginTime");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("UserName")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("UserName");
+
+                    b.ToTable("ExpertAccounts");
                 });
 
             modelBuilder.Entity("JustERP.Core.User.Experts.LhzxExpertClass", b =>
@@ -1522,15 +1548,18 @@ namespace JustERP.Migrations
                         .WithMany()
                         .HasForeignKey("DeleterUserId");
 
+                    b.HasOne("JustERP.Core.User.Experts.LhzxExpertAccount", "ExpertAccount")
+                        .WithOne("Expert")
+                        .HasForeignKey("JustERP.Core.User.Experts.LhzxExpert", "ExpertAccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("JustERP.Core.User.Experts.LhzxExpertClass", "ExpertClass")
                         .WithMany("Experts")
-                        .HasForeignKey("ExpertClassId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ExpertClassId");
 
                     b.HasOne("JustERP.Core.User.Experts.LhzxExpertClass", "ExpertFirstClass")
                         .WithMany("FirstClassExperts")
-                        .HasForeignKey("ExpertFirstClassId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ExpertFirstClassId");
 
                     b.HasOne("JustERP.Authorization.Users.User", "LastModifierUser")
                         .WithMany()

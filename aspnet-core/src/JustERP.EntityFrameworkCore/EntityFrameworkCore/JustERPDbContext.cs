@@ -13,6 +13,7 @@ namespace JustERP.EntityFrameworkCore
     public class JustERPDbContext : AbpZeroDbContext<Tenant, Role, User, JustERPDbContext>
     {
         /* Define an IDbSet for each entity of the application */
+        public virtual DbSet<LhzxExpertAccount> ExpertAccounts { get; set; }
         public virtual DbSet<LhzxExpert> Experts { get; set; }
         public virtual DbSet<LhzxExpertClass> ExpertClasses { get; set; }
         public virtual DbSet<LhzxExpertComment> ExpertComments { get; set; }
@@ -34,12 +35,19 @@ namespace JustERP.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<LhzxExpertAccount>(b =>
+            {
+                b.HasOne(e => e.Expert).WithOne(e => e.ExpertAccount).HasForeignKey<LhzxExpert>(e => e.ExpertAccountId);
+
+                b.HasAlternateKey(e => e.UserName);
+            });
+
             modelBuilder.Entity<LhzxExpert>(b =>
             {
                 b.HasOne(e => e.ExpertClass).WithMany(e => e.Experts).HasForeignKey(e => e.ExpertClassId);
                 b.HasOne(e => e.ExpertFirstClass).WithMany(e => e.FirstClassExperts).HasForeignKey(e => e.ExpertFirstClassId);
 
-                b.HasAlternateKey(e => e.Phone);
+                b.HasAlternateKey(e => e.ExpertAccountId);
             });
 
             modelBuilder.Entity<LhzxExpertComment>(b =>

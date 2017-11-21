@@ -11,7 +11,7 @@ namespace JustERP.Core.User
     {
         private UserClaimsPrincipalFactory _claimsPrincipalFactory;
         private ExpertManager _expertManager;
-        protected IUnitOfWorkManager UnitOfWorkManager { get; }
+        private IUnitOfWorkManager UnitOfWorkManager { get; }
         public UserLogInManager(ExpertManager expertManager,
             UserClaimsPrincipalFactory claimsPrincipalFactory,
             IUnitOfWorkManager unitOfWorkManager)
@@ -23,7 +23,7 @@ namespace JustERP.Core.User
 
         public async Task<UserLoginResult> LoginAsync(string userName, string phoneCode)
         {
-            var user = _expertManager.FindByPhone(userName);
+            var user = await _expertManager.FindByUserName(userName);
 
             if (user == null)
             {

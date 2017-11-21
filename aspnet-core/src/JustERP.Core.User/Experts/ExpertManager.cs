@@ -8,40 +8,42 @@ using Microsoft.Extensions.Logging;
 
 namespace JustERP.Core.User.Experts
 {
-    public class ExpertManager : UserManager<LhzxExpert>, IDomainService
+    public class ExpertManager : UserManager<LhzxExpertAccount>, IDomainService
     {
-        private IRepository<LhzxExpert, long> ExpertRepository;
-
-
-        public LhzxExpert FindByPhone(string name)
-        {
-            return ExpertRepository.FirstOrDefault(e => e.Phone == name);
-        }
+        private IRepository<LhzxExpertAccount, long> _expertAccountRepository;
 
         public ExpertManager(
-            IRepository<LhzxExpert, long> expertRepository,
+            IRepository<LhzxExpertAccount, long> expertAccountRepository,
             UserStore store,
             IdentityErrorDescriber errors,
             IServiceProvider services,
-            ILogger<UserManager<LhzxExpert>> logger) : base(
-                store,
-                null,
-                null,
-                null,
-                null,
-                null,
-                errors,
-                services,
-                logger)
+            ILogger<UserManager<LhzxExpertAccount>> logger) : base(
+            store,
+            null,
+            null,
+            null,
+            null,
+            null,
+            errors,
+            services,
+            logger)
         {
-            ExpertRepository = expertRepository;
+            _expertAccountRepository = expertAccountRepository;
         }
 
-        public override async Task<IdentityResult> CreateAsync(LhzxExpert user)
+        public async Task<LhzxExpertAccount> FindByUserName(string userName)
+        {
+            return await _expertAccountRepository.FirstOrDefaultAsync(e => e.UserName == userName);
+        }
+
+        public override async Task<IdentityResult> CreateAsync(LhzxExpertAccount user)
         {
             Check.NotNull(user, nameof(user));
 
-            await ExpertRepository.InsertAsync(user);
+            user.CreationTime = DateTime.Now;
+            user.IsDeleted = false;
+
+            await _expertAccountRepository.InsertAsync(user);
 
             return IdentityResult.Success;
         }

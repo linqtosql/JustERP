@@ -10,6 +10,26 @@ namespace JustERP.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ExpertAccounts",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CreationTime = table.Column<DateTime>(nullable: false),
+                    CreatorUserId = table.Column<long>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    LastLoginTime = table.Column<DateTime>(nullable: false),
+                    LastModificationTime = table.Column<DateTime>(nullable: true),
+                    LastModifierUserId = table.Column<long>(nullable: true),
+                    UserName = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExpertAccounts", x => x.Id);
+                    table.UniqueConstraint("AK_ExpertAccounts_UserName", x => x.UserName);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ExpertClasses",
                 columns: table => new
                 {
@@ -71,8 +91,9 @@ namespace JustERP.Migrations
                     DeleterUserId = table.Column<long>(nullable: true),
                     DeletionTime = table.Column<DateTime>(nullable: true),
                     DurationPerTime = table.Column<int>(nullable: true),
-                    ExpertClassId = table.Column<long>(nullable: false),
-                    ExpertFirstClassId = table.Column<long>(nullable: false),
+                    ExpertAccountId = table.Column<long>(nullable: false),
+                    ExpertClassId = table.Column<long>(nullable: true),
+                    ExpertFirstClassId = table.Column<long>(nullable: true),
                     ExpertType = table.Column<int>(nullable: true),
                     ExtensionData = table.Column<string>(nullable: true),
                     Introduction = table.Column<string>(maxLength: 512, nullable: true),
@@ -85,7 +106,6 @@ namespace JustERP.Migrations
                     NickName = table.Column<string>(maxLength: 16, nullable: true),
                     OnlineStatus = table.Column<int>(nullable: true),
                     Organization = table.Column<string>(maxLength: 32, nullable: true),
-                    Password = table.Column<string>(maxLength: 32, nullable: true),
                     Phone = table.Column<string>(maxLength: 16, nullable: false),
                     Post = table.Column<string>(maxLength: 32, nullable: true),
                     Price = table.Column<decimal>(nullable: true),
@@ -100,7 +120,7 @@ namespace JustERP.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Experts", x => x.Id);
-                    table.UniqueConstraint("AK_Experts_Phone", x => x.Phone);
+                    table.UniqueConstraint("AK_Experts_ExpertAccountId", x => x.ExpertAccountId);
                     table.ForeignKey(
                         name: "FK_Experts_AbpUsers_CreatorUserId",
                         column: x => x.CreatorUserId,
@@ -114,17 +134,23 @@ namespace JustERP.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
+                        name: "FK_Experts_ExpertAccounts_ExpertAccountId",
+                        column: x => x.ExpertAccountId,
+                        principalTable: "ExpertAccounts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Experts_ExpertClasses_ExpertClassId",
                         column: x => x.ExpertClassId,
                         principalTable: "ExpertClasses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Experts_ExpertClasses_ExpertFirstClassId",
                         column: x => x.ExpertFirstClassId,
                         principalTable: "ExpertClasses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Experts_AbpUsers_LastModifierUserId",
                         column: x => x.LastModifierUserId,
@@ -572,6 +598,9 @@ namespace JustERP.Migrations
 
             migrationBuilder.DropTable(
                 name: "Experts");
+
+            migrationBuilder.DropTable(
+                name: "ExpertAccounts");
 
             migrationBuilder.DropTable(
                 name: "ExpertClasses");

@@ -36,7 +36,8 @@ namespace JustERP.Application.User.Experts
                 e => e.ExpertClass,
                 e => e.ExpertFirstClass,
                 e => e.ExpertComments,
-                e => e.ExpertWorkSettings).SingleOrDefaultAsync(e => e.Id == id);
+                e => e.ExpertWorkSettings)
+                .SingleOrDefaultAsync(e => e.Id == id);
 
             return ObjectMapper.Map<ExpertDetailsDto>(expert);
         }
