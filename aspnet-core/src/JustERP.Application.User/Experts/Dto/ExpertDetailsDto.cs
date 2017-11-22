@@ -12,5 +12,6 @@ namespace JustERP.Application.User.Experts.Dto
         public int ServicesCount { get; set; }
         public string[] ExpertWorkSettings { get; set; }
         public string[] ExpertPhotos { get; set; }
+        public string Phone { get; set; }
     }
 }

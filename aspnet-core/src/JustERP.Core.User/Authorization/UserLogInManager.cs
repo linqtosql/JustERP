@@ -34,5 +34,19 @@ namespace JustERP.Core.User
             var result = new UserLoginResult(user.Id, principal.Identity as ClaimsIdentity);
             return result;
         }
+
+        public async Task<UserLoginResult> RegisterAsync(string userName, string phoneCode)
+        {
+            var user = await _expertManager.FindByUserName(userName);
+            if (user != null)
+            {
+                throw new UserFriendlyException($"用户 {userName} 已存在");
+            }
+            var expertAccount = new LhzxExpertAccount { UserName = userName };
+            await _expertManager.CreateAsync(expertAccount);
+            UnitOfWorkManager.Current.SaveChanges();
+
+            return await LoginAsync(userName, phoneCode);
+        }
     }
 }

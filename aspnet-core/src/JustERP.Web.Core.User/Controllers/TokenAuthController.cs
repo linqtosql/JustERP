@@ -65,6 +65,22 @@ namespace JustERP.Web.Core.User.Controllers
             };
         }
 
+        [HttpPost]
+        public async Task<AuthenticateResultModel> Register([FromBody] UserAuthenticateModel model)
+        {
+            var loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode);
+
+            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
+
+            return new AuthenticateResultModel
+            {
+                AccessToken = accessToken,
+                EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
+                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
+                UserId = loginResult.UserId
+            };
+        }
+
         [HttpGet]
         public List<ExternalLoginProviderInfoModel> GetExternalAuthenticationProviders()
         {

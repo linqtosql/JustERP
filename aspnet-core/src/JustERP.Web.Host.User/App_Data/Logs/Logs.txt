@@ -418,3 +418,917 @@ System.Reflection.TargetInvocationException: Exception has been thrown by the ta
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Frame`1.<ProcessRequestsAsync>d__2.MoveNext()
 INFO  2017-11-21 23:43:26,340 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49453.3627ms 200 application/json; charset=utf-8
+DEBUG 2017-11-22 22:25:15,881 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-22 22:25:15,916 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-22 22:25:15,928 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,931 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,932 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,932 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,932 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,933 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,933 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,933 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,934 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,934 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,934 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,934 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,935 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,935 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,935 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,935 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:15,938 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-22 22:25:15,985 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:25:15,985 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:25:15,985 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:25:15,985 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:25:16,193 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:25:16,542 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-22 22:25:16,552 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-22 22:25:16,556 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-22 22:25:16,753 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-22 22:25:16,758 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-22 22:25:16,875 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-22 22:25:16,969 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-22 22:25:16,970 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-22 22:25:16,976 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-22 22:25:16,977 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Accounts.Dto.RegisterInput
+DEBUG 2017-11-22 22:25:16,978 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-11-22 22:31:54,841 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-22 22:31:54,864 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-22 22:31:54,877 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,880 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,881 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,881 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,881 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,881 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,882 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,882 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,882 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,883 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,883 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,883 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,883 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,884 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,884 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,884 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:54,887 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-22 22:31:54,940 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:31:54,940 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:31:54,940 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:31:54,940 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:31:55,172 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:31:55,556 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-22 22:31:55,566 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-22 22:31:55,571 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-22 22:31:55,573 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-22 22:31:55,574 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-22 22:31:55,607 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-22 22:31:55,652 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-22 22:31:55,652 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-22 22:31:55,656 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-22 22:31:55,657 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Accounts.Dto.RegisterInput
+DEBUG 2017-11-22 22:31:55,658 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-22 22:31:59,362 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2017-11-22 22:32:00,519 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-22 22:32:00,753 [6    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2017-11-22 22:32:00,767 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 319.8942ms
+INFO  2017-11-22 22:32:00,824 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1478.6328ms 302 
+INFO  2017-11-22 22:32:00,828 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-22 22:32:00,853 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-22 22:32:00,873 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 45.2024ms 200 text/html
+INFO  2017-11-22 22:32:00,889 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-22 22:32:00,893 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-22 22:32:00,897 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6397ms 304 text/css
+INFO  2017-11-22 22:32:00,904 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-22 22:32:00,904 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-22 22:32:00,904 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-22 22:32:00,904 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-22 22:32:00,904 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-22 22:32:00,905 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0064ms 304 text/css
+INFO  2017-11-22 22:32:00,905 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0633ms 304 application/javascript
+INFO  2017-11-22 22:32:00,905 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-22 22:32:00,905 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-22 22:32:00,906 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9893ms 304 application/javascript
+INFO  2017-11-22 22:32:00,906 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-22 22:32:00,906 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7949ms 304 application/javascript
+INFO  2017-11-22 22:32:00,906 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-22 22:32:00,907 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-22 22:32:00,907 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8988ms 304 text/css
+INFO  2017-11-22 22:32:00,918 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-22 22:32:00,918 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-22 22:32:00,919 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-22 22:32:00,919 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-22 22:32:00,919 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9108ms 304 application/javascript
+INFO  2017-11-22 22:32:00,924 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-22 22:32:00,925 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-22 22:32:00,925 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-22 22:32:00,925 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5486ms 304 application/javascript
+INFO  2017-11-22 22:32:00,925 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-22 22:32:00,926 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-22 22:32:00,926 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-22 22:32:00,926 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0002ms 304 application/javascript
+INFO  2017-11-22 22:32:00,926 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7703ms 304 application/javascript
+INFO  2017-11-22 22:32:00,919 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.853ms 304 application/javascript
+INFO  2017-11-22 22:32:00,931 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-22 22:32:00,932 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-22 22:32:00,932 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9644ms 304 application/javascript
+INFO  2017-11-22 22:32:00,932 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-22 22:32:00,933 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-22 22:32:00,933 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1835ms 304 application/javascript
+INFO  2017-11-22 22:32:00,936 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-22 22:32:00,936 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-22 22:32:00,937 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0595ms 304 application/javascript
+INFO  2017-11-22 22:32:00,937 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-22 22:32:00,938 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-22 22:32:00,938 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8996ms 304 application/javascript
+INFO  2017-11-22 22:32:00,940 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-22 22:32:00,946 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-22 22:32:00,949 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-22 22:32:00,949 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.9933ms 304 application/javascript
+INFO  2017-11-22 22:32:00,949 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-22 22:32:00,949 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.9679ms 304 application/javascript
+INFO  2017-11-22 22:32:00,953 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-22 22:32:00,954 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-22 22:32:00,954 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8812ms 304 image/png
+INFO  2017-11-22 22:32:00,958 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-22 22:32:00,959 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-22 22:32:00,959 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2345ms 304 text/css
+INFO  2017-11-22 22:32:01,110 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-22 22:32:01,419 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 308.4282ms 200 application/json
+INFO  2017-11-22 22:32:01,561 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511361121558  
+INFO  2017-11-22 22:32:01,561 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511361121557  
+INFO  2017-11-22 22:32:01,561 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-22 22:32:01,561 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-22 22:32:01,570 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.4584ms 200 application/javascript
+INFO  2017-11-22 22:32:01,570 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.6ms 200 application/javascript
+INFO  2017-11-22 22:38:06,809 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-22 22:38:06,815 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/throbber.gif was not modified
+INFO  2017-11-22 22:38:06,816 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.8564ms 304 image/gif
+INFO  2017-11-22 22:38:14,539 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 79
+INFO  2017-11-22 22:38:14,555 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:14,556 [6    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:14,679 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:14,679 [6    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+WARN  2017-11-22 22:38:15,210 [15   ] Mvc.ExceptionHandling.AbpExceptionFilter - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 128
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 94
+   at Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter.<OnActionExecutionAsync>d__3.MoveNext() in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Validation\AbpValidationActionFilter.cs:line 35
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+WARN  2017-11-22 22:38:15,216 [15   ] Mvc.ExceptionHandling.AbpExceptionFilter - There are 1 validation errors:
+WARN  2017-11-22 22:38:15,216 [15   ] Mvc.ExceptionHandling.AbpExceptionFilter - The field PhoneCode must be a string or array type with a maximum length of '4'. (PhoneCode)
+INFO  2017-11-22 22:38:15,475 [15   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:38:15,497 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 818.8469ms
+INFO  2017-11-22 22:38:15,504 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 965.6309ms 400 application/json; charset=utf-8
+INFO  2017-11-22 22:38:31,052 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:38:31,053 [5    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:31,053 [5    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:31,075 [5    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:31,076 [5    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:31,098 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:38:31,282 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:38:31,285 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 209.631ms
+INFO  2017-11-22 22:38:31,286 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 233.7797ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:38:37,066 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:38:37,067 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:37,068 [14   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:37,084 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:37,085 [14   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:37,102 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+WARN  2017-11-22 22:38:37,155 [5    ] Mvc.ExceptionHandling.AbpExceptionFilter - 当前用户不存在
+Abp.UI.UserFriendlyException: 当前用户不存在
+   at JustERP.Core.User.UserLogInManager.<LoginAsync>d__6.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Core.User\Authorization\UserLogInManager.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<GetLoginResultAsync>d__12.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 123
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<Authenticate>d__7.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 51
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-22 22:38:37,177 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:38:37,178 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 93.8233ms
+INFO  2017-11-22 22:38:37,179 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 113.2123ms 500 application/json; charset=utf-8
+INFO  2017-11-22 22:38:43,731 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:38:43,732 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:43,732 [18   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:43,747 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:43,747 [18   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:43,762 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+WARN  2017-11-22 22:38:43,807 [20   ] Mvc.ExceptionHandling.AbpExceptionFilter - 当前用户不存在
+Abp.UI.UserFriendlyException: 当前用户不存在
+   at JustERP.Core.User.UserLogInManager.<LoginAsync>d__6.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Core.User\Authorization\UserLogInManager.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<GetLoginResultAsync>d__12.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 123
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<Authenticate>d__7.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 51
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-22 22:38:43,824 [20   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:38:43,825 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 78.1973ms
+INFO  2017-11-22 22:38:43,825 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 93.9867ms 500 application/json; charset=utf-8
+INFO  2017-11-22 22:38:56,978 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:38:56,979 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:56,979 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:56,994 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:38:56,994 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:38:57,008 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:38:57,036 [20   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:38:57,037 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 43.6324ms
+INFO  2017-11-22 22:38:57,038 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 60.4992ms 200 application/json; charset=utf-8
+DEBUG 2017-11-22 22:52:49,205 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-22 22:52:49,503 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-22 22:52:49,522 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,527 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,528 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,528 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,529 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,529 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,530 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,530 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,531 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,531 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,532 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,533 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,533 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,533 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,534 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,534 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:49,540 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-22 22:52:49,635 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:52:49,635 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:52:49,635 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:52:49,635 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 22:52:49,935 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 22:52:50,981 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-22 22:52:50,994 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-22 22:52:50,998 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-22 22:52:51,001 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-22 22:52:51,003 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-22 22:52:51,190 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-22 22:52:51,238 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2017-11-22 22:52:51,238 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-22 22:52:51,242 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-22 22:52:54,976 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-22 22:52:54,976 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2017-11-22 22:52:55,503 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-22 22:52:55,820 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-22 22:52:55,832 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 853.2082ms 200 text/html
+INFO  2017-11-22 22:52:55,838 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-22 22:52:55,854 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-22 22:52:55,865 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-22 22:52:55,885 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 88.2103ms 304 application/javascript
+INFO  2017-11-22 22:52:55,894 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 92.3835ms 304 text/css
+INFO  2017-11-22 22:52:55,928 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-22 22:52:55,930 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-22 22:52:55,960 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-22 22:52:55,973 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-22 22:52:55,975 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-22 22:52:55,986 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-22 22:52:56,009 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 63.5953ms 304 text/css
+INFO  2017-11-22 22:52:56,057 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 85.8564ms 304 application/javascript
+INFO  2017-11-22 22:52:56,092 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 81.0852ms 304 application/javascript
+INFO  2017-11-22 22:52:56,119 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-22 22:52:56,122 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-22 22:52:56,153 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-22 22:52:56,176 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-22 22:52:56,180 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-22 22:52:56,219 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 123.6241ms 304 application/javascript
+INFO  2017-11-22 22:52:56,223 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 68.5292ms 304 application/javascript
+INFO  2017-11-22 22:52:56,225 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-22 22:52:56,234 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 110.7966ms 304 application/javascript
+INFO  2017-11-22 22:52:56,286 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-22 22:52:56,288 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-22 22:52:56,340 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-22 22:52:56,388 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-22 22:52:56,390 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-22 22:52:56,398 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 100.3657ms 304 application/javascript
+INFO  2017-11-22 22:52:56,428 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 131.0175ms 304 application/javascript
+INFO  2017-11-22 22:52:56,431 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-22 22:52:56,470 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-22 22:52:56,472 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-22 22:52:56,500 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-22 22:52:56,530 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-22 22:52:56,549 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 63.5249ms 304 application/javascript
+INFO  2017-11-22 22:52:56,557 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 202.2822ms 304 application/javascript
+INFO  2017-11-22 22:52:56,566 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-22 22:52:56,598 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-22 22:52:56,635 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 68.2858ms 304 application/javascript
+INFO  2017-11-22 22:52:56,643 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-22 22:52:56,658 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 59.2552ms 304 application/javascript
+INFO  2017-11-22 22:52:56,674 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-22 22:52:56,679 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-22 22:52:56,715 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-22 22:52:56,728 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 136.3385ms 304 text/css
+INFO  2017-11-22 22:52:56,763 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-22 22:52:56,784 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 165.9933ms 304 application/javascript
+INFO  2017-11-22 22:52:56,810 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-22 22:52:56,857 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-22 22:52:56,873 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 170.3149ms 304 application/javascript
+INFO  2017-11-22 22:52:56,887 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-22 22:52:56,924 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 112.9473ms 304 image/png
+INFO  2017-11-22 22:52:56,979 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-22 22:52:57,008 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-22 22:52:57,033 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-22 22:52:57,077 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 135.7893ms 304 text/css
+INFO  2017-11-22 22:52:57,079 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-32x32.png  
+INFO  2017-11-22 22:52:57,090 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2017-11-22 22:52:57,169 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.3105ms 200 image/png
+INFO  2017-11-22 22:52:57,191 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-16x16.png  
+INFO  2017-11-22 22:52:57,206 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/favicon-16x16.png was not modified
+INFO  2017-11-22 22:52:57,217 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 90.724ms 304 image/png
+INFO  2017-11-22 22:52:58,229 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1276.6048ms 200 application/json
+INFO  2017-11-22 22:52:58,395 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511362378360  
+INFO  2017-11-22 22:52:58,398 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511362378359  
+INFO  2017-11-22 22:52:58,402 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-22 22:52:58,410 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-22 22:52:58,459 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 67.8465ms 200 application/javascript
+INFO  2017-11-22 22:52:58,503 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-22 22:52:58,509 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 67.7832ms 200 application/javascript
+INFO  2017-11-22 22:52:58,517 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/throbber.gif was not modified
+INFO  2017-11-22 22:52:58,526 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 48.9549ms 304 image/gif
+INFO  2017-11-22 22:53:00,641 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-22 22:53:00,896 [5    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2017-11-22 22:53:00,912 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 495.2049ms
+INFO  2017-11-22 22:53:00,922 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6023.1076ms 302 
+INFO  2017-11-22 22:53:00,929 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-22 22:53:00,933 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-22 22:53:00,946 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.2815ms 200 text/html
+INFO  2017-11-22 22:53:00,987 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-22 22:53:00,993 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-22 22:53:01,023 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-22 22:53:01,029 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-22 22:53:01,034 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-22 22:53:01,037 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-22 22:53:01,047 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-22 22:53:01,118 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 80.294ms 304 application/javascript
+INFO  2017-11-22 22:53:01,121 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-22 22:53:01,129 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-22 22:53:01,154 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 69.8743ms 304 text/css
+INFO  2017-11-22 22:53:01,156 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-22 22:53:01,161 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-22 22:53:01,163 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 154.1994ms 304 application/javascript
+INFO  2017-11-22 22:53:01,179 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-22 22:53:01,200 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-22 22:53:01,216 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-22 22:53:01,221 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-22 22:53:01,226 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 157.9671ms 304 text/css
+INFO  2017-11-22 22:53:01,227 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-22 22:53:01,229 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 187.4764ms 304 application/javascript
+INFO  2017-11-22 22:53:01,281 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 45.7497ms 304 application/javascript
+INFO  2017-11-22 22:53:01,307 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 213.1576ms 304 text/css
+INFO  2017-11-22 22:53:01,360 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-22 22:53:01,366 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-22 22:53:01,367 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-22 22:53:01,390 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-22 22:53:01,404 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-22 22:53:01,417 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-22 22:53:01,507 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-22 22:53:01,511 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-22 22:53:01,522 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 231.212ms 304 application/javascript
+INFO  2017-11-22 22:53:01,548 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 174.1617ms 304 application/javascript
+INFO  2017-11-22 22:53:01,556 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-22 22:53:01,576 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 196.4738ms 304 application/javascript
+INFO  2017-11-22 22:53:01,598 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 185.4899ms 304 application/javascript
+INFO  2017-11-22 22:53:01,614 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-22 22:53:01,674 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 251.4538ms 304 application/javascript
+INFO  2017-11-22 22:53:01,731 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-22 22:53:01,733 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-22 22:53:01,737 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-22 22:53:01,767 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-22 22:53:01,844 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 148.2333ms 304 application/javascript
+INFO  2017-11-22 22:53:01,858 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 194.6231ms 304 application/javascript
+INFO  2017-11-22 22:53:01,861 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-22 22:53:01,871 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-22 22:53:01,888 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 288.6145ms 304 application/javascript
+INFO  2017-11-22 22:53:01,912 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-22 22:53:01,923 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-22 22:53:01,952 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 609.2378ms 304 application/javascript
+INFO  2017-11-22 22:53:01,977 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-22 22:53:01,980 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-22 22:53:01,989 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-22 22:53:01,993 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 270.9677ms 304 application/javascript
+INFO  2017-11-22 22:53:02,052 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-22 22:53:02,056 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-22 22:53:02,083 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 104.6841ms 304 text/css
+INFO  2017-11-22 22:53:02,085 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 72.3455ms 304 image/png
+INFO  2017-11-22 22:53:02,097 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 86.6279ms 200 application/json
+INFO  2017-11-22 22:53:02,278 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511362382243  
+INFO  2017-11-22 22:53:02,290 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-22 22:53:02,295 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511362382242  
+INFO  2017-11-22 22:53:02,306 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 40.5976ms 200 application/javascript
+INFO  2017-11-22 22:53:02,308 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-22 22:53:02,319 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.8419ms 200 application/javascript
+INFO  2017-11-22 22:53:13,083 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 22:53:13,122 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:53:13,188 [17   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:53:13,279 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:53:13,284 [17   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:53:13,969 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:53:58,004 [17   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:53:58,038 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 44756.4925ms
+INFO  2017-11-22 22:53:58,055 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 44980.7851ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:54:15,235 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 22:54:15,240 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:15,245 [17   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:15,257 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:15,264 [17   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:15,304 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:54:15,403 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:54:15,407 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 151.2584ms
+INFO  2017-11-22 22:54:15,413 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 177.8302ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:54:19,472 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 22:54:19,487 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:19,496 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:19,510 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:19,520 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:19,567 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:54:19,602 [17   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:54:19,609 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 98.698ms
+INFO  2017-11-22 22:54:19,617 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 158.5729ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:54:31,505 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 22:54:31,514 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:31,526 [16   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:31,543 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:31,552 [16   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:31,610 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:54:31,644 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:54:31,652 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 112.5698ms
+INFO  2017-11-22 22:54:31,661 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 157.4372ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:54:37,527 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 22:54:37,542 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:37,553 [6    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:37,568 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:54:37,577 [6    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:54:37,622 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:54:37,654 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:54:37,660 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 94.7758ms
+INFO  2017-11-22 22:54:37,669 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 147.3157ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:55:04,860 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 22:55:04,876 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:55:04,889 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:55:04,909 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:55:04,918 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:55:04,990 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:55:05,033 [16   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:55:05,039 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 134.4881ms
+INFO  2017-11-22 22:55:05,046 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 200.6635ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:56:06,528 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 79
+INFO  2017-11-22 22:56:06,539 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:06,549 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:06,570 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:06,579 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+WARN  2017-11-22 22:56:06,733 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 128
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 94
+   at Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter.<OnActionExecutionAsync>d__3.MoveNext() in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Validation\AbpValidationActionFilter.cs:line 35
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+WARN  2017-11-22 22:56:06,739 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - There are 1 validation errors:
+WARN  2017-11-22 22:56:06,740 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - The field PhoneCode must be a string or array type with a maximum length of '4'. (PhoneCode)
+INFO  2017-11-22 22:56:07,236 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:56:07,247 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 678.8996ms
+INFO  2017-11-22 22:56:07,253 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 735.0194ms 400 application/json; charset=utf-8
+INFO  2017-11-22 22:56:13,265 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:56:13,279 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:13,289 [16   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:13,308 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:13,321 [16   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:13,354 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:56:13,372 [16   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:56:13,378 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 77.2533ms
+INFO  2017-11-22 22:56:13,386 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 127.2179ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:56:19,625 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:56:19,629 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:19,634 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:19,642 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:19,646 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:19,679 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:56:19,695 [15   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:56:19,701 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 57.701ms
+INFO  2017-11-22 22:56:19,711 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 82.1342ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:56:23,011 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:56:23,024 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:23,033 [16   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:23,041 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:23,046 [16   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:23,088 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 22:56:23,126 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:56:23,131 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 89.0434ms
+INFO  2017-11-22 22:56:23,136 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 131.1987ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:56:28,985 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 22:56:29,014 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:29,032 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:29,044 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 22:56:29,051 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 22:56:29,094 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+WARN  2017-11-22 22:56:29,334 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - 当前用户不存在
+Abp.UI.UserFriendlyException: 当前用户不存在
+   at JustERP.Core.User.UserLogInManager.<LoginAsync>d__6.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Core.User\Authorization\UserLogInManager.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<GetLoginResultAsync>d__13.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<Authenticate>d__7.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 51
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-22 22:56:29,345 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:56:29,350 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 307.3833ms
+INFO  2017-11-22 22:56:29,357 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 392.2538ms 500 application/json; charset=utf-8
+INFO  2017-11-22 22:58:11,138 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetExpertDetail?id=3  
+INFO  2017-11-22 22:58:11,838 [21   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) with arguments (3) - ModelState is Valid
+INFO  2017-11-22 22:58:12,222 [15   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:58:12,227 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 1050.9267ms
+INFO  2017-11-22 22:58:12,234 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1105.4823ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:58:29,140 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetExpertDetail?id=4  
+INFO  2017-11-22 22:58:29,240 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) with arguments (4) - ModelState is Valid
+INFO  2017-11-22 22:58:29,286 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:58:29,294 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 132.0609ms
+INFO  2017-11-22 22:58:29,304 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 164.6473ms 200 application/json; charset=utf-8
+INFO  2017-11-22 22:58:31,924 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetExpertDetail?id=5  
+INFO  2017-11-22 22:58:32,013 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) with arguments (5) - ModelState is Valid
+INFO  2017-11-22 22:58:32,036 [16   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 22:58:32,045 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 91.0214ms
+INFO  2017-11-22 22:58:32,055 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 138.9414ms 200 application/json; charset=utf-8
+DEBUG 2017-11-22 23:03:27,634 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-22 23:03:27,657 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-22 23:03:27,671 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,674 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,674 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,674 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,675 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,675 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,675 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,675 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,676 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,676 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,677 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,677 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,677 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,677 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,678 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,678 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:27,681 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-22 23:03:27,731 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:03:27,731 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:03:27,731 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:03:27,731 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:03:27,945 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:03:28,299 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-22 23:03:28,309 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-22 23:03:28,313 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-22 23:03:28,315 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-22 23:03:28,316 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-22 23:03:28,348 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-22 23:03:28,389 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2017-11-22 23:03:28,389 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-22 23:03:28,392 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-22 23:03:28,392 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-22 23:03:28,393 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-22 23:03:31,490 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2017-11-22 23:03:32,450 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-22 23:03:32,676 [5    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2017-11-22 23:03:32,690 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 320.481ms
+INFO  2017-11-22 23:03:32,740 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1268.2514ms 302 
+INFO  2017-11-22 23:03:32,743 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-22 23:03:32,773 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-22 23:03:32,800 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 56.6506ms 200 text/html
+INFO  2017-11-22 23:03:32,814 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-22 23:03:32,819 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-22 23:03:32,819 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-22 23:03:32,820 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-22 23:03:32,822 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.1983ms 304 text/css
+INFO  2017-11-22 23:03:32,822 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.2054ms 304 text/css
+INFO  2017-11-22 23:03:32,826 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-22 23:03:32,827 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-22 23:03:32,827 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0163ms 304 application/javascript
+INFO  2017-11-22 23:03:32,827 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-22 23:03:32,828 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-22 23:03:32,828 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.829ms 304 application/javascript
+INFO  2017-11-22 23:03:32,829 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-22 23:03:32,830 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-22 23:03:32,830 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8908ms 304 application/javascript
+INFO  2017-11-22 23:03:32,833 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-22 23:03:32,834 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-22 23:03:32,834 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.4046ms 304 text/css
+INFO  2017-11-22 23:03:32,835 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-22 23:03:32,836 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-22 23:03:32,836 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0703ms 304 application/javascript
+INFO  2017-11-22 23:03:32,836 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-22 23:03:32,838 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-22 23:03:32,838 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8263ms 304 application/javascript
+INFO  2017-11-22 23:03:32,839 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-22 23:03:32,840 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-22 23:03:32,840 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7791ms 304 application/javascript
+INFO  2017-11-22 23:03:32,842 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-22 23:03:32,843 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-22 23:03:32,843 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0794ms 304 application/javascript
+INFO  2017-11-22 23:03:32,843 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-22 23:03:32,844 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-22 23:03:32,845 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1149ms 304 application/javascript
+INFO  2017-11-22 23:03:32,845 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-22 23:03:32,846 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-22 23:03:32,846 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9125ms 304 application/javascript
+INFO  2017-11-22 23:03:32,847 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-22 23:03:32,849 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-22 23:03:32,849 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.1946ms 304 application/javascript
+INFO  2017-11-22 23:03:32,854 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-22 23:03:32,855 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-22 23:03:32,855 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.27ms 304 application/javascript
+INFO  2017-11-22 23:03:32,856 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-22 23:03:32,856 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-22 23:03:32,857 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0858ms 304 application/javascript
+INFO  2017-11-22 23:03:32,863 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-22 23:03:32,864 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-22 23:03:32,864 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5542ms 304 application/javascript
+INFO  2017-11-22 23:03:32,865 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-22 23:03:32,865 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-22 23:03:32,866 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2603ms 304 application/javascript
+INFO  2017-11-22 23:03:32,871 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-22 23:03:32,871 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-22 23:03:32,871 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8973ms 304 image/png
+INFO  2017-11-22 23:03:32,876 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-22 23:03:32,877 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-22 23:03:32,877 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9149ms 304 text/css
+INFO  2017-11-22 23:03:33,085 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-22 23:03:33,384 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 298.6674ms 200 application/json
+INFO  2017-11-22 23:03:33,575 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511363013569  
+INFO  2017-11-22 23:03:33,576 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-22 23:03:33,579 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511363013568  
+INFO  2017-11-22 23:03:33,580 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-22 23:03:33,592 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.4216ms 200 application/javascript
+INFO  2017-11-22 23:03:33,592 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.9865ms 200 application/javascript
+INFO  2017-11-22 23:03:35,518 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-22 23:03:35,520 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/throbber.gif was not modified
+INFO  2017-11-22 23:03:35,522 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.8629ms 304 image/gif
+INFO  2017-11-22 23:03:47,529 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register application/json-patch+json 77
+INFO  2017-11-22 23:03:47,546 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 23:03:47,547 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 23:03:47,690 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 23:03:47,690 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 23:03:48,295 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 23:03:48,667 [15   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 23:03:48,699 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 1008.4907ms
+INFO  2017-11-22 23:03:48,706 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1177.6918ms 200 application/json; charset=utf-8
+INFO  2017-11-22 23:04:04,036 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Authenticate application/json-patch+json 77
+INFO  2017-11-22 23:04:04,037 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 23:04:04,037 [6    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 23:04:04,067 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2017-11-22 23:04:04,067 [6    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2017-11-22 23:04:04,089 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) with arguments (JustERP.Web.Core.User.Models.UserAuthenticateModel) - ModelState is Valid
+INFO  2017-11-22 23:04:04,224 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 23:04:04,225 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Authenticate (JustERP.Web.Core.User) in 158.5609ms
+INFO  2017-11-22 23:04:04,225 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 189.5291ms 200 application/json; charset=utf-8
+INFO  2017-11-22 23:04:12,397 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetExpertDetail?id=9  
+INFO  2017-11-22 23:04:12,635 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) with arguments (9) - ModelState is Valid
+INFO  2017-11-22 23:04:13,281 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 23:04:13,281 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 849.9491ms
+INFO  2017-11-22 23:04:13,281 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 884.8858ms 200 application/json; charset=utf-8
+INFO  2017-11-22 23:04:37,969 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetExpertDetail?id=1  
+INFO  2017-11-22 23:04:37,999 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) with arguments (1) - ModelState is Valid
+INFO  2017-11-22 23:04:38,217 [18   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 23:04:38,233 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 239.8332ms
+INFO  2017-11-22 23:04:38,234 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 265.63ms 200 application/json; charset=utf-8
+DEBUG 2017-11-22 23:08:08,960 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-22 23:08:08,983 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-22 23:08:08,996 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:08,999 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:08,999 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:08,999 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:08,999 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,000 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,000 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,000 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,001 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,001 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,001 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,002 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,002 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,002 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,002 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,003 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,007 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-22 23:08:09,056 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:08:09,056 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:08:09,056 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:08:09,056 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-22 23:08:09,280 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-22 23:08:09,634 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-22 23:08:09,644 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-22 23:08:09,648 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-22 23:08:09,650 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-22 23:08:09,651 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-22 23:08:09,682 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-22 23:08:09,724 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2017-11-22 23:08:09,724 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-22 23:08:09,727 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-22 23:08:09,727 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-22 23:08:09,728 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-22 23:08:12,551 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-22 23:08:12,859 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-22 23:08:12,931 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 388.8859ms 200 text/html
+INFO  2017-11-22 23:08:12,948 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-22 23:08:12,951 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-22 23:08:12,952 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-22 23:08:12,952 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-22 23:08:12,953 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-22 23:08:12,954 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-22 23:08:12,957 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-22 23:08:12,958 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-22 23:08:12,958 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.9485ms 304 application/javascript
+INFO  2017-11-22 23:08:12,958 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.6225ms 304 application/javascript
+INFO  2017-11-22 23:08:12,958 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.8325ms 304 text/css
+INFO  2017-11-22 23:08:12,959 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-22 23:08:12,959 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.8039ms 304 text/css
+INFO  2017-11-22 23:08:12,959 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-22 23:08:12,959 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-22 23:08:12,959 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-22 23:08:12,959 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9005ms 304 text/css
+INFO  2017-11-22 23:08:12,960 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0111ms 304 application/javascript
+INFO  2017-11-22 23:08:12,973 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-22 23:08:12,973 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-22 23:08:12,974 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-22 23:08:12,974 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-22 23:08:12,974 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-22 23:08:12,974 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7551ms 304 application/javascript
+INFO  2017-11-22 23:08:12,976 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-22 23:08:12,976 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.6172ms 304 application/javascript
+INFO  2017-11-22 23:08:12,976 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-22 23:08:12,977 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-22 23:08:12,977 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-22 23:08:12,977 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9272ms 304 application/javascript
+INFO  2017-11-22 23:08:12,978 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-22 23:08:12,978 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-22 23:08:12,978 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.3817ms 304 application/javascript
+INFO  2017-11-22 23:08:12,978 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.7025ms 304 application/javascript
+INFO  2017-11-22 23:08:12,979 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-22 23:08:12,979 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.1119ms 304 application/javascript
+INFO  2017-11-22 23:08:12,991 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-22 23:08:12,991 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-22 23:08:12,992 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-22 23:08:12,992 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-22 23:08:12,992 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8533ms 304 application/javascript
+INFO  2017-11-22 23:08:12,992 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2087ms 304 application/javascript
+INFO  2017-11-22 23:08:12,992 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-22 23:08:12,993 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-22 23:08:12,993 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-22 23:08:12,993 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7753ms 304 application/javascript
+INFO  2017-11-22 23:08:12,993 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-22 23:08:12,993 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9618ms 304 application/javascript
+INFO  2017-11-22 23:08:12,997 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-22 23:08:12,998 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-22 23:08:12,999 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0419ms 304 application/javascript
+INFO  2017-11-22 23:08:13,003 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-22 23:08:13,003 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-22 23:08:13,004 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9967ms 304 image/png
+INFO  2017-11-22 23:08:13,010 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-22 23:08:13,011 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-22 23:08:13,011 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0633ms 304 text/css
+INFO  2017-11-22 23:08:13,040 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-22 23:08:13,088 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-32x32.png  
+INFO  2017-11-22 23:08:13,089 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2017-11-22 23:08:13,090 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.6791ms 200 image/png
+INFO  2017-11-22 23:08:13,096 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-16x16.png  
+INFO  2017-11-22 23:08:13,097 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/favicon-16x16.png was not modified
+INFO  2017-11-22 23:08:13,097 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5234ms 304 image/png
+INFO  2017-11-22 23:08:13,354 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 314.4679ms 200 application/json
+INFO  2017-11-22 23:08:13,460 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511363293457  
+INFO  2017-11-22 23:08:13,461 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-22 23:08:13,462 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511363293458  
+INFO  2017-11-22 23:08:13,462 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-22 23:08:13,469 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6074ms 200 application/javascript
+INFO  2017-11-22 23:08:13,469 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.7654ms 200 application/javascript
+INFO  2017-11-22 23:08:13,564 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-22 23:08:13,565 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/throbber.gif was not modified
+INFO  2017-11-22 23:08:13,565 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9457ms 304 image/gif
+INFO  2017-11-22 23:08:18,774 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetExpertDetail?id=1  
+INFO  2017-11-22 23:08:19,828 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) with arguments (1) - ModelState is Valid
+INFO  2017-11-22 23:08:20,477 [14   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-22 23:08:20,510 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 986.6753ms
+INFO  2017-11-22 23:08:20,514 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1740.4343ms 200 application/json; charset=utf-8

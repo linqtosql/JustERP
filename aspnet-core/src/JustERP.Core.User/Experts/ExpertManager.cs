@@ -11,9 +11,11 @@ namespace JustERP.Core.User.Experts
     public class ExpertManager : UserManager<LhzxExpertAccount>, IDomainService
     {
         private IRepository<LhzxExpertAccount, long> _expertAccountRepository;
+        private IRepository<LhzxExpert, long> _expertRepository;
 
         public ExpertManager(
             IRepository<LhzxExpertAccount, long> expertAccountRepository,
+            IRepository<LhzxExpert, long> expertRepository,
             UserStore store,
             IdentityErrorDescriber errors,
             IServiceProvider services,
@@ -29,6 +31,7 @@ namespace JustERP.Core.User.Experts
             logger)
         {
             _expertAccountRepository = expertAccountRepository;
+            _expertRepository = expertRepository;
         }
 
         public async Task<LhzxExpertAccount> FindByUserName(string userName)
@@ -44,6 +47,16 @@ namespace JustERP.Core.User.Experts
             user.IsDeleted = false;
 
             await _expertAccountRepository.InsertAsync(user);
+
+            var expert = new LhzxExpert
+            {
+                CreationTime = DateTime.Now,
+                IsDeleted = false,
+                Phone = user.UserName,
+                ExpertAccountId = user.Id,
+                Name = ""
+            };
+            await _expertRepository.InsertAsync(expert);
 
             return IdentityResult.Success;
         }
