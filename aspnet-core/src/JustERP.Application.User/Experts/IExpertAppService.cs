@@ -12,7 +12,9 @@ namespace JustERP.Application.User.Experts
         /// <returns></returns>
         Task<List<ExpertClassDto>> GetGroupedByClassExperts();
 
-        Task<ExpertDetailsDto> GetExpertDetail(long id);
+        Task<ExpertDetailsDto> GetExpertDetail(long accountId);
+
+        Task<ExpertDto> GetExpertLoginInfo();
 
         Task UpdateNonExpert(CreateNonExpertInput input);
 

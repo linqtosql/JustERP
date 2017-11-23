@@ -30,16 +30,23 @@ namespace JustERP.Application.User.Experts
             return ObjectMapper.Map<List<ExpertClassDto>>(list);
         }
 
-        public async Task<ExpertDetailsDto> GetExpertDetail(long id)
+        public async Task<ExpertDetailsDto> GetExpertDetail(long accountId)
         {
             var expert = await ExpertRepository.GetAllIncluding(
                 e => e.ExpertClass,
                 e => e.ExpertFirstClass,
                 e => e.ExpertComments,
                 e => e.ExpertWorkSettings)
-                .SingleOrDefaultAsync(e => e.Id == id);
+                .SingleOrDefaultAsync(e => e.ExpertAccountId == accountId);
 
             return ObjectMapper.Map<ExpertDetailsDto>(expert);
+        }
+
+        public async Task<ExpertDto> GetExpertLoginInfo()
+        {
+            var expert = await ExpertRepository.GetAll()
+                .SingleOrDefaultAsync(e => e.ExpertAccountId == AbpSession.UserId);
+            return ObjectMapper.Map<ExpertDto>(expert);
         }
 
         [AbpAuthorize]
