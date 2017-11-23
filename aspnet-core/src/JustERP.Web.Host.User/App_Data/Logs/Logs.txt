@@ -1332,3 +1332,473 @@ INFO  2017-11-22 23:08:19,828 [15   ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2017-11-22 23:08:20,477 [14   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
 INFO  2017-11-22 23:08:20,510 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetExpertDetail (JustERP.Application.User) in 986.6753ms
 INFO  2017-11-22 23:08:20,514 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1740.4343ms 200 application/json; charset=utf-8
+DEBUG 2017-11-23 13:38:22,611 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-23 13:38:22,647 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-23 13:38:22,664 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,668 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,668 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,669 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,669 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,669 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,670 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,670 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,671 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,671 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,672 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,672 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,672 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,673 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,673 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,673 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:22,677 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-23 13:38:22,748 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:22,748 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:22,748 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:22,748 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:23,071 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:23,595 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-23 13:38:23,614 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-23 13:38:23,620 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-23 13:38:23,623 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-23 13:38:23,625 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-23 13:38:23,667 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-23 13:38:23,727 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2017-11-23 13:38:23,727 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-23 13:38:23,732 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-23 13:38:23,732 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-23 13:38:23,733 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+FATAL 2017-11-23 13:38:24,887 [2    ] Abp.AbpBootstrapper                      - MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1.ConfiguredValueTaskAwaiter.GetResult()
+   at MySqlConnector.Core.ServerSession.<ConnectAsync>d__56.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 251
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<CreateSessionAsync>d__77.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 366
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__19.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 138
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlConnectionSettings.<>c__DisplayClass2_0.<GetSettings>b__0(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlSmartTypeMapper.MaybeConvertMapping(RelationalTypeMapping mapping)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapper.IsTypeMapped(Type clrType)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.PropertyDiscoveryConvention.Apply(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.AddEntityType(EntityType entityType)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.InternalModelBuilder.Entity(TypeIdentity type, ConfigurationSource configurationSource)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity(Type type)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass22_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ExecutionStrategyFactory()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 116
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule.PostInitialize() in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\JustERPEntityFrameworkModule.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 153
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1.ConfiguredValueTaskAwaiter.GetResult()
+   at MySqlConnector.Core.ServerSession.<ConnectAsync>d__56.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 251
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<CreateSessionAsync>d__77.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 366
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__19.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 138
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlConnectionSettings.<>c__DisplayClass2_0.<GetSettings>b__0(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlSmartTypeMapper.MaybeConvertMapping(RelationalTypeMapping mapping)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapper.IsTypeMapped(Type clrType)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.PropertyDiscoveryConvention.Apply(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.AddEntityType(EntityType entityType)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.InternalModelBuilder.Entity(TypeIdentity type, ConfigurationSource configurationSource)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity(Type type)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass22_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ExecutionStrategyFactory()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 116
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule.PostInitialize() in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\JustERPEntityFrameworkModule.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 153
+FATAL 2017-11-23 13:38:24,975 [2    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1.ConfiguredValueTaskAwaiter.GetResult()
+   at MySqlConnector.Core.ServerSession.<ConnectAsync>d__56.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 251
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<CreateSessionAsync>d__77.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 366
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__19.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 138
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlConnectionSettings.<>c__DisplayClass2_0.<GetSettings>b__0(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlSmartTypeMapper.MaybeConvertMapping(RelationalTypeMapping mapping)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapper.IsTypeMapped(Type clrType)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.PropertyDiscoveryConvention.Apply(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.AddEntityType(EntityType entityType)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.InternalModelBuilder.Entity(TypeIdentity type, ConfigurationSource configurationSource)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity(Type type)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass22_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ExecutionStrategyFactory()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 116
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule.PostInitialize() in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\JustERPEntityFrameworkModule.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 158
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\AbpApplicationBuilderExtensions.cs:line 36
+   at JustERP.Web.Host.User.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in D:\Project\JustERP\aspnet-core\src\JustERP.Web.Host.User\Startup.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+DEBUG 2017-11-23 13:38:44,133 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-23 13:38:44,175 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-23 13:38:44,200 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,207 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,208 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,209 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,209 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,210 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,210 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,211 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,212 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,212 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,213 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,213 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,214 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,214 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,214 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,215 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:44,219 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-23 13:38:44,301 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:44,301 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:44,301 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:44,301 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-23 13:38:44,615 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-23 13:38:45,129 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-23 13:38:45,143 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-23 13:38:45,149 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-23 13:38:45,152 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-23 13:38:45,154 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-23 13:38:45,201 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-23 13:38:45,260 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2017-11-23 13:38:45,260 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-23 13:38:45,264 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-23 13:38:45,264 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-23 13:38:45,265 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+FATAL 2017-11-23 13:38:46,185 [2    ] Abp.AbpBootstrapper                      - MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1.ConfiguredValueTaskAwaiter.GetResult()
+   at MySqlConnector.Core.ServerSession.<ConnectAsync>d__56.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 251
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<CreateSessionAsync>d__77.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 366
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__19.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 138
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlConnectionSettings.<>c__DisplayClass2_0.<GetSettings>b__0(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlSmartTypeMapper.MaybeConvertMapping(RelationalTypeMapping mapping)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapper.IsTypeMapped(Type clrType)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.PropertyDiscoveryConvention.Apply(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.AddEntityType(EntityType entityType)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.InternalModelBuilder.Entity(TypeIdentity type, ConfigurationSource configurationSource)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity(Type type)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass22_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ExecutionStrategyFactory()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 116
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule.PostInitialize() in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\JustERPEntityFrameworkModule.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 153
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1.ConfiguredValueTaskAwaiter.GetResult()
+   at MySqlConnector.Core.ServerSession.<ConnectAsync>d__56.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 251
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<CreateSessionAsync>d__77.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 366
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__19.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 138
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlConnectionSettings.<>c__DisplayClass2_0.<GetSettings>b__0(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlSmartTypeMapper.MaybeConvertMapping(RelationalTypeMapping mapping)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapper.IsTypeMapped(Type clrType)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.PropertyDiscoveryConvention.Apply(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.AddEntityType(EntityType entityType)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.InternalModelBuilder.Entity(TypeIdentity type, ConfigurationSource configurationSource)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity(Type type)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass22_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ExecutionStrategyFactory()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 116
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule.PostInitialize() in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\JustERPEntityFrameworkModule.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 153
+FATAL 2017-11-23 13:38:46,263 [2    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+MySql.Data.MySqlClient.MySqlException (0x80004005): Access denied for user 'root'@'localhost' (using password: YES)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1.ConfiguredValueTaskAwaiter.GetResult()
+   at MySqlConnector.Core.ServerSession.<ConnectAsync>d__56.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 251
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<CreateSessionAsync>d__77.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 366
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__19.MoveNext() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 138
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlConnectionSettings.<>c__DisplayClass2_0.<GetSettings>b__0(String key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlSmartTypeMapper.MaybeConvertMapping(RelationalTypeMapping mapping)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapper.IsTypeMapped(Type clrType)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.PropertyDiscoveryConvention.Apply(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(InternalEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.AddEntityType(EntityType entityType)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.InternalModelBuilder.Entity(TypeIdentity type, ConfigurationSource configurationSource)
+   at Microsoft.EntityFrameworkCore.ModelBuilder.Entity(Type type)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.FindSets(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.<>c__DisplayClass22_0.<RealizeService>b__0(ServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ExecutionStrategyFactory()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.CreateExecutionStrategy()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.BeginTransaction(DatabaseFacade databaseFacade, IsolationLevel isolationLevel)
+   at Abp.EntityFrameworkCore.Uow.DbContextEfCoreTransactionStrategy.CreateDbContext[TDbContext](String connectionString, IDbContextResolver dbContextResolver) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\DbContextEfCoreTransactionStrategy.cs:line 38
+   at Abp.EntityFrameworkCore.Uow.EfCoreUnitOfWork.GetOrCreateDbContext[TDbContext](Nullable`1 multiTenancySide) in D:\Github\aspnetboilerplate\src\Abp.EntityFrameworkCore\EntityFrameworkCore\Uow\EfCoreUnitOfWork.cs:line 116
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 39
+   at JustERP.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule.PostInitialize() in D:\Project\JustERP\aspnet-core\src\JustERP.EntityFrameworkCore\EntityFrameworkCore\JustERPEntityFrameworkModule.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 158
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\AbpApplicationBuilderExtensions.cs:line 36
+   at JustERP.Web.Host.User.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env) in D:\Project\JustERP\aspnet-core\src\JustERP.Web.Host.User\Startup.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
