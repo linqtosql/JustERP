@@ -957,8 +957,6 @@ namespace JustERP.Migrations
 
                     b.Property<long?>("ExpertFirstClassId");
 
-                    b.Property<int?>("ExpertType");
-
                     b.Property<string>("ExtensionData");
 
                     b.Property<string>("Introduction")
@@ -969,6 +967,8 @@ namespace JustERP.Migrations
                     b.Property<bool?>("IsChecked");
 
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<bool>("IsExpert");
 
                     b.Property<DateTime?>("LastModificationTime");
 

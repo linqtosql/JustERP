@@ -14,7 +14,7 @@ namespace JustERP.Core.User.Experts
         public long ExpertAccountId { get; set; }
         public long? ExpertFirstClassId { get; set; }
         public long? ExpertClassId { get; set; }
-        public int? ExpertType { get; set; }
+        public bool IsExpert { get; set; }
         [Required]
         [MaxLength(16)]
         public string Phone { get; set; }

@@ -1,6 +1,8 @@
-﻿using Abp.AspNetCore.Configuration;
+﻿using System;
+using Abp.AspNetCore.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using JustERP.Authentication.JwtBearer;
 
 #if FEATURE_SIGNALR
 using Abp.Web.SignalR;
@@ -23,6 +25,10 @@ namespace JustERP
                  .CreateControllersForAppServices(
                      typeof(JustERPApplicationUserModule).GetAssembly()
                  );
+
+            var tokenAuthConfig = IocManager.Resolve<TokenAuthConfiguration>();
+
+            tokenAuthConfig.Expiration = TimeSpan.FromDays(365);
         }
 
         public override void Initialize()

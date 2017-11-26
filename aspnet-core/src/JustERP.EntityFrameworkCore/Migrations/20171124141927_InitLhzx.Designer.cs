@@ -15,7 +15,7 @@ using System;
 namespace JustERP.Migrations
 {
     [DbContext(typeof(JustERPDbContext))]
-    [Migration("20171121153457_InitLhzx")]
+    [Migration("20171124141927_InitLhzx")]
     partial class InitLhzx
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -958,8 +958,6 @@ namespace JustERP.Migrations
 
                     b.Property<long?>("ExpertFirstClassId");
 
-                    b.Property<int?>("ExpertType");
-
                     b.Property<string>("ExtensionData");
 
                     b.Property<string>("Introduction")
@@ -970,6 +968,8 @@ namespace JustERP.Migrations
                     b.Property<bool?>("IsChecked");
 
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<bool>("IsExpert");
 
                     b.Property<DateTime?>("LastModificationTime");
 

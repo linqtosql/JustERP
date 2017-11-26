@@ -12,6 +12,7 @@ namespace JustERP.Application.User.Experts.Dto
         public string Post { get; set; }
         public string ExpertFirstClassName { get; set; }
         public string ExpertClassName { get; set; }
+        public string Speciality { get; set; }
         public int OnlineStatus { get; set; }
     }
 }

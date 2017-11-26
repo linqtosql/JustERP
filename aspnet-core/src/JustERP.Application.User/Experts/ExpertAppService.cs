@@ -5,6 +5,7 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Linq;
+using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Core.User.Experts;
 using Microsoft.EntityFrameworkCore;
@@ -30,37 +31,75 @@ namespace JustERP.Application.User.Experts
             return ObjectMapper.Map<List<ExpertClassDto>>(list);
         }
 
-        public async Task<ExpertDetailsDto> GetExpertDetail(long accountId)
+        public async Task<ExpertDetailsDto> GetExpertDetail(GetExpertDetailInput input)
         {
+            if (!input.Id.HasValue && !input.ExpertAccountId.HasValue)
+                throw new UserFriendlyException("Id或者ExpertAccountId必须有一个大于0");
             var expert = await ExpertRepository.GetAllIncluding(
                 e => e.ExpertClass,
                 e => e.ExpertFirstClass,
                 e => e.ExpertComments,
                 e => e.ExpertWorkSettings)
-                .SingleOrDefaultAsync(e => e.ExpertAccountId == accountId);
+                .SingleOrDefaultAsync(e => input.Id > 0 ? e.Id == input.Id : e.ExpertAccountId == input.ExpertAccountId);
 
             return ObjectMapper.Map<ExpertDetailsDto>(expert);
         }
 
-        public async Task<ExpertDto> GetExpertLoginInfo()
+        public async Task<List<ExpertClassDto>> GetAllExpertClasses()
         {
+            var list = await ExpertClassRepository.GetAllIncluding(
+                e => e.ChildrenExpertClasses)
+                .Where(e => e.ParentId == null).ToListAsync();
+            return ObjectMapper.Map<List<ExpertClassDto>>(list);
+        }
+
+        public async Task<LoggedInExpertOutput> GetExpertLoginInfo()
+        {
+            if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户未登录");
+
             var expert = await ExpertRepository.GetAll()
                 .SingleOrDefaultAsync(e => e.ExpertAccountId == AbpSession.UserId);
-            return ObjectMapper.Map<ExpertDto>(expert);
+            return ObjectMapper.Map<LoggedInExpertOutput>(expert);
         }
 
         [AbpAuthorize]
-        public async Task UpdateNonExpert(CreateNonExpertInput input)
+        public async Task CreateNonExpert(CreateNonExpertInput input)
         {
             var expert = ObjectMapper.Map<LhzxExpert>(input);
             await ExpertRepository.UpdateAsync(expert);
         }
 
         [AbpAuthorize]
-        public async Task UpdateExpert(CreateExpertInput input)
+        public async Task CreateExpert(CreateExpertInput input)
         {
             var expert = ObjectMapper.Map<LhzxExpert>(input);
+
+            expert.OnlineStatus = (int)ExpertOnlineStatus.Offline;
+            expert.IsExpert = true;
+
             await ExpertRepository.UpdateAsync(expert);
         }
+    }
+
+    public enum ExpertOnlineStatus
+    {
+        Offline = 1,
+        Online = 2
+    }
+
+    public enum WeekDays
+    {
+        Monday = 1,
+        Tuesday = 2,
+        Wednesday = 3,
+        Thursday = 4,
+        Friday = 5,
+        Saturday = 6,
+        Sunday = 7
+    }
+
+    public enum YearOfWorks
+    {
+
     }
 }
