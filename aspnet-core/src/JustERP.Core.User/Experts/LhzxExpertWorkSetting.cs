@@ -1,9 +1,9 @@
 ﻿using System;
-using Abp.Domain.Entities.Auditing;
+using Abp.Domain.Entities;
 
 namespace JustERP.Core.User.Experts
 {
-    public class LhzxExpertWorkSetting : FullAuditedEntity<long>
+    public class LhzxExpertWorkSetting : Entity<long>
     {
         public long ExpertId { get; set; }
         public int Week { get; set; }

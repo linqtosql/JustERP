@@ -15874,3 +15874,1139 @@ INFO  2017-11-26 23:58:19,547 [16   ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2017-11-26 23:58:19,567 [4    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
 INFO  2017-11-26 23:58:19,567 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 24.783ms
 INFO  2017-11-26 23:58:19,568 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.6064ms 200 application/json; charset=utf-8
+DEBUG 2017-11-27 23:05:27,428 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:05:27,449 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:05:27,461 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,464 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,465 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,465 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,465 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,466 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,466 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,466 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,467 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,467 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,467 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,468 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,468 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,468 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,468 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,469 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:27,471 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:05:27,518 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:05:27,518 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:05:27,518 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:05:27,518 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:05:27,722 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:05:28,068 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:05:28,078 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:05:28,083 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:05:28,131 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:05:28,133 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:05:28,164 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:05:28,204 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:05:28,204 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:05:28,207 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:05:28,207 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:05:28,208 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-11-27 23:06:58,064 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:06:58,089 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:06:58,102 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,106 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,106 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,106 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,108 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,108 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,109 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,109 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,109 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,110 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,110 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,111 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,114 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:06:58,172 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:06:58,172 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:06:58,172 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:06:58,172 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:06:58,406 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:06:58,771 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:06:58,782 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:06:58,786 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:06:58,788 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:06:58,789 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:06:58,820 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:06:58,861 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:06:58,861 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:06:58,864 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:06:58,864 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:06:58,865 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-11-27 23:10:50,937 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:10:50,960 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:10:50,972 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,975 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,975 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,976 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,976 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,976 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,976 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,977 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,977 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,977 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,978 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,978 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,978 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,979 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,979 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,979 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:50,982 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:10:51,029 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:10:51,029 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:10:51,029 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:10:51,029 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:10:51,240 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:10:51,584 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:10:51,594 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:10:51,598 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:10:51,600 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:10:51,601 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:10:51,632 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:10:51,672 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:10:51,672 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:10:51,675 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:10:51,675 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:10:51,675 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:10:51,675 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:10:51,676 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-11-27 23:11:43,596 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:11:43,617 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:11:43,629 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,632 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,632 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,633 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,633 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,633 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,633 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,634 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,634 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,635 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,635 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,635 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,635 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,636 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,636 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,636 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:43,639 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:11:43,686 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:11:43,686 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:11:43,686 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:11:43,686 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:11:43,887 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:11:44,235 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:11:44,245 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:11:44,249 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:11:44,252 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:11:44,253 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:11:44,283 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:11:44,323 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:11:44,323 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:11:44,326 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:11:44,326 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:11:44,327 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-11-27 23:21:25,289 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:21:25,312 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:21:25,325 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,328 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,328 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,329 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,329 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,329 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,329 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,330 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,330 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,330 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,331 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,331 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,331 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,331 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,332 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,332 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,335 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:21:25,387 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:21:25,387 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:21:25,387 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:21:25,387 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:21:25,606 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:21:25,961 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:21:25,972 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:21:25,976 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:21:25,978 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:21:25,979 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:21:26,015 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:21:26,056 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:21:26,057 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:21:26,060 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:21:26,060 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:21:26,061 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-27 23:21:28,895 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2017-11-27 23:21:29,872 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:21:30,102 [5    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2017-11-27 23:21:30,114 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 317.157ms
+INFO  2017-11-27 23:21:30,162 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1282.8071ms 302 
+INFO  2017-11-27 23:21:30,168 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger  
+INFO  2017-11-27 23:21:30,181 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.4228ms 301 
+INFO  2017-11-27 23:21:30,185 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-27 23:21:30,199 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,222 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.3927ms 200 text/html
+INFO  2017-11-27 23:21:30,237 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-27 23:21:30,241 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/typography.css'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,242 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.9031ms 200 text/css
+INFO  2017-11-27 23:21:30,242 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-27 23:21:30,243 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-1.8.0.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,244 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-27 23:21:30,245 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery.slideto.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,247 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.7095ms 200 application/javascript
+INFO  2017-11-27 23:21:30,251 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-27 23:21:30,252 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/screen.css'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,253 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0697ms 200 text/css
+INFO  2017-11-27 23:21:30,253 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-27 23:21:30,254 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/reset.css'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,254 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9166ms 200 text/css
+INFO  2017-11-27 23:21:30,264 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-27 23:21:30,265 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/object-assign-pollyfill.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,265 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9284ms 200 application/javascript
+INFO  2017-11-27 23:21:30,266 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24.1164ms 200 application/javascript
+INFO  2017-11-27 23:21:30,271 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-27 23:21:30,272 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery.ba-bbq.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,272 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2375ms 200 application/javascript
+INFO  2017-11-27 23:21:30,272 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-27 23:21:30,273 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/handlebars-4.0.5.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,274 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-27 23:21:30,275 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery.wiggle.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,275 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-27 23:21:30,277 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/lodash.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,278 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-27 23:21:30,279 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.647ms 200 application/javascript
+INFO  2017-11-27 23:21:30,279 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/backbone-min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,280 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.3518ms 200 application/javascript
+INFO  2017-11-27 23:21:30,287 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.9325ms 200 application/javascript
+INFO  2017-11-27 23:21:30,288 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-27 23:21:30,290 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,291 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.2403ms 200 application/javascript
+INFO  2017-11-27 23:21:30,291 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-27 23:21:30,292 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/highlight.9.1.0.pack.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,292 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1987ms 200 application/javascript
+INFO  2017-11-27 23:21:30,303 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-27 23:21:30,303 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-27 23:21:30,303 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-27 23:21:30,303 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jsoneditor.min.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,303 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/highlight.9.1.0.pack_extended.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,304 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.97ms 200 application/javascript
+INFO  2017-11-27 23:21:30,304 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-27 23:21:30,304 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/swagger-oauth.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,304 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/marked.js'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,305 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8448ms 200 application/javascript
+INFO  2017-11-27 23:21:30,305 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1029ms 200 application/javascript
+INFO  2017-11-27 23:21:30,306 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.4905ms 200 application/javascript
+INFO  2017-11-27 23:21:30,335 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-27 23:21:30,335 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/logo_small.png'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,336 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9518ms 200 image/png
+INFO  2017-11-27 23:21:30,343 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-27 23:21:30,343 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 55.1228ms 200 application/javascript
+INFO  2017-11-27 23:21:30,344 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/print.css'. Physical path: 'N/A'
+INFO  2017-11-27 23:21:30,345 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0401ms 200 text/css
+INFO  2017-11-27 23:21:30,540 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-27 23:21:30,856 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 316.038ms 200 application/json
+INFO  2017-11-27 23:21:31,011 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511796091006  
+INFO  2017-11-27 23:21:31,011 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511796091008  
+INFO  2017-11-27 23:21:31,011 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-27 23:21:31,011 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-27 23:21:31,013 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.509ms 200 application/javascript
+INFO  2017-11-27 23:21:31,017 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.918ms 200 application/javascript
+INFO  2017-11-27 23:24:11,658 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-27 23:24:11,660 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/throbber.gif'. Physical path: 'N/A'
+INFO  2017-11-27 23:24:11,660 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.6448ms 200 image/gif
+INFO  2017-11-27 23:24:13,187 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:24:13,381 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:24:13,787 [18   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:24:13,812 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 598.98ms
+INFO  2017-11-27 23:24:13,813 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 626.3582ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:25:20,529 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:25:20,574 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:25:20,652 [14   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:25:20,653 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 82.6934ms
+INFO  2017-11-27 23:25:20,654 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 125.6285ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:25:23,326 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:25:23,347 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:25:23,374 [19   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:25:23,374 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 32.9496ms
+INFO  2017-11-27 23:25:23,375 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49.5589ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:25:24,116 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:25:24,137 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:25:24,158 [19   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:25:24,159 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 28.8621ms
+INFO  2017-11-27 23:25:24,160 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 43.7166ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:25:24,848 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:25:24,871 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:25:24,892 [19   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:25:24,893 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 30.6623ms
+INFO  2017-11-27 23:25:24,894 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 47.4094ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:25:35,975 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:25:35,995 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:25:36,020 [19   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:25:36,020 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 29.0714ms
+INFO  2017-11-27 23:25:36,021 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 45.7414ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:25:36,523 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:25:36,540 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:25:36,556 [19   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:25:36,556 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 20.9344ms
+INFO  2017-11-27 23:25:36,557 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 33.8291ms 200 application/json; charset=utf-8
+INFO  2017-11-27 23:26:00,528 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:26:00,551 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:26:00,592 [19   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:26:00,592 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 47.7851ms
+INFO  2017-11-27 23:26:00,593 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 64.9149ms 200 application/json; charset=utf-8
+DEBUG 2017-11-27 23:39:21,498 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:39:21,522 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:39:21,536 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,539 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,539 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,540 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,540 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,540 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,540 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,541 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,541 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,542 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,542 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,542 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,543 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,543 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,544 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,544 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:21,547 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:39:21,605 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:39:21,605 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:39:21,605 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:39:21,605 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:39:21,867 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:39:22,263 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:39:22,274 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:39:22,279 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:39:22,281 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:39:22,282 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:39:22,318 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:39:22,360 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:39:22,360 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:39:22,364 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:39:22,364 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:39:22,365 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-27 23:39:25,647 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-27 23:39:25,963 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-27 23:39:26,035 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 398.6936ms 200 text/html
+INFO  2017-11-27 23:39:26,056 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-27 23:39:26,061 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-27 23:39:26,061 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-27 23:39:26,062 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-27 23:39:26,064 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-27 23:39:26,064 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-27 23:39:26,066 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-27 23:39:26,067 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.9516ms 304 text/css
+INFO  2017-11-27 23:39:26,067 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.6737ms 304 text/css
+INFO  2017-11-27 23:39:26,067 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.5503ms 304 application/javascript
+INFO  2017-11-27 23:39:26,067 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-27 23:39:26,067 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-27 23:39:26,067 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-27 23:39:26,067 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-27 23:39:26,068 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7158ms 304 application/javascript
+INFO  2017-11-27 23:39:26,068 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7639ms 304 application/javascript
+INFO  2017-11-27 23:39:26,068 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-27 23:39:26,068 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.8213ms 304 text/css
+INFO  2017-11-27 23:39:26,092 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-27 23:39:26,093 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-27 23:39:26,093 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9829ms 304 application/javascript
+INFO  2017-11-27 23:39:26,094 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-27 23:39:26,094 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-27 23:39:26,095 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0257ms 304 application/javascript
+INFO  2017-11-27 23:39:26,095 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-27 23:39:26,095 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-27 23:39:26,096 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1908ms 304 application/javascript
+INFO  2017-11-27 23:39:26,096 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-27 23:39:26,096 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-27 23:39:26,097 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8328ms 304 application/javascript
+INFO  2017-11-27 23:39:26,094 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-27 23:39:26,100 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-27 23:39:26,101 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.8538ms 304 application/javascript
+INFO  2017-11-27 23:39:26,105 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-27 23:39:26,106 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-27 23:39:26,106 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.3026ms 304 application/javascript
+INFO  2017-11-27 23:39:26,107 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-27 23:39:26,108 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-27 23:39:26,109 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9876ms 304 application/javascript
+INFO  2017-11-27 23:39:26,109 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-27 23:39:26,110 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-27 23:39:26,110 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.4149ms 304 application/javascript
+INFO  2017-11-27 23:39:26,116 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-27 23:39:26,117 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-27 23:39:26,117 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-27 23:39:26,117 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.936ms 304 application/javascript
+INFO  2017-11-27 23:39:26,117 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-27 23:39:26,118 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9706ms 304 application/javascript
+INFO  2017-11-27 23:39:26,120 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-27 23:39:26,121 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-27 23:39:26,122 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.524ms 304 application/javascript
+INFO  2017-11-27 23:39:26,130 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-27 23:39:26,130 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-27 23:39:26,130 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.012ms 304 image/png
+INFO  2017-11-27 23:39:26,134 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-27 23:39:26,135 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-27 23:39:26,135 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1366ms 304 text/css
+INFO  2017-11-27 23:39:26,333 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-27 23:39:26,433 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-32x32.png  
+INFO  2017-11-27 23:39:26,433 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2017-11-27 23:39:26,434 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7363ms 200 image/png
+INFO  2017-11-27 23:39:26,460 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-16x16.png  
+INFO  2017-11-27 23:39:26,460 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-16x16.png'. Physical path: 'N/A'
+INFO  2017-11-27 23:39:26,461 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9812ms 200 image/png
+INFO  2017-11-27 23:39:26,634 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 300.938ms 200 application/json
+INFO  2017-11-27 23:39:26,782 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511797166779  
+INFO  2017-11-27 23:39:26,782 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511797166779  
+INFO  2017-11-27 23:39:26,782 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-27 23:39:26,782 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-27 23:39:26,792 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.8147ms 200 application/javascript
+INFO  2017-11-27 23:39:26,792 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.8153ms 200 application/javascript
+INFO  2017-11-27 23:39:26,886 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-27 23:39:26,886 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/throbber.gif was not modified
+INFO  2017-11-27 23:39:26,887 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.963ms 304 image/gif
+INFO  2017-11-27 23:39:29,451 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:39:30,478 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+ERROR 2017-11-27 23:39:30,703 [16   ] Mvc.ExceptionHandling.AbpExceptionFilter - The property expression 'c => {from LhzxExpert e in c.Experts where [e].IsExpert select [e]}' is not valid. The expression should represent a property access: 't => t.MyProperty'. For more information on including related data, see http://go.microsoft.com/fwlink/?LinkID=746393.
+System.InvalidOperationException: The property expression 'c => {from LhzxExpert e in c.Experts where [e].IsExpert select [e]}' is not valid. The expression should represent a property access: 't => t.MyProperty'. For more information on including related data, see http://go.microsoft.com/fwlink/?LinkID=746393.
+   at Microsoft.EntityFrameworkCore.Query.ResultOperators.Internal.IncludeExpressionNode.CreateResultOperator(ClauseGenerationContext clauseGenerationContext)
+   at Remotion.Linq.Parsing.Structure.IntermediateModel.ResultOperatorExpressionNodeBase.ApplyNodeSpecificSemantics(QueryModel queryModel, ClauseGenerationContext clauseGenerationContext)
+   at Remotion.Linq.Parsing.Structure.IntermediateModel.MethodCallExpressionNodeBase.Apply(QueryModel queryModel, ClauseGenerationContext clauseGenerationContext)
+   at Remotion.Linq.Parsing.Structure.QueryParser.ApplyAllNodes(IExpressionNode node, ClauseGenerationContext clauseGenerationContext)
+   at Remotion.Linq.Parsing.Structure.QueryParser.GetParsedQuery(Expression expressionTreeRoot)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileAsyncQueryCore[TResult](Expression query, INodeTypeProvider nodeTypeProvider, IDatabase database)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass24_0`1.<CompileAsyncQuery>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQueryCore[TFunc](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.System.Collections.Generic.IAsyncEnumerable<TResult>.GetEnumerator()
+   at System.Linq.AsyncEnumerable.<Aggregate_>d__6`3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Application.User.Experts.ExpertAppService.<GetGroupedByClassExperts>d__14.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Application.User\Experts\ExpertAppService.cs:line 31
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-27 23:39:31,020 [16   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:39:31,048 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 760.5763ms
+INFO  2017-11-27 23:39:31,051 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1600.7547ms 500 application/json; charset=utf-8
+DEBUG 2017-11-27 23:51:37,054 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:51:37,082 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:51:37,098 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,102 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,103 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,103 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,104 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,104 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,104 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,104 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,105 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,105 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,106 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,106 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,106 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,107 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,110 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:51:37,177 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:51:37,177 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:51:37,177 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:51:37,177 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:51:37,389 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:51:37,753 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:51:37,762 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:51:37,767 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:51:37,769 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:51:37,770 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:51:37,802 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:51:37,846 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:51:37,846 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:51:37,849 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:51:37,849 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:51:37,849 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:51:37,850 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-27 23:51:40,999 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2017-11-27 23:51:41,412 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/index.html'. Physical path: 'N/A'
+INFO  2017-11-27 23:51:41,482 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 506.6178ms 200 text/html
+INFO  2017-11-27 23:51:41,501 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/typography.css  
+INFO  2017-11-27 23:51:41,501 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/reset.css  
+INFO  2017-11-27 23:51:41,504 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.slideto.min.js  
+INFO  2017-11-27 23:51:41,505 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/typography.css was not modified
+INFO  2017-11-27 23:51:41,505 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/reset.css was not modified
+INFO  2017-11-27 23:51:41,505 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.slideto.min.js was not modified
+INFO  2017-11-27 23:51:41,511 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.7018ms 304 text/css
+INFO  2017-11-27 23:51:41,511 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.298ms 304 application/javascript
+INFO  2017-11-27 23:51:41,511 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.7074ms 304 text/css
+INFO  2017-11-27 23:51:41,511 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery-1.8.0.min.js  
+INFO  2017-11-27 23:51:41,511 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/object-assign-pollyfill.js  
+INFO  2017-11-27 23:51:41,512 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery-1.8.0.min.js was not modified
+INFO  2017-11-27 23:51:41,512 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/object-assign-pollyfill.js was not modified
+INFO  2017-11-27 23:51:41,512 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0149ms 304 application/javascript
+INFO  2017-11-27 23:51:41,517 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/screen.css  
+INFO  2017-11-27 23:51:41,518 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/screen.css was not modified
+INFO  2017-11-27 23:51:41,518 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2055ms 304 text/css
+INFO  2017-11-27 23:51:41,519 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.wiggle.min.js  
+INFO  2017-11-27 23:51:41,520 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.wiggle.min.js was not modified
+INFO  2017-11-27 23:51:41,520 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2275ms 304 application/javascript
+INFO  2017-11-27 23:51:41,513 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.4539ms 304 application/javascript
+INFO  2017-11-27 23:51:41,526 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/handlebars-4.0.5.js  
+INFO  2017-11-27 23:51:41,526 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jquery.ba-bbq.min.js  
+INFO  2017-11-27 23:51:41,527 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jquery.ba-bbq.min.js was not modified
+INFO  2017-11-27 23:51:41,527 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/handlebars-4.0.5.js was not modified
+INFO  2017-11-27 23:51:41,527 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9483ms 304 application/javascript
+INFO  2017-11-27 23:51:41,527 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9568ms 304 application/javascript
+INFO  2017-11-27 23:51:41,533 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/lodash.min.js  
+INFO  2017-11-27 23:51:41,534 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/lodash.min.js was not modified
+INFO  2017-11-27 23:51:41,534 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.min.js  
+INFO  2017-11-27 23:51:41,534 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1237ms 304 application/javascript
+INFO  2017-11-27 23:51:41,534 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/backbone-min.js  
+INFO  2017-11-27 23:51:41,535 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.min.js was not modified
+INFO  2017-11-27 23:51:41,535 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8322ms 304 application/javascript
+INFO  2017-11-27 23:51:41,535 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/backbone-min.js was not modified
+INFO  2017-11-27 23:51:41,535 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.6536ms 304 application/javascript
+INFO  2017-11-27 23:51:41,545 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/marked.js  
+INFO  2017-11-27 23:51:41,546 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/marked.js was not modified
+INFO  2017-11-27 23:51:41,546 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1662ms 304 application/javascript
+INFO  2017-11-27 23:51:41,546 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/jsoneditor.min.js  
+INFO  2017-11-27 23:51:41,546 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack.js  
+INFO  2017-11-27 23:51:41,547 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/jsoneditor.min.js was not modified
+INFO  2017-11-27 23:51:41,547 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7143ms 304 application/javascript
+INFO  2017-11-27 23:51:41,547 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack.js was not modified
+INFO  2017-11-27 23:51:41,547 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/highlight.9.1.0.pack_extended.js  
+INFO  2017-11-27 23:51:41,547 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.4867ms 304 application/javascript
+INFO  2017-11-27 23:51:41,548 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/highlight.9.1.0.pack_extended.js was not modified
+INFO  2017-11-27 23:51:41,548 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9225ms 304 application/javascript
+INFO  2017-11-27 23:51:41,553 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/lib/swagger-oauth.js  
+INFO  2017-11-27 23:51:41,554 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /lib/swagger-oauth.js was not modified
+INFO  2017-11-27 23:51:41,554 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0653ms 304 application/javascript
+INFO  2017-11-27 23:51:41,559 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/logo_small.png  
+INFO  2017-11-27 23:51:41,559 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/logo_small.png was not modified
+INFO  2017-11-27 23:51:41,559 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.9205ms 304 image/png
+INFO  2017-11-27 23:51:41,563 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/css/print.css  
+INFO  2017-11-27 23:51:41,564 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/print.css was not modified
+INFO  2017-11-27 23:51:41,564 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0207ms 304 text/css
+INFO  2017-11-27 23:51:41,699 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2017-11-27 23:51:41,805 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-32x32.png  
+INFO  2017-11-27 23:51:41,806 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2017-11-27 23:51:41,807 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7627ms 200 image/png
+INFO  2017-11-27 23:51:41,812 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/favicon-16x16.png  
+INFO  2017-11-27 23:51:41,812 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/favicon-16x16.png was not modified
+INFO  2017-11-27 23:51:41,813 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1386ms 304 image/png
+INFO  2017-11-27 23:51:42,016 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 317.5998ms 200 application/json
+INFO  2017-11-27 23:51:42,165 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/on-complete.js?_=1511797902161  
+INFO  2017-11-27 23:51:42,165 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/ui/abp.js?_=1511797902160  
+INFO  2017-11-27 23:51:42,165 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\abp.js'
+INFO  2017-11-27 23:51:42,165 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/on-complete.js'. Physical path: 'G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Host.User\wwwroot\swagger\ui\on-complete.js'
+INFO  2017-11-27 23:51:42,174 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.3297ms 200 application/javascript
+INFO  2017-11-27 23:51:42,174 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.3297ms 200 application/javascript
+INFO  2017-11-27 23:51:42,268 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/images/throbber.gif  
+INFO  2017-11-27 23:51:42,269 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/throbber.gif was not modified
+INFO  2017-11-27 23:51:42,269 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1313ms 304 image/gif
+INFO  2017-11-27 23:51:43,562 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:51:44,764 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+ERROR 2017-11-27 23:51:45,348 [5    ] Mvc.ExceptionHandling.AbpExceptionFilter - The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+System.InvalidOperationException: The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetOrCreateCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.AddRange(Object instance, IEnumerable`1 values)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.<IncludeCollectionAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.<_IncludeAsync>d__20`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor.<_ExecuteAsync>d__8`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<Aggregate_>d__6`3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Application.User.Experts.ExpertAppService.<GetGroupedByClassExperts>d__14.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Application.User\Experts\ExpertAppService.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-27 23:51:45,598 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:51:45,624 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 1058.5494ms
+INFO  2017-11-27 23:51:45,628 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2066.1592ms 500 application/json; charset=utf-8
+DEBUG 2017-11-27 23:56:29,549 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:56:29,572 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:56:29,587 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,589 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,590 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,590 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,590 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,591 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,591 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,591 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,592 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,592 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,592 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,592 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,593 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,593 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,593 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,593 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:29,597 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:56:29,650 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:56:29,650 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:56:29,650 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:56:29,650 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:56:29,867 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:56:30,224 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:56:30,234 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:56:30,238 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:56:30,241 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:56:30,242 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:56:30,274 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:56:30,316 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:56:30,316 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:56:30,319 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:56:30,319 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:56:30,320 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-27 23:56:33,414 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:56:34,485 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+ERROR 2017-11-27 23:56:35,055 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+System.InvalidOperationException: The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetOrCreateCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.AddRange(Object instance, IEnumerable`1 values)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.<IncludeCollectionAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.<_IncludeAsync>d__20`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor.<_ExecuteAsync>d__8`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<Aggregate_>d__6`3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Application.User.Experts.ExpertAppService.<GetGroupedByClassExperts>d__14.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Application.User\Experts\ExpertAppService.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-27 23:56:35,315 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:56:35,390 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 1089.2343ms
+INFO  2017-11-27 23:56:35,407 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2013.1351ms 500 application/json; charset=utf-8
+INFO  2017-11-27 23:57:54,081 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:57:54,094 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+ERROR 2017-11-27 23:57:54,143 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+System.InvalidOperationException: The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetOrCreateCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.AddRange(Object instance, IEnumerable`1 values)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.<IncludeCollectionAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.<_IncludeAsync>d__20`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor.<_ExecuteAsync>d__8`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<Aggregate_>d__6`3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Application.User.Experts.ExpertAppService.<GetGroupedByClassExperts>d__14.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Application.User\Experts\ExpertAppService.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-27 23:57:54,159 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:57:54,159 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 68.44ms
+INFO  2017-11-27 23:57:54,160 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 78.6298ms 500 application/json; charset=utf-8
+INFO  2017-11-27 23:57:54,685 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:57:54,691 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+ERROR 2017-11-27 23:57:54,724 [17   ] Mvc.ExceptionHandling.AbpExceptionFilter - The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+System.InvalidOperationException: The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'WhereEnumerableIterator<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetOrCreateCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.AddRange(Object instance, IEnumerable`1 values)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.<IncludeCollectionAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.<_IncludeAsync>d__20`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor.<_ExecuteAsync>d__8`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<Aggregate_>d__6`3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Application.User.Experts.ExpertAppService.<GetGroupedByClassExperts>d__14.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Application.User\Experts\ExpertAppService.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-27 23:57:54,735 [17   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:57:54,735 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 45.8743ms
+INFO  2017-11-27 23:57:54,736 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.5073ms 500 application/json; charset=utf-8
+DEBUG 2017-11-27 23:58:34,446 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:58:34,471 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:58:34,483 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,487 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,487 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,488 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,488 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,488 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,489 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,489 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,490 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,490 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,490 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,490 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,491 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,491 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,491 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,491 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:34,495 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:58:34,543 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:58:34,543 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:58:34,544 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:58:34,544 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:58:34,758 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:58:35,117 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:58:35,128 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:58:35,133 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:58:35,135 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:58:35,136 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:58:35,168 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:58:35,210 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:58:35,210 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:58:35,214 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-27 23:58:38,355 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:58:39,464 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+ERROR 2017-11-27 23:58:40,033 [14   ] Mvc.ExceptionHandling.AbpExceptionFilter - The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'EnumerableQuery<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+System.InvalidOperationException: The type of navigation property 'Experts' on the entity type 'LhzxExpertClass' is 'EnumerableQuery<LhzxExpert>' which does not implement ICollection<LhzxExpert>. Collection navigation properties must implement ICollection<> of the target type.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetOrCreateCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.AddRange(Object instance, IEnumerable`1 values)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.<IncludeCollectionAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.<_IncludeAsync>d__20`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor.<_ExecuteAsync>d__8`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<Aggregate_>d__6`3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Application.User.Experts.ExpertAppService.<GetGroupedByClassExperts>d__14.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Application.User\Experts\ExpertAppService.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2017-11-27 23:58:40,292 [14   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:58:40,367 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 1091.9527ms
+INFO  2017-11-27 23:58:40,382 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2046.4968ms 500 application/json; charset=utf-8
+DEBUG 2017-11-27 23:59:44,811 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-27 23:59:44,834 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-27 23:59:44,848 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,851 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,852 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,852 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,852 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,852 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,853 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,853 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,854 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,854 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,854 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,855 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,855 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,855 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,855 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,856 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:44,859 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-27 23:59:44,909 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:59:44,909 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:59:44,909 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:59:44,909 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-27 23:59:45,136 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-27 23:59:45,509 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-27 23:59:45,519 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-27 23:59:45,523 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-27 23:59:45,525 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-27 23:59:45,527 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-27 23:59:45,558 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-27 23:59:45,600 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-27 23:59:45,600 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-27 23:59:45,603 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-27 23:59:45,603 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-27 23:59:45,603 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-27 23:59:45,603 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-27 23:59:45,603 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-27 23:59:45,603 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-27 23:59:45,604 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-27 23:59:45,604 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-27 23:59:45,604 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-27 23:59:45,604 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-27 23:59:45,604 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-27 23:59:48,626 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-27 23:59:49,790 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-27 23:59:50,403 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-27 23:59:50,490 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 888.1318ms
+INFO  2017-11-27 23:59:50,503 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1902.0127ms 200 application/json; charset=utf-8
+INFO  2017-11-28 00:00:01,324 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-28 00:00:01,346 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-28 00:00:01,479 [5    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-28 00:00:01,481 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 140.2528ms
+INFO  2017-11-28 00:00:01,482 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 157.9011ms 200 application/json; charset=utf-8
+DEBUG 2017-11-28 00:01:56,514 [2    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-28 00:01:56,542 [2    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2017-11-28 00:01:56,555 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,559 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,559 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,560 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,560 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,560 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,560 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,561 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,562 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,562 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,562 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,562 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,563 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,563 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,563 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,564 [2    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:56,567 [2    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2017-11-28 00:01:56,618 [2    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-28 00:01:56,619 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-28 00:01:56,619 [2    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-28 00:01:56,619 [2    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-11-28 00:01:56,835 [2    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-28 00:01:57,201 [2    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-11-28 00:01:57,212 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-28 00:01:57,217 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-11-28 00:01:57,219 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2017-11-28 00:01:57,220 [2    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-28 00:01:57,252 [2    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-28 00:01:57,293 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2017-11-28 00:01:57,293 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDetailsDto
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Orders.Dto.ExpertOrderDto
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertCommentInput
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertInput
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateExpertWorkSettingInput
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.CreateNonExpertInput
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertClassDto
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertCommentDto
+DEBUG 2017-11-28 00:01:57,297 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDetailsDto
+DEBUG 2017-11-28 00:01:57,298 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertDto
+DEBUG 2017-11-28 00:01:57,298 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Experts.Dto.ExpertWorkSettingDto
+DEBUG 2017-11-28 00:01:57,298 [2    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2017-11-28 00:02:00,162 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-28 00:02:01,220 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-28 00:02:01,874 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-28 00:02:01,961 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 931.8813ms
+INFO  2017-11-28 00:02:01,974 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1831.0108ms 200 application/json; charset=utf-8
+INFO  2017-11-28 00:02:04,952 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-28 00:02:04,983 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-28 00:02:05,090 [6    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-28 00:02:05,091 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 114.0792ms
+INFO  2017-11-28 00:02:05,092 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 140.5355ms 200 application/json; charset=utf-8
+INFO  2017-11-28 00:02:06,133 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/api/services/app/Expert/GetGroupedByClassExperts  
+INFO  2017-11-28 00:02:06,156 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) with arguments ((null)) - ModelState is Valid
+INFO  2017-11-28 00:02:06,190 [4    ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2017-11-28 00:02:06,191 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Experts.ExpertAppService.GetGroupedByClassExperts (JustERP.Application.User) in 40.9879ms
+INFO  2017-11-28 00:02:06,192 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 58.4617ms 200 application/json; charset=utf-8

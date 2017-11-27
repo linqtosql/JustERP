@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
-using JetBrains.Annotations;
 using JustERP.Core.User.Orders;
 
 namespace JustERP.Core.User.Experts
 {
-    public class LhzxExpert : FullAuditedEntity<long>, IFullAudited<Authorization.Users.User>, IExtendableObject
+    public class LhzxExpert : FullAuditedEntity<long>, IExtendableObject
     {
         private const string PhotosKey = "ExpertPhotos";
         public long ExpertAccountId { get; set; }
@@ -69,13 +68,6 @@ namespace JustERP.Core.User.Experts
         public virtual IEnumerable<LhzxExpertOrder> ExpertOrders { get; set; }
         public virtual IEnumerable<LhzxExpertOrder> ServerExpertOrders { get; set; }
         public virtual IEnumerable<LhzxExpertFriendShip> ExpertFriendShips { get; set; }
-
-        [CanBeNull]
-        public virtual Authorization.Users.User CreatorUser { get; set; }
-        [CanBeNull]
-        public virtual Authorization.Users.User LastModifierUser { get; set; }
-        [CanBeNull]
-        public virtual Authorization.Users.User DeleterUser { get; set; }
 
         public string ExtensionData { get; set; }
     }

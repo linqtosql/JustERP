@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
+using Abp.EntityFrameworkCore.Extensions;
 using Abp.Linq;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
@@ -26,8 +27,13 @@ namespace JustERP.Application.User.Experts
 
         public async Task<List<ExpertClassDto>> GetGroupedByClassExperts()
         {
-            var query = ExpertClassRepository.GetAllIncluding(e => e.Experts).Where(e => e.ParentId != null);
+            var query = ExpertClassRepository.GetAllIncluding(c => c.Experts)
+                .Where(c => c.ParentId != null);
             var list = await AsyncQueryableExecuter.ToListAsync(query);
+            foreach (var lhzxExpertClass in list)
+            {
+                lhzxExpertClass.Experts = lhzxExpertClass.Experts.Where(e => e.IsExpert).ToList();
+            }
             return ObjectMapper.Map<List<ExpertClassDto>>(list);
         }
 
