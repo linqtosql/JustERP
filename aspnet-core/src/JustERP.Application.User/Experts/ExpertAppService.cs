@@ -63,15 +63,14 @@ namespace JustERP.Application.User.Experts
         {
             if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户未登录");
 
-            var expert = await ExpertRepository.GetAll()
-                .SingleOrDefaultAsync(e => e.ExpertAccountId == AbpSession.UserId);
+            var expert = await ExpertRepository.SingleAsync(e => e.ExpertAccountId == AbpSession.UserId);
             return ObjectMapper.Map<LoggedInExpertOutput>(expert);
         }
 
         [AbpAuthorize]
         public async Task CreateNonExpert(CreateNonExpertInput input)
         {
-            var expert = ExpertRepository.FirstOrDefault(e => e.Id == input.Id);
+            var expert = await ExpertRepository.GetAsync(input.Id);
             ObjectMapper.Map(input, expert);
 
             await ExpertRepository.UpdateAsync(expert);
@@ -80,7 +79,7 @@ namespace JustERP.Application.User.Experts
         [AbpAuthorize]
         public async Task CreateExpert(CreateExpertInput input)
         {
-            var expert = ExpertRepository.FirstOrDefault(e => e.Id == input.Id);
+            var expert = await ExpertRepository.GetAsync(input.Id);
             ObjectMapper.Map(input, expert);
 
             expert.OnlineStatus = (int)ExpertOnlineStatus.Offline;

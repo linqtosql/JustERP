@@ -34,6 +34,8 @@ namespace JustERP.Core.User.Experts
             _expertRepository = expertRepository;
         }
 
+        
+
         public async Task<LhzxExpertAccount> FindByUserName(string userName)
         {
             return await _expertAccountRepository.FirstOrDefaultAsync(e => e.UserName == userName);

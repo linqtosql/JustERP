@@ -19,7 +19,7 @@ namespace JustERP.Application.User.Experts.Dto
         [MaxLength(512)]
         public string Speciality { get; set; }
         [Required(ErrorMessage = "请输入您每节的咨询价格")]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
         [Required(ErrorMessage = "请输入您的支付宝收款账号")]
         [MaxLength(32)]
         public string AlipayAccount { get; set; }
