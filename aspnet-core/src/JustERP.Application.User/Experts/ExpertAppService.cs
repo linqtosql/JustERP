@@ -71,14 +71,17 @@ namespace JustERP.Application.User.Experts
         [AbpAuthorize]
         public async Task CreateNonExpert(CreateNonExpertInput input)
         {
-            var expert = ObjectMapper.Map<LhzxExpert>(input);
+            var expert = ExpertRepository.FirstOrDefault(e => e.Id == input.Id);
+            ObjectMapper.Map(input, expert);
+
             await ExpertRepository.UpdateAsync(expert);
         }
 
         [AbpAuthorize]
         public async Task CreateExpert(CreateExpertInput input)
         {
-            var expert = ObjectMapper.Map<LhzxExpert>(input);
+            var expert = ExpertRepository.FirstOrDefault(e => e.Id == input.Id);
+            ObjectMapper.Map(input, expert);
 
             expert.OnlineStatus = (int)ExpertOnlineStatus.Offline;
             expert.IsExpert = true;
