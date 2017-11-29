@@ -21,5 +21,7 @@ namespace JustERP.Application.User.Experts
         Task CreateNonExpert(CreateNonExpertInput input);
 
         Task CreateExpert(CreateExpertInput input);
+
+        Task<ExpertPriceDto> GetExpertPrice(long expertId);
     }
 }

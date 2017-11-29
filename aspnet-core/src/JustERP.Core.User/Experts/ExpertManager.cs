@@ -10,12 +10,14 @@ namespace JustERP.Core.User.Experts
 {
     public class ExpertManager : UserManager<LhzxExpertAccount>, IDomainService
     {
-        private IRepository<LhzxExpertAccount, long> _expertAccountRepository;
+        private IRepository<LhzxExpertAccount, long> _accountRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
+        private IRepository<LhzxExpertWorkSetting, long> _workSettingRepository;
 
         public ExpertManager(
-            IRepository<LhzxExpertAccount, long> expertAccountRepository,
+            IRepository<LhzxExpertAccount, long> accountRepository,
             IRepository<LhzxExpert, long> expertRepository,
+            IRepository<LhzxExpertWorkSetting, long> workSettingRepository,
             UserStore store,
             IdentityErrorDescriber errors,
             IServiceProvider services,
@@ -30,15 +32,16 @@ namespace JustERP.Core.User.Experts
             services,
             logger)
         {
-            _expertAccountRepository = expertAccountRepository;
+            _accountRepository = accountRepository;
             _expertRepository = expertRepository;
+            _workSettingRepository = workSettingRepository;
         }
 
-        
+
 
         public async Task<LhzxExpertAccount> FindByUserName(string userName)
         {
-            return await _expertAccountRepository.FirstOrDefaultAsync(e => e.UserName == userName);
+            return await _accountRepository.FirstOrDefaultAsync(e => e.UserName == userName);
         }
 
         public override async Task<IdentityResult> CreateAsync(LhzxExpertAccount user)
@@ -48,7 +51,7 @@ namespace JustERP.Core.User.Experts
             user.CreationTime = DateTime.Now;
             user.IsDeleted = false;
 
-            await _expertAccountRepository.InsertAsync(user);
+            await _accountRepository.InsertAsync(user);
 
             var expert = new LhzxExpert
             {
@@ -56,7 +59,7 @@ namespace JustERP.Core.User.Experts
                 IsDeleted = false,
                 Phone = user.UserName,
                 ExpertAccountId = user.Id,
-                Name = ""
+                Name = user.UserName
             };
             await _expertRepository.InsertAsync(expert);
 

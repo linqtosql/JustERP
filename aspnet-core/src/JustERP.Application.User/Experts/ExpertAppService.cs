@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
-using Abp.EntityFrameworkCore.Extensions;
 using Abp.Linq;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
@@ -86,6 +85,12 @@ namespace JustERP.Application.User.Experts
             expert.IsExpert = true;
 
             await ExpertRepository.UpdateAsync(expert);
+        }
+
+        public async Task<ExpertPriceDto> GetExpertPrice(long expertId)
+        {
+            var expert = await ExpertRepository.GetAsync(expertId);
+            return ObjectMapper.Map<ExpertPriceDto>(expert);
         }
     }
 

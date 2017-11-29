@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services.Dto;
+﻿using System.Collections.Generic;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using JustERP.Core.User.Orders;
 
@@ -14,5 +15,7 @@ namespace JustERP.Application.User.Orders.Dto
         public decimal Quantity { get; set; }
         public decimal Amount { get; set; }
         public string QuestionRemark { get; set; }
+
+        public List<ExpertOrderLogDto> ExpertOrderLogs { get; set; }
     }
 }
