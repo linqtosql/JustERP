@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Abp.Application.Services;
-using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.UI;
@@ -26,7 +25,7 @@ namespace JustERP.Application.User.Orders
             IRepository<LhzxExpert, long> expertRepository)
         {
             _orderLogRepository = orderLogRepository;
-            _orderLogRepository = orderLogRepository;
+            _orderRepository = ordeRepository;
             _expertRepository = expertRepository;
         }
 
@@ -44,18 +43,43 @@ namespace JustERP.Application.User.Orders
             return order.Id;
         }
 
-        public async Task<List<ExpertOrderDto>> GetLoggedIndExpertOrders(PagedResultRequestDto input)
+        public async Task<List<ExpertOrderDto>> GetLoggedIndExpertOrders(GetExpertOrdersInput input)
         {
+            if (input.ExpertId != AbpSession.UserId && input.ServerExpertId != AbpSession.UserId)
+            {
+                throw new ApplicationException("只能获取自己的订单");
+            }
+
             var query = _orderRepository.GetAllIncluding(
                 e => e.Expert,
-                e => e.ServerExpert,
-                e => e.ExpertOrderLogs)
+                e => e.ServerExpert)
                 .Where(o => o.ExpertId == AbpSession.UserId)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount);
 
+            if (input.ExpertId > 0) query = query.Where(o => o.ExpertId == input.ExpertId);
+            if (input.ServerExpertId > 0) query = query.Where(o => o.ServerExpertId == input.ServerExpertId);
+
 
             return ObjectMapper.Map<List<ExpertOrderDto>>(await query.ToListAsync());
+        }
+
+        public async Task<ExpertOrderDetailsDto> GetExpertOrderDetail(long orderId)
+        {
+            var order = await _orderRepository.GetAllIncluding(
+                e => e.Expert,
+                e => e.ServerExpert,
+                e => e.ExpertOrderLogs).SingleOrDefaultAsync(o => o.Id == orderId);
+
+            if (order == null)
+                return new ExpertOrderDetailsDto();
+
+            if (order.ExpertId != AbpSession.UserId && order.ServerExpertId != AbpSession.UserId)
+            {
+                throw new ApplicationException("只能获取自己的订单");
+            }
+
+            return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
         }
     }
 }
