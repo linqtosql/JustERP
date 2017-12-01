@@ -9,6 +9,7 @@ namespace JustERP.Core.User.Orders
 {
     public class ExpertOrderManager : DomainService
     {
+        private static Random _random;
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpertOrderLog, long> _orderLogRepository;
         public ExpertOrderManager(IRepository<LhzxExpertOrder, long> orderRepository,
@@ -16,6 +17,11 @@ namespace JustERP.Core.User.Orders
         {
             _orderLogRepository = orderLogRepository;
             _orderRepository = orderRepository;
+        }
+
+        static ExpertOrderManager()
+        {
+            _random = new Random();
         }
 
         public async Task<LhzxExpertOrder> CreateOrder(LhzxExpert expert, LhzxExpert serviceExpert, LhzxExpertOrder order)
@@ -28,7 +34,7 @@ namespace JustERP.Core.User.Orders
             order.ExpertId = expert.Id;
             order.Status = (int)ExpertOrderStatus.Waiting;
             order.CreationTime = DateTime.Now;
-            order.OrderNo = DateTime.Now.ToBinary().ToString();
+            order.OrderNo = $"{DateTime.Now:yyyyMMdd}{_random.Next(100000, 999999)}";
             order.IsDeleted = false;
             order.Price = serviceExpert.Price ?? 0;
             order.Amount = order.Price * order.Quantity;
@@ -69,8 +75,12 @@ namespace JustERP.Core.User.Orders
         /// </summary>
         Commented = 5,
         /// <summary>
-        /// 已取消
+        /// 客户已取消
         /// </summary>
-        Canceled = 6
+        Canceled = 6,
+        /// <summary>
+        /// 已拒绝
+        /// </summary>
+        Refused = 7
     }
 }

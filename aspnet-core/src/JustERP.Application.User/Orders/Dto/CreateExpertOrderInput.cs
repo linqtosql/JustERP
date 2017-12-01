@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Abp.AutoMapper;
+using JustERP.Core.User.Orders;
 
 namespace JustERP.Application.User.Orders.Dto
 {
+    [AutoMapTo(typeof(LhzxExpertOrder))]
     public class CreateExpertOrderInput
     {
         public long ServerExpertId { get; set; }
