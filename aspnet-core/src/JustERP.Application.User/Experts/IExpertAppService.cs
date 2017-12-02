@@ -16,6 +16,8 @@ namespace JustERP.Application.User.Experts
 
         Task<List<ExpertClassDto>> GetAllExpertClasses();
 
+        Task<List<ExpertDto>> GetExperts(SearchExpertInput input);
+
         Task<LoggedInExpertOutput> GetExpertLoginInfo();
 
         Task CreateNonExpert(CreateNonExpertInput input);

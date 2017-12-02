@@ -9,5 +9,9 @@ namespace JustERP.Application.User.Orders
         Task<long> CreateOrder(CreateExpertOrderInput input);
         Task<List<ExpertOrderDto>> GetLoggedIndExpertOrders(GetExpertOrdersInput input);
         Task<ExpertOrderDetailsDto> GetExpertOrderDetail(long orderId);
+
+        Task CancelOrder(long orderId);
+        Task RefuseOrder(long orderId);
+        Task AcceptOrder(long orderId);
     }
 }

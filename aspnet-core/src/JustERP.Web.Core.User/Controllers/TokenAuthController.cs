@@ -54,15 +54,7 @@ namespace JustERP.Web.Core.User.Controllers
                 GetTenancyNameOrNull()
             );
 
-            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
-
-            return new AuthenticateResultModel
-            {
-                AccessToken = accessToken,
-                EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
-                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
-                UserId = loginResult.UserId
-            };
+            return CreateAuthenticateResultModel(loginResult);
         }
 
         [HttpPost]
@@ -70,16 +62,34 @@ namespace JustERP.Web.Core.User.Controllers
         {
             var loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode);
 
+            return CreateAuthenticateResultModel(loginResult);
+        }
+
+        private AuthenticateResultModel CreateAuthenticateResultModel(UserLoginResult loginResult)
+        {
             var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
 
             return new AuthenticateResultModel
             {
                 AccessToken = accessToken,
                 EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
-                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
+                ExpireInSeconds = (int) _configuration.Expiration.TotalSeconds,
                 UserId = loginResult.UserId
             };
         }
+
+        [HttpPost]
+        public async Task<AuthenticateResultModel> RegisterOrAuthenticate([FromBody] UserAuthenticateModel model)
+        {
+            var loginResult = await _logInManager.LoginAsync(model.Phone, model.PhoneCode);
+            if (loginResult.Result != AbpLoginResultType.Success)
+            {
+                loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode);
+            }
+
+            return CreateAuthenticateResultModel(loginResult);
+        }
+
 
         [HttpGet]
         public List<ExternalLoginProviderInfoModel> GetExternalAuthenticationProviders()

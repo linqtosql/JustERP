@@ -31,7 +31,9 @@ namespace JustERP.Application.User.Orders
 
         public async Task<long> CreateOrder(CreateExpertOrderInput input)
         {
-            if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户必须登录");
+            if (!AbpSession.UserId.HasValue) throw new ApplicationException("当前用户必须登录");
+
+            if (AbpSession.UserId.Value == input.ServerExpertId) throw new ApplicationException("您不能自己咨询自己哦");
 
             var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
             var serviceExpert = await _expertRepository.GetAsync(input.ServerExpertId);
@@ -53,7 +55,6 @@ namespace JustERP.Application.User.Orders
             var query = _orderRepository.GetAllIncluding(
                 e => e.Expert,
                 e => e.ServerExpert)
-                .Where(o => o.ExpertId == AbpSession.UserId)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount);
 
@@ -80,6 +81,41 @@ namespace JustERP.Application.User.Orders
             }
 
             return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
+        }
+
+        public async Task CancelOrder(long orderId)
+        {
+            var order = await _orderRepository.GetAsync(orderId);
+
+            CheckIfCurrentExpertOrder(order);
+
+            OrderManager.CancelOrder(order);
+        }
+
+        private void CheckIfCurrentExpertOrder(LhzxExpertOrder order)
+        {
+            if (order.ExpertId != AbpSession.UserId) throw new ApplicationException("只能操作自己的订单");
+        }
+
+        public async Task RefuseOrder(long orderId)
+        {
+            var order = await _orderRepository.GetAsync(orderId);
+
+            CheckIfMineOrder(order);
+            OrderManager.RefuseOrder(order);
+        }
+
+        private void CheckIfMineOrder(LhzxExpertOrder order)
+        {
+            if (order.ServerExpertId != AbpSession.UserId) throw new ApplicationException("只能操作自己的订单");
+        }
+
+        public async Task AcceptOrder(long orderId)
+        {
+            var order = await _orderRepository.GetAsync(orderId);
+
+            CheckIfMineOrder(order);
+            OrderManager.AcceptOrder(order);
         }
     }
 }

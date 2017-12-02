@@ -50,6 +50,21 @@ namespace JustERP.Core.User.Orders
 
             return order;
         }
+
+        public void CancelOrder(LhzxExpertOrder order)
+        {
+
+        }
+
+        public void RefuseOrder(LhzxExpertOrder order)
+        {
+
+        }
+
+        public void AcceptOrder(LhzxExpertOrder order)
+        {
+
+        }
     }
 
     public enum ExpertOrderStatus

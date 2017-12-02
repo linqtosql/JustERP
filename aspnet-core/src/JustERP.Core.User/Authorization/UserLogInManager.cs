@@ -1,5 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
+using Abp.Authorization;
 using Abp.Dependency;
 using Abp.Domain.Uow;
 using Abp.UI;
@@ -27,7 +28,7 @@ namespace JustERP.Core.User
 
             if (user == null)
             {
-                throw new UserFriendlyException("当前用户不存在");
+                return await Task.FromResult(new UserLoginResult(AbpLoginResultType.InvalidUserNameOrEmailAddress));
             }
 
             var principal = await _claimsPrincipalFactory.CreateAsync(user);

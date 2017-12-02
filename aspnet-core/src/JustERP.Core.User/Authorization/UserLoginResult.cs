@@ -5,7 +5,7 @@ namespace JustERP.Core.User
 {
     public class UserLoginResult
     {
-        public UserLoginResult(AbpLoginResultType resultType, long userId, ClaimsIdentity identity)
+        public UserLoginResult(AbpLoginResultType resultType, long userId = 0, ClaimsIdentity identity = null)
         {
             UserId = userId;
             Result = resultType;
@@ -16,6 +16,7 @@ namespace JustERP.Core.User
         {
 
         }
+
         public AbpLoginResultType Result { get; }
         public long UserId { get; }
         public ClaimsIdentity Identity { get; }

@@ -57,6 +57,19 @@ namespace JustERP.Application.User.Experts
                 .Where(e => e.ParentId == null).ToListAsync();
             return ObjectMapper.Map<List<ExpertClassDto>>(list);
         }
+        
+        public async Task<List<ExpertDto>> GetExperts(SearchExpertInput input)
+        {
+            var query = ExpertRepository.GetAllIncluding(e => e.ExpertFirstClass, e => e.ExpertClass)
+                .Where(e => e.IsExpert)
+                .Where(e =>
+            e.Name.Contains(input.Keyword) ||
+            e.ExpertClass.Name.Contains(input.Keyword) ||
+            e.ExpertFirstClass.Name.Contains(input.Keyword));
+
+            var list = await query.ToListAsync();
+            return ObjectMapper.Map<List<ExpertDto>>(list);
+        }
 
         public async Task<LoggedInExpertOutput> GetExpertLoginInfo()
         {
