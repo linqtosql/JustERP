@@ -61,6 +61,7 @@ namespace JustERP.Application.User.Orders
             if (input.ExpertId > 0) query = query.Where(o => o.ExpertId == input.ExpertId);
             if (input.ServerExpertId > 0) query = query.Where(o => o.ServerExpertId == input.ServerExpertId);
 
+            query = query.OrderByDescending(o => o.Id);
 
             return ObjectMapper.Map<List<ExpertOrderDto>>(await query.ToListAsync());
         }
@@ -83,13 +84,21 @@ namespace JustERP.Application.User.Orders
             return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
         }
 
-        public async Task CancelOrder(long orderId)
+        public async Task<ExpertOrderDto> CancelOrder(GetExpertOrderInput input)
         {
-            var order = await _orderRepository.GetAsync(orderId);
+            var order = await _orderRepository.GetAsync(input.Id);
 
             CheckIfCurrentExpertOrder(order);
+            CheckIsWaitingOrder(order);
 
-            OrderManager.CancelOrder(order);
+            await OrderManager.CancelOrder(order);
+
+            return ObjectMapper.Map<ExpertOrderDto>(order);
+        }
+
+        private void CheckIsWaitingOrder(LhzxExpertOrder order)
+        {
+            if (order.Status != (int)ExpertOrderStatus.Waiting) throw new UserFriendlyException("订单已取消或已确认");
         }
 
         private void CheckIfCurrentExpertOrder(LhzxExpertOrder order)
@@ -97,12 +106,16 @@ namespace JustERP.Application.User.Orders
             if (order.ExpertId != AbpSession.UserId) throw new ApplicationException("只能操作自己的订单");
         }
 
-        public async Task RefuseOrder(long orderId)
+        public async Task<ExpertOrderDto> RefuseOrder(GetExpertOrderInput input)
         {
-            var order = await _orderRepository.GetAsync(orderId);
+            var order = await _orderRepository.GetAsync(input.Id);
 
             CheckIfMineOrder(order);
-            OrderManager.RefuseOrder(order);
+            CheckIsWaitingOrder(order);
+
+            await OrderManager.RefuseOrder(order);
+
+            return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 
         private void CheckIfMineOrder(LhzxExpertOrder order)
@@ -110,12 +123,16 @@ namespace JustERP.Application.User.Orders
             if (order.ServerExpertId != AbpSession.UserId) throw new ApplicationException("只能操作自己的订单");
         }
 
-        public async Task AcceptOrder(long orderId)
+        public async Task<ExpertOrderDto> AcceptOrder(GetExpertOrderInput input)
         {
-            var order = await _orderRepository.GetAsync(orderId);
+            var order = await _orderRepository.GetAsync(input.Id);
 
             CheckIfMineOrder(order);
-            OrderManager.AcceptOrder(order);
+            CheckIsWaitingOrder(order);
+
+            await OrderManager.AcceptOrder(order);
+
+            return ObjectMapper.Map<ExpertOrderDto>(order);
         }
     }
 }

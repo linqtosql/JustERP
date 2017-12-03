@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.UI;
+using Castle.MicroKernel;
 using JustERP.Core.User.Experts;
 
 namespace JustERP.Core.User.Orders
@@ -41,29 +42,62 @@ namespace JustERP.Core.User.Orders
             order = await _orderRepository.InsertAsync(order);
             await UnitOfWorkManager.Current.SaveChangesAsync();
 
-            await _orderLogRepository.InsertAsync(new LhzxExpertOrderLog
-            {
-                ExpertOrderId = order.Id,
-                CreationTime = DateTime.Now,
-                Title = "提交了订单"
-            });
+            await CreateOrderLog(order);
 
             return order;
         }
 
-        public void CancelOrder(LhzxExpertOrder order)
+        public async Task CancelOrder(LhzxExpertOrder order)
         {
-
+            order.Status = (int)ExpertOrderStatus.Canceled;
+            await CreateOrderLog(order);
         }
 
-        public void RefuseOrder(LhzxExpertOrder order)
+        public async Task RefuseOrder(LhzxExpertOrder order)
         {
-
+            order.Status = (int)ExpertOrderStatus.Refused;
+            await CreateOrderLog(order);
         }
 
-        public void AcceptOrder(LhzxExpertOrder order)
+        public async Task AcceptOrder(LhzxExpertOrder order)
         {
+            order.Status = (int)ExpertOrderStatus.Paying;
+            await CreateOrderLog(order);
+        }
 
+        private async Task CreateOrderLog(LhzxExpertOrder order)
+        {
+            string title = null;
+            switch ((ExpertOrderStatus)order.Status)
+            {
+                case ExpertOrderStatus.Waiting:
+                    title = "提交了订单";
+                    break;
+                case ExpertOrderStatus.Paying:
+                    title = "专家已确认";
+                    break;
+                case ExpertOrderStatus.Charting:
+                    title = "客户已支付";
+                    break;
+                case ExpertOrderStatus.Complete:
+                    title = "已完成咨询";
+                    break;
+                case ExpertOrderStatus.Commented:
+                    title = "已完成评价";
+                    break;
+                case ExpertOrderStatus.Canceled:
+                    title = "客户已取消";
+                    break;
+                case ExpertOrderStatus.Refused:
+                    title = "专家已拒绝";
+                    break;
+            }
+            await _orderLogRepository.InsertAsync(new LhzxExpertOrderLog
+            {
+                ExpertOrderId = order.Id,
+                CreationTime = DateTime.Now,
+                Title = title
+            });
         }
     }
 
@@ -92,10 +126,10 @@ namespace JustERP.Core.User.Orders
         /// <summary>
         /// 客户已取消
         /// </summary>
-        Canceled = 6,
+        Canceled = -1,
         /// <summary>
         /// 已拒绝
         /// </summary>
-        Refused = 7
+        Refused = -2
     }
 }
