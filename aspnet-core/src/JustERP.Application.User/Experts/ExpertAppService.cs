@@ -57,7 +57,7 @@ namespace JustERP.Application.User.Experts
                 .Where(e => e.ParentId == null).ToListAsync();
             return ObjectMapper.Map<List<ExpertClassDto>>(list);
         }
-        
+
         public async Task<List<ExpertDto>> GetExperts(SearchExpertInput input)
         {
             var query = ExpertRepository.GetAllIncluding(e => e.ExpertFirstClass, e => e.ExpertClass)
@@ -104,6 +104,16 @@ namespace JustERP.Application.User.Experts
         {
             var expert = await ExpertRepository.GetAsync(expertId);
             return ObjectMapper.Map<ExpertPriceDto>(expert);
+        }
+
+        [AbpAuthorize]
+        public async Task<ExpertDto> ChangeOnlineStatusTo(ChangeOnlineStatusInput input)
+        {
+            var expert = await ExpertRepository.GetAsync(AbpSession.UserId.Value);
+            expert.OnlineStatus = (int)input.OnlineStatus;
+            await ExpertRepository.UpdateAsync(expert);
+
+            return ObjectMapper.Map<ExpertDto>(expert);
         }
     }
 

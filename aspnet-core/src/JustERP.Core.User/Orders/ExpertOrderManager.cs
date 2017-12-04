@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.UI;
-using Castle.MicroKernel;
 using JustERP.Core.User.Experts;
 
 namespace JustERP.Core.User.Orders

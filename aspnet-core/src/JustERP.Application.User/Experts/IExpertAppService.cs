@@ -25,5 +25,7 @@ namespace JustERP.Application.User.Experts
         Task CreateExpert(CreateExpertInput input);
 
         Task<ExpertPriceDto> GetExpertPrice(long expertId);
+
+        Task<ExpertDto> ChangeOnlineStatusTo(ChangeOnlineStatusInput input);
     }
 }
