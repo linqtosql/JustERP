@@ -17,14 +17,11 @@ namespace JustERP.Application.User.Orders
     public class ExpertOrderAppService : ApplicationService, IExpertOrderAppService
     {
         private IRepository<LhzxExpertOrder, long> _orderRepository;
-        private IRepository<LhzxExpertOrderLog, long> _orderLogRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
         public ExpertOrderManager OrderManager { get; set; }
         public ExpertOrderAppService(IRepository<LhzxExpertOrder, long> ordeRepository,
-            IRepository<LhzxExpertOrderLog, long> orderLogRepository,
             IRepository<LhzxExpert, long> expertRepository)
         {
-            _orderLogRepository = orderLogRepository;
             _orderRepository = ordeRepository;
             _expertRepository = expertRepository;
         }
@@ -120,7 +117,10 @@ namespace JustERP.Application.User.Orders
 
         private void CheckIfMineOrder(LhzxExpertOrder order)
         {
-            if (order.ServerExpertId != AbpSession.UserId) throw new ApplicationException("只能操作自己的订单");
+            if (order.ExpertId != AbpSession.UserId && order.ServerExpertId != AbpSession.UserId)
+            {
+                throw new ApplicationException("只能操作自己的订单");
+            }
         }
 
         public async Task<ExpertOrderDto> AcceptOrder(GetExpertOrderInput input)
@@ -133,6 +133,23 @@ namespace JustERP.Application.User.Orders
             await OrderManager.AcceptOrder(order);
 
             return ObjectMapper.Map<ExpertOrderDto>(order);
+        }
+
+        public async Task<ExpertOrderDto> PayOrder(GetExpertOrderInput input)
+        {
+            var order = await _orderRepository.GetAsync(input.Id);
+
+            CheckIfMineOrder(order);
+            CheckIsPayingOrder(order);
+
+            await OrderManager.PayOrder(order);
+
+            return ObjectMapper.Map<ExpertOrderDto>(order);
+        }
+
+        private void CheckIsPayingOrder(LhzxExpertOrder order)
+        {
+            if (order.Status != (int)ExpertOrderStatus.Paying) throw new UserFriendlyException("订单已取消或已支付");
         }
     }
 }

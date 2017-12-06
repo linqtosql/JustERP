@@ -13,6 +13,7 @@ using System.Linq;
 using Abp.Extensions;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
+using JustERP.SignalR.Hub;
 
 #if FEATURE_SIGNALR
 using Owin;
@@ -74,6 +75,9 @@ namespace JustERP.Web.Host.User
                 });
             });
 
+            //add signalR
+            services.AddSignalR();
+
             //Configure Abp and Dependency Injection
             return services.AddAbp<JustERPWebHostUserModule>(options =>
             {
@@ -99,6 +103,11 @@ namespace JustERP.Web.Host.User
 //Integrate to OWIN
             app.UseAppBuilder(ConfigureOwinServices);
 #endif
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ExpertChatHub>("chat");
+            });
 
             app.UseMvc(routes =>
             {

@@ -13,5 +13,6 @@ namespace JustERP.Application.User.Orders
         Task<ExpertOrderDto> CancelOrder(GetExpertOrderInput input);
         Task<ExpertOrderDto> RefuseOrder(GetExpertOrderInput input);
         Task<ExpertOrderDto> AcceptOrder(GetExpertOrderInput input);
+        Task<ExpertOrderDto> PayOrder(GetExpertOrderInput input);
     }
 }

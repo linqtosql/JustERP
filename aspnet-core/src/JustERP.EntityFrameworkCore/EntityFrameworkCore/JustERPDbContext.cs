@@ -78,6 +78,8 @@ namespace JustERP.EntityFrameworkCore
             modelBuilder.Entity<LhzxExpertOrderChart>(b =>
             {
                 b.HasOne(e => e.ExpertOrder).WithMany(e => e.ExpertOrderCharts).HasForeignKey(e => e.ExpertOrderId);
+                b.HasOne(e => e.SenderExpert).WithMany(e => e.SenderExpertCharts).HasForeignKey(e => e.ExpertId);
+                b.HasOne(e => e.ReceiverExpert).WithMany(e => e.ReceiverExpertCharts).HasForeignKey(e => e.ExperReceiverId);
             });
 
             modelBuilder.Entity<LhzxExpertWorkSetting>(b =>

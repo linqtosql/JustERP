@@ -1,6 +1,4 @@
-﻿
-
-namespace JustERP.SignalR.Hub
+﻿namespace JustERP.SignalR.Hub
 {
     public class BaseHub : Microsoft.AspNetCore.SignalR.Hub
     {

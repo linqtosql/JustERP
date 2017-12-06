@@ -6,10 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-alpha2-final" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.0.0-alpha2-final" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JustERP.Application\JustERP.Application.csproj" />
+    <ProjectReference Include="..\JustERP.Application.User\JustERP.Application.User.csproj" />
   </ItemGroup>
 
 </Project>

@@ -64,6 +64,12 @@ namespace JustERP.Core.User.Orders
             await CreateOrderLog(order);
         }
 
+        public async Task PayOrder(LhzxExpertOrder order)
+        {
+            order.Status = (int)ExpertOrderStatus.Charting;
+            await CreateOrderLog(order);
+        }
+
         private async Task CreateOrderLog(LhzxExpertOrder order)
         {
             string title = null;

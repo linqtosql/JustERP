@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using JustERP.Core.User.Charts;
 using JustERP.Core.User.Orders;
 
 namespace JustERP.Core.User.Experts
@@ -67,6 +68,8 @@ namespace JustERP.Core.User.Experts
         public virtual IEnumerable<LhzxExpertComment> CommenterComments { get; set; }
         public virtual IEnumerable<LhzxExpertOrder> ExpertOrders { get; set; }
         public virtual IEnumerable<LhzxExpertOrder> ServerExpertOrders { get; set; }
+        public virtual IEnumerable<LhzxExpertOrderChart> SenderExpertCharts { get; set; }
+        public virtual IEnumerable<LhzxExpertOrderChart> ReceiverExpertCharts { get; set; }
         public virtual IEnumerable<LhzxExpertFriendShip> ExpertFriendShips { get; set; }
 
         public string ExtensionData { get; set; }

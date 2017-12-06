@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JustERP.SignalR\JustERP.SignalR.csproj" />
     <ProjectReference Include="..\JustERP.Web.Core.User\JustERP.Web.Core.User.csproj" />
   </ItemGroup>
 
