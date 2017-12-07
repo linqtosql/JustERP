@@ -1,11 +1,18 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Threading.Tasks;
+using JustERP.Application.User.Charts.Dto;
+using JustERP.Charts;
 
 namespace JustERP.SignalR.Hub
 {
     public class ExpertChatHub : BaseHub
     {
+        private IExpertChatService _chatService;
+        public ExpertChatHub(IExpertChatService chatService)
+        {
+            _chatService = chatService;
+        }
         public override async Task OnConnectedAsync()
         {
             await Clients.All.InvokeAsync("Send", $"{Context.ConnectionId} joined");
@@ -16,14 +23,10 @@ namespace JustERP.SignalR.Hub
             await Clients.All.InvokeAsync("Send", $"{Context.ConnectionId} left");
         }
 
-        public Task Send(string message)
+        public async Task SendToGroup(string groupName, CreateExpertChatInput chat)
         {
-            return Clients.All.InvokeAsync("Send", $"{Context.ConnectionId}: {message}");
-        }
-
-        public Task SendToGroup(string groupName, string message)
-        {
-            return Clients.Group(groupName).InvokeAsync("Send", $"{Context.ConnectionId}@{groupName}: {message}");
+            var chatDto = await _chatService.CreateExpertChat(chat);
+            await Clients.Group(groupName).InvokeAsync("SendToGroup", chatDto);
         }
 
         public async Task JoinGroup(string groupName)

@@ -45,6 +45,12 @@ namespace JustERP.Application.User.Charts
             var chat = ObjectMapper.Map<LhzxExpertOrderChart>(input);
             chat.CreationTime = DateTime.Now;
             await _chatRepository.InsertAsync(chat);
+            UnitOfWorkManager.Current.SaveChanges();
+
+            long id = chat.Id;
+            chat = await _chatRepository.GetAllIncluding(
+                c => c.SenderExpert,
+                c => c.ReceiverExpert).SingleOrDefaultAsync(c => c.Id == id);
 
             return ObjectMapper.Map<ExpertChatDto>(chat);
         }

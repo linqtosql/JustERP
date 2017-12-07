@@ -2,10 +2,10 @@
 using Abp.AutoMapper;
 using JustERP.Core.User.Experts;
 
-namespace JustERP.Application.User.Charts.Dto
+namespace JustERP.Application.User.Experts.Dto
 {
     [AutoMapFrom(typeof(LhzxExpert))]
-    public class ExpertDto : EntityDto<long>
+    public class ExpertBasicDto : EntityDto<long>
     {
         public string Avatar { get; set; }
         public string Name { get; set; }

@@ -1,10 +1,12 @@
-﻿namespace JustERP.SignalR.Hub
+﻿using Abp.Dependency;
+
+namespace JustERP.SignalR.Hub
 {
-    public class BaseHub : Microsoft.AspNetCore.SignalR.Hub
+    public abstract class BaseHub : Microsoft.AspNetCore.SignalR.Hub, ITransientDependency
     {
-        public BaseHub()
+        protected BaseHub()
         {
-            
+
         }
     }
 }
