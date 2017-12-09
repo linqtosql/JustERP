@@ -3,6 +3,8 @@ using Abp;
 using Abp.AutoMapper;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using JustERP.SignalR.Hub;
+using Microsoft.AspNetCore.SignalR;
 
 namespace JustERP.SignalR
 {
@@ -18,6 +20,9 @@ namespace JustERP.SignalR
         {
             Assembly thisAssembly = typeof(JustERPSignalRModule).GetAssembly();
             IocManager.RegisterAssemblyByConvention(thisAssembly);
+
+            //use hublifetimemanager to invoke method out of hub
+            IocManager.Register(typeof(HubLifetimeManager<ExpertChatHub>), typeof(DefaultHubLifetimeManager<ExpertChatHub>));
 
             Configuration.Modules.AbpAutoMapper().Configurators.Add(cfg =>
             {

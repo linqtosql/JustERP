@@ -1,13 +1,15 @@
 ﻿using Abp.Modules;
 using Abp.Reflection.Extensions;
 using JustERP.Configuration;
+using JustERP.SignalR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
 namespace JustERP.Web.Host.User
 {
     [DependsOn(
-       typeof(JustERPWebCoreUserModule))]
+        typeof(JustERPWebCoreUserModule),
+        typeof(JustERPSignalRModule))]
     public class JustERPWebHostUserModule : AbpModule
     {
         private readonly IHostingEnvironment _env;
