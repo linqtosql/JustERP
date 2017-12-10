@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
 using Castle.Facilities.Logging;
@@ -14,6 +15,8 @@ using Abp.Extensions;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 using JustERP.SignalR.Hub;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
 
 #if FEATURE_SIGNALR
 using Owin;
@@ -95,6 +98,13 @@ namespace JustERP.Web.Host.User
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 
             app.UseStaticFiles();
+            // letsencrypt
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                ServeUnknownFileTypes = true,//important:serve file without extension need
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), ".well-known")),
+                RequestPath = new PathString("/.well-known")
+            });
 
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();

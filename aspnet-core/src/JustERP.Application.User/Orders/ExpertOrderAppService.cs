@@ -51,16 +51,19 @@ namespace JustERP.Application.User.Orders
 
             var query = _orderRepository.GetAllIncluding(
                 e => e.Expert,
-                e => e.ServerExpert)
-                .Skip(input.SkipCount)
-                .Take(input.MaxResultCount);
+                e => e.ServerExpert);
 
             if (input.ExpertId > 0) query = query.Where(o => o.ExpertId == input.ExpertId);
             if (input.ServerExpertId > 0) query = query.Where(o => o.ServerExpertId == input.ServerExpertId);
 
-            query = query.OrderByDescending(o => o.Id);
+            query = query
+                .Skip(input.SkipCount)
+                .Take(input.MaxResultCount)
+                .OrderByDescending(o => o.Id);
 
-            return ObjectMapper.Map<List<ExpertOrderDto>>(await query.ToListAsync());
+            var list = await query.ToListAsync();
+
+            return ObjectMapper.Map<List<ExpertOrderDto>>(list);
         }
 
         public async Task<ExpertOrderDetailsDto> GetExpertOrderDetail(long orderId)

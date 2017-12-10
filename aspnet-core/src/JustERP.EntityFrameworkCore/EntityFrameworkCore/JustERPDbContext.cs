@@ -7,6 +7,8 @@ using JustERP.Core.User.Orders;
 using JustERP.Core.User.Payments;
 using JustERP.MultiTenancy;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace JustERP.EntityFrameworkCore
 {
@@ -98,5 +100,22 @@ namespace JustERP.EntityFrameworkCore
             });
 
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        #region DefineLoggerFactory
+
+        private static readonly LoggerFactory MyLoggerFactory
+            = new LoggerFactory(new[]
+            {
+                new ConsoleLoggerProvider((category, level)
+                    => category == DbLoggerCategory.Database.Command.Name
+                       && level == LogLevel.Information, true)
+            });
+        #endregion
     }
 }
