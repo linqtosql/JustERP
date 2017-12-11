@@ -21,8 +21,15 @@ namespace JustERP.Application.User.Experts.Dto
 
             CreateMap<CreateExpertInput, LhzxExpert>()
                 .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => new LhzxExpertPhoto { ImageUrl = p })));
+            CreateMap<LhzxExpert, CreateExpertInput>()
+                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => p.ImageUrl)));
 
-
+            CreateMap<LhzxExpertFriendShip, ExpertFriendDto>()
+                .ForMember(e => e.Name, opt => opt.MapFrom(e => e.ExpertFriend.Name))
+                .ForMember(e => e.Avatar, opt => opt.MapFrom(e => e.ExpertFriend.Avatar))
+                .ForMember(e => e.Post, opt => opt.MapFrom(e => e.ExpertFriend.Post))
+                .ForMember(e => e.Phone, opt => opt.MapFrom(e => e.ExpertFriend.Phone))
+                .ForMember(e => e.OrderCount, opt => opt.MapFrom(e => 0));
         }
     }
 }

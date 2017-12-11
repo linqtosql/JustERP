@@ -14,6 +14,10 @@ namespace JustERP.Application.User.Experts
 
         Task<ExpertDetailsDto> GetExpertDetail(GetExpertDetailInput input);
 
+        Task<CreateNonExpertInput> GetNonExpert();
+
+        Task<CreateExpertInput> GetExpert();
+
         Task<List<ExpertClassDto>> GetAllExpertClasses();
 
         Task<List<ExpertDto>> GetExperts(SearchExpertInput input);
@@ -27,5 +31,7 @@ namespace JustERP.Application.User.Experts
         Task<ExpertPriceDto> GetExpertPrice(long expertId);
 
         Task<ExpertDto> ChangeOnlineStatusTo(ChangeOnlineStatusInput input);
+        Task<ExpertFriendDto> CreateExpertFriend(CreateExpertFriendDto input);
+        Task<List<ExpertFriendDto>> GetExpertFriends();
     }
 }

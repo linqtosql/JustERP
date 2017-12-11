@@ -11,6 +11,7 @@ namespace JustERP.Core.User.Experts
     public class LhzxExpert : FullAuditedEntity<long>, IExtendableObject
     {
         private const string PhotosKey = "ExpertPhotos";
+        public long? ExpertType { get; set; }
         public long ExpertAccountId { get; set; }
         public long? ExpertFirstClassId { get; set; }
         public long? ExpertClassId { get; set; }

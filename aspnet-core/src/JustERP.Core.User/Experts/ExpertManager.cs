@@ -3,21 +3,27 @@ using System.Threading.Tasks;
 using Abp;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using Abp.Domain.Uow;
+using Abp.UI;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace JustERP.Core.User.Experts
 {
     public class ExpertManager : UserManager<LhzxExpertAccount>, IDomainService
     {
+        public IUnitOfWorkManager UnitOfWorkManager { get; set; }
         private IRepository<LhzxExpertAccount, long> _accountRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
         private IRepository<LhzxExpertWorkSetting, long> _workSettingRepository;
+        private IRepository<LhzxExpertFriendShip, long> _friendShipRepository;
 
         public ExpertManager(
             IRepository<LhzxExpertAccount, long> accountRepository,
             IRepository<LhzxExpert, long> expertRepository,
             IRepository<LhzxExpertWorkSetting, long> workSettingRepository,
+            IRepository<LhzxExpertFriendShip, long> friendShipRepository,
             UserStore store,
             IdentityErrorDescriber errors,
             IServiceProvider services,
@@ -35,6 +41,7 @@ namespace JustERP.Core.User.Experts
             _accountRepository = accountRepository;
             _expertRepository = expertRepository;
             _workSettingRepository = workSettingRepository;
+            _friendShipRepository = friendShipRepository;
         }
 
 
@@ -64,6 +71,26 @@ namespace JustERP.Core.User.Experts
             await _expertRepository.InsertAsync(expert);
 
             return IdentityResult.Success;
+        }
+
+        public async Task<LhzxExpertFriendShip> CreateExpertFriend(LhzxExpert expert, LhzxExpert friendExpert)
+        {
+            if(expert.Id == friendExpert.Id)
+                throw new UserFriendlyException("您不能添加自己");
+            if (await _friendShipRepository.GetAll()
+                .AnyAsync(f => f.ExpertId == expert.Id && f.ExpertFriendId == friendExpert.Id))
+                throw new UserFriendlyException("您已添加过该用户");
+
+            var friendShip = new LhzxExpertFriendShip
+            {
+                ExpertId = expert.Id,
+                ExpertFriendId = friendExpert.Id
+            };
+
+            await _friendShipRepository.InsertAsync(friendShip);
+            
+            UnitOfWorkManager.Current.SaveChanges();
+            return await _friendShipRepository.GetAllIncluding(f => f.ExpertFriend).SingleOrDefaultAsync(f => f.Id == friendShip.Id);
         }
     }
 }

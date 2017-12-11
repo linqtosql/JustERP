@@ -5,7 +5,7 @@ using JustERP.Core.User.Experts;
 
 namespace JustERP.Application.User.Experts.Dto
 {
-    [AutoMapTo(typeof(LhzxExpert))]
+    [AutoMap(typeof(LhzxExpert))]
     public class CreateNonExpertInput : IEntityDto<long>
     {
         [Required(ErrorMessage = "请选择您所在的领域")]

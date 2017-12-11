@@ -16,6 +16,7 @@ namespace JustERP.Application.User.Experts
     {
         public IRepository<LhzxExpert, long> ExpertRepository { get; set; }
         public IRepository<LhzxExpertClass, long> ExpertClassRepository { get; set; }
+        public IRepository<LhzxExpertFriendShip, long> ExpertFriendRepository { get; set; }
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
         private ExpertManager _expertManager;
 
@@ -50,6 +51,23 @@ namespace JustERP.Application.User.Experts
             return ObjectMapper.Map<ExpertDetailsDto>(expert);
         }
 
+        [AbpAuthorize]
+        public async Task<CreateNonExpertInput> GetNonExpert()
+        {
+            var expert = await ExpertRepository.GetAsync(AbpSession.UserId.Value);
+
+            return ObjectMapper.Map<CreateNonExpertInput>(expert);
+        }
+
+        [AbpAuthorize]
+        public async Task<CreateExpertInput> GetExpert()
+        {
+            var expert = await ExpertRepository.GetAllIncluding(
+                e => e.ExpertWorkSettings).SingleOrDefaultAsync(e => e.Id == AbpSession.UserId);
+
+            return ObjectMapper.Map<CreateExpertInput>(expert);
+        }
+
         public async Task<List<ExpertClassDto>> GetAllExpertClasses()
         {
             var list = await ExpertClassRepository.GetAllIncluding(
@@ -71,6 +89,7 @@ namespace JustERP.Application.User.Experts
             return ObjectMapper.Map<List<ExpertDto>>(list);
         }
 
+        [AbpAuthorize]
         public async Task<LoggedInExpertOutput> GetExpertLoginInfo()
         {
             if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户未登录");
@@ -114,6 +133,30 @@ namespace JustERP.Application.User.Experts
             await ExpertRepository.UpdateAsync(expert);
 
             return ObjectMapper.Map<ExpertDto>(expert);
+        }
+
+        [AbpAuthorize]
+        public async Task<ExpertFriendDto> CreateExpertFriend(CreateExpertFriendDto input)
+        {
+            var expert = await ExpertRepository.GetAsync(input.ExpertId);
+            var friendExpert = await ExpertRepository.FirstOrDefaultAsync(e => e.ExpertAccount.UserName == input.UserName);
+            if (friendExpert == null)
+                throw new UserFriendlyException("用户不存在");
+            if (friendExpert.Name != input.Name)
+                throw new UserFriendlyException("姓名填写不正确");
+
+            var friendShip = await _expertManager.CreateExpertFriend(expert, friendExpert);
+
+            return ObjectMapper.Map<ExpertFriendDto>(friendShip);
+        }
+
+        [AbpAuthorize]
+        public async Task<List<ExpertFriendDto>> GetExpertFriends()
+        {
+            var expertFriends = await ExpertFriendRepository.GetAllIncluding(f => f.ExpertFriend)
+                .Where(f => f.ExpertId == AbpSession.UserId).ToListAsync();
+
+            return ObjectMapper.Map<List<ExpertFriendDto>>(expertFriends);
         }
     }
 

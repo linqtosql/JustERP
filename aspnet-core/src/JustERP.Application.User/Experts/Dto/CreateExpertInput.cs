@@ -5,7 +5,7 @@ using JustERP.Core.User.Experts;
 
 namespace JustERP.Application.User.Experts.Dto
 {
-    [AutoMapTo(typeof(LhzxExpert))]
+    [AutoMap(typeof(LhzxExpert))]
     public class CreateExpertInput : CreateNonExpertInput
     {
         [Required(ErrorMessage = "请选择您想成为的专家分类")]
