@@ -12,11 +12,14 @@ namespace JustERP.Core.User.Orders
         private static Random _random;
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpertOrderLog, long> _orderLogRepository;
+        private IRepository<LhzxExpertComment, long> _commentRepository;
         public ExpertOrderManager(IRepository<LhzxExpertOrder, long> orderRepository,
-            IRepository<LhzxExpertOrderLog, long> orderLogRepository)
+            IRepository<LhzxExpertOrderLog, long> orderLogRepository,
+            IRepository<LhzxExpertComment, long> commentRepository)
         {
             _orderLogRepository = orderLogRepository;
             _orderRepository = orderRepository;
+            _commentRepository = commentRepository;
         }
 
         static ExpertOrderManager()
@@ -67,6 +70,22 @@ namespace JustERP.Core.User.Orders
         public async Task PayOrder(LhzxExpertOrder order)
         {
             order.Status = (int)ExpertOrderStatus.Charting;
+            await CreateOrderLog(order);
+        }
+
+        public async Task CompleteOrder(LhzxExpertOrder order)
+        {
+            order.Status = (int)ExpertOrderStatus.Complete;
+            await CreateOrderLog(order);
+        }
+
+        public async Task CommentOrder(LhzxExpertOrder order, LhzxExpert commenter, LhzxExpert expert, LhzxExpertComment comment)
+        {
+            expert.ServicesCount += 1;
+            expert.Score = comment.Score;
+
+            order.Status = (int)ExpertOrderStatus.Commented;
+            await _commentRepository.InsertAsync(comment);
             await CreateOrderLog(order);
         }
 

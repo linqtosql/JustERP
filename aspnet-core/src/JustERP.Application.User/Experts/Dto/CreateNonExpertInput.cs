@@ -8,6 +8,7 @@ namespace JustERP.Application.User.Experts.Dto
     [AutoMap(typeof(LhzxExpert))]
     public class CreateNonExpertInput : IEntityDto<long>
     {
+        public int? ExpertType { get; set; }
         [Required(ErrorMessage = "请选择您所在的领域")]
         public long ExpertFirstClassId { get; set; }
         [Required(ErrorMessage = "请选择您所在的细分领域")]

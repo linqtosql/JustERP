@@ -150,6 +150,25 @@ namespace JustERP.Application.User.Orders
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 
+        public async Task<ExpertOrderDto> CompleteOrder(GetExpertOrderInput input)
+        {
+            var order = await _orderRepository.GetAsync(input.Id);
+            await OrderManager.CompleteOrder(order);
+
+            return ObjectMapper.Map<ExpertOrderDto>(order);
+        }
+
+        public async Task<ExpertOrderDto> CommentOrder(CommentOrderInput input)
+        {
+            var order = await _orderRepository.GetAsync(input.ExpertOrderId);
+            var commenter = await _expertRepository.GetAsync(input.CommenterExpertId);
+            var expert = await _expertRepository.GetAsync(order.ServerExpertId);
+            var comment = ObjectMapper.Map<LhzxExpertComment>(input);
+
+            await OrderManager.CommentOrder(order, commenter, expert, comment);
+            return ObjectMapper.Map<ExpertOrderDto>(order);
+        }
+
         private void CheckIsPayingOrder(LhzxExpertOrder order)
         {
             if (order.Status != (int)ExpertOrderStatus.Paying) throw new UserFriendlyException("订单已取消或已支付");
