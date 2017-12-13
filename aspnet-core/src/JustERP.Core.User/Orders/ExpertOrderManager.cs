@@ -10,16 +10,19 @@ namespace JustERP.Core.User.Orders
     public class ExpertOrderManager : DomainService
     {
         private static Random _random;
+        private IRepository<LhzxExpert, long> _expertRepository;
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpertOrderLog, long> _orderLogRepository;
         private IRepository<LhzxExpertComment, long> _commentRepository;
         public ExpertOrderManager(IRepository<LhzxExpertOrder, long> orderRepository,
             IRepository<LhzxExpertOrderLog, long> orderLogRepository,
-            IRepository<LhzxExpertComment, long> commentRepository)
+            IRepository<LhzxExpertComment, long> commentRepository,
+            IRepository<LhzxExpert, long> expertRepository)
         {
             _orderLogRepository = orderLogRepository;
             _orderRepository = orderRepository;
             _commentRepository = commentRepository;
+            _expertRepository = expertRepository;
         }
 
         static ExpertOrderManager()
@@ -81,12 +84,17 @@ namespace JustERP.Core.User.Orders
 
         public async Task CommentOrder(LhzxExpertOrder order, LhzxExpert commenter, LhzxExpert expert, LhzxExpertComment comment)
         {
+            expert.ServicesCount = expert.ServicesCount ?? 0;
             expert.ServicesCount += 1;
             expert.Score = comment.Score;
-
             order.Status = (int)ExpertOrderStatus.Commented;
-            await _commentRepository.InsertAsync(comment);
-            await CreateOrderLog(order);
+            comment.ExpertId = expert.Id;
+            comment.CommenterExpertId = commenter.Id;
+            await Task.WhenAll(
+                            _expertRepository.UpdateAsync(expert),
+                            _orderRepository.UpdateAsync(order),
+                            _commentRepository.InsertAsync(comment),
+                            CreateOrderLog(order));
         }
 
         private async Task CreateOrderLog(LhzxExpertOrder order)

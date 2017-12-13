@@ -6,6 +6,7 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.UI;
+using JustERP.Application.User.Experts.Dto;
 using JustERP.Application.User.Orders.Dto;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders;
@@ -18,12 +19,15 @@ namespace JustERP.Application.User.Orders
     {
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
+        private IRepository<LhzxExpertComment, long> _commentRepository;
         public ExpertOrderManager OrderManager { get; set; }
         public ExpertOrderAppService(IRepository<LhzxExpertOrder, long> ordeRepository,
-            IRepository<LhzxExpert, long> expertRepository)
+            IRepository<LhzxExpert, long> expertRepository,
+            IRepository<LhzxExpertComment, long> commentRepository)
         {
             _orderRepository = ordeRepository;
             _expertRepository = expertRepository;
+            _commentRepository = commentRepository;
         }
 
         public async Task<long> CreateOrder(CreateExpertOrderInput input)
@@ -82,6 +86,17 @@ namespace JustERP.Application.User.Orders
             }
 
             return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
+        }
+
+        public async Task<ExpertCommentDto> GetExpertOrderComment(long orderId)
+        {
+            var orderComments = await _commentRepository.GetAllIncluding(
+                e => e.CommenterExpert,
+                e => e.ExpertCommentReplies)
+                .Where(e => e.ExpertOrderId == orderId && e.ParentId == null)
+                .SingleOrDefaultAsync();
+
+            return ObjectMapper.Map<ExpertCommentDto>(orderComments);
         }
 
         public async Task<ExpertOrderDto> CancelOrder(GetExpertOrderInput input)
@@ -161,11 +176,13 @@ namespace JustERP.Application.User.Orders
         public async Task<ExpertOrderDto> CommentOrder(CommentOrderInput input)
         {
             var order = await _orderRepository.GetAsync(input.ExpertOrderId);
-            var commenter = await _expertRepository.GetAsync(input.CommenterExpertId);
-            var expert = await _expertRepository.GetAsync(order.ServerExpertId);
+            var commenter = _expertRepository.GetAsync(input.CommenterExpertId);
+            var expert = _expertRepository.GetAsync(order.ServerExpertId);
+            var result = await Task.WhenAll(commenter, expert);
+
             var comment = ObjectMapper.Map<LhzxExpertComment>(input);
 
-            await OrderManager.CommentOrder(order, commenter, expert, comment);
+            await OrderManager.CommentOrder(order, result[0], result[1], comment);
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 

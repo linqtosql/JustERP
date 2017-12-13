@@ -30,6 +30,12 @@ namespace JustERP.Application.User.Experts.Dto
                 .ForMember(e => e.Post, opt => opt.MapFrom(e => e.ExpertFriend.Post))
                 .ForMember(e => e.Phone, opt => opt.MapFrom(e => e.ExpertFriend.Phone))
                 .ForMember(e => e.OrderCount, opt => opt.MapFrom(e => 0));
+
+            CreateMap<LhzxExpertComment, ExpertCommentDto>()
+                .ForMember(e => e.Name, opt => opt.MapFrom(e => e.CommenterExpert.Name))
+                .ForMember(e => e.Avatar, opt => opt.MapFrom(e => e.CommenterExpert.Avatar))
+                .ForMember(e => e.Organization, opt => opt.MapFrom(e => e.CommenterExpert.Organization))
+                .ForMember(e => e.Post, opt => opt.MapFrom(e => e.CommenterExpert.Post));
         }
     }
 }
