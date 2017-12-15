@@ -73,6 +73,8 @@ namespace JustERP.Core.User.Experts
         public virtual IEnumerable<LhzxExpertOrderChart> ReceiverExpertCharts { get; set; }
         public virtual IEnumerable<LhzxExpertFriendShip> ExpertFriendShips { get; set; }
 
+        public virtual IEnumerable<LhzxExpertAnonymousShip> ExpertAnonymousShips { get; set; }
+
         public string ExtensionData { get; set; }
     }
 }

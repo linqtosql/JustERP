@@ -3,7 +3,7 @@ using JustERP.Core.User.Experts;
 
 namespace JustERP.Application.User.Experts.Dto
 {
-    [AutoMapFrom(typeof(LhzxExpertFriendShip))]
+    [AutoMapFrom(typeof(LhzxExpertFriendShip), typeof(LhzxExpertAnonymousShip))]
     public class ExpertFriendDto
     {
         public string Avatar { get; set; }
@@ -11,5 +11,6 @@ namespace JustERP.Application.User.Experts.Dto
         public string Name { get; set; }
         public string Post { get; set; }
         public int OrderCount { get; set; }
+        public bool Anonymous { get; set; }
     }
 }

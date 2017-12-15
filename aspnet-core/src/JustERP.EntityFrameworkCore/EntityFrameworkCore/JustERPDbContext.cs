@@ -26,6 +26,7 @@ namespace JustERP.EntityFrameworkCore
         public virtual DbSet<LhzxExpertOrderLog> ExpertOrderLogs { get; set; }
         public virtual DbSet<LhzxExpertOrderPayment> ExpertOrderPayments { get; set; }
         public virtual DbSet<LhzxExpertOrderRefund> ExpertOrderRefunds { get; set; }
+        public virtual DbSet<LhzxExpertAnonymousShip> ExpertAnonymousShips { get; set; }
 
 
         public JustERPDbContext(DbContextOptions<JustERPDbContext> options)
@@ -97,6 +98,11 @@ namespace JustERP.EntityFrameworkCore
             modelBuilder.Entity<LhzxExpertFriendShip>(b =>
             {
                 b.HasOne(e => e.ExpertFriend).WithMany(e => e.ExpertFriendShips).HasForeignKey(e => e.ExpertFriendId);
+            });
+
+            modelBuilder.Entity<LhzxExpertAnonymousShip>(b =>
+            {
+                b.HasOne(e => e.Expert).WithMany(e => e.ExpertAnonymousShips).HasForeignKey(e => e.ExpertId);
             });
 
         }

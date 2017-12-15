@@ -17,6 +17,7 @@ namespace JustERP.Application.User.Experts
         public IRepository<LhzxExpert, long> ExpertRepository { get; set; }
         public IRepository<LhzxExpertClass, long> ExpertClassRepository { get; set; }
         public IRepository<LhzxExpertFriendShip, long> ExpertFriendRepository { get; set; }
+        public IRepository<LhzxExpertAnonymousShip, long> AnonymousFriendRepository { get; set; }
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
         private ExpertManager _expertManager;
 
@@ -138,16 +139,15 @@ namespace JustERP.Application.User.Experts
         [AbpAuthorize]
         public async Task<ExpertFriendDto> CreateExpertFriend(CreateExpertFriendDto input)
         {
-            var expert = await ExpertRepository.GetAsync(input.ExpertId);
-            var friendExpert = await ExpertRepository.FirstOrDefaultAsync(e => e.ExpertAccount.UserName == input.UserName);
-            if (friendExpert == null)
-                throw new UserFriendlyException("用户不存在");
-            if (friendExpert.Name != input.Name)
-                throw new UserFriendlyException("姓名填写不正确");
-
-            var friendShip = await _expertManager.CreateExpertFriend(expert, friendExpert);
-
-            return ObjectMapper.Map<ExpertFriendDto>(friendShip);
+            var anonym = ObjectMapper.Map<LhzxExpertAnonymousShip>(input);
+            var expert = ExpertRepository.GetAsync(input.ExpertId);
+            var friendExpert = ExpertRepository.FirstOrDefaultAsync(e => e.ExpertAccount.UserName == input.UserName);
+            var result = await Task.WhenAll(expert, friendExpert);
+            if (result[1] == null)
+            {
+                return ObjectMapper.Map<ExpertFriendDto>(await _expertManager.CreateExpertFriend(result[0], anonym));
+            }
+            return ObjectMapper.Map<ExpertFriendDto>(await _expertManager.CreateExpertFriend(result[0], result[1]));
         }
 
         [AbpAuthorize]
@@ -155,8 +155,11 @@ namespace JustERP.Application.User.Experts
         {
             var expertFriends = await ExpertFriendRepository.GetAllIncluding(f => f.ExpertFriend)
                 .Where(f => f.ExpertId == AbpSession.UserId).ToListAsync();
+            var anonymousFriends = await AnonymousFriendRepository.GetAllListAsync(f => f.ExpertId == AbpSession.UserId);
 
-            return ObjectMapper.Map<List<ExpertFriendDto>>(expertFriends);
+            var friends = ObjectMapper.Map<List<ExpertFriendDto>>(expertFriends);
+            friends.AddRange(ObjectMapper.Map<List<ExpertFriendDto>>(anonymousFriends));
+            return friends;
         }
     }
 
