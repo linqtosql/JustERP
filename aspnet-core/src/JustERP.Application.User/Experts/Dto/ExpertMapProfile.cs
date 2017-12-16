@@ -28,7 +28,7 @@ namespace JustERP.Application.User.Experts.Dto
                 .ForMember(e => e.Name, opt => opt.MapFrom(e => e.ExpertFriend.Name))
                 .ForMember(e => e.Avatar, opt => opt.MapFrom(e => e.ExpertFriend.Avatar))
                 .ForMember(e => e.Post, opt => opt.MapFrom(e => e.ExpertFriend.Post))
-                .ForMember(e => e.Phone, opt => opt.MapFrom(e => e.ExpertFriend.Phone))
+                .ForMember(e => e.Phone, opt => opt.MapFrom(e => e.ExpertFriend.ExpertAccount.UserName))
                 .ForMember(e => e.OrderCount, opt => opt.MapFrom(e => 0))
                 .ForMember(e => e.Anonymous, opt => opt.MapFrom(e => false));
             CreateMap<LhzxExpertAnonymousShip, ExpertFriendDto>()

@@ -153,7 +153,9 @@ namespace JustERP.Application.User.Experts
         [AbpAuthorize]
         public async Task<List<ExpertFriendDto>> GetExpertFriends()
         {
-            var expertFriends = await ExpertFriendRepository.GetAllIncluding(f => f.ExpertFriend)
+            var expertFriends = await ExpertFriendRepository.GetAllIncluding(
+                f => f.ExpertFriend,
+                f => f.ExpertFriend.ExpertAccount)
                 .Where(f => f.ExpertId == AbpSession.UserId).ToListAsync();
             var anonymousFriends = await AnonymousFriendRepository.GetAllListAsync(f => f.ExpertId == AbpSession.UserId);
 
