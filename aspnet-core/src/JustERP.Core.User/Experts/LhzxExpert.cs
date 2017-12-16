@@ -55,6 +55,8 @@ namespace JustERP.Core.User.Experts
         public string RegisterIpAddress { get; set; }
         public bool? IsChecked { get; set; }
         public bool? IsActive { get; set; }
+        [MaxLength(128)]
+        public string OpenId { get; set; }
         [NotMapped]
         public LhzxExpertPhoto[] ExpertPhotos
         {

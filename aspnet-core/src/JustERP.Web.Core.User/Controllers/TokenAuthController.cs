@@ -23,7 +23,6 @@ namespace JustERP.Web.Core.User.Controllers
     public class TokenAuthController : JustERPControllerBase
     {
         private readonly UserLogInManager _logInManager;
-        private readonly ITenantCache _tenantCache;
         private readonly TokenAuthConfiguration _configuration;
         private readonly IExternalAuthConfiguration _externalAuthConfiguration;
         private readonly IExternalAuthManager _externalAuthManager;
@@ -31,14 +30,12 @@ namespace JustERP.Web.Core.User.Controllers
 
         public TokenAuthController(
             UserLogInManager logInManager,
-            ITenantCache tenantCache,
             TokenAuthConfiguration configuration,
             IExternalAuthConfiguration externalAuthConfiguration,
             IExternalAuthManager externalAuthManager,
             UserRegistrationManager userRegistrationManager)
         {
             _logInManager = logInManager;
-            _tenantCache = tenantCache;
             _configuration = configuration;
             _externalAuthConfiguration = externalAuthConfiguration;
             _externalAuthManager = externalAuthManager;
@@ -48,11 +45,7 @@ namespace JustERP.Web.Core.User.Controllers
         [HttpPost]
         public async Task<AuthenticateResultModel> Authenticate([FromBody] UserAuthenticateModel model)
         {
-            var loginResult = await GetLoginResultAsync(
-                model.Phone,
-                model.PhoneCode,
-                GetTenancyNameOrNull()
-            );
+            var loginResult = await GetLoginResultAsync(model);
 
             return CreateAuthenticateResultModel(loginResult);
         }
@@ -60,31 +53,18 @@ namespace JustERP.Web.Core.User.Controllers
         [HttpPost]
         public async Task<AuthenticateResultModel> Register([FromBody] UserAuthenticateModel model)
         {
-            var loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode);
+            var loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode, model.Openid);
 
             return CreateAuthenticateResultModel(loginResult);
-        }
-
-        private AuthenticateResultModel CreateAuthenticateResultModel(UserLoginResult loginResult)
-        {
-            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
-
-            return new AuthenticateResultModel
-            {
-                AccessToken = accessToken,
-                EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
-                ExpireInSeconds = (int) _configuration.Expiration.TotalSeconds,
-                UserId = loginResult.UserId
-            };
         }
 
         [HttpPost]
         public async Task<AuthenticateResultModel> RegisterOrAuthenticate([FromBody] UserAuthenticateModel model)
         {
-            var loginResult = await _logInManager.LoginAsync(model.Phone, model.PhoneCode);
+            var loginResult = await _logInManager.LoginAsync(model.Phone, model.PhoneCode, model.Openid);
             if (loginResult.Result != AbpLoginResultType.Success)
             {
-                loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode);
+                loginResult = await _logInManager.RegisterAsync(model.Phone, model.PhoneCode, model.Openid);
             }
 
             return CreateAuthenticateResultModel(loginResult);
@@ -95,6 +75,21 @@ namespace JustERP.Web.Core.User.Controllers
         public List<ExternalLoginProviderInfoModel> GetExternalAuthenticationProviders()
         {
             return ObjectMapper.Map<List<ExternalLoginProviderInfoModel>>(_externalAuthConfiguration.Providers);
+        }
+
+        #region private
+
+        private AuthenticateResultModel CreateAuthenticateResultModel(UserLoginResult loginResult)
+        {
+            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
+
+            return new AuthenticateResultModel
+            {
+                AccessToken = accessToken,
+                EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
+                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
+                UserId = loginResult.UserId
+            };
         }
 
         private async Task<Authorization.Users.User> RegisterExternalUserAsync(ExternalAuthUserInfo externalUser)
@@ -134,19 +129,9 @@ namespace JustERP.Web.Core.User.Controllers
             return userInfo;
         }
 
-        private string GetTenancyNameOrNull()
+        private async Task<UserLoginResult> GetLoginResultAsync(UserAuthenticateModel model)
         {
-            if (!AbpSession.TenantId.HasValue)
-            {
-                return null;
-            }
-
-            return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
-        }
-
-        private async Task<UserLoginResult> GetLoginResultAsync(string phone, string phoneCode, string tenancyName)
-        {
-            var loginResult = await _logInManager.LoginAsync(phone, phoneCode);
+            var loginResult = await _logInManager.LoginAsync(model.Phone, model.PhoneCode, model.Openid);
 
             switch (loginResult.Result)
             {
@@ -192,6 +177,7 @@ namespace JustERP.Web.Core.User.Controllers
         private string GetEncrpyedAccessToken(string accessToken)
         {
             return SimpleStringCipher.Instance.Encrypt(accessToken, AppConsts.DefaultPassPhrase);
-        }
+        } 
+        #endregion
     }
 }

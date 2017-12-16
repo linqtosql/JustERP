@@ -5,6 +5,7 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.Domain.Uow;
 using Abp.UI;
+using JustERP.Core.User.Wechat;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -19,6 +20,7 @@ namespace JustERP.Core.User.Experts
         private IRepository<LhzxExpertWorkSetting, long> _workSettingRepository;
         private IRepository<LhzxExpertFriendShip, long> _friendShipRepository;
         private IRepository<LhzxExpertAnonymousShip, long> _anonymousRepository;
+        private IRepository<LhzxExpertWechatInfo, long> _wechatRepository;
 
         public ExpertManager(
             IRepository<LhzxExpertAccount, long> accountRepository,
@@ -26,6 +28,7 @@ namespace JustERP.Core.User.Experts
             IRepository<LhzxExpertWorkSetting, long> workSettingRepository,
             IRepository<LhzxExpertFriendShip, long> friendShipRepository,
             IRepository<LhzxExpertAnonymousShip, long> anonymousRepository,
+            IRepository<LhzxExpertWechatInfo, long> wechatRepository,
             UserStore store,
             IdentityErrorDescriber errors,
             IServiceProvider services,
@@ -45,6 +48,7 @@ namespace JustERP.Core.User.Experts
             _workSettingRepository = workSettingRepository;
             _friendShipRepository = friendShipRepository;
             _anonymousRepository = anonymousRepository;
+            _wechatRepository = wechatRepository;
         }
 
 
@@ -105,6 +109,27 @@ namespace JustERP.Core.User.Experts
                 throw new UserFriendlyException("您已添加过该用户");
 
             var inserted = await _anonymousRepository.InsertAsync(anonymExpert);
+            return inserted;
+        }
+
+        public void UpdateExpertFromWechatInfo(LhzxExpert expert, LhzxExpertWechatInfo wechatInfo)
+        {
+            expert.OpenId = wechatInfo.Openid;
+            expert.Avatar = wechatInfo.Headimgurl;
+            expert.NickName = wechatInfo.Nickname;
+            expert.Name = wechatInfo.Nickname;
+        }
+
+        public async Task<LhzxExpertWechatInfo> CreateWechatInfo(LhzxExpertWechatInfo wechatInfo)
+        {
+            var existsInfo = await _wechatRepository.FirstOrDefaultAsync(w => w.Openid == wechatInfo.Openid);
+            if (existsInfo != null)
+            {
+                wechatInfo.Id = existsInfo.Id;
+                await _wechatRepository.UpdateAsync(wechatInfo);
+                return wechatInfo;
+            }
+            var inserted = await _wechatRepository.InsertAsync(wechatInfo);
             return inserted;
         }
     }

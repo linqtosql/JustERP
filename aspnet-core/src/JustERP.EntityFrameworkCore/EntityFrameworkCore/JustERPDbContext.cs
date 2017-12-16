@@ -5,6 +5,7 @@ using JustERP.Core.User.Charts;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders;
 using JustERP.Core.User.Payments;
+using JustERP.Core.User.Wechat;
 using JustERP.MultiTenancy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -27,6 +28,7 @@ namespace JustERP.EntityFrameworkCore
         public virtual DbSet<LhzxExpertOrderPayment> ExpertOrderPayments { get; set; }
         public virtual DbSet<LhzxExpertOrderRefund> ExpertOrderRefunds { get; set; }
         public virtual DbSet<LhzxExpertAnonymousShip> ExpertAnonymousShips { get; set; }
+        public virtual DbSet<LhzxExpertWechatInfo> ExpertWechatInfos { get; set; }
 
 
         public JustERPDbContext(DbContextOptions<JustERPDbContext> options)
@@ -103,6 +105,11 @@ namespace JustERP.EntityFrameworkCore
             modelBuilder.Entity<LhzxExpertAnonymousShip>(b =>
             {
                 b.HasOne(e => e.Expert).WithMany(e => e.ExpertAnonymousShips).HasForeignKey(e => e.ExpertId);
+            });
+
+            modelBuilder.Entity<LhzxExpertWechatInfo>(b =>
+            {
+                b.HasAlternateKey(e => e.Openid);
             });
 
         }
