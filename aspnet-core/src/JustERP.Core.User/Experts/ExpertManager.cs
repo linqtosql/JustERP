@@ -112,12 +112,17 @@ namespace JustERP.Core.User.Experts
             return inserted;
         }
 
-        public void UpdateExpertFromWechatInfo(LhzxExpert expert, LhzxExpertWechatInfo wechatInfo)
+        public async Task UpdateExpertFromWechatInfo(LhzxExpert expert, LhzxExpertWechatInfo wechatInfo)
         {
+            if (await _expertRepository.GetAll().AnyAsync(e => e.OpenId == wechatInfo.Openid))
+            {
+                return;
+            }
             expert.OpenId = wechatInfo.Openid;
             expert.Avatar = wechatInfo.Headimgurl;
             expert.NickName = wechatInfo.Nickname;
             expert.Name = wechatInfo.Nickname;
+            await _expertRepository.UpdateAsync(expert);
         }
 
         public async Task<LhzxExpertWechatInfo> CreateWechatInfo(LhzxExpertWechatInfo wechatInfo)

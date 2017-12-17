@@ -27,19 +27,16 @@ namespace JustERP.Core.User.Wechat
         /// <summary>
         /// province
         /// </summary>
-        [Required]
         [MaxLength(16)]
         public string Province { get; set; }
         /// <summary>
         /// city
         /// </summary>
-        [Required]
         [MaxLength(16)]
         public string City { get; set; }
         /// <summary>
         /// country
         /// </summary>
-        [Required]
         [MaxLength(16)]
         public string Country { get; set; }
         /// <summary>
@@ -51,7 +48,6 @@ namespace JustERP.Core.User.Wechat
         /// <summary>
         /// unionid
         /// </summary>
-        [Required]
         [MaxLength(128)]
         public string Unionid { get; set; }
     }

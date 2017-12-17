@@ -45,7 +45,7 @@ namespace JustERP.Core.User
                 if (wechatInfo != null)
                 {
                     var expert = await _expertRepository.FirstOrDefaultAsync(e => e.ExpertAccountId == user.Id);
-                    _expertManager.UpdateExpertFromWechatInfo(expert, wechatInfo);
+                    await _expertManager.UpdateExpertFromWechatInfo(expert, wechatInfo);
                     await _expertRepository.UpdateAsync(expert);
                 }
             }

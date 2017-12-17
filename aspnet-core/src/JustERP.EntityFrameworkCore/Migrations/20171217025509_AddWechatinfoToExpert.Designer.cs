@@ -15,9 +15,10 @@ using System;
 namespace JustERP.Migrations
 {
     [DbContext(typeof(JustERPDbContext))]
-    partial class JustERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171217025509_AddWechatinfoToExpert")]
+    partial class AddWechatinfoToExpert
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1346,9 +1347,11 @@ namespace JustERP.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasMaxLength(16);
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasMaxLength(16);
 
                     b.Property<DateTime>("CreationTime");
@@ -1368,11 +1371,13 @@ namespace JustERP.Migrations
                         .HasMaxLength(128);
 
                     b.Property<string>("Province")
+                        .IsRequired()
                         .HasMaxLength(16);
 
                     b.Property<int>("Sex");
 
                     b.Property<string>("Unionid")
+                        .IsRequired()
                         .HasMaxLength(128);
 
                     b.HasKey("Id");

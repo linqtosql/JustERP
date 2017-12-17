@@ -1,6 +1,9 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using Abp.Domain.Repositories;
+using Abp.Logging;
 using Abp.ObjectMapping;
+using Abp.Runtime.Session;
 using JustERP.Application.User.Wechat.Dto;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Wechat;
@@ -14,12 +17,15 @@ namespace JustERP.Application.User.Wechat
         private const string AppSecret = "644f585ce47f569406447cef3ebb04cf";
         private static readonly HttpClient HttpClient;
         private ExpertManager _expertManager;
+        private IRepository<LhzxExpert, long> _expertRepository;
 
         public IObjectMapper ObjectMapper { get; set; }
+        public IAbpSession AbpSession { get; set; }
 
-        public ExpertWechatAppService(ExpertManager expertManager)
+        public ExpertWechatAppService(ExpertManager expertManager, IRepository<LhzxExpert, long> expertRepository)
         {
             _expertManager = expertManager;
+            _expertRepository = expertRepository;
         }
         static ExpertWechatAppService()
         {
@@ -53,10 +59,15 @@ namespace JustERP.Application.User.Wechat
             var result = await HttpClient.GetStringAsync(
                 $"https://api.weixin.qq.com/sns/userinfo?access_token={accessToken}&openid={openId}&lang=zh_CN");
             var userInfo = JsonConvert.DeserializeObject<UserInfoDto>(result);
-
+            
             var wechatInfo = ObjectMapper.Map<LhzxExpertWechatInfo>(userInfo);
-            await _expertManager.CreateWechatInfo(wechatInfo);
 
+            wechatInfo = await _expertManager.CreateWechatInfo(wechatInfo);
+            if (AbpSession.UserId.HasValue)
+            {
+                var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
+                await _expertManager.UpdateExpertFromWechatInfo(expert, wechatInfo);
+            }
             return userInfo;
         }
     }

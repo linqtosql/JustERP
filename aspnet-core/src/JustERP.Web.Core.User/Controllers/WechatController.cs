@@ -71,8 +71,8 @@ namespace JustERP.Web.Core.User.Controllers
         public async Task<IActionResult> Step4(string returnUrl, string accessToken, string openId)
         {
             var userInfo = await _wechatAppService.GetUserInfo(accessToken, openId);
-            //save to database
-            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={openId}");
+            //return new ContentResult { Content = $"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={openId}" };
+            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.Openid}");
         }
 
         byte[] ObjectToByteArray(object obj)
