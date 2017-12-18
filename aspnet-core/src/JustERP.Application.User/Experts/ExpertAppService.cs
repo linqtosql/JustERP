@@ -114,6 +114,7 @@ namespace JustERP.Application.User.Experts
             var expert = await ExpertRepository.GetAsync(input.Id);
             ObjectMapper.Map(input, expert);
 
+            expert.ExpertPhotos = input.ExpertPhotos.Select(p => new LhzxExpertPhoto { ImageUrl = p }).ToArray();
             expert.OnlineStatus = (int)ExpertOnlineStatus.Offline;
             expert.IsExpert = true;
 
