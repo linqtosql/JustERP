@@ -18,6 +18,7 @@ namespace JustERP.Application.User.Experts
         public IRepository<LhzxExpertClass, long> ExpertClassRepository { get; set; }
         public IRepository<LhzxExpertFriendShip, long> ExpertFriendRepository { get; set; }
         public IRepository<LhzxExpertAnonymousShip, long> AnonymousFriendRepository { get; set; }
+        public IRepository<LhzxExpertWorkSetting, long> WorkSettingRepository { get; set; }
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
         private ExpertManager _expertManager;
 
@@ -114,9 +115,20 @@ namespace JustERP.Application.User.Experts
             var expert = await ExpertRepository.GetAsync(input.Id);
             ObjectMapper.Map(input, expert);
 
-            expert.ExpertPhotos = input.ExpertPhotos.Select(p => new LhzxExpertPhoto { ImageUrl = p }).ToArray();
-            expert.OnlineStatus = (int)ExpertOnlineStatus.Offline;
+            expert.OnlineStatus = expert.OnlineStatus ?? (int)ExpertOnlineStatus.Offline;
             expert.IsExpert = true;
+
+            foreach (var workSetting in expert.ExpertWorkSettings)
+            {
+                if (workSetting.Id > 0)
+                {
+                    await WorkSettingRepository.UpdateAsync(workSetting);
+                }
+                else
+                {
+                    await WorkSettingRepository.InsertAsync(workSetting);
+                }
+            }
 
             await ExpertRepository.UpdateAsync(expert);
         }

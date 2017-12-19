@@ -1,4 +1,5 @@
-﻿using Abp.AutoMapper;
+﻿using System;
+using Abp.AutoMapper;
 using JustERP.Core.User.Experts;
 
 namespace JustERP.Application.User.Experts.Dto
@@ -7,7 +8,7 @@ namespace JustERP.Application.User.Experts.Dto
     public class ExpertWorkSettingDto
     {
         public int Week { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

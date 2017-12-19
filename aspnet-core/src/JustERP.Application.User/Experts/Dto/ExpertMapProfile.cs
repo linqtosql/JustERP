@@ -16,11 +16,11 @@ namespace JustERP.Application.User.Experts.Dto
                 .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => p.ImageUrl).ToArray()));
 
             CreateMap<LhzxExpertWorkSetting, ExpertWorkSettingDto>()
-                .ForMember(e => e.StartTime, opt => opt.MapFrom(e => e.StartTime.ToString("HH:mm")))
-                .ForMember(e => e.EndTime, opt => opt.MapFrom(e => e.EndTime.ToString("HH:mm")));
+                .ForMember(e => e.StartTime, opt => opt.MapFrom(e => e.StartTime))
+                .ForMember(e => e.EndTime, opt => opt.MapFrom(e => e.EndTime));
 
             CreateMap<CreateExpertInput, LhzxExpert>()
-                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => new LhzxExpertPhoto { ImageUrl = p })));
+                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => new LhzxExpertPhoto { ImageUrl = p }).ToArray()));
             CreateMap<LhzxExpert, CreateExpertInput>()
                 .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => p.ImageUrl)));
 

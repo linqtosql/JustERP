@@ -9,7 +9,7 @@ namespace JustERP.Application.User.Experts.Dto
     public class CreateExpertInput : CreateNonExpertInput
     {
         [Required(ErrorMessage = "请选择您想成为的专家分类")]
-        public int ExpertType { get; set; }
+        public new int ExpertType { get; set; }
         [MaxLength(64)]
         public string Tags { get; set; }
         [Required(ErrorMessage = "请输入您的个人介绍")]
@@ -20,10 +20,8 @@ namespace JustERP.Application.User.Experts.Dto
         public string Speciality { get; set; }
         [Required(ErrorMessage = "请输入您每节的咨询价格")]
         public decimal? Price { get; set; }
-        [Required(ErrorMessage = "请输入您的支付宝收款账号")]
         [MaxLength(32)]
         public string AlipayAccount { get; set; }
-        [Required(ErrorMessage = "请输入您的微信收款账号")]
         [MaxLength(32)]
         public string WeixinAccount { get; set; }
         [Required(ErrorMessage = "请设置您的营业时间")]
