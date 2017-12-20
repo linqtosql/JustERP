@@ -9,7 +9,7 @@ using Senparc.Weixin.MP;
 
 namespace JustERP.Web.Core.User.Controllers
 {
-    public partial class WechatController : JustERPControllerBase
+    public class WechatController : JustERPControllerBase
     {
         private const string Token = "lianhezixun";
         private IExpertWechatAppService _wechatAppService;
