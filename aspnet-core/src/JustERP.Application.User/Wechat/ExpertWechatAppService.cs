@@ -1,7 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
-using Abp.Logging;
 using Abp.ObjectMapping;
 using Abp.Runtime.Session;
 using JustERP.Application.User.Wechat.Dto;

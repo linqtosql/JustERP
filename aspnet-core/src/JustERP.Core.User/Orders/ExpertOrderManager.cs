@@ -144,7 +144,7 @@ namespace JustERP.Core.User.Orders
         /// </summary>
         Paying = 2,
         /// <summary>
-        /// 待咨询
+        /// 咨询中
         /// </summary>
         Charting = 3,
         /// <summary>

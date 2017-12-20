@@ -5,11 +5,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using JustERP.Application.User.Wechat;
 using Microsoft.AspNetCore.Mvc;
+using Senparc.Weixin.MP;
 
 namespace JustERP.Web.Core.User.Controllers
 {
     public partial class WechatController : JustERPControllerBase
     {
+        private const string Token = "lianhezixun";
         private IExpertWechatAppService _wechatAppService;
         public WechatController(IExpertWechatAppService wechatAppService)
         {
@@ -17,26 +19,9 @@ namespace JustERP.Web.Core.User.Controllers
         }
         public IActionResult Index(string signature, string timestamp, string nonce, string echostr)
         {
-            return new ContentResult { Content = echostr };
-            //var listStr = new string[3]
-            //{
-            //    "lianhezixun",
-            //    timestamp,
-            //    nonce
-            //};
-            //listStr = listStr.OrderBy(s => s).ToArray();
-
-            //var str = string.Join(string.Empty, listStr);
-
-            //var sha1 = System.Security.Cryptography.SHA1.Create();
-
-            //var hash = sha1.ComputeHash(ObjectToByteArray(str));
-
-            //var hashStr = BitConverter.ToString(hash, 0).Replace("-", string.Empty).ToLower();
-
-            //if (hashStr == signature)
-            //    return new ContentResult { Content = echostr };
-            //throw new Exception($"{signature},{echostr},{nonce},{timestamp}");
+            if (CheckSignature.Check(signature, timestamp, nonce, Token))
+                return Content(echostr);
+            return Content("error");
         }
 
         public IActionResult Step1(string returnUrl)
@@ -71,20 +56,8 @@ namespace JustERP.Web.Core.User.Controllers
         public async Task<IActionResult> Step4(string returnUrl, string accessToken, string openId)
         {
             var userInfo = await _wechatAppService.GetUserInfo(accessToken, openId);
-            //return new ContentResult { Content = $"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={openId}" };
-            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.Openid}");
-        }
 
-        byte[] ObjectToByteArray(object obj)
-        {
-            if (obj == null)
-                return null;
-            BinaryFormatter bf = new BinaryFormatter();
-            using (MemoryStream ms = new MemoryStream())
-            {
-                bf.Serialize(ms, obj);
-                return ms.ToArray();
-            }
+            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.Openid}");
         }
     }
 }
