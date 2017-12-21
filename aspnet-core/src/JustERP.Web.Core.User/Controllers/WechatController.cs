@@ -1,9 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Net;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using JustERP.Application.User.Wechat;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Senparc.Weixin.MP;
 
@@ -37,8 +36,8 @@ namespace JustERP.Web.Core.User.Controllers
             return RedirectToAction("Step4", new
             {
                 returnUrl,
-                accessToken = tokenInfo.Access_Token,
-                openId = tokenInfo.Openid
+                accessToken = tokenInfo.access_token,
+                openId = tokenInfo.openid
             });
         }
 
@@ -48,8 +47,8 @@ namespace JustERP.Web.Core.User.Controllers
             return RedirectToAction("Step4", new
             {
                 returnUrl,
-                accessToken = tokenInfo.Access_Token,
-                openId = tokenInfo.Openid
+                accessToken = tokenInfo.access_token,
+                openId = tokenInfo.openid
             });
         }
 
@@ -57,7 +56,13 @@ namespace JustERP.Web.Core.User.Controllers
         {
             var userInfo = await _wechatAppService.GetUserInfo(accessToken, openId);
 
-            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.Openid}");
+            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.openid}");
+        }
+
+        public async Task<IActionResult> JsSdkConfig()
+        {
+            var config = await _wechatAppService.GetJsSdkConfig(Request.GetDisplayUrl());
+            return Json(config);
         }
     }
 }

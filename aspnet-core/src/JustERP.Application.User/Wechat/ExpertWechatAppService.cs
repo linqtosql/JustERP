@@ -1,12 +1,13 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
 using Abp.Runtime.Session;
-using JustERP.Application.User.Wechat.Dto;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Wechat;
-using Newtonsoft.Json;
+using Senparc.Weixin.MP;
+using Senparc.Weixin.MP.AdvancedAPIs;
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.MP.Helpers;
 
 namespace JustERP.Application.User.Wechat
 {
@@ -14,7 +15,6 @@ namespace JustERP.Application.User.Wechat
     {
         private const string AppId = "wxd1e9929bab5029ce";
         private const string AppSecret = "644f585ce47f569406447cef3ebb04cf";
-        private static readonly HttpClient HttpClient;
         private ExpertManager _expertManager;
         private IRepository<LhzxExpert, long> _expertRepository;
 
@@ -26,39 +26,26 @@ namespace JustERP.Application.User.Wechat
             _expertManager = expertManager;
             _expertRepository = expertRepository;
         }
-        static ExpertWechatAppService()
-        {
-            HttpClient = new HttpClient();
-        }
 
         public string GetAuthenticateUrl(string returnUrl)
         {
-            return
-                $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={AppId}&redirect_uri={returnUrl}&response_type=code&scope=snsapi_userinfo#wechat_redirect";
+            return OAuthApi.GetAuthorizeUrl(AppId, returnUrl, null, OAuthScope.snsapi_userinfo);
         }
 
-        public async Task<TokenInfotDto> GetToken(string code)
+        public async Task<OAuthAccessTokenResult> GetToken(string code)
         {
-            var result = await HttpClient.GetStringAsync(
-                $"https://api.weixin.qq.com/sns/oauth2/access_token?appid={AppId}&secret={AppSecret}&code={code}&grant_type=authorization_code");
-            var tokenInfo = JsonConvert.DeserializeObject<TokenInfotDto>(result);
-            return tokenInfo;
+            return await OAuthApi.GetAccessTokenAsync(AppId, AppSecret, code);
         }
 
-        public async Task<TokenInfotDto> RefreshToken(string refreshToken)
+        public async Task<OAuthAccessTokenResult> RefreshToken(string refreshToken)
         {
-            var result = await HttpClient.GetStringAsync(
-                $"https://api.weixin.qq.com/sns/oauth2/refresh_token?appid={AppId}&grant_type=refresh_token&refresh_token={refreshToken}");
-            var tokenInfo = JsonConvert.DeserializeObject<TokenInfotDto>(result);
-            return tokenInfo;
+            return await OAuthApi.RefreshTokenAsync(AppId, refreshToken);
         }
 
-        public async Task<UserInfoDto> GetUserInfo(string accessToken, string openId)
+        public async Task<OAuthUserInfo> GetUserInfo(string accessToken, string openId)
         {
-            var result = await HttpClient.GetStringAsync(
-                $"https://api.weixin.qq.com/sns/userinfo?access_token={accessToken}&openid={openId}&lang=zh_CN");
-            var userInfo = JsonConvert.DeserializeObject<UserInfoDto>(result);
-            
+            var userInfo = await OAuthApi.GetUserInfoAsync(accessToken, openId);
+
             var wechatInfo = ObjectMapper.Map<LhzxExpertWechatInfo>(userInfo);
 
             wechatInfo = await _expertManager.CreateWechatInfo(wechatInfo);
@@ -68,6 +55,11 @@ namespace JustERP.Application.User.Wechat
                 await _expertManager.UpdateExpertFromWechatInfo(expert, wechatInfo);
             }
             return userInfo;
+        }
+
+        public Task<JsSdkUiPackage> GetJsSdkConfig(string requestUrl)
+        {
+            return JSSDKHelper.GetJsSdkUiPackageAsync(AppId, AppSecret, requestUrl);
         }
     }
 }

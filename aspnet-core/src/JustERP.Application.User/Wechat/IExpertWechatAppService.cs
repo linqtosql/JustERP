@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Abp.Dependency;
-using JustERP.Application.User.Wechat.Dto;
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.MP.Helpers;
 
 namespace JustERP.Application.User.Wechat
 {
@@ -8,10 +9,12 @@ namespace JustERP.Application.User.Wechat
     {
         string GetAuthenticateUrl(string returnUrl);
 
-        Task<TokenInfotDto> GetToken(string code);
+        Task<OAuthAccessTokenResult> GetToken(string code);
 
-        Task<TokenInfotDto> RefreshToken(string refreshToken);
+        Task<OAuthAccessTokenResult> RefreshToken(string refreshToken);
 
-        Task<UserInfoDto> GetUserInfo(string accessToken, string openId);
+        Task<OAuthUserInfo> GetUserInfo(string accessToken, string openId);
+
+        Task<JsSdkUiPackage> GetJsSdkConfig(string requestUrl);
     }
 }
