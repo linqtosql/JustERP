@@ -99,12 +99,12 @@ namespace JustERP.Web.Host.User
 
             app.UseStaticFiles();
             // letsencrypt
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                ServeUnknownFileTypes = true,//important:serve file without extension need
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), ".well-known")),
-                RequestPath = new PathString("/.well-known")
-            });
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    ServeUnknownFileTypes = true,//important:serve file without extension need
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), ".well-known")),
+            //    RequestPath = new PathString("/.well-known")
+            //});
 
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
