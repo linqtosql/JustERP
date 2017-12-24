@@ -130,9 +130,8 @@ namespace JustERP.Core.User.Experts
             var existsInfo = await _wechatRepository.FirstOrDefaultAsync(w => w.Openid == wechatInfo.Openid);
             if (existsInfo != null)
             {
-                wechatInfo.Id = existsInfo.Id;
-                await _wechatRepository.UpdateAsync(wechatInfo);
-                return wechatInfo;
+                await _wechatRepository.DeleteAsync(existsInfo);
+                UnitOfWorkManager.Current.SaveChanges();
             }
             var inserted = await _wechatRepository.InsertAsync(wechatInfo);
             return inserted;

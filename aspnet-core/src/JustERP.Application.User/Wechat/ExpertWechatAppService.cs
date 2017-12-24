@@ -29,7 +29,9 @@ namespace JustERP.Application.User.Wechat
 
         public string GetAuthenticateUrl(string returnUrl)
         {
-            return OAuthApi.GetAuthorizeUrl(AppId, returnUrl, null, OAuthScope.snsapi_userinfo);
+            return $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={AppId}&redirect_uri={returnUrl}&response_type=code&scope=snsapi_userinfo#wechat_redirect";
+
+            //return OAuthApi.GetAuthorizeUrl(AppId, returnUrl, string.Empty, OAuthScope.snsapi_userinfo);
         }
 
         public async Task<OAuthAccessTokenResult> GetToken(string code)
