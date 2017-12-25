@@ -8,14 +8,18 @@ using Senparc.Weixin.MP;
 
 namespace JustERP.Web.Core.User.Controllers
 {
+    [Route("api/[controller]/[action]")]
     public class WechatController : JustERPControllerBase
     {
         private const string Token = "lianhezixun";
         private IExpertWechatAppService _wechatAppService;
+
         public WechatController(IExpertWechatAppService wechatAppService)
         {
             _wechatAppService = wechatAppService;
         }
+
+        [HttpGet]
         public IActionResult Index(string signature, string timestamp, string nonce, string echostr)
         {
             if (CheckSignature.Check(signature, timestamp, nonce, Token))
@@ -23,6 +27,7 @@ namespace JustERP.Web.Core.User.Controllers
             return Content("error");
         }
 
+        [HttpGet]
         public IActionResult Step1(string returnUrl)
         {
             var redirect = WebUtility.UrlEncode($"https://api.advisors-ally.com/wechat/Step2?returnUrl={returnUrl}");
@@ -30,6 +35,7 @@ namespace JustERP.Web.Core.User.Controllers
             return Redirect(_wechatAppService.GetAuthenticateUrl(redirect));
         }
 
+        [HttpGet]
         public async Task<IActionResult> Step2(string returnUrl, string code, string state)
         {
             var tokenInfo = await _wechatAppService.GetToken(code);
@@ -41,6 +47,7 @@ namespace JustERP.Web.Core.User.Controllers
             });
         }
 
+        [HttpGet]
         public async Task<IActionResult> Step3(string returnUrl, string refreshToken)
         {
             var tokenInfo = await _wechatAppService.RefreshToken(refreshToken);
@@ -52,6 +59,7 @@ namespace JustERP.Web.Core.User.Controllers
             });
         }
 
+        [HttpGet]
         public async Task<IActionResult> Step4(string returnUrl, string accessToken, string openId)
         {
             var userInfo = await _wechatAppService.GetUserInfo(accessToken, openId);
@@ -59,9 +67,11 @@ namespace JustERP.Web.Core.User.Controllers
             return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.openid}");
         }
 
+        [HttpGet]
         public async Task<IActionResult> JsSdkConfig()
         {
-            var config = await _wechatAppService.GetJsSdkConfig(Request.GetDisplayUrl());
+            var url = Request.GetDisplayUrl();
+            var config = await _wechatAppService.GetJsSdkConfig(url);
             return Json(config);
         }
     }
