@@ -5,6 +5,8 @@ using JustERP.Application.User.Wechat;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Senparc.Weixin.MP;
+using Senparc.Weixin.MP.Containers;
+using Senparc.Weixin.MP.Helpers;
 
 namespace JustERP.Web.Core.User.Controllers
 {
@@ -68,9 +70,18 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> JsSdkConfig()
+        public async Task<IActionResult> JsSdkConfig(string url)
         {
-            var url = Request.GetDisplayUrl();
+            var appId = "wxd1e9929bab5029ce";
+            var secret = "644f585ce47f569406447cef3ebb04cf";
+            //获取时间戳
+            var timestamp = JSSDKHelper.GetTimestamp();
+            //获取随机码
+            var nonceStr = JSSDKHelper.GetNoncestr();
+            string ticket = JsApiTicketContainer.TryGetJsApiTicket(appId, secret);
+            //获取签名
+            var signature = JSSDKHelper.GetSignature(ticket, nonceStr, timestamp, url);
+
             var config = await _wechatAppService.GetJsSdkConfig(url);
             return Json(config);
         }

@@ -11,6 +11,7 @@ namespace JustERP.Application.User.Charts.Dto
     {
         public ExpertBasicDto SenderExpert { get; set; }
         public ExpertBasicDto ReceiverExpert { get; set; }
+        public short ChatType { get; set; } = (short)ChatTypes.Text;
         public string Content { get; set; }
         public DateTime CreationTime { get; set; }
     }

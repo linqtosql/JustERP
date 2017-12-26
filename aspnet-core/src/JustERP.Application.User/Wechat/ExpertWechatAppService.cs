@@ -4,7 +4,6 @@ using Abp.ObjectMapping;
 using Abp.Runtime.Session;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Wechat;
-using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
 using Senparc.Weixin.MP.Helpers;
