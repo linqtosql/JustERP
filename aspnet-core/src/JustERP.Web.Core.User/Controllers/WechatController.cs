@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using JustERP.Application.User.Wechat;
-using Microsoft.AspNetCore.Http.Extensions;
+using JustERP.Web.Core.User.QCloud.Api;
+using JustERP.Web.Core.User.QCloud.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Senparc.Weixin.MP;
-using Senparc.Weixin.MP.Containers;
-using Senparc.Weixin.MP.Helpers;
 
 namespace JustERP.Web.Core.User.Controllers
 {
@@ -72,18 +72,30 @@ namespace JustERP.Web.Core.User.Controllers
         [HttpGet]
         public async Task<IActionResult> JsSdkConfig(string url)
         {
-            var appId = "wxd1e9929bab5029ce";
-            var secret = "644f585ce47f569406447cef3ebb04cf";
-            //获取时间戳
-            var timestamp = JSSDKHelper.GetTimestamp();
-            //获取随机码
-            var nonceStr = JSSDKHelper.GetNoncestr();
-            string ticket = JsApiTicketContainer.TryGetJsApiTicket(appId, secret);
-            //获取签名
-            var signature = JSSDKHelper.GetSignature(ticket, nonceStr, timestamp, url);
-
             var config = await _wechatAppService.GetJsSdkConfig(url);
             return Json(config);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadCos(string accessToken, string mediaId)
+        {
+            string stUrl = $"http://file.api.weixin.qq.com/cgi-bin/media/get?access_token={accessToken}&media_id={mediaId}";
+            var fileName = "";
+
+            using (WebClient webClient = new WebClient())
+            {
+                await webClient.DownloadFileTaskAsync(new Uri(stUrl), fileName);
+            }
+
+            var uploadParasDic = new Dictionary<string, string>
+            {
+                {CosParameters.PARA_BIZ_ATTR, string.Empty},
+                {CosParameters.PARA_INSERT_ONLY, "0"}
+            };
+
+            var cos = new CosCloud(1253333391, "AKIDFQTPEwb6VyUvGSwREtdLxeDeyAYsD84t", "qZ6Xq150nSzQjvzvlS1SlvxumV3UpEXg");
+            var file = cos.UploadFile("yuelinshe", "/vizcaya", fileName, uploadParasDic);
+            return Content(file);
         }
     }
 }
