@@ -12,7 +12,7 @@ namespace JustERP.Web.Core.User.QCloud.Api
 {
  	public class CosCloud
 	{
-		const string COSAPI_CGI_URL = "http://sh.file.myqcloud.com/files/v2/";
+		const string COSAPI_CGI_URL = "http://tj.file.myqcloud.com/files/v2/";
 		//文件大于8M时采用分片上传,小于等于8M时采用单文件上传
 		const int SLICE_UPLOAD_FILE_SIZE = 8 * 1024 * 1024;
 		//用户计算用户签名超时时间

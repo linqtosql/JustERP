@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using JustERP.Application.User.Wechat;
 using JustERP.Web.Core.User.QCloud.Api;
+using JustERP.Web.Core.User.QCloud.Dto;
 using JustERP.Web.Core.User.QCloud.Enums;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Senparc.Weixin.MP;
 
 namespace JustERP.Web.Core.User.Controllers
@@ -15,10 +19,12 @@ namespace JustERP.Web.Core.User.Controllers
     {
         private const string Token = "lianhezixun";
         private IExpertWechatAppService _wechatAppService;
+        private IHostingEnvironment _hostingEnvironment;
 
-        public WechatController(IExpertWechatAppService wechatAppService)
+        public WechatController(IExpertWechatAppService wechatAppService, IHostingEnvironment environment)
         {
             _wechatAppService = wechatAppService;
+            _hostingEnvironment = environment;
         }
 
         [HttpGet]
@@ -32,7 +38,7 @@ namespace JustERP.Web.Core.User.Controllers
         [HttpGet]
         public IActionResult Step1(string returnUrl)
         {
-            var redirect = WebUtility.UrlEncode($"https://api.advisors-ally.com/wechat/Step2?returnUrl={returnUrl}");
+            var redirect = WebUtility.UrlEncode($"https://api.advisors-ally.com/api/wechat/Step2?returnUrl={returnUrl}");
 
             return Redirect(_wechatAppService.GetAuthenticateUrl(redirect));
         }
@@ -66,7 +72,7 @@ namespace JustERP.Web.Core.User.Controllers
         {
             var userInfo = await _wechatAppService.GetUserInfo(accessToken, openId);
 
-            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.openid}");
+            return Redirect($"{WebUtility.UrlDecode(returnUrl)}{(returnUrl.IndexOf("?", StringComparison.Ordinal) > 0 ? "&" : "?")}&openid={userInfo.openid}&token={accessToken}");
         }
 
         [HttpGet]
@@ -80,22 +86,25 @@ namespace JustERP.Web.Core.User.Controllers
         public async Task<IActionResult> UploadCos(string accessToken, string mediaId)
         {
             string stUrl = $"http://file.api.weixin.qq.com/cgi-bin/media/get?access_token={accessToken}&media_id={mediaId}";
-            var fileName = "";
+            var basePath = Path.Combine(_hostingEnvironment.WebRootPath, "temp");
+            var fileName = $"{Guid.NewGuid().ToString()}.png";
+            var filePath = $"{basePath}\\{fileName}";
 
             using (WebClient webClient = new WebClient())
             {
-                await webClient.DownloadFileTaskAsync(new Uri(stUrl), fileName);
+                await webClient.DownloadFileTaskAsync(new Uri(stUrl), filePath);
             }
 
-            var uploadParasDic = new Dictionary<string, string>
+            var uploadParamDic = new Dictionary<string, string>
             {
                 {CosParameters.PARA_BIZ_ATTR, string.Empty},
                 {CosParameters.PARA_INSERT_ONLY, "0"}
             };
 
             var cos = new CosCloud(1253333391, "AKIDFQTPEwb6VyUvGSwREtdLxeDeyAYsD84t", "qZ6Xq150nSzQjvzvlS1SlvxumV3UpEXg");
-            var file = cos.UploadFile("yuelinshe", "/vizcaya", fileName, uploadParasDic);
-            return Content(file);
+            var uploadResult = cos.UploadFile("yuelinshe", $"/vizcaya/{fileName}", filePath, uploadParamDic);
+            var file = JsonConvert.DeserializeObject<UploadResultDto>(uploadResult);
+            return Json(file);
         }
     }
 }
