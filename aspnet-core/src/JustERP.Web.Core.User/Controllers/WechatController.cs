@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Senparc.Weixin.MP;
+using Senparc.Weixin.MP.AdvancedAPIs;
 
 namespace JustERP.Web.Core.User.Controllers
 {
@@ -83,17 +84,16 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadCos(string accessToken, string mediaId)
+        public async Task<IActionResult> UploadCos(string mediaId)
         {
-            string stUrl = $"http://file.api.weixin.qq.com/cgi-bin/media/get?access_token={accessToken}&media_id={mediaId}";
             var basePath = Path.Combine(_hostingEnvironment.WebRootPath, "temp");
+            if (!Directory.Exists(basePath))
+            {
+                Directory.CreateDirectory(basePath);
+            }
             var fileName = $"{Guid.NewGuid().ToString()}.png";
             var filePath = $"{basePath}\\{fileName}";
-
-            using (WebClient webClient = new WebClient())
-            {
-                await webClient.DownloadFileTaskAsync(new Uri(stUrl), filePath);
-            }
+            var mediaFile = await MediaApi.GetAsync("wxd1e9929bab5029ce", mediaId, filePath);
 
             var uploadParamDic = new Dictionary<string, string>
             {
@@ -102,7 +102,7 @@ namespace JustERP.Web.Core.User.Controllers
             };
 
             var cos = new CosCloud(1253333391, "AKIDFQTPEwb6VyUvGSwREtdLxeDeyAYsD84t", "qZ6Xq150nSzQjvzvlS1SlvxumV3UpEXg");
-            var uploadResult = cos.UploadFile("yuelinshe", $"/vizcaya/{fileName}", filePath, uploadParamDic);
+            var uploadResult = cos.UploadFile("yuelinshe", $"/vizcaya/{fileName}", mediaFile, uploadParamDic);
             var file = JsonConvert.DeserializeObject<UploadResultDto>(uploadResult);
             return Json(file);
         }
