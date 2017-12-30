@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
 using Abp.Runtime.Session;
@@ -61,6 +62,11 @@ namespace JustERP.Application.User.Wechat
         public Task<JsSdkUiPackage> GetJsSdkConfig(string requestUrl)
         {
             return JSSDKHelper.GetJsSdkUiPackageAsync(AppId, AppSecret, requestUrl);
+        }
+
+        public Task<string> GetMediaAndSaveAsync(string mediaId, string fileName)
+        {
+            return MediaApi.GetAsync(AppId, mediaId, fileName);
         }
     }
 }

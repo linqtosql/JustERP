@@ -60,10 +60,9 @@ namespace JustERP.Application.User.Orders
             if (input.ExpertId > 0) query = query.Where(o => o.ExpertId == input.ExpertId);
             if (input.ServerExpertId > 0) query = query.Where(o => o.ServerExpertId == input.ServerExpertId);
 
-            query = query
-                .Skip(input.SkipCount)
-                .Take(input.MaxResultCount)
-                .OrderByDescending(o => o.Id);
+            query = query.OrderByDescending(o => o.Id);
+
+            query = query.Skip(input.SkipCount).Take(input.MaxResultCount);
 
             var list = await query.ToListAsync();
 

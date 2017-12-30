@@ -16,5 +16,7 @@ namespace JustERP.Application.User.Wechat
         Task<OAuthUserInfo> GetUserInfo(string accessToken, string openId);
 
         Task<JsSdkUiPackage> GetJsSdkConfig(string requestUrl);
+
+        Task<string> GetMediaAndSaveAsync(string mediaId, string fileName);
     }
 }

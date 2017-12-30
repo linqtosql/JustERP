@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using JustERP.Application.User.Wechat;
 using JustERP.Web.Core.User.QCloud.Api;
 using JustERP.Web.Core.User.QCloud.Dto;
-using JustERP.Web.Core.User.QCloud.Enums;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -19,6 +17,11 @@ namespace JustERP.Web.Core.User.Controllers
     public class WechatController : JustERPControllerBase
     {
         private const string Token = "lianhezixun";
+        private const int CosAppId = 1253333391;
+        private const string CosAppSecretId = "AKIDFQTPEwb6VyUvGSwREtdLxeDeyAYsD84t";
+        private const string CosAppSecretKey = "qZ6Xq150nSzQjvzvlS1SlvxumV3UpEXg";
+        private const string CosBucketName = "yuelinshe";
+        private const string CosDirectory = "/vizcaya";
         private IExpertWechatAppService _wechatAppService;
         private IHostingEnvironment _hostingEnvironment;
 
@@ -91,18 +94,12 @@ namespace JustERP.Web.Core.User.Controllers
             {
                 Directory.CreateDirectory(basePath);
             }
-            var fileName = $"{Guid.NewGuid().ToString()}.png";
+            var fileName = $"{Guid.NewGuid().ToString()}.wx";
             var filePath = $"{basePath}\\{fileName}";
-            var mediaFile = await MediaApi.GetAsync("wxd1e9929bab5029ce", mediaId, filePath);
+            var mediaFile = await _wechatAppService.GetMediaAndSaveAsync(mediaId, filePath);
 
-            var uploadParamDic = new Dictionary<string, string>
-            {
-                {CosParameters.PARA_BIZ_ATTR, string.Empty},
-                {CosParameters.PARA_INSERT_ONLY, "0"}
-            };
-
-            var cos = new CosCloud(1253333391, "AKIDFQTPEwb6VyUvGSwREtdLxeDeyAYsD84t", "qZ6Xq150nSzQjvzvlS1SlvxumV3UpEXg");
-            var uploadResult = cos.UploadFile("yuelinshe", $"/vizcaya/{fileName}", mediaFile, uploadParamDic);
+            var cos = new CosCloud(CosAppId, CosAppSecretId, CosAppSecretKey);
+            var uploadResult = cos.UploadFile(CosBucketName, $"{CosDirectory}/{fileName}", mediaFile);
             var file = JsonConvert.DeserializeObject<UploadResultDto>(uploadResult);
             return Json(file);
         }
