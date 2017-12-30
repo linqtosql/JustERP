@@ -8,8 +8,12 @@ using Abp.Domain.Repositories;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Application.User.Orders.Dto;
+using JustERP.Application.User.Wechat;
+using JustERP.Application.User.Wechat.Dto;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders;
+using JustERP.Core.User.Payments;
+using JustERP.Core.User.Wechat;
 using Microsoft.EntityFrameworkCore;
 
 namespace JustERP.Application.User.Orders
@@ -20,14 +24,19 @@ namespace JustERP.Application.User.Orders
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
         private IRepository<LhzxExpertComment, long> _commentRepository;
+        private IRepository<LhzxExpertWechatInfo, long> _expertWechatRepository;
         public ExpertOrderManager OrderManager { get; set; }
+        public ExpertOrderPaymentManager OrderPaymentManager { get; set; }
+        public ExpertWechatAppService WechatAppService { get; set; }
         public ExpertOrderAppService(IRepository<LhzxExpertOrder, long> ordeRepository,
             IRepository<LhzxExpert, long> expertRepository,
-            IRepository<LhzxExpertComment, long> commentRepository)
+            IRepository<LhzxExpertComment, long> commentRepository,
+            IRepository<LhzxExpertWechatInfo, long> expertWechatRepository)
         {
             _orderRepository = ordeRepository;
             _expertRepository = expertRepository;
             _commentRepository = commentRepository;
+            _expertWechatRepository = expertWechatRepository;
         }
 
         public async Task<long> CreateOrder(CreateExpertOrderInput input)
@@ -44,6 +53,23 @@ namespace JustERP.Application.User.Orders
             order = await OrderManager.CreateOrder(expert, serviceExpert, order);
 
             return order.Id;
+        }
+
+        public async Task<UnifiedOrderDto> CreateOrderPayment(CreateOrderPaymentInput input)
+        {
+            var order = await _orderRepository.GetAsync(input.ExpertOrderId);
+            var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
+            var wechatInfo = await _expertWechatRepository.SingleAsync(w => w.Openid == expert.OpenId);
+
+            await OrderPaymentManager.CreateOrder(new LhzxExpertOrderPayment
+            {
+                Account = wechatInfo.Nickname,
+                PaymentChannel = (int)PaymentChannels.Wechat
+            }, order);
+
+            var unifiedOrderDto = WechatAppService.Unifiedorder(
+                new CreateUnifiedOrderInput(order.OrderNo, "联合咨询服务费", order.Amount, expert.OpenId));
+            return unifiedOrderDto;
         }
 
         public async Task<List<ExpertOrderDto>> GetLoggedIndExpertOrders(GetExpertOrdersInput input)
@@ -152,10 +178,9 @@ namespace JustERP.Application.User.Orders
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 
-        public async Task<ExpertOrderDto> PayOrder(GetExpertOrderInput input)
+        public async Task<ExpertOrderDto> PayOrder(string orderNo)
         {
-            var order = await _orderRepository.GetAsync(input.Id);
-
+            var order = await _orderRepository.SingleAsync(o => o.OrderNo == orderNo);
             CheckIfMineOrder(order);
             CheckIsPayingOrder(order);
 

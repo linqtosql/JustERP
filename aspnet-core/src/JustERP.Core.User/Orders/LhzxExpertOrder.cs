@@ -12,7 +12,13 @@ namespace JustERP.Core.User.Orders
     {
         [MaxLength(16)]
         public string OrderNo { get; set; }
+        /// <summary>
+        /// 下单的专家
+        /// </summary>
         public long ExpertId { get; set; }
+        /// <summary>
+        /// 接单的专家
+        /// </summary>
         public long ServerExpertId { get; set; }
         public string QuestionRemark { get; set; }
         public decimal Price { get; set; }

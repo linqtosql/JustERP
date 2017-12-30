@@ -1,13 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
 using System.Threading.Tasks;
+using Abp.Auditing;
 using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
 using Abp.Runtime.Session;
+using Abp.UI;
+using JustERP.Application.User.Wechat.Dto;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Wechat;
+using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
 using Senparc.Weixin.MP.Helpers;
+using Senparc.Weixin.MP.TenPayLibV3;
 
 namespace JustERP.Application.User.Wechat
 {
@@ -15,11 +20,16 @@ namespace JustERP.Application.User.Wechat
     {
         private const string AppId = "wxd1e9929bab5029ce";
         private const string AppSecret = "644f585ce47f569406447cef3ebb04cf";
+        private const string MerchantId = "1489631162";
+        private const string PaySecret = "LianHeZixun586742POITFCijneik845";
+        private const string TenpayNotify = "https://api.advisors-ally.com/api/wechat/PayNotify";
+
         private ExpertManager _expertManager;
         private IRepository<LhzxExpert, long> _expertRepository;
 
         public IObjectMapper ObjectMapper { get; set; }
         public IAbpSession AbpSession { get; set; }
+        public IClientInfoProvider ClientInfoProvider { get; set; }
 
         public ExpertWechatAppService(ExpertManager expertManager, IRepository<LhzxExpert, long> expertRepository)
         {
@@ -67,6 +77,44 @@ namespace JustERP.Application.User.Wechat
         public Task<string> GetMediaAndSaveAsync(string mediaId, string fileName)
         {
             return MediaApi.GetAsync(AppId, mediaId, fileName);
+        }
+
+        public UnifiedOrderDto Unifiedorder(CreateUnifiedOrderInput input)
+        {
+            var xmlDataInfo = new TenPayV3UnifiedorderRequestData(AppId, MerchantId, input.ProductName, input.TradeNo, input.Amount, ClientInfoProvider.ClientIpAddress, TenpayNotify, TenPayV3Type.JSAPI, input.OpenId, PaySecret, input.NonceStr);
+
+            var result = TenPayV3.Unifiedorder(xmlDataInfo);
+
+            if (string.IsNullOrWhiteSpace(result.prepay_id))
+                throw new UserFriendlyException("支付出现问题了，请稍候重试");
+            var orderDto = new UnifiedOrderDto
+            {
+                AppId = AppId,
+                NonceStr = input.NonceStr,
+                Package = $"prepay_id={result.prepay_id}",
+                TimeStamp = input.TimeStamp
+            };
+            orderDto.Sign(PaySecret);
+            return orderDto;
+        }
+
+        public bool CheckNotify(ResponseHandler handler, out PayNotifyInfoDto info)
+        {
+            info = new PayNotifyInfoDto
+            {
+                return_code = handler.GetParameter("return_code"),
+                return_msg = handler.GetParameter("return_msg")
+            };
+
+            handler.SetKey(PaySecret);
+            //验证请求是否从微信发过来（安全）
+            if (handler.IsTenpaySign() && info.return_code.ToUpper() == "SUCCESS")
+            {
+                info.out_trade_no = handler.GetParameter("out_trade_no");
+                info.total_fee = Convert.ToInt32(handler.GetParameter("total_fee"));
+                return true;
+            }
+            return false;
         }
     }
 }

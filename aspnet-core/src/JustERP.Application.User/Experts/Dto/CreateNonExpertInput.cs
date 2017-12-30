@@ -20,8 +20,6 @@ namespace JustERP.Application.User.Experts.Dto
         [MaxLength(16)]
         public string Name { get; set; }
         [MaxLength(128)]
-        public string Avatar { get; set; }
-        [MaxLength(128)]
         public string BackgroundImage { get; set; }
         [Required(ErrorMessage = "请输入您所在的任职机构")]
         [MaxLength(32)]

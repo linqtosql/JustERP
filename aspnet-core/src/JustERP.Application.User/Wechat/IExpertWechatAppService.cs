@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Abp.Dependency;
+using JustERP.Application.User.Wechat.Dto;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
 using Senparc.Weixin.MP.Helpers;
+using Senparc.Weixin.MP.TenPayLibV3;
 
 namespace JustERP.Application.User.Wechat
 {
@@ -18,5 +20,8 @@ namespace JustERP.Application.User.Wechat
         Task<JsSdkUiPackage> GetJsSdkConfig(string requestUrl);
 
         Task<string> GetMediaAndSaveAsync(string mediaId, string fileName);
+
+        UnifiedOrderDto Unifiedorder(CreateUnifiedOrderInput input);
+        bool CheckNotify(ResponseHandler handler, out PayNotifyInfoDto info);
     }
 }
