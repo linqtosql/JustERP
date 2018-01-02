@@ -8,6 +8,7 @@ namespace JustERP.Core.User.Payments
 {
     public class LhzxExpertOrderPayment : CreationAuditedEntity<long>, IExtendableObject
     {
+        private const string PaymentContentKey = "wechatpay";
         public long ExpertId { get; set; }
         /// <summary>
         /// 支付订单号
@@ -37,6 +38,7 @@ namespace JustERP.Core.User.Payments
             ExpertOrderId = order.Id;
             Status = (int)PaymentStatus.WaitPay;
         }
+        
     }
 
     public enum PaymentChannels : short

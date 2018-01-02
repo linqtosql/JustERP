@@ -21,7 +21,10 @@ namespace JustERP.Application.User.Wechat
 
         Task<string> GetMediaAndSaveAsync(string mediaId, string fileName);
 
-        UnifiedOrderDto Unifiedorder(CreateUnifiedOrderInput input);
+        Task<UnifiedOrderDto> Unifiedorder(CreateUnifiedOrderInput input);
+
+        Task<OrderQueryResult> QueryOrder(QueryOrderInput input);
+
         bool CheckNotify(ResponseHandler handler, out PayNotifyInfoDto info);
     }
 }

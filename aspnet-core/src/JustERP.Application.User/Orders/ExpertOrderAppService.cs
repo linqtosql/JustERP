@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
+using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Application.User.Orders.Dto;
 using JustERP.Application.User.Wechat;
 using JustERP.Application.User.Wechat.Dto;
+using JustERP.Application.User.Wechat.Extension;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders;
 using JustERP.Core.User.Payments;
@@ -25,18 +27,22 @@ namespace JustERP.Application.User.Orders
         private IRepository<LhzxExpert, long> _expertRepository;
         private IRepository<LhzxExpertComment, long> _commentRepository;
         private IRepository<LhzxExpertWechatInfo, long> _expertWechatRepository;
+        private IRepository<LhzxExpertOrderPayment, long> _orderPaymentRepository;
+
         public ExpertOrderManager OrderManager { get; set; }
         public ExpertOrderPaymentManager OrderPaymentManager { get; set; }
         public ExpertWechatAppService WechatAppService { get; set; }
         public ExpertOrderAppService(IRepository<LhzxExpertOrder, long> ordeRepository,
             IRepository<LhzxExpert, long> expertRepository,
             IRepository<LhzxExpertComment, long> commentRepository,
-            IRepository<LhzxExpertWechatInfo, long> expertWechatRepository)
+            IRepository<LhzxExpertWechatInfo, long> expertWechatRepository,
+            IRepository<LhzxExpertOrderPayment, long> orderPaymentRepository)
         {
             _orderRepository = ordeRepository;
             _expertRepository = expertRepository;
             _commentRepository = commentRepository;
             _expertWechatRepository = expertWechatRepository;
+            _orderPaymentRepository = orderPaymentRepository;
         }
 
         public async Task<long> CreateOrder(CreateExpertOrderInput input)
@@ -67,7 +73,7 @@ namespace JustERP.Application.User.Orders
                 PaymentChannel = (int)PaymentChannels.Wechat
             }, order);
 
-            var unifiedOrderDto = WechatAppService.Unifiedorder(
+            var unifiedOrderDto = await WechatAppService.Unifiedorder(
                 new CreateUnifiedOrderInput(order.OrderNo, "联合咨询服务费", order.Amount, expert.OpenId));
             return unifiedOrderDto;
         }
@@ -178,14 +184,44 @@ namespace JustERP.Application.User.Orders
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 
-        public async Task<ExpertOrderDto> PayOrder(string orderNo)
+        /// <summary>
+        /// 订单付款
+        /// </summary>
+        /// <param name="resultInput"></param>
+        /// <returns></returns>
+        [RemoteService(false)]
+        public async Task<ExpertOrderDto> PayOrder(CreatePaymentResultInput resultInput)
         {
-            var order = await _orderRepository.SingleAsync(o => o.OrderNo == orderNo);
+            var order = await _orderRepository.SingleAsync(o => o.OrderNo == resultInput.OrderNo);
             CheckIfMineOrder(order);
             CheckIsPayingOrder(order);
-
+            //订单为已支付状态
             await OrderManager.PayOrder(order);
 
+            var orderPayment = await _orderPaymentRepository.SingleAsync(p => p.ExpertOrderId == order.Id);
+
+            ObjectMapper.Map(resultInput, orderPayment);
+            orderPayment.SetData("PaymentContent", resultInput.PaymentContent);
+            //支付订单为已完成状态
+            await OrderPaymentManager.PaymentComplete(orderPayment);
+
+            return ObjectMapper.Map<ExpertOrderDto>(order);
+        }
+
+        public async Task<ExpertOrderDto> GetPaymentStatus(long orderId)
+        {
+            var order = await _orderRepository.GetAsync(orderId);
+            var wechatOrder = await WechatAppService.QueryOrder(new QueryOrderInput(order.OrderNo));
+            if (wechatOrder.TradeSuccess())
+            {
+                return await PayOrder(new CreatePaymentResultInput
+                {
+                    OrderNo = wechatOrder.out_trade_no,
+                    PaymentContent = wechatOrder,
+                    PaymentNo = wechatOrder.transaction_id,
+                    PaymentTime = DateTime.Now
+                });
+            }
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 

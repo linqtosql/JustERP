@@ -2,7 +2,9 @@
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Abp.Application.Services;
 using JustERP.Application.User.Orders;
+using JustERP.Application.User.Orders.Dto;
 using JustERP.Application.User.Wechat;
 using JustERP.Application.User.Wechat.Dto;
 using JustERP.Web.Core.User.QCloud.Api;
@@ -111,12 +113,14 @@ namespace JustERP.Web.Core.User.Controllers
             return Json(file);
         }
 
+        [RemoteService(false)]
         [HttpPost]
         public async Task<IActionResult> ScanNotify()
         {
             return StatusCode((int)HttpStatusCode.OK);
         }
 
+        [RemoteService(false)]
         [HttpGet, HttpPost]
         public async Task<IActionResult> PayNotify()
         {
@@ -128,33 +132,15 @@ namespace JustERP.Web.Core.User.Controllers
                 //验证请求是否从微信发过来（安全）
                 if (_wechatAppService.CheckNotify(resHandler, out notifyInfo))
                 {
-                    //直到这里，才能认为交易真正成功了，可以进行数据库操作，但是别忘了返回规定格式的消息！
-                    await _orderAppService.PayOrder(notifyInfo.out_trade_no);
+                    var paymentInput = new CreatePaymentResultInput
+                    {
+                        OrderNo = notifyInfo.out_trade_no,
+                        PaymentNo = notifyInfo.transaction_id,
+                        PaymentContent = notifyInfo,
+                        PaymentTime = DateTime.Now
+                    };
+                    await _orderAppService.PayOrder(paymentInput);
                 }
-                else
-                {
-                    //错误的订单处理
-
-                }
-
-                /* 这里可以进行订单处理的逻辑 */
-
-                //发送支付成功的模板消息
-                //try
-                //{
-                //    string appId = WebConfigurationManager.AppSettings["WeixinAppId"];//与微信公众账号后台的AppId设置保持一致，区分大小写。
-                //    string openId = resHandler.GetParameter("openid");
-                //    var templateData = new WeixinTemplate_PaySuccess("https://weixin.senparc.com", "购买商品", "状态：" + return_code);
-
-                //    Senparc.Weixin.WeixinTrace.SendCustomLog("支付成功模板消息参数", appId + " , " + openId);
-
-                //    var result = Senparc.Weixin.MP.AdvancedAPIs.TemplateApi.SendTemplateMessage(appId, openId, templateData);
-                //}
-                //catch (Exception ex)
-                //{
-                //    Senparc.Weixin.WeixinTrace.SendCustomLog("支付成功模板消息", ex.ToString());
-                //}
-
 
                 string xml = $@"<xml>
                                 <return_code><![CDATA[{notifyInfo.return_code}]]></return_code>

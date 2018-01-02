@@ -70,6 +70,11 @@ namespace JustERP.Core.User.Orders
             await CreateOrderLog(order);
         }
 
+        /// <summary>
+        /// 将订单状态修改为支付完成
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public async Task PayOrder(LhzxExpertOrder order)
         {
             order.Status = (int)ExpertOrderStatus.Charting;

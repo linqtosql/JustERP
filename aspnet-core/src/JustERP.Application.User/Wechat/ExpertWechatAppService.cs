@@ -5,6 +5,7 @@ using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
 using Abp.Runtime.Session;
 using Abp.UI;
+using JustERP.Application.User.Orders.Dto;
 using JustERP.Application.User.Wechat.Dto;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Wechat;
@@ -22,7 +23,7 @@ namespace JustERP.Application.User.Wechat
         private const string AppSecret = "644f585ce47f569406447cef3ebb04cf";
         private const string MerchantId = "1489631162";
         private const string PaySecret = "LianHeZixun586742POITFCijneik845";
-        private const string TenpayNotify = "https://api.advisors-ally.com/api/wechat/PayNotify";
+        private const string TenpayNotify = "https://api.advisors-ally.com/api/Wechat/PayNotify/";
 
         private ExpertManager _expertManager;
         private IRepository<LhzxExpert, long> _expertRepository;
@@ -31,7 +32,8 @@ namespace JustERP.Application.User.Wechat
         public IAbpSession AbpSession { get; set; }
         public IClientInfoProvider ClientInfoProvider { get; set; }
 
-        public ExpertWechatAppService(ExpertManager expertManager, IRepository<LhzxExpert, long> expertRepository)
+        public ExpertWechatAppService(ExpertManager expertManager,
+            IRepository<LhzxExpert, long> expertRepository)
         {
             _expertManager = expertManager;
             _expertRepository = expertRepository;
@@ -79,32 +81,29 @@ namespace JustERP.Application.User.Wechat
             return MediaApi.GetAsync(AppId, mediaId, fileName);
         }
 
-        public UnifiedOrderDto Unifiedorder(CreateUnifiedOrderInput input)
+        public async Task<UnifiedOrderDto> Unifiedorder(CreateUnifiedOrderInput input)
         {
             var xmlDataInfo = new TenPayV3UnifiedorderRequestData(AppId, MerchantId, input.ProductName, input.TradeNo, input.Amount, ClientInfoProvider.ClientIpAddress, TenpayNotify, TenPayV3Type.JSAPI, input.OpenId, PaySecret, input.NonceStr);
 
-            var result = TenPayV3.Unifiedorder(xmlDataInfo);
+            var result = await TenPayV3.UnifiedorderAsync(xmlDataInfo);
 
             if (string.IsNullOrWhiteSpace(result.prepay_id))
-                throw new UserFriendlyException("支付出现问题了，请稍候重试");
-            var orderDto = new UnifiedOrderDto
-            {
-                AppId = AppId,
-                NonceStr = input.NonceStr,
-                Package = $"prepay_id={result.prepay_id}",
-                TimeStamp = input.TimeStamp
-            };
+                throw new UserFriendlyException(result.return_msg);
+            var orderDto = new UnifiedOrderDto(AppId, input.TimeStamp, input.NonceStr, result.prepay_id);
+
             orderDto.Sign(PaySecret);
             return orderDto;
         }
 
+        public Task<OrderQueryResult> QueryOrder(QueryOrderInput input)
+        {
+            return TenPayV3.OrderQueryAsync(
+                new TenPayV3OrderQueryRequestData(AppId, MerchantId, null, input.NonceStr, input.TradeNo, PaySecret));
+        }
+
         public bool CheckNotify(ResponseHandler handler, out PayNotifyInfoDto info)
         {
-            info = new PayNotifyInfoDto
-            {
-                return_code = handler.GetParameter("return_code"),
-                return_msg = handler.GetParameter("return_msg")
-            };
+            info = ObjectMapper.Map<PayNotifyInfoDto>(handler);
 
             handler.SetKey(PaySecret);
             //验证请求是否从微信发过来（安全）
@@ -114,7 +113,9 @@ namespace JustERP.Application.User.Wechat
                 info.total_fee = Convert.ToInt32(handler.GetParameter("total_fee"));
                 return true;
             }
-            return false;
+            throw new UserFriendlyException(info.return_msg);
         }
+
+
     }
 }

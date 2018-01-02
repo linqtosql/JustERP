@@ -1,8 +1,6 @@
-﻿using Senparc.Weixin.MP.TenPayLibV3;
-
-namespace JustERP.Application.User.Wechat.Dto
+﻿namespace JustERP.Application.User.Wechat.Dto
 {
-    public class CreateUnifiedOrderInput
+    public class CreateUnifiedOrderInput : BaseWechatInput
     {
         public CreateUnifiedOrderInput(string tradeNo, string productName, decimal amount, string openId)
         {
@@ -12,8 +10,7 @@ namespace JustERP.Application.User.Wechat.Dto
             OpenId = openId;
         }
         public string TradeNo { get; set; }
-        public string TimeStamp { get; set; } = TenPayV3Util.GetTimestamp();
-        public string NonceStr { get; set; } = TenPayV3Util.GetNoncestr();
+
         public string ProductName { get; set; }
         public int Amount { get; set; }
         public string OpenId { get; set; }
