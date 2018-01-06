@@ -9,6 +9,7 @@ namespace JustERP.Application.User.Experts.Dto
     [AutoMapFrom(typeof(LhzxExpertComment))]
     public class ExpertCommentDto : EntityDto<long>
     {
+        public long ExpertOrderId { get; set; }
         public string Name { get; set; }
         public string Organization { get; set; }
         public string Post { get; set; }

@@ -19,6 +19,7 @@ namespace JustERP.Application.User.Experts
         public IRepository<LhzxExpertFriendShip, long> ExpertFriendRepository { get; set; }
         public IRepository<LhzxExpertAnonymousShip, long> AnonymousFriendRepository { get; set; }
         public IRepository<LhzxExpertWorkSetting, long> WorkSettingRepository { get; set; }
+        public IRepository<LhzxExpertComment, long> CommentRepository { get; set; }
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
         private ExpertManager _expertManager;
 
@@ -46,11 +47,20 @@ namespace JustERP.Application.User.Experts
             var expert = await ExpertRepository.GetAllIncluding(
                 e => e.ExpertClass,
                 e => e.ExpertFirstClass,
-                e => e.ExpertComments,
                 e => e.ExpertWorkSettings)
                 .SingleOrDefaultAsync(e => input.Id > 0 ? e.Id == input.Id : e.ExpertAccountId == input.ExpertAccountId);
 
-            return ObjectMapper.Map<ExpertDetailsDto>(expert);
+            var expertDto = ObjectMapper.Map<ExpertDetailsDto>(expert);
+
+            return expertDto;
+        }
+
+        public async Task<List<ExpertCommentDto>> GetExpertComments(long expertId)
+        {
+            var expertComments = await CommentRepository
+                .GetAllIncluding(e => e.CommenterExpert)
+                .Where(e => e.ExpertId == expertId).ToListAsync();
+            return ObjectMapper.Map<List<ExpertCommentDto>>(expertComments);
         }
 
         [AbpAuthorize]
@@ -112,6 +122,10 @@ namespace JustERP.Application.User.Experts
         [AbpAuthorize]
         public async Task CreateExpert(CreateExpertInput input)
         {
+            if (input.ExpertWorkSettings.GroupBy(w => w.Week).Any(g => g.Count() > 1))
+            {
+                throw new UserFriendlyException("营业时间同一天只能选择一次");
+            }
             var expert = await ExpertRepository.GetAsync(input.Id);
             ObjectMapper.Map(input, expert);
 

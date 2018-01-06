@@ -118,7 +118,8 @@ namespace JustERP.Application.User.Orders
 
             return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
         }
-
+        
+        [AbpAllowAnonymous]
         public async Task<ExpertCommentDto> GetExpertOrderComment(long orderId)
         {
             var orderComments = await _commentRepository.GetAllIncluding(
