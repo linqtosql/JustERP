@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}"
 EndProject
@@ -31,7 +31,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustERP.Web.Core.User", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustERP.Application.User", "src\JustERP.Application.User\JustERP.Application.User.csproj", "{86CF4779-7759-40BF-B566-084D86CEC1AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustERP.Web.Core.Admin", "src\JustERP.Web.Core.Admin\JustERP.Web.Core.Admin.csproj", "{52F24F3C-32EA-460D-81A7-28F9F42DE3FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustERP.Web.Core.Admin", "src\JustERP.Web.Core.Admin\JustERP.Web.Core.Admin.csproj", "{52F24F3C-32EA-460D-81A7-28F9F42DE3FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{200438C3-C053-44CA-935B-B5A15A7F1C0A}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.Config = NuGet.Config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

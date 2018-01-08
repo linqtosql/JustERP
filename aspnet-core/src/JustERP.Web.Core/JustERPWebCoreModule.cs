@@ -7,23 +7,18 @@ using Abp.Zero.Configuration;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 using JustERP.EntityFrameworkCore;
+using JustERP.SignalR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-#if FEATURE_SIGNALR
-using Abp.Web.SignalR;
-#endif
 
 namespace JustERP
 {
     [DependsOn(
-         typeof(JustERPEntityFrameworkModule),
-         typeof(AbpAspNetCoreModule)
-#if FEATURE_SIGNALR 
-        ,typeof(AbpWebSignalRModule)
-#endif
-     )]
+        typeof(JustERPEntityFrameworkModule),
+        typeof(AbpAspNetCoreModule),
+        typeof(JustERPSignalRModule))]
     public class JustERPWebCoreModule : AbpModule
     {
         private readonly IHostingEnvironment _env;

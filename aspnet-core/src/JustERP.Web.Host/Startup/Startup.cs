@@ -16,11 +16,13 @@ using Abp.Extensions;
 using JustERP.Authentication.JwtBearer;
 
 #if FEATURE_SIGNALR
-using Owin;
-using Microsoft.Owin.Cors;
 using Microsoft.AspNet.SignalR;
-using JustERP.Owin;
+using Microsoft.Owin.Cors;
+using Owin;
 using Abp.Owin;
+using AbpCompanyName.AbpProjectName.Owin;
+#elif FEATURE_SIGNALR_ASPNETCORE
+using Abp.AspNetCore.SignalR.Hubs;
 #endif
 
 
@@ -79,6 +81,10 @@ namespace JustERP.Web.Host.Startup
                 options.OperationFilter<SecurityRequirementsOperationFilter>();
             });
 
+#if FEATURE_SIGNALR_ASPNETCORE
+            services.AddSignalR();
+#endif
+
             //Configure Abp and Dependency Injection
             return services.AddAbp<JustERPWebHostModule>(options =>
             {
@@ -101,8 +107,13 @@ namespace JustERP.Web.Host.Startup
             app.UseJwtTokenMiddleware();
 
 #if FEATURE_SIGNALR
-            //Integrate to OWIN
+            // Integrate with OWIN
             app.UseAppBuilder(ConfigureOwinServices);
+#elif FEATURE_SIGNALR_ASPNETCORE
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<AbpCommonHub>("/signalr");
+            });
 #endif
 
             app.UseMvc(routes =>
@@ -130,7 +141,7 @@ namespace JustERP.Web.Host.Startup
 #if FEATURE_SIGNALR
         private static void ConfigureOwinServices(IAppBuilder app)
         {
-            app.Properties["host.AppName"] = "JustERP";
+            app.Properties["host.AppName"] = "AbpProjectName";
 
             app.UseAbp();
             
