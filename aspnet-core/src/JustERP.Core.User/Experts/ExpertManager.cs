@@ -114,7 +114,7 @@ namespace JustERP.Core.User.Experts
 
         public async Task UpdateExpertFromWechatInfo(LhzxExpert expert, LhzxExpertWechatInfo wechatInfo)
         {
-            if (await _expertRepository.GetAll().AnyAsync(e => e.OpenId == wechatInfo.Openid))
+            if (await _expertRepository.GetAll().AnyAsync(e => e.Id == expert.Id && e.OpenId == wechatInfo.Openid))
             {
                 return;
             }
