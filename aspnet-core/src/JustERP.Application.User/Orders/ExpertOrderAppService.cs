@@ -6,9 +6,11 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
+using Abp.Events.Bus;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Application.User.Orders.Dto;
+using JustERP.Application.User.Orders.Events;
 using JustERP.Application.User.Wechat;
 using JustERP.Application.User.Wechat.Dto;
 using JustERP.Application.User.Wechat.Extension;
@@ -32,6 +34,7 @@ namespace JustERP.Application.User.Orders
         public ExpertOrderManager OrderManager { get; set; }
         public ExpertOrderPaymentManager OrderPaymentManager { get; set; }
         public ExpertWechatAppService WechatAppService { get; set; }
+        public IEventBus EventBus { get; set; }
         public ExpertOrderAppService(IRepository<LhzxExpertOrder, long> ordeRepository,
             IRepository<LhzxExpert, long> expertRepository,
             IRepository<LhzxExpertComment, long> commentRepository,
@@ -57,6 +60,8 @@ namespace JustERP.Application.User.Orders
             var order = ObjectMapper.Map<LhzxExpertOrder>(input);
 
             order = await OrderManager.CreateOrder(expert, serviceExpert, order);
+
+            await EventBus.TriggerAsync(new OrderCreateEventData());
 
             return order.Id;
         }
@@ -118,7 +123,7 @@ namespace JustERP.Application.User.Orders
 
             return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
         }
-        
+
         [AbpAllowAnonymous]
         public async Task<ExpertCommentDto> GetExpertOrderComment(long orderId)
         {
@@ -181,6 +186,8 @@ namespace JustERP.Application.User.Orders
             CheckIsWaitingOrder(order);
 
             await OrderManager.AcceptOrder(order);
+
+            await EventBus.TriggerAsync(new OrderAcceptEventData());
 
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
