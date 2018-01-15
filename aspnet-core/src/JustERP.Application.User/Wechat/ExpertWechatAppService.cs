@@ -6,8 +6,11 @@ using Abp.ObjectMapping;
 using Abp.Runtime.Session;
 using Abp.UI;
 using JustERP.Application.User.Wechat.Dto;
+using JustERP.Application.User.Wechat.TemplateMessage;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Wechat;
+using Senparc.Weixin;
+using Senparc.Weixin.Entities.TemplateMessage;
 using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
@@ -115,6 +118,26 @@ namespace JustERP.Application.User.Wechat
             throw new UserFriendlyException(info.return_msg);
         }
 
+        public Task<bool> SendNewOrderMessage()
+        {
+            return SendTemplateMessage("", new NewOrderMessage());
+        }
 
+        public Task<bool> SendOrderConfirmMessage()
+        {
+            return SendTemplateMessage("", new OrderConfirmedMessage());
+        }
+
+        public Task<bool> SendPayedSuccessMessage()
+        {
+            return SendTemplateMessage("", new PayedSuccessMessage());
+        }
+
+        private async Task<bool> SendTemplateMessage(string openId, ITemplateMessageBase message)
+        {
+            var result = await TemplateApi.SendTemplateMessageAsync(AppId, openId, message);
+
+            return result.errcode == ReturnCode.请求成功;
+        }
     }
 }

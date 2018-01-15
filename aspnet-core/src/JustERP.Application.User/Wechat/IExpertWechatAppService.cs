@@ -26,5 +26,9 @@ namespace JustERP.Application.User.Wechat
         Task<OrderQueryResult> QueryOrder(QueryOrderInput input);
 
         bool CheckNotify(ResponseHandler handler, out PayNotifyInfoDto info);
+
+        Task<bool> SendNewOrderMessage();
+        Task<bool> SendOrderConfirmMessage();
+        Task<bool> SendPayedSuccessMessage();
     }
 }

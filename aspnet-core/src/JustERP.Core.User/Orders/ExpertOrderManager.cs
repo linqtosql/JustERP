@@ -2,8 +2,10 @@
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using Abp.Events.Bus;
 using Abp.UI;
 using JustERP.Core.User.Experts;
+using JustERP.Core.User.Orders.Events;
 
 namespace JustERP.Core.User.Orders
 {
@@ -14,6 +16,8 @@ namespace JustERP.Core.User.Orders
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpertOrderLog, long> _orderLogRepository;
         private IRepository<LhzxExpertComment, long> _commentRepository;
+
+        public IEventBus EventBus { get; set; }
         public ExpertOrderManager(IRepository<LhzxExpertOrder, long> orderRepository,
             IRepository<LhzxExpertOrderLog, long> orderLogRepository,
             IRepository<LhzxExpertComment, long> commentRepository,
@@ -38,7 +42,6 @@ namespace JustERP.Core.User.Orders
             }
             order.ServerExpertId = serviceExpert.Id;
             order.ExpertId = expert.Id;
-            order.Status = (int)ExpertOrderStatus.Waiting;
             order.CreationTime = DateTime.Now;
             order.OrderNo = $"{DateTime.Now:yyyyMMdd}{_random.Next(100000, 999999)}";
             order.IsDeleted = false;
@@ -47,27 +50,25 @@ namespace JustERP.Core.User.Orders
             order = await _orderRepository.InsertAsync(order);
             await UnitOfWorkManager.Current.SaveChangesAsync();
 
-            await CreateOrderLog(order);
+            await ChangeOrderStatusTo(order, ExpertOrderStatus.Waiting);
+            await _orderRepository.UpdateAsync(order);
 
             return order;
         }
 
         public async Task CancelOrder(LhzxExpertOrder order)
         {
-            order.Status = (int)ExpertOrderStatus.Canceled;
-            await CreateOrderLog(order);
+            await ChangeOrderStatusTo(order, ExpertOrderStatus.Canceled);
         }
 
         public async Task RefuseOrder(LhzxExpertOrder order)
         {
-            order.Status = (int)ExpertOrderStatus.Refused;
-            await CreateOrderLog(order);
+            await ChangeOrderStatusTo(order, ExpertOrderStatus.Refused);
         }
 
         public async Task AcceptOrder(LhzxExpertOrder order)
         {
-            order.Status = (int)ExpertOrderStatus.Paying;
-            await CreateOrderLog(order);
+            await ChangeOrderStatusTo(order, ExpertOrderStatus.Paying);
         }
 
         /// <summary>
@@ -77,14 +78,12 @@ namespace JustERP.Core.User.Orders
         /// <returns></returns>
         public async Task PayOrder(LhzxExpertOrder order)
         {
-            order.Status = (int)ExpertOrderStatus.Charting;
-            await CreateOrderLog(order);
+            await ChangeOrderStatusTo(order, ExpertOrderStatus.Charting);
         }
 
         public async Task CompleteOrder(LhzxExpertOrder order)
         {
-            order.Status = (int)ExpertOrderStatus.Complete;
-            await CreateOrderLog(order);
+            await ChangeOrderStatusTo(order, ExpertOrderStatus.Complete);
         }
 
         public async Task CommentOrder(LhzxExpertOrder order, LhzxExpert commenter, LhzxExpert expert, LhzxExpertComment comment)
@@ -100,6 +99,20 @@ namespace JustERP.Core.User.Orders
                             _orderRepository.UpdateAsync(order),
                             _commentRepository.InsertAsync(comment),
                             CreateOrderLog(order));
+        }
+
+        private async Task ChangeOrderStatusTo(LhzxExpertOrder order, ExpertOrderStatus status)
+        {
+            var oldStatus = order.Status;
+            order.Status = (int)status;
+            await CreateOrderLog(order);
+
+            await EventBus.TriggerAsync(new OrderStatusChangedEvent
+            {
+                FromStatus = (ExpertOrderStatus)oldStatus,
+                ToStatus = status,
+                ChangedOrder = order
+            });
         }
 
         private async Task CreateOrderLog(LhzxExpertOrder order)

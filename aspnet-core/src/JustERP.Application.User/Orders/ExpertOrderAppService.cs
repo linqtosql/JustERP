@@ -6,16 +6,16 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
-using Abp.Events.Bus;
+using Abp.Events.Bus.Handlers;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Application.User.Orders.Dto;
-using JustERP.Application.User.Orders.Events;
 using JustERP.Application.User.Wechat;
 using JustERP.Application.User.Wechat.Dto;
 using JustERP.Application.User.Wechat.Extension;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders;
+using JustERP.Core.User.Orders.Events;
 using JustERP.Core.User.Payments;
 using JustERP.Core.User.Wechat;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +23,7 @@ using Microsoft.EntityFrameworkCore;
 namespace JustERP.Application.User.Orders
 {
     [AbpAuthorize]
-    public class ExpertOrderAppService : ApplicationService, IExpertOrderAppService
+    public class ExpertOrderAppService : ApplicationService, IExpertOrderAppService, IEventHandler<OrderStatusChangedEvent>
     {
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
@@ -33,8 +33,7 @@ namespace JustERP.Application.User.Orders
 
         public ExpertOrderManager OrderManager { get; set; }
         public ExpertOrderPaymentManager OrderPaymentManager { get; set; }
-        public ExpertWechatAppService WechatAppService { get; set; }
-        public IEventBus EventBus { get; set; }
+        public IExpertWechatAppService WechatAppService { get; set; }
         public ExpertOrderAppService(IRepository<LhzxExpertOrder, long> ordeRepository,
             IRepository<LhzxExpert, long> expertRepository,
             IRepository<LhzxExpertComment, long> commentRepository,
@@ -60,8 +59,6 @@ namespace JustERP.Application.User.Orders
             var order = ObjectMapper.Map<LhzxExpertOrder>(input);
 
             order = await OrderManager.CreateOrder(expert, serviceExpert, order);
-
-            await EventBus.TriggerAsync(new OrderCreateEventData());
 
             return order.Id;
         }
@@ -187,8 +184,6 @@ namespace JustERP.Application.User.Orders
 
             await OrderManager.AcceptOrder(order);
 
-            await EventBus.TriggerAsync(new OrderAcceptEventData());
-
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 
@@ -203,7 +198,7 @@ namespace JustERP.Application.User.Orders
             var order = await _orderRepository.SingleAsync(o => o.OrderNo == resultInput.OrderNo);
             CheckIfMineOrder(order);
             CheckIsPayingOrder(order);
-            //订单为已支付状态
+            //修改订单为已支付状态
             await OrderManager.PayOrder(order);
 
             var orderPayment = await _orderPaymentRepository.SingleAsync(p => p.ExpertOrderId == order.Id);
@@ -219,17 +214,24 @@ namespace JustERP.Application.User.Orders
         public async Task<ExpertOrderDto> GetPaymentStatus(long orderId)
         {
             var order = await _orderRepository.GetAsync(orderId);
-            var wechatOrder = await WechatAppService.QueryOrder(new QueryOrderInput(order.OrderNo));
-            if (wechatOrder.TradeSuccess())
+            int count = 3;
+            while (count > 0)
             {
-                return await PayOrder(new CreatePaymentResultInput
+                var wechatOrder = await WechatAppService.QueryOrder(new QueryOrderInput(order.OrderNo));
+                if (wechatOrder.TradeSuccess())
                 {
-                    OrderNo = wechatOrder.out_trade_no,
-                    PaymentContent = wechatOrder,
-                    PaymentNo = wechatOrder.transaction_id,
-                    PaymentTime = DateTime.Now
-                });
+                    return await PayOrder(new CreatePaymentResultInput
+                    {
+                        OrderNo = wechatOrder.out_trade_no,
+                        PaymentContent = wechatOrder,
+                        PaymentNo = wechatOrder.transaction_id,
+                        PaymentTime = DateTime.Now
+                    });
+                }
+                await Task.Delay(500);
+                count--;
             }
+
             return ObjectMapper.Map<ExpertOrderDto>(order);
         }
 
@@ -257,6 +259,30 @@ namespace JustERP.Application.User.Orders
         private void CheckIsPayingOrder(LhzxExpertOrder order)
         {
             if (order.Status != (int)ExpertOrderStatus.Paying) throw new UserFriendlyException("订单已取消或已支付");
+        }
+
+        /// <summary>
+        /// 订单状态改变事件处理
+        /// </summary>
+        /// <param name="eventData"></param>
+        public async void HandleEvent(OrderStatusChangedEvent eventData)
+        {
+            var data = await Task.WhenAll(
+                _expertRepository.GetAsync(eventData.ChangedOrder.ExpertId),
+                _expertRepository.GetAsync(eventData.ChangedOrder.ServerExpertId));
+
+            switch (eventData.ToStatus)
+            {
+                case ExpertOrderStatus.Waiting:
+                    await WechatAppService.SendNewOrderMessage();
+                    break;
+                case ExpertOrderStatus.Paying:
+                    await WechatAppService.SendOrderConfirmMessage();
+                    break;
+                case ExpertOrderStatus.Charting:
+                    await WechatAppService.SendPayedSuccessMessage();
+                    break;
+            }
         }
     }
 }
