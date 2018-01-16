@@ -6,6 +6,7 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
+using Abp.Domain.Uow;
 using Abp.Events.Bus.Handlers;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
@@ -265,22 +266,36 @@ namespace JustERP.Application.User.Orders
         /// 订单状态改变事件处理
         /// </summary>
         /// <param name="eventData"></param>
+        [UnitOfWork(IsDisabled = true)]
         public async void HandleEvent(OrderStatusChangedEvent eventData)
         {
-            var data = await Task.WhenAll(
-                _expertRepository.GetAsync(eventData.ChangedOrder.ExpertId),
-                _expertRepository.GetAsync(eventData.ChangedOrder.ServerExpertId));
+            var expert = await _expertRepository.GetAsync(eventData.ChangedOrder.ExpertId);
+            var serverExpert = await _expertRepository.GetAsync(eventData.ChangedOrder.ServerExpertId);
+            var order = eventData.ChangedOrder;
 
+            var messageInput = new SendOrderMessageInput
+            {
+                OrderId = order.Id,
+                OrderNo = order.OrderNo,
+                OrderAmount = order.Amount,
+                OrderTime = order.CreationTime,
+                ServerExpertName = serverExpert.Name,
+                ExpertName = expert.Name,
+                ExpertPhone = expert.Phone
+            };
             switch (eventData.ToStatus)
             {
                 case ExpertOrderStatus.Waiting:
-                    await WechatAppService.SendNewOrderMessage();
+                    messageInput.OpenId = serverExpert.OpenId;
+                    await WechatAppService.SendNewOrderMessage(messageInput);
                     break;
                 case ExpertOrderStatus.Paying:
-                    await WechatAppService.SendOrderConfirmMessage();
+                    messageInput.OpenId = expert.OpenId;
+                    await WechatAppService.SendOrderConfirmMessage(messageInput);
                     break;
                 case ExpertOrderStatus.Charting:
-                    await WechatAppService.SendPayedSuccessMessage();
+                    messageInput.OpenId = serverExpert.OpenId;
+                    await WechatAppService.SendPayedSuccessMessage(messageInput);
                     break;
             }
         }

@@ -14,6 +14,7 @@ using Senparc.Weixin.Entities.TemplateMessage;
 using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.MP.Containers;
 using Senparc.Weixin.MP.Helpers;
 using Senparc.Weixin.MP.TenPayLibV3;
 
@@ -118,24 +119,25 @@ namespace JustERP.Application.User.Wechat
             throw new UserFriendlyException(info.return_msg);
         }
 
-        public Task<bool> SendNewOrderMessage()
+        public Task<bool> SendNewOrderMessage(SendOrderMessageInput input)
         {
-            return SendTemplateMessage("", new NewOrderMessage());
+            return SendTemplateMessage(input.OpenId, new NewOrderMessage(input.OrderId, input.ExpertName, input.ExpertPhone));
         }
 
-        public Task<bool> SendOrderConfirmMessage()
+        public Task<bool> SendOrderConfirmMessage(SendOrderMessageInput input)
         {
-            return SendTemplateMessage("", new OrderConfirmedMessage());
+            return SendTemplateMessage(input.OpenId, new OrderConfirmedMessage(input.OrderId, input.OrderNo, input.OrderAmount, input.OrderTime));
         }
 
-        public Task<bool> SendPayedSuccessMessage()
+        public Task<bool> SendPayedSuccessMessage(SendOrderMessageInput input)
         {
-            return SendTemplateMessage("", new PayedSuccessMessage());
+            return SendTemplateMessage(input.OpenId, new PayedSuccessMessage(input.OrderId, input.OrderNo, input.OrderAmount, input.OrderTime));
         }
 
         private async Task<bool> SendTemplateMessage(string openId, ITemplateMessageBase message)
         {
-            var result = await TemplateApi.SendTemplateMessageAsync(AppId, openId, message);
+            var token = await AccessTokenContainer.GetAccessTokenAsync(AppId, true);
+            var result = await TemplateApi.SendTemplateMessageAsync(token, openId, message);
 
             return result.errcode == ReturnCode.请求成功;
         }
