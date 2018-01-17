@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using Abp.UI;
 using JustERP.Core.User.Orders;
 
 namespace JustERP.Core.User.Payments
@@ -9,12 +9,10 @@ namespace JustERP.Core.User.Payments
     public class ExpertOrderPaymentManager : DomainService
     {
         private IRepository<LhzxExpertOrderPayment, long> _orderPaymentRepository;
-        private IRepository<LhzxExpertOrder, long> _orderRepository;
-        public ExpertOrderPaymentManager(IRepository<LhzxExpertOrderPayment, long> orderPaymentRepository,
-            IRepository<LhzxExpertOrder, long> orderRepository)
+
+        public ExpertOrderPaymentManager(IRepository<LhzxExpertOrderPayment, long> orderPaymentRepository)
         {
             _orderPaymentRepository = orderPaymentRepository;
-            _orderRepository = orderRepository;
         }
 
         public async Task<LhzxExpertOrderPayment> CreateOrder(LhzxExpertOrderPayment orderPayment, LhzxExpertOrder order)
@@ -22,7 +20,7 @@ namespace JustERP.Core.User.Payments
             var existsPayment = await _orderPaymentRepository.FirstOrDefaultAsync(p => p.ExpertOrderId == order.Id);
             if (existsPayment != null && existsPayment.Status == (int)PaymentStatus.PayComplete)
             {
-                throw new ApplicationException("已支付的订单无法再重新发起支付");
+                throw new UserFriendlyException("订单已支付，请刷新页面查看");
             }
             await _orderPaymentRepository.DeleteAsync(p => p.ExpertOrderId == order.Id);
 

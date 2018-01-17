@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using JustERP.Core.User.Orders;
@@ -38,7 +39,16 @@ namespace JustERP.Core.User.Payments
             ExpertOrderId = order.Id;
             Status = (int)PaymentStatus.WaitPay;
         }
-        
+
+        /// <summary>
+        /// 支付结果消息正文JSON
+        /// </summary>
+        [NotMapped]
+        public object PaymentContent
+        {
+            set => this.SetData("PaymentContent", value);
+        }
+
     }
 
     public enum PaymentChannels : short

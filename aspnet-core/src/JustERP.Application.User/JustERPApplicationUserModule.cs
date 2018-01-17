@@ -2,6 +2,7 @@
 using Abp.AutoMapper;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using JustERP.Application.User.Wechat;
 using JustERP.Core.User;
 
 namespace JustERP
@@ -26,6 +27,8 @@ namespace JustERP
                 //Scan the assembly for classes which inherit from AutoMapper.Profile
                 cfg.AddProfiles(thisAssembly);
             });
+
+            WechatConfig.Init();
         }
     }
 }

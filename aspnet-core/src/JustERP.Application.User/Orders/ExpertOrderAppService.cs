@@ -167,9 +167,9 @@ namespace JustERP.Application.User.Orders
 
         private void CheckIfMineOrder(LhzxExpertOrder order)
         {
-            if (order.ExpertId != AbpSession.UserId && order.ServerExpertId != AbpSession.UserId)
+            if (!order.IsExpertOrder(AbpSession.UserId ?? 0))
             {
-                throw new ApplicationException("只能操作自己的订单");
+                throw new UserFriendlyException("只能操作自己的订单");
             }
         }
 
@@ -202,7 +202,7 @@ namespace JustERP.Application.User.Orders
             var orderPayment = await _orderPaymentRepository.SingleAsync(p => p.ExpertOrderId == order.Id);
 
             ObjectMapper.Map(resultInput, orderPayment);
-            orderPayment.SetData("PaymentContent", resultInput.PaymentContent);
+            orderPayment.PaymentContent = resultInput.PaymentContent;
             //支付订单为已完成状态
             await OrderPaymentManager.PaymentComplete(orderPayment);
 
@@ -256,7 +256,7 @@ namespace JustERP.Application.User.Orders
 
         private void CheckIsPayingOrder(LhzxExpertOrder order)
         {
-            if (order.Status != (int)ExpertOrderStatus.Paying) throw new UserFriendlyException("订单已取消或已支付");
+            if (!order.IsPayingOrder()) throw new UserFriendlyException("订单已取消或已支付");
         }
 
     }

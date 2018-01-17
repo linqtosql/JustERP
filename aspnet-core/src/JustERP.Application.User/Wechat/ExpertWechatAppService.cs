@@ -5,6 +5,7 @@ using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
 using Abp.Runtime.Session;
 using Abp.UI;
+using Castle.Core.Logging;
 using JustERP.Application.User.Wechat.Dto;
 using JustERP.Application.User.Wechat.TemplateMessage;
 using JustERP.Core.User.Experts;
@@ -14,7 +15,6 @@ using Senparc.Weixin.Entities.TemplateMessage;
 using Senparc.Weixin.MP;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
-using Senparc.Weixin.MP.Containers;
 using Senparc.Weixin.MP.Helpers;
 using Senparc.Weixin.MP.TenPayLibV3;
 
@@ -22,18 +22,13 @@ namespace JustERP.Application.User.Wechat
 {
     public class ExpertWechatAppService : IExpertWechatAppService
     {
-        private const string AppId = "wxd1e9929bab5029ce";
-        private const string AppSecret = "644f585ce47f569406447cef3ebb04cf";
-        private const string MerchantId = "1489631162";
-        private const string PaySecret = "LianHeZixun586742POITFCijneik845";
-        private const string TenpayNotify = "https://api.advisors-ally.com/api/Wechat/PayNotify/";
-
         private ExpertManager _expertManager;
         private IRepository<LhzxExpert, long> _expertRepository;
 
         public IObjectMapper ObjectMapper { get; set; }
         public IAbpSession AbpSession { get; set; }
         public IClientInfoProvider ClientInfoProvider { get; set; }
+        public ILogger Logger { get; set; }
 
         public ExpertWechatAppService(ExpertManager expertManager,
             IRepository<LhzxExpert, long> expertRepository)
@@ -44,19 +39,19 @@ namespace JustERP.Application.User.Wechat
 
         public string GetAuthenticateUrl(string returnUrl)
         {
-            return $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={AppId}&redirect_uri={returnUrl}&response_type=code&scope=snsapi_userinfo#wechat_redirect";
+            return $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={WechatConfig.AppId}&redirect_uri={returnUrl}&response_type=code&scope=snsapi_userinfo#wechat_redirect";
 
             //return OAuthApi.GetAuthorizeUrl(AppId, returnUrl, string.Empty, OAuthScope.snsapi_userinfo);
         }
 
         public async Task<OAuthAccessTokenResult> GetToken(string code)
         {
-            return await OAuthApi.GetAccessTokenAsync(AppId, AppSecret, code);
+            return await OAuthApi.GetAccessTokenAsync(WechatConfig.AppId, WechatConfig.AppSecret, code);
         }
 
         public async Task<OAuthAccessTokenResult> RefreshToken(string refreshToken)
         {
-            return await OAuthApi.RefreshTokenAsync(AppId, refreshToken);
+            return await OAuthApi.RefreshTokenAsync(WechatConfig.AppId, refreshToken);
         }
 
         public async Task<OAuthUserInfo> GetUserInfo(string accessToken, string openId)
@@ -76,39 +71,39 @@ namespace JustERP.Application.User.Wechat
 
         public Task<JsSdkUiPackage> GetJsSdkConfig(string requestUrl)
         {
-            return JSSDKHelper.GetJsSdkUiPackageAsync(AppId, AppSecret, requestUrl);
+            return JSSDKHelper.GetJsSdkUiPackageAsync(WechatConfig.AppId, WechatConfig.AppSecret, requestUrl);
         }
 
         public Task<string> GetMediaAndSaveAsync(string mediaId, string fileName)
         {
-            return MediaApi.GetAsync(AppId, mediaId, fileName);
+            return MediaApi.GetAsync(WechatConfig.AppId, mediaId, fileName);
         }
 
         public async Task<UnifiedOrderDto> Unifiedorder(CreateUnifiedOrderInput input)
         {
-            var xmlDataInfo = new TenPayV3UnifiedorderRequestData(AppId, MerchantId, input.ProductName, input.TradeNo, input.Amount, ClientInfoProvider.ClientIpAddress, TenpayNotify, TenPayV3Type.JSAPI, input.OpenId, PaySecret, input.NonceStr);
+            var xmlDataInfo = new TenPayV3UnifiedorderRequestData(WechatConfig.AppId, WechatConfig.MerchantId, input.ProductName, input.TradeNo, input.Amount, ClientInfoProvider.ClientIpAddress, WechatConfig.TenpayNotify, TenPayV3Type.JSAPI, input.OpenId, WechatConfig.PaySecret, input.NonceStr);
 
             var result = await TenPayV3.UnifiedorderAsync(xmlDataInfo);
 
             if (string.IsNullOrWhiteSpace(result.prepay_id))
                 throw new UserFriendlyException(result.return_msg);
-            var orderDto = new UnifiedOrderDto(AppId, input.TimeStamp, input.NonceStr, result.prepay_id);
+            var orderDto = new UnifiedOrderDto(WechatConfig.AppId, input.TimeStamp, input.NonceStr, result.prepay_id);
 
-            orderDto.Sign(PaySecret);
+            orderDto.Sign(WechatConfig.PaySecret);
             return orderDto;
         }
 
         public Task<OrderQueryResult> QueryOrder(QueryOrderInput input)
         {
             return TenPayV3.OrderQueryAsync(
-                new TenPayV3OrderQueryRequestData(AppId, MerchantId, null, input.NonceStr, input.TradeNo, PaySecret));
+                new TenPayV3OrderQueryRequestData(WechatConfig.AppId, WechatConfig.MerchantId, null, input.NonceStr, input.TradeNo, WechatConfig.PaySecret));
         }
 
         public bool CheckNotify(ResponseHandler handler, out PayNotifyInfoDto info)
         {
             info = ObjectMapper.Map<PayNotifyInfoDto>(handler);
 
-            handler.SetKey(PaySecret);
+            handler.SetKey(WechatConfig.PaySecret);
             //验证请求是否从微信发过来（安全）
             if (handler.IsTenpaySign() && info.return_code.ToUpper() == "SUCCESS")
             {
@@ -134,12 +129,21 @@ namespace JustERP.Application.User.Wechat
             return SendTemplateMessage(input.OpenId, new PayedSuccessMessage(input.OrderId, input.OrderNo, input.OrderAmount, input.OrderTime));
         }
 
-        private async Task<bool> SendTemplateMessage(string openId, ITemplateMessageBase message)
+        private Task<bool> SendTemplateMessage(string openId, ITemplateMessageBase message)
         {
-            var token = await AccessTokenContainer.GetAccessTokenAsync(AppId, true);
-            var result = await TemplateApi.SendTemplateMessageAsync(token, openId, message);
+            try
+            {
+                var result = TemplateApi.SendTemplateMessage(WechatConfig.AppId, openId, message);
 
-            return result.errcode == ReturnCode.请求成功;
+                var success = result.errcode == ReturnCode.请求成功;
+                return Task.FromResult(success);
+            }
+            catch (Exception e)
+            {
+                Logger.Info(e.Message);
+                Logger.Info(e.StackTrace);
+            }
+            return Task.FromResult(false);
         }
     }
 }
