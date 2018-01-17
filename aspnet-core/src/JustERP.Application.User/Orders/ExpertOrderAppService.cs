@@ -6,8 +6,6 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
-using Abp.Domain.Uow;
-using Abp.Events.Bus.Handlers;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;
 using JustERP.Application.User.Orders.Dto;
@@ -16,7 +14,6 @@ using JustERP.Application.User.Wechat.Dto;
 using JustERP.Application.User.Wechat.Extension;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders;
-using JustERP.Core.User.Orders.Events;
 using JustERP.Core.User.Payments;
 using JustERP.Core.User.Wechat;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +21,7 @@ using Microsoft.EntityFrameworkCore;
 namespace JustERP.Application.User.Orders
 {
     [AbpAuthorize]
-    public class ExpertOrderAppService : ApplicationService, IExpertOrderAppService, IEventHandler<OrderStatusChangedEvent>
+    public class ExpertOrderAppService : ApplicationService, IExpertOrderAppService
     {
         private IRepository<LhzxExpertOrder, long> _orderRepository;
         private IRepository<LhzxExpert, long> _expertRepository;
@@ -262,42 +259,5 @@ namespace JustERP.Application.User.Orders
             if (order.Status != (int)ExpertOrderStatus.Paying) throw new UserFriendlyException("订单已取消或已支付");
         }
 
-        /// <summary>
-        /// 订单状态改变事件处理
-        /// </summary>
-        /// <param name="eventData"></param>
-        [UnitOfWork(IsDisabled = true)]
-        public async void HandleEvent(OrderStatusChangedEvent eventData)
-        {
-            var expert = await _expertRepository.GetAsync(eventData.ChangedOrder.ExpertId);
-            var serverExpert = await _expertRepository.GetAsync(eventData.ChangedOrder.ServerExpertId);
-            var order = eventData.ChangedOrder;
-
-            var messageInput = new SendOrderMessageInput
-            {
-                OrderId = order.Id,
-                OrderNo = order.OrderNo,
-                OrderAmount = order.Amount,
-                OrderTime = order.CreationTime,
-                ServerExpertName = serverExpert.Name,
-                ExpertName = expert.Name,
-                ExpertPhone = expert.Phone
-            };
-            switch (eventData.ToStatus)
-            {
-                case ExpertOrderStatus.Waiting:
-                    messageInput.OpenId = serverExpert.OpenId;
-                    await WechatAppService.SendNewOrderMessage(messageInput);
-                    break;
-                case ExpertOrderStatus.Paying:
-                    messageInput.OpenId = expert.OpenId;
-                    await WechatAppService.SendOrderConfirmMessage(messageInput);
-                    break;
-                case ExpertOrderStatus.Charting:
-                    messageInput.OpenId = serverExpert.OpenId;
-                    await WechatAppService.SendPayedSuccessMessage(messageInput);
-                    break;
-            }
-        }
     }
 }
