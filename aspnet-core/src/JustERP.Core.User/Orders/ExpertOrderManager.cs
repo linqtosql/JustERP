@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
@@ -6,6 +7,7 @@ using Abp.Events.Bus;
 using Abp.UI;
 using JustERP.Core.User.Experts;
 using JustERP.Core.User.Orders.Events;
+using Microsoft.EntityFrameworkCore;
 
 namespace JustERP.Core.User.Orders
 {
@@ -88,9 +90,11 @@ namespace JustERP.Core.User.Orders
 
         public async Task CommentOrder(LhzxExpertOrder order, LhzxExpert commenter, LhzxExpert expert, LhzxExpertComment comment)
         {
+            var totalScore = await _commentRepository.GetAll().Where(c => c.ExpertId == expert.Id).SumAsync(c => c.Score);
+
             expert.ServicesCount = expert.ServicesCount ?? 0;
             expert.ServicesCount += 1;
-            expert.Score = comment.Score;
+            expert.Score = (comment.Score + totalScore) / expert.ServicesCount;
             order.Status = (int)ExpertOrderStatus.Commented;
             comment.ExpertId = expert.Id;
             comment.CommenterExpertId = commenter.Id;
