@@ -61,7 +61,7 @@ namespace JustERP.Web.Host.User
                 return Task.CompletedTask;
             }
 
-            var qsAuthToken = context.HttpContext.Request.Query["enc_auth_token"].FirstOrDefault();
+            var qsAuthToken = context.HttpContext.Request.Query["token"].FirstOrDefault();
             if (qsAuthToken == null)
             {
                 //Cookie value does not matches to querystring value

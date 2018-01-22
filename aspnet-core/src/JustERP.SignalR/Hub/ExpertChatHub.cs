@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using System;
 using System.Threading.Tasks;
+using Abp.Runtime.Session;
 using JustERP.Application.User.Charts.Dto;
 using JustERP.Charts;
 
@@ -9,6 +9,8 @@ namespace JustERP.SignalR.Hub
     public class ExpertChatHub : BaseHub
     {
         private IExpertChatService _chatService;
+
+        public IAbpSession AbpSession { get; set; }
         public ExpertChatHub(IExpertChatService chatService)
         {
             _chatService = chatService;
