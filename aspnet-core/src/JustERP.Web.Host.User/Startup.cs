@@ -116,7 +116,7 @@ namespace JustERP.Web.Host.User
 
             app.UseSignalR(routes =>
             {
-                routes.MapHub<ExpertChatHub>("chat");
+                routes.MapHub<ExpertChatHub>("/chat");
             });
 
             app.UseMvc(routes =>

@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-alpha2-final" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.0.0-alpha2-final" />
+    <PackageReference Include="Abp.AspNetCore.SignalR" Version="3.3.0-preview1" />
   </ItemGroup>
 
   <ItemGroup>

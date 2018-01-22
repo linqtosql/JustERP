@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Abp;
+using Abp.AspNetCore.SignalR;
 using Abp.AutoMapper;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace JustERP.SignalR
 {
-    [DependsOn(typeof(AbpKernelModule))]
+    [DependsOn(typeof(AbpKernelModule), typeof(AbpAspNetCoreSignalRModule))]
     public class JustERPSignalRModule : AbpModule
     {
         public override void PreInitialize()

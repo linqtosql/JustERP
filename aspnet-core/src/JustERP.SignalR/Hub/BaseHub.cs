@@ -1,12 +1,13 @@
-﻿using Abp.Dependency;
+﻿using Abp.AspNetCore.SignalR.Hubs;
+using Abp.Auditing;
+using Abp.RealTime;
 
 namespace JustERP.SignalR.Hub
 {
-    public abstract class BaseHub : Microsoft.AspNetCore.SignalR.Hub, ITransientDependency
+    public abstract class BaseHub : AbpCommonHub
     {
-        protected BaseHub()
+        protected BaseHub(IOnlineClientManager onlineClientManager, IClientInfoProvider clientInfoProvider) : base(onlineClientManager, clientInfoProvider)
         {
-
         }
     }
 }
