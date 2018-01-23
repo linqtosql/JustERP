@@ -47,9 +47,9 @@ namespace JustERP.Application.User.Orders
 
         public async Task<long> CreateOrder(CreateExpertOrderInput input)
         {
-            if (!AbpSession.UserId.HasValue) throw new ApplicationException("当前用户必须登录");
+            if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户必须登录");
 
-            if (AbpSession.UserId.Value == input.ServerExpertId) throw new ApplicationException("您不能自己咨询自己哦");
+            if (AbpSession.UserId.Value == input.ServerExpertId) throw new UserFriendlyException("您不能向自己咨询哦");
 
             var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
             var serviceExpert = await _expertRepository.GetAsync(input.ServerExpertId);
@@ -82,7 +82,7 @@ namespace JustERP.Application.User.Orders
         {
             if (input.ExpertId != AbpSession.UserId && input.ServerExpertId != AbpSession.UserId)
             {
-                throw new ApplicationException("只能获取自己的订单");
+                throw new UserFriendlyException("只能获取自己的订单");
             }
 
             var query = _orderRepository.GetAllIncluding(
@@ -113,7 +113,7 @@ namespace JustERP.Application.User.Orders
 
             if (order.ExpertId != AbpSession.UserId && order.ServerExpertId != AbpSession.UserId)
             {
-                throw new ApplicationException("只能获取自己的订单");
+                throw new UserFriendlyException("只能获取自己的订单");
             }
 
             return ObjectMapper.Map<ExpertOrderDetailsDto>(order);
@@ -150,7 +150,7 @@ namespace JustERP.Application.User.Orders
 
         private void CheckIfCurrentExpertOrder(LhzxExpertOrder order)
         {
-            if (order.ExpertId != AbpSession.UserId) throw new ApplicationException("只能操作自己的订单");
+            if (order.ExpertId != AbpSession.UserId) throw new UserFriendlyException("只能操作自己的订单");
         }
 
         public async Task<ExpertOrderDto> RefuseOrder(GetExpertOrderInput input)

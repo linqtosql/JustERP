@@ -55,7 +55,7 @@ namespace JustERP.Web.Host.User
         private static Task QueryStringTokenResolver(MessageReceivedContext context)
         {
             if (!context.HttpContext.Request.Path.HasValue ||
-                !context.HttpContext.Request.Path.Value.StartsWith("/signalr"))
+                !context.HttpContext.Request.Path.Value.StartsWith("/chat"))
             {
                 //We are just looking for signalr clients
                 return Task.CompletedTask;

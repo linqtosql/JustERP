@@ -30,6 +30,12 @@ namespace JustERP.SignalR.Hub
         public async Task JoinGroup(string groupName)
         {
             await Groups.AddAsync(Context.ConnectionId, groupName);
+            await Clients.Group(groupName).InvokeAsync("JoinGroup", AbpSession.UserId);
+        }
+
+        public async Task StartChat(string groupName)
+        {
+            await Clients.Group(groupName).InvokeAsync("StartChat");
         }
 
         public async Task LeaveGroup(string groupName)

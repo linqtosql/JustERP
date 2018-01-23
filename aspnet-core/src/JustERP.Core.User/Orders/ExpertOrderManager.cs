@@ -178,7 +178,7 @@ namespace JustERP.Core.User.Orders
         /// </summary>
         Commented = 5,
         /// <summary>
-        /// 客户已取消
+        /// 已取消
         /// </summary>
         Canceled = -1,
         /// <summary>
