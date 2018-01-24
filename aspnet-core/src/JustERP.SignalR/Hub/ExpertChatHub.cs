@@ -35,12 +35,13 @@ namespace JustERP.SignalR.Hub
 
         public async Task StartChat(string groupName)
         {
-            await Clients.Group(groupName).InvokeAsync("StartChat");
+            await Clients.Group(groupName).InvokeAsync("StartChat", AbpSession.UserId);
         }
 
         public async Task LeaveGroup(string groupName)
         {
             await Groups.RemoveAsync(Context.ConnectionId, groupName);
+            await Clients.OthersInGroup(groupName).InvokeAsync("LeaveGroup", AbpSession.UserId);
         }
 
     }
