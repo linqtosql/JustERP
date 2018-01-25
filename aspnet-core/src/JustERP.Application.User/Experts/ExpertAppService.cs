@@ -30,12 +30,15 @@ namespace JustERP.Application.User.Experts
 
         public async Task<List<ExpertClassDto>> GetGroupedByClassExperts()
         {
-            var query = ExpertClassRepository.GetAllIncluding(c => c.Experts)
+            var query = ExpertClassRepository.GetAll()
                 .Where(c => c.ParentId != null);
-            var list = await AsyncQueryableExecuter.ToListAsync(query);
+            var list = await query.ToListAsync();
             foreach (var lhzxExpertClass in list)
             {
-                lhzxExpertClass.Experts = lhzxExpertClass.Experts.Where(e => e.IsExpert).ToList();
+                lhzxExpertClass.Experts = await ExpertRepository
+                    .GetAllIncluding(e => e.ExpertWorkSettings)
+                    .Where(e => e.ExpertClassId == lhzxExpertClass.Id && e.IsExpert)
+                    .ToListAsync();
             }
             return ObjectMapper.Map<List<ExpertClassDto>>(list);
         }
@@ -106,7 +109,7 @@ namespace JustERP.Application.User.Experts
         {
             if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户未登录");
 
-            var expert = await ExpertRepository.SingleAsync(e => e.ExpertAccountId == AbpSession.UserId);
+            var expert = await ExpertRepository.GetAllIncluding(e => e.ExpertWorkSettings).SingleAsync(e => e.ExpertAccountId == AbpSession.UserId);
             return ObjectMapper.Map<LoggedInExpertOutput>(expert);
         }
 
@@ -190,27 +193,5 @@ namespace JustERP.Application.User.Experts
             friends.AddRange(ObjectMapper.Map<List<ExpertFriendDto>>(anonymousFriends));
             return friends;
         }
-    }
-
-    public enum ExpertOnlineStatus
-    {
-        Offline = 1,
-        Online = 2
-    }
-
-    public enum WeekDays
-    {
-        Monday = 1,
-        Tuesday = 2,
-        Wednesday = 3,
-        Thursday = 4,
-        Friday = 5,
-        Saturday = 6,
-        Sunday = 7
-    }
-
-    public enum YearOfWorks
-    {
-
     }
 }

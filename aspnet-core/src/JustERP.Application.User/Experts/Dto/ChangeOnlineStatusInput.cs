@@ -1,4 +1,6 @@
-﻿namespace JustERP.Application.User.Experts.Dto
+﻿using JustERP.Core.User.Experts;
+
+namespace JustERP.Application.User.Experts.Dto
 {
     public class ChangeOnlineStatusInput
     {

@@ -10,10 +10,14 @@ namespace JustERP.Application.User.Experts.Dto
         {
             CreateMap<LhzxExpert, ExpertDto>()
                 .ForMember(e => e.ExpertFirstClassName, opt => opt.MapFrom(e => e.ExpertFirstClass.Name))
-                .ForMember(e => e.ExpertClassName, opt => opt.MapFrom(e => e.ExpertClass.Name));
+                .ForMember(e => e.ExpertClassName, opt => opt.MapFrom(e => e.ExpertClass.Name))
+                .ForMember(e => e.OnlineStatus, opt => opt.MapFrom(e => e.GetOnlineStatus()));
 
             CreateMap<LhzxExpert, ExpertDetailsDto>()
-                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => p.ImageUrl).ToArray()));
+                .ForMember(e => e.ExpertPhotos, opt => opt.MapFrom(e => e.ExpertPhotos.Select(p => p.ImageUrl).ToArray()))
+                .ForMember(e => e.OnlineStatus, opt => opt.MapFrom(e => e.GetOnlineStatus()));
+            CreateMap<LhzxExpert, LoggedInExpertOutput>()
+                .ForMember(e => e.OnlineStatus, opt => opt.MapFrom(e => e.GetOnlineStatus()));
 
             CreateMap<LhzxExpertWorkSetting, ExpertWorkSettingDto>()
                 .ForMember(e => e.StartTime, opt => opt.MapFrom(e => e.StartTime))
