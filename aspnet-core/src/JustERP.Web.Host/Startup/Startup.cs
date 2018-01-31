@@ -57,7 +57,12 @@ namespace JustERP.Web.Host.Startup
                 {
                     //App:CorsOrigins in appsettings.json can contain more than one address with splitted by comma.
                     builder
-                        .WithOrigins(_appConfiguration["App:CorsOrigins"].Split(",", StringSplitOptions.RemoveEmptyEntries).Select(o => o.RemovePostFix("/")).ToArray())
+                        .WithOrigins(
+                            _appConfiguration["App:CorsOrigins"]
+                            .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                            .Select(o => o.RemovePostFix("/"))
+                            .ToArray()
+                        )
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
@@ -104,7 +109,10 @@ namespace JustERP.Web.Host.Startup
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
             app.UseJwtTokenMiddleware();
+
+            app.UseAbpRequestLocalization();
 
 #if FEATURE_SIGNALR
             // Integrate with OWIN

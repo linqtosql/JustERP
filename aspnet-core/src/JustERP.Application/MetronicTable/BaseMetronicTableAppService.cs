@@ -3,6 +3,7 @@ using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
+using Abp.Web.Models;
 using JustERP.MetronicTable.Dto;
 
 namespace JustERP.MetronicTable
@@ -30,13 +31,14 @@ namespace JustERP.MetronicTable
         {
         }
 
+        [DontWrapResult]
         public async Task<MetronicPagedResultDto<TEntityDto>> GetMetronicTable(TGetAllInput input)
         {
-            var roles = await GetAll(input);
-            input.Total = roles.TotalCount;
+            var pagedResultDto = await GetAll(input);
+            input.Total = pagedResultDto.TotalCount;
             return new MetronicPagedResultDto<TEntityDto>
             {
-                Data = roles.Items,
+                Data = pagedResultDto.Items,
                 Meta = input
             };
         }
