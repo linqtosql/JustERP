@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Abp.Extensions;
 using JustERP.Authentication.JwtBearer;
-
+using JustERP.MetronicTable.ModelBinder;
 #if FEATURE_SIGNALR
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Cors;
@@ -45,6 +45,7 @@ namespace JustERP.Web.Host.Startup
             services.AddMvc(options =>
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory(DefaultCorsPolicyName));
+                options.ModelBinderProviders.Insert(0, new MetronicModelBinderProvider());
             });
 
             IdentityRegistrar.Register(services);

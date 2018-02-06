@@ -1,25 +1,57 @@
 ﻿using System;
-using System.Linq.Expressions;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using JustERP.MetronicTable.Dto;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 
 namespace JustERP.MetronicTable.ModelBinder
 {
-    public class MetronicModelBinder : IModelBinder
+    public class MetronicModelBinder : ComplexTypeModelBinder
     {
-        public Task BindModelAsync(ModelBindingContext bindingContext)
+        public MetronicModelBinder(IDictionary<ModelMetadata, IModelBinder> propertyBinders) : base(propertyBinders)
         {
-            //ComplexTypeModelBinder
-            var modelCreator = ((Expression<Func<object>>)(() => Expression.New(bindingContext.ModelType))).Compile();
-            bindingContext.Model = modelCreator();
-            foreach (var property in bindingContext.ModelMetadata.Properties)
+        }
+
+        protected override Task BindProperty(ModelBindingContext bindingContext)
+        {
+            if (!string.IsNullOrWhiteSpace(bindingContext.BinderModelName))
+                return base.BindProperty(bindingContext);
+
+            var modelName = bindingContext.HttpContext
+                .Request
+                .Query
+                .Keys
+                .SingleOrDefault(q => q.ToLower() == $"datatable[query][{bindingContext.ModelMetadata.PropertyName.ToLower()}]");
+
+            if (string.IsNullOrWhiteSpace(modelName) ||
+                bindingContext.HttpContext.Request.Query[modelName].All(string.IsNullOrWhiteSpace))
+                return base.BindProperty(bindingContext);
+
+            bindingContext.ModelName = modelName;
+            bindingContext.FieldName = modelName;
+            bindingContext.BindingSource = BindingSource.Query;
+            bindingContext.BinderModelName = modelName;
+
+            return base.BindProperty(bindingContext);
+        }
+    }
+
+    public class MetronicModelBinderProvider : IModelBinderProvider
+    {
+        public IModelBinder GetBinder(ModelBinderProviderContext context)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+            if (!context.Metadata.ModelType.IsSubclassOf(typeof(MetronicPagedResultRequestDto)))
+                return null;
+            Dictionary<ModelMetadata, IModelBinder> dictionary = new Dictionary<ModelMetadata, IModelBinder>();
+            foreach (ModelMetadata property in context.Metadata.Properties)
             {
-                var modelName = property.BinderModelName ?? $"query[{property.PropertyName.ToLower()}]";
-                var value = bindingContext.ValueProvider.GetValue(modelName);
-                property.PropertySetter(bindingContext.Model, value.FirstValue);
+                dictionary.Add(property, context.CreateBinder(property));
             }
-            bindingContext.Result = ModelBindingResult.Success(bindingContext.Model);
-            return Task.CompletedTask;
+            return new MetronicModelBinder(dictionary);
         }
     }
 }

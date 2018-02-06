@@ -7,11 +7,10 @@ namespace JustERP.MetronicTable.Dto
     {
         [FromQuery(Name = "pagination[page]")]
         public int Page { get; set; } = 1;
-        [FromQuery(Name = "pagination[pages]")]
-        public int Pages { get; set; }
         [FromQuery(Name = "pagination[perpage]")]
         public int Perpage { get; set; } = 10;
-        [FromQuery(Name = "pagination[total]")]
+        [FromQuery(Name = "pagination[pages]")]
+        public int? Pages { get; set; }
         public int Total { get; set; }
         [FromQuery(Name = "sort[sort]")]
         public string Sort { get; set; }

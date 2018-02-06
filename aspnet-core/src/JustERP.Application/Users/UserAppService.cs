@@ -15,6 +15,7 @@ using Abp.Linq.Extensions;
 using Abp.Localization;
 using Abp.Organizations;
 using Abp.Runtime.Session;
+using Abp.Web.Models;
 using JustERP.Authorization.Roles;
 using JustERP.MetronicTable;
 using JustERP.MetronicTable.Dto;
@@ -102,6 +103,7 @@ namespace JustERP.Users
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
         }
 
+        [DontWrapResult]
         public async Task<MetronicPagedResultDto<UserOUnitDto>> GetUsersInOUnit(GetUsersDto input)
         {
             var userOrg = await _organizationUnitRepository.GetAsync(input.OrganizationUnitId);
