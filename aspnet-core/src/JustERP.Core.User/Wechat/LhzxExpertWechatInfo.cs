@@ -43,7 +43,7 @@ namespace JustERP.Core.User.Wechat
         /// headimgurl
         /// </summary>
         [Required]
-        [MaxLength(128)]
+        [MaxLength(512)]
         public string Headimgurl { get; set; }
         /// <summary>
         /// unionid

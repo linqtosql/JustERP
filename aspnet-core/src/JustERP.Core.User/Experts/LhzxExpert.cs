@@ -25,7 +25,7 @@ namespace JustERP.Core.User.Experts
         public string Name { get; set; }
         [MaxLength(16)]
         public string NickName { get; set; }
-        [MaxLength(128)]
+        [MaxLength(512)]
         public string Avatar { get; set; }
         [MaxLength(128)]
         public string BackgroundImage { get; set; }
