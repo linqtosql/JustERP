@@ -17,6 +17,8 @@ namespace JustERP.MetronicTable.Dto
         [FromQuery(Name = "sort[field]")]
         public string Field { get; set; }
 
+        public string Search { get; set; }
+
         public override int SkipCount => (Page - 1) * Perpage;
 
         public override int MaxResultCount => Perpage;

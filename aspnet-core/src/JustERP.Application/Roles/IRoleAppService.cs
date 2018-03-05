@@ -7,7 +7,7 @@ using JustERP.Roles.Dto;
 
 namespace JustERP.Roles
 {
-    public interface IRoleAppService : IAsyncCrudAppService<RoleDto, int, MetronicPagedResultRequestDto, CreateRoleDto, RoleDto>, IMetronicTableAppService<RoleDto, MetronicPagedResultRequestDto>
+    public interface IRoleAppService : IAsyncCrudAppService<RoleDto, int, GetRoleInput, CreateRoleDto, RoleDto>, IMetronicTableAppService<RoleDto, GetRoleInput>
     {
         Task<ListResultDto<PermissionDto>> GetAllPermissions();
     }

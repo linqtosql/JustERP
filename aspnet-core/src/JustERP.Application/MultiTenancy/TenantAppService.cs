@@ -13,12 +13,13 @@ using JustERP.Editions;
 using JustERP.MultiTenancy.Dto;
 using Microsoft.AspNetCore.Identity;
 using Abp.IdentityFramework;
+using Abp.Linq.Extensions;
 using JustERP.MetronicTable;
 
 namespace JustERP.MultiTenancy
 {
     [AbpAuthorize(PermissionNames.Pages_Tenants)]
-    public class TenantAppService : BaseMetronicTableAppService<Tenant, TenantDto, int, CreateTenantDto, TenantDto>, ITenantAppService
+    public class TenantAppService : BaseMetronicTableAppService<Tenant, TenantDto, int, GetTenantInput, CreateTenantDto, TenantDto>, ITenantAppService
     {
         private readonly TenantManager _tenantManager;
         private readonly EditionManager _editionManager;
@@ -114,6 +115,16 @@ namespace JustERP.MultiTenancy
         private void CheckErrors(IdentityResult identityResult)
         {
             identityResult.CheckErrors(LocalizationManager);
+        }
+
+        protected override IQueryable<Tenant> CreateFilteredQuery(GetTenantInput input)
+        {
+            var query = base.CreateFilteredQuery(input);
+            query = query
+                .WhereIf(!string.IsNullOrWhiteSpace(input.Search),
+                    t => t.Name.Contains(input.Search) ||
+                         t.TenancyName.Contains(input.Search));
+            return query;
         }
     }
 }

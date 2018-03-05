@@ -5,7 +5,7 @@ using JustERP.MultiTenancy.Dto;
 
 namespace JustERP.MultiTenancy
 {
-    public interface ITenantAppService : IAsyncCrudAppService<TenantDto, int, MetronicPagedResultRequestDto, CreateTenantDto, TenantDto>, IMetronicTableAppService<TenantDto, MetronicPagedResultRequestDto>
+    public interface ITenantAppService : IAsyncCrudAppService<TenantDto, int, GetTenantInput, CreateTenantDto, TenantDto>, IMetronicTableAppService<TenantDto, GetTenantInput>
     {
     }
 }

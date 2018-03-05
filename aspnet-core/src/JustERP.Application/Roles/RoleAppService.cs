@@ -9,6 +9,7 @@ using JustERP.Roles.Dto;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
+using Abp.Linq.Extensions;
 using JustERP.Authorization.Users;
 using JustERP.Authorization;
 using JustERP.MetronicTable;
@@ -17,7 +18,7 @@ using JustERP.MetronicTable.Dto;
 namespace JustERP.Roles
 {
     [AbpAuthorize(PermissionNames.Pages_Roles)]
-    public class RoleAppService : BaseMetronicTableAppService<Role, RoleDto, int, CreateRoleDto, RoleDto>, IRoleAppService
+    public class RoleAppService : BaseMetronicTableAppService<Role, RoleDto, int, GetRoleInput, CreateRoleDto, RoleDto>, IRoleAppService
     {
         private readonly RoleManager _roleManager;
         private readonly UserManager _userManager;
@@ -93,9 +94,13 @@ namespace JustERP.Roles
             ));
         }
 
-        protected override IQueryable<Role> CreateFilteredQuery(MetronicPagedResultRequestDto input)
+        protected override IQueryable<Role> CreateFilteredQuery(GetRoleInput input)
         {
-            return Repository.GetAllIncluding(x => x.Permissions);
+            return Repository.GetAllIncluding(x => x.Permissions)
+                .WhereIf(!string.IsNullOrWhiteSpace(input.Search),
+                    r => r.Name.Contains(input.Search) ||
+                         r.DisplayName.Contains(input.Search) ||
+                         r.NormalizedName == input.Search);
         }
 
         protected override async Task<Role> GetEntityByIdAsync(int id)
@@ -103,7 +108,7 @@ namespace JustERP.Roles
             return await Repository.GetAllIncluding(x => x.Permissions).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        protected override IQueryable<Role> ApplySorting(IQueryable<Role> query, MetronicPagedResultRequestDto input)
+        protected override IQueryable<Role> ApplySorting(IQueryable<Role> query, GetRoleInput input)
         {
             return query.OrderBy(r => r.DisplayName);
         }
