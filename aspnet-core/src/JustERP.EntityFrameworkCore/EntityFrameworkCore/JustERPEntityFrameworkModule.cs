@@ -34,7 +34,7 @@ namespace JustERP.EntityFrameworkCore
                 });
             }
             //auto entity history
-            Configuration.EntityHistory.Selectors.Add(new NamedTypeSelector("EntityHistory", type => true));
+            //Configuration.EntityHistory.Selectors.Add(new NamedTypeSelector("EntityHistory", type => true));
         }
 
         public override void Initialize()
