@@ -13,7 +13,6 @@ using Abp.Linq.Extensions;
 using JustERP.Authorization.Users;
 using JustERP.Authorization;
 using JustERP.MetronicTable;
-using JustERP.MetronicTable.Dto;
 
 namespace JustERP.Roles
 {
