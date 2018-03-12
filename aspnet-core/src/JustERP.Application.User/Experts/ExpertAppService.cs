@@ -109,7 +109,8 @@ namespace JustERP.Application.User.Experts
         {
             if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("当前用户未登录");
 
-            var expert = await ExpertRepository.GetAllIncluding(e => e.ExpertWorkSettings).SingleAsync(e => e.ExpertAccountId == AbpSession.UserId);
+            var expert = await ExpertRepository.GetAllIncluding(e => e.ExpertWorkSettings).SingleOrDefaultAsync(e => e.ExpertAccountId == AbpSession.UserId);
+            if (expert == null) throw new UserFriendlyException("用户登录已过期，请重新登录");
             return ObjectMapper.Map<LoggedInExpertOutput>(expert);
         }
 
