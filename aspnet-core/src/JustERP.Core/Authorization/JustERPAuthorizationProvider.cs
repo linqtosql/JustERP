@@ -14,6 +14,7 @@ namespace JustERP.Authorization
             rootPermission.CreateChildPermission(PermissionNames.Pages_AuditLogs, L("AuditLogs"));
             rootPermission.CreateChildPermission(PermissionNames.Pages_OrganizationUnits, L("OrganizationUnits"));
             rootPermission.CreateChildPermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
+            rootPermission.CreateChildPermission(PermissionNames.Pages_Languages, L("Languages"));
         }
 
         private static ILocalizableString L(string name)

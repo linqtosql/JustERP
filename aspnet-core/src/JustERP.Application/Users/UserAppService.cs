@@ -32,6 +32,7 @@ namespace JustERP.Users
         private readonly IRepository<Role> _roleRepository;
         private IRepository<UserOrganizationUnit, long> _userOrganizationUnit;
         private readonly IRepository<OrganizationUnit, long> _organizationUnitRepository;
+        private readonly IPermissionManager _permissionManager;
 
         public UserAppService(
             IRepository<User, long> repository,
@@ -40,6 +41,7 @@ namespace JustERP.Users
             IRepository<Role> roleRepository,
             IRepository<OrganizationUnit, long> organizationUnitRepository,
             IRepository<UserOrganizationUnit, long> userOrganizationUnit,
+            IPermissionManager permissionManager,
             RoleManager roleManager)
             : base(repository)
         {
@@ -49,6 +51,7 @@ namespace JustERP.Users
             _roleManager = roleManager;
             _organizationUnitRepository = organizationUnitRepository;
             _userOrganizationUnit = userOrganizationUnit;
+            _permissionManager = permissionManager;
         }
 
         public override async Task<UserDto> Create(CreateUserDto input)

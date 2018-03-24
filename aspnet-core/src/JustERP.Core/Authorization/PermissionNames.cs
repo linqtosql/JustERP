@@ -13,5 +13,8 @@
         public const string Pages_OrganizationUnits = "Pages.OrganizationUnits";
 
         public const string Pages_AuditLogs = "Pages.AuditLogs";
+
+        public const string Pages_Languages = "Pages.Languages";
+
     }
 }

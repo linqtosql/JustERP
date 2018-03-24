@@ -7,13 +7,14 @@ using JustERP.Authorization;
 namespace JustERP
 {
     [DependsOn(
-        typeof(JustERPCoreModule), 
+        typeof(JustERPCoreModule),
         typeof(AbpAutoMapperModule))]
     public class JustERPApplicationModule : AbpModule
     {
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<JustERPAuthorizationProvider>();
+            Configuration.Navigation.Providers.Add<SystemNavigationProvider>();
         }
 
         public override void Initialize()

@@ -6,7 +6,6 @@ using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Organizations;
-using Abp.Zero.Configuration;
 using JustERP.Authorization;
 using JustERP.OrganizationUnits.Dto;
 

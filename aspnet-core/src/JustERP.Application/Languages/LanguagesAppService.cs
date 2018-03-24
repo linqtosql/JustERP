@@ -1,14 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abp.Application.Services;
 using Abp.Application.Services.Dto;
+using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Localization;
+using JustERP.Authorization;
 using JustERP.Languages.Dto;
 
 namespace JustERP.Languages
 {
-    public class LanguagesAppService : ApplicationService, ILanguagesAppService
+    [AbpAuthorize(PermissionNames.Pages_Languages)]
+    public class LanguagesAppService : JustERPAppServiceBase, ILanguagesAppService
     {
         private IApplicationLanguageManager _appLanguageManager;
         private IRepository<ApplicationLanguage> _languageRepository;
