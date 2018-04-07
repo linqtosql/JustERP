@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
-using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using Abp.UI;
 using JustERP.Application.User.Experts.Dto;

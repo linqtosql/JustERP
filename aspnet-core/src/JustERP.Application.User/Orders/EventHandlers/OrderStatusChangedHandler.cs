@@ -1,4 +1,5 @@
-﻿using Abp.Dependency;
+﻿using System.Threading.Tasks;
+using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Events.Bus.Handlers;
@@ -11,7 +12,7 @@ using JustERP.Core.User.Orders.Events;
 namespace JustERP.Application.User.Orders.EventHandlers
 {
     [UnitOfWork(IsDisabled = true)]
-    public class OrderStatusChangedHandler : IEventHandler<OrderStatusChangedEvent>, ITransientDependency
+    public class OrderStatusChangedHandler : IAsyncEventHandler<OrderStatusChangedEvent>, ITransientDependency
     {
         private IRepository<LhzxExpert, long> _expertRepository;
         private IExpertWechatAppService _wechatAppService { get; set; }
@@ -28,22 +29,13 @@ namespace JustERP.Application.User.Orders.EventHandlers
         /// 订单状态改变事件处理
         /// </summary>
         /// <param name="eventData"></param>
-        public async void HandleEvent(OrderStatusChangedEvent eventData)
+        public async Task HandleEventAsync(OrderStatusChangedEvent eventData)
         {
             var expert = await _expertRepository.GetAsync(eventData.ChangedOrder.ExpertId);
             var serverExpert = await _expertRepository.GetAsync(eventData.ChangedOrder.ServerExpertId);
             var order = eventData.ChangedOrder;
 
-            var messageInput = new SendOrderMessageInput
-            {
-                OrderId = order.Id,
-                OrderNo = order.OrderNo,
-                OrderAmount = order.Amount,
-                OrderTime = order.CreationTime,
-                ServerExpertName = serverExpert.Name,
-                ExpertName = expert.Name,
-                ExpertPhone = expert.Phone
-            };
+            var messageInput = BuildSendOrderMessageInput(order, serverExpert, expert);
             switch (eventData.ToStatus)
             {
                 case ExpertOrderStatus.Waiting:
@@ -59,6 +51,22 @@ namespace JustERP.Application.User.Orders.EventHandlers
                     await _wechatAppService.SendPayedSuccessMessage(messageInput);
                     break;
             }
+        }
+
+        private SendOrderMessageInput BuildSendOrderMessageInput(LhzxExpertOrder order, LhzxExpert serverExpert,
+            LhzxExpert expert)
+        {
+            var messageInput = new SendOrderMessageInput
+            {
+                OrderId = order.Id,
+                OrderNo = order.OrderNo,
+                OrderAmount = order.Amount,
+                OrderTime = order.CreationTime,
+                ServerExpertName = serverExpert.Name,
+                ExpertName = expert.Name,
+                ExpertPhone = expert.Phone
+            };
+            return messageInput;
         }
     }
 }

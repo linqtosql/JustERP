@@ -16,6 +16,7 @@ using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 using JustERP.SignalR.Hub;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.FileProviders;
 
 #if FEATURE_SIGNALR
@@ -98,13 +99,6 @@ namespace JustERP.Web.Host.User
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 
             app.UseStaticFiles();
-            // letsencrypt
-            //app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    ServeUnknownFileTypes = true,//important:serve file without extension need
-            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), ".well-known")),
-            //    RequestPath = new PathString("/.well-known")
-            //});
 
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
@@ -118,6 +112,17 @@ namespace JustERP.Web.Host.User
             {
                 routes.MapHub<ExpertChatHub>("/chat");
             });
+
+            // letsencrypt router
+            //app.UseRouter(r =>
+            //{
+            //    r.MapGet(".well-known/acme-challenge/{id}", async (request, response, routeData) =>
+            //    {
+            //        var id = routeData.Values["id"] as string;
+            //        var file = Path.Combine(env.WebRootPath, ".well-known", "acme-challenge", id);
+            //        await response.SendFileAsync(file);
+            //    });
+            //});
 
             app.UseMvc(routes =>
             {
