@@ -53,5 +53,17 @@ namespace JustERP.Languages
             var language = await _languageRepository.GetAsync(input.Id);
             await _appLanguageManager.RemoveAsync(AbpSession.TenantId, language.Name);
         }
+
+        public Task SetDefaultLanguage(ChangeLanguageInput changeLanguageInput)
+        {
+            return _appLanguageManager.SetDefaultLanguageAsync(changeLanguageInput.TenantId,
+                changeLanguageInput.LanguageName);
+        }
+
+        public async Task<LanguageDto> GetDefaultLanguageOrNull(int? tenantId)
+        {
+            var appLanguage = await _appLanguageManager.GetDefaultLanguageOrNullAsync(tenantId);
+            return ObjectMapper.Map<LanguageDto>(appLanguage);
+        }
     }
 }
