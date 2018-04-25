@@ -23,7 +23,7 @@ namespace JustERP.MetronicTable.ModelBinder
                 .Request
                 .Query
                 .Keys
-                .SingleOrDefault(q => q.ToLower() == $"datatable[query][{bindingContext.ModelMetadata.PropertyName.ToLower()}]");
+                .SingleOrDefault(q => q.ToLower() == $"query[{bindingContext.ModelMetadata.PropertyName.ToLower()}]");
 
             if (string.IsNullOrWhiteSpace(modelName) ||
                 bindingContext.HttpContext.Request.Query[modelName].All(string.IsNullOrWhiteSpace))
