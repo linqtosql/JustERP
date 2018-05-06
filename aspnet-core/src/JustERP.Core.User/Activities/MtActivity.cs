@@ -13,7 +13,7 @@ namespace JustERP.Core.User.Activities
         [MaxLength(64), Required]
         public string Icon { get; set; }
 
-        public long? UserId { get; set; }
+        public long? PeopleId { get; set; }
         public bool IsDefault { get; set; }
         public bool IsSystem { get; set; }
         public float Turn { get; set; }
