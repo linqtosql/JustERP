@@ -2,17 +2,18 @@
 using Abp.AutoMapper;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using JustERP.Core.User;
 
 namespace JustERP
 {
     [DependsOn(
-        typeof(JustERPCoreModule), 
+        typeof(JustERPCoreUserModule),
         typeof(AbpAutoMapperModule))]
     public class JustERPApplicationUserModule : AbpModule
     {
         public override void PreInitialize()
         {
-            
+
         }
 
         public override void Initialize()
