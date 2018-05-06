@@ -28,20 +28,25 @@ namespace JustERP.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<MtPeople>(b =>
             {
-                b.HasMany(e => e.PeopleActivities).WithOne().HasForeignKey(e => e.PeopleId);
-                b.HasMany(e => e.Activities).WithOne().HasForeignKey(e => e.PeopleId);
+                b.HasMany(e => e.PeopleActivities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.ClientSetNull);
+                b.HasMany(e => e.Activities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<MtPeopleActivity>(b =>
             {
-                b.HasMany(e => e.PeopleActivityLabels).WithOne().HasForeignKey(e => e.PeopleActivityId);
+                b
+                .HasMany(e => e.PeopleActivityLabels)
+                .WithOne(e => e.PeopleActivity)
+                .HasForeignKey(e => e.PeopleActivityId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<MtLabelCategory>(b =>
             {
-                b.HasMany(e => e.Labels).WithOne().HasForeignKey(e => e.LabelCategoryId);
+                b.HasMany(e => e.Labels).WithOne(e => e.LabelCategory).HasForeignKey(e => e.LabelCategoryId);
             });
         }
     }

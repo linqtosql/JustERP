@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using Abp.Domain.Entities;
 
 namespace JustERP.Core.User.Activities
 {
@@ -6,6 +7,9 @@ namespace JustERP.Core.User.Activities
     {
         public long PeopleActivityId { get; set; }
         public long LabelId { get; set; }
+        [Required]
         public long LabelName { get; set; }
+        public virtual MtLabel Label { get; set; }
+        public virtual MtPeopleActivity PeopleActivity { get; set; }
     }
 }

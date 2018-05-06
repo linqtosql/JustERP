@@ -72,7 +72,7 @@ namespace JustERP.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ExtensionData = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -107,13 +107,13 @@ namespace JustERP.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    AvatarImg = table.Column<string>(nullable: true),
+                    AvatarImg = table.Column<string>(nullable: false),
                     CreationTime = table.Column<DateTime>(nullable: false),
                     CreatorUserId = table.Column<long>(nullable: true),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    NickName = table.Column<string>(nullable: true),
-                    Openid = table.Column<string>(nullable: true),
+                    NickName = table.Column<string>(nullable: false),
+                    Openid = table.Column<string>(nullable: false),
                     PeopleWechatInfoId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
@@ -140,9 +140,8 @@ namespace JustERP.Migrations
                     IsSystem = table.Column<bool>(nullable: false),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    Name = table.Column<string>(maxLength: 32, nullable: true),
+                    Name = table.Column<string>(maxLength: 32, nullable: false),
                     PeopleId = table.Column<long>(nullable: true),
-                    PeopleId1 = table.Column<long>(nullable: true),
                     Turn = table.Column<float>(nullable: false)
                 },
                 constraints: table =>
@@ -151,12 +150,6 @@ namespace JustERP.Migrations
                     table.ForeignKey(
                         name: "FK_Activities_Peoples_PeopleId",
                         column: x => x.PeopleId,
-                        principalTable: "Peoples",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Activities_Peoples_PeopleId1",
-                        column: x => x.PeopleId1,
                         principalTable: "Peoples",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -169,7 +162,6 @@ namespace JustERP.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     LabelCategoryId = table.Column<long>(nullable: false),
-                    LabelCategoryId1 = table.Column<long>(nullable: true),
                     Name = table.Column<string>(maxLength: 32, nullable: false),
                     PeopleId = table.Column<long>(nullable: true)
                 },
@@ -182,12 +174,6 @@ namespace JustERP.Migrations
                         principalTable: "LabelCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Labels_LabelCategories_LabelCategoryId1",
-                        column: x => x.LabelCategoryId1,
-                        principalTable: "LabelCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Labels_Peoples_PeopleId",
                         column: x => x.PeopleId,
@@ -202,15 +188,14 @@ namespace JustERP.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ActivityIcon = table.Column<string>(maxLength: 64, nullable: true),
+                    ActivityIcon = table.Column<string>(maxLength: 64, nullable: false),
                     ActivityId = table.Column<long>(nullable: false),
-                    ActivityName = table.Column<string>(maxLength: 32, nullable: true),
+                    ActivityName = table.Column<string>(maxLength: 32, nullable: false),
                     BeginTime = table.Column<DateTime>(nullable: false),
                     CreationTime = table.Column<DateTime>(nullable: false),
                     CreatorUserId = table.Column<long>(nullable: true),
                     EndTime = table.Column<DateTime>(nullable: true),
                     PeopleId = table.Column<long>(nullable: false),
-                    PeopleId1 = table.Column<long>(nullable: true),
                     TotalMillisecond = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -225,12 +210,6 @@ namespace JustERP.Migrations
                     table.ForeignKey(
                         name: "FK_PeopleActivities_Peoples_PeopleId",
                         column: x => x.PeopleId,
-                        principalTable: "Peoples",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PeopleActivities_Peoples_PeopleId1",
-                        column: x => x.PeopleId1,
                         principalTable: "Peoples",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -250,11 +229,17 @@ namespace JustERP.Migrations
                 {
                     table.PrimaryKey("PK_PeopleActivityLabels", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_PeopleActivityLabels_Labels_LabelId",
+                        column: x => x.LabelId,
+                        principalTable: "Labels",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_PeopleActivityLabels_PeopleActivities_PeopleActivityId",
                         column: x => x.PeopleActivityId,
                         principalTable: "PeopleActivities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -263,19 +248,9 @@ namespace JustERP.Migrations
                 column: "PeopleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Activities_PeopleId1",
-                table: "Activities",
-                column: "PeopleId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Labels_LabelCategoryId",
                 table: "Labels",
                 column: "LabelCategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Labels_LabelCategoryId1",
-                table: "Labels",
-                column: "LabelCategoryId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Labels_PeopleId",
@@ -293,9 +268,9 @@ namespace JustERP.Migrations
                 column: "PeopleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PeopleActivities_PeopleId1",
-                table: "PeopleActivities",
-                column: "PeopleId1");
+                name: "IX_PeopleActivityLabels_LabelId",
+                table: "PeopleActivityLabels",
+                column: "LabelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PeopleActivityLabels_PeopleActivityId",
@@ -311,16 +286,16 @@ namespace JustERP.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Labels");
-
-            migrationBuilder.DropTable(
                 name: "PeopleActivityLabels");
 
             migrationBuilder.DropTable(
-                name: "LabelCategories");
+                name: "Labels");
 
             migrationBuilder.DropTable(
                 name: "PeopleActivities");
+
+            migrationBuilder.DropTable(
+                name: "LabelCategories");
 
             migrationBuilder.DropTable(
                 name: "Activities");
