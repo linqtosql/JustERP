@@ -9,6 +9,7 @@ namespace JustERP.Core.User.Activities
         [Required, MaxLength(32)]
         public string Name { get; set; }
 
+        public long LabelCategoryId { get; set; }
         public long? PeopleId { get; set; }
 
         public virtual MtLabelCategory LabelCategory { get; set; }

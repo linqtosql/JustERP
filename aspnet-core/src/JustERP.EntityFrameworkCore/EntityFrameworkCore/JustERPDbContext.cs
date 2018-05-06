@@ -12,8 +12,12 @@ namespace JustERP.EntityFrameworkCore
     {
         /* Define an IDbSet for each entity of the application */
         public virtual DbSet<MtPeople> Peoples { get; set; }
-
+        public virtual DbSet<MtPeopleWechatInfo> PeopleWechatInfos { get; set; }
         public virtual DbSet<MtActivity> Activities { get; set; }
+        public virtual DbSet<MtPeopleActivity> PeopleActivities { get; set; }
+        public virtual DbSet<MtLabel> Labels { get; set; }
+        public virtual DbSet<MtLabelCategory> LabelCategories { get; set; }
+        public virtual DbSet<MtPeopleActivityLabel> PeopleActivityLabels { get; set; }
 
         public JustERPDbContext(DbContextOptions<JustERPDbContext> options)
             : base(options)
@@ -26,9 +30,18 @@ namespace JustERP.EntityFrameworkCore
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<MtPeople>(b =>
             {
-                b.HasMany(e => e.PeopleActivities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId);
-                b.HasMany(e => e.Activities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId);
-                b.HasOne(e => e.PeopleWechatInfo);
+                b.HasMany(e => e.PeopleActivities).WithOne().HasForeignKey(e => e.PeopleId);
+                b.HasMany(e => e.Activities).WithOne().HasForeignKey(e => e.PeopleId);
+            });
+
+            modelBuilder.Entity<MtPeopleActivity>(b =>
+            {
+                b.HasMany(e => e.PeopleActivityLabels).WithOne().HasForeignKey(e => e.PeopleActivityId);
+            });
+
+            modelBuilder.Entity<MtLabelCategory>(b =>
+            {
+                b.HasMany(e => e.Labels).WithOne().HasForeignKey(e => e.LabelCategoryId);
             });
         }
     }
