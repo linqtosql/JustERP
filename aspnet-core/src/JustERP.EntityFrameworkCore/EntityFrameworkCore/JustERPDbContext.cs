@@ -11,9 +11,9 @@ namespace JustERP.EntityFrameworkCore
     public class JustERPDbContext : AbpZeroDbContext<Tenant, Role, User, JustERPDbContext>
     {
         /* Define an IDbSet for each entity of the application */
-        public DbSet<MtPeople> Peoples { get; set; }
+        public virtual DbSet<MtPeople> Peoples { get; set; }
 
-        public DbSet<MtActivity> Activities { get; set; }
+        public virtual DbSet<MtActivity> Activities { get; set; }
         
         public JustERPDbContext(DbContextOptions<JustERPDbContext> options)
             : base(options)
@@ -24,7 +24,10 @@ namespace JustERP.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+            modelBuilder.Entity<MtPeople>(b =>
+            {
+                
+            });
         }
     }
 }
