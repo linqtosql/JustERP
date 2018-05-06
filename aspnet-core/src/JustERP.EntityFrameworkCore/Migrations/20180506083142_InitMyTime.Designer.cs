@@ -16,9 +16,10 @@ using System;
 namespace JustERP.Migrations
 {
     [DbContext(typeof(JustERPDbContext))]
-    partial class JustERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180506083142_InitMyTime")]
+    partial class InitMyTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
