@@ -72,7 +72,7 @@ namespace JustERP.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ExtensionData = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(maxLength: 32, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -107,13 +107,14 @@ namespace JustERP.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    AvatarImg = table.Column<string>(nullable: false),
+                    AvatarImg = table.Column<string>(maxLength: 128, nullable: false),
+                    BackgroundColor = table.Column<string>(maxLength: 8, nullable: true),
                     CreationTime = table.Column<DateTime>(nullable: false),
                     CreatorUserId = table.Column<long>(nullable: true),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
                     LastModifierUserId = table.Column<long>(nullable: true),
-                    NickName = table.Column<string>(nullable: false),
-                    Openid = table.Column<string>(nullable: false),
+                    NickName = table.Column<string>(maxLength: 32, nullable: false),
+                    Openid = table.Column<string>(maxLength: 128, nullable: false),
                     PeopleWechatInfoId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
@@ -222,7 +223,7 @@ namespace JustERP.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     LabelId = table.Column<long>(nullable: false),
-                    LabelName = table.Column<long>(nullable: false),
+                    LabelName = table.Column<long>(maxLength: 64, nullable: false),
                     PeopleActivityId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>

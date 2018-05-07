@@ -3,4 +3,6 @@
   <Compile Remove="Migrations\20180506083142_InitMyTime.cs" />
   <Compile Remove="Migrations\20180506085130_InitMyTime.cs" />
   <Compile Remove="Migrations\20180506124344_InitMyTime.cs" />
+  <Compile Remove="Migrations\20180506124906_InitMyTime.cs" />
+  <Compile Remove="Migrations\20180507132202_InitMyTime.cs" />
 </ItemGroup><ItemGroup><PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" /><PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" /><PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.0.1" /></ItemGroup><ItemGroup><ProjectReference Include="..\JustERP.Core.User\JustERP.Core.User.csproj" /></ItemGroup><ItemGroup><DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" /></ItemGroup><ItemGroup Condition=" '$(TargetFramework)' == 'net461' "><Reference Include="System.Transactions" /></ItemGroup></Project>

@@ -16,7 +16,7 @@ using System;
 namespace JustERP.Migrations
 {
     [DbContext(typeof(JustERPDbContext))]
-    [Migration("20180506124906_InitMyTime")]
+    [Migration("20180507132647_InitMyTime")]
     partial class InitMyTime
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1057,7 +1057,8 @@ namespace JustERP.Migrations
                     b.Property<string>("ExtensionData");
 
                     b.Property<string>("Name")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(32);
 
                     b.HasKey("Id");
 
@@ -1107,7 +1108,8 @@ namespace JustERP.Migrations
 
                     b.Property<long>("LabelId");
 
-                    b.Property<long>("LabelName");
+                    b.Property<long>("LabelName")
+                        .HasMaxLength(64);
 
                     b.Property<long>("PeopleActivityId");
 
@@ -1126,7 +1128,11 @@ namespace JustERP.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AvatarImg")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("BackgroundColor")
+                        .HasMaxLength(8);
 
                     b.Property<DateTime>("CreationTime");
 
@@ -1137,10 +1143,12 @@ namespace JustERP.Migrations
                     b.Property<long?>("LastModifierUserId");
 
                     b.Property<string>("NickName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(32);
 
                     b.Property<string>("Openid")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(128);
 
                     b.Property<long?>("PeopleWechatInfoId");
 

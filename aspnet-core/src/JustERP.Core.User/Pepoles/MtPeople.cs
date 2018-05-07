@@ -7,12 +7,15 @@ namespace JustERP.Core.User.Pepoles
 {
     public class MtPeople : AuditedEntity<long>
     {
-        [Required]
+        private const string DefaultBackground = "#c5c3c6";
+        [Required,MaxLength(32)]
         public string NickName { get; set; }
-        [Required]
+        [Required,MaxLength(128)]
         public string AvatarImg { get; set; }
-        [Required]
+        [Required,MaxLength(128)]
         public string Openid { get; set; }
+        [MaxLength(8)]
+        public string BackgroundColor { get; set; } = DefaultBackground;
         public virtual MtPeopleWechatInfo PeopleWechatInfo { get; set; }
         public virtual IEnumerable<MtActivity> Activities { get; set; }
         public virtual IEnumerable<MtPeopleActivity> PeopleActivities { get; set; }
