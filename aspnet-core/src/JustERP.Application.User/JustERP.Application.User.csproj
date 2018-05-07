@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Senparc.Weixin.MP" Version="14.12.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\JustERP.Core.User\JustERP.Core.User.csproj" />
   </ItemGroup>
 
