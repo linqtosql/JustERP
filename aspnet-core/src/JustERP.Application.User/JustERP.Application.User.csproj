@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Senparc.Weixin.MP" Version="14.12.3" />
+    <PackageReference Include="Senparc.Weixin.WxOpen" Version="1.9.1" />
   </ItemGroup>
 
   <ItemGroup>

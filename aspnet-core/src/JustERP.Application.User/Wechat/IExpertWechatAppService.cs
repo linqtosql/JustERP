@@ -1,11 +1,13 @@
 ﻿using System.Threading.Tasks;
 using Abp.Dependency;
-using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Abp.Web.Models;
+using Senparc.Weixin.WxOpen.AdvancedAPIs.Sns;
 
 namespace JustERP.Application.User.Wechat
 {
     public interface IExpertWechatAppService : ITransientDependency
     {
-        Task<OAuthAccessTokenResult> GetToken(string code);
+        [DontWrapResult]
+        Task<JsCode2JsonResult> GetToken(string code);
     }
 }

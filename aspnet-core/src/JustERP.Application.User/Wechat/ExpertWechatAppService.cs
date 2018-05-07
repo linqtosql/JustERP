@@ -1,15 +1,15 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using Senparc.Weixin.MP.AdvancedAPIs;
-using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.WxOpen.AdvancedAPIs.Sns;
 
 namespace JustERP.Application.User.Wechat
 {
     public class ExpertWechatAppService : ApplicationService, IExpertWechatAppService
     {
-        public async Task<OAuthAccessTokenResult> GetToken(string code)
+        public async Task<JsCode2JsonResult> GetToken(string code)
         {
-            return await OAuthApi.GetAccessTokenAsync(WechatConfig.AppId, WechatConfig.AppSecret, code);
+            var jsonResult = await SnsApi.JsCode2JsonAsync(WechatConfig.AppId, WechatConfig.AppSecret, code);
+            return jsonResult;
         }
     }
 }
