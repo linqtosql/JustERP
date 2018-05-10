@@ -28,11 +28,13 @@ namespace JustERP.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
             modelBuilder.Entity<MtPeople>(b =>
             {
                 b.HasMany(e => e.PeopleActivities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.ClientSetNull);
                 b.HasMany(e => e.Activities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.ClientSetNull);
+
+                b.HasAlternateKey(e => e.Openid);
             });
 
             modelBuilder.Entity<MtPeopleActivity>(b =>
@@ -47,6 +49,11 @@ namespace JustERP.EntityFrameworkCore
             modelBuilder.Entity<MtLabelCategory>(b =>
             {
                 b.HasMany(e => e.Labels).WithOne(e => e.LabelCategory).HasForeignKey(e => e.LabelCategoryId);
+            });
+
+            modelBuilder.Entity<MtPeopleWechatInfo>(b =>
+            {
+                b.HasAlternateKey(e => e.Openid);
             });
         }
     }
