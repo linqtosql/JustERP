@@ -1,0 +1,74 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using JustERP.Application.User.Peoples.Dto;
+using JustERP.Core.User.Activities;
+
+namespace JustERP.Peoples
+{
+    public interface IPeopleAppService
+    {
+        /// <summary>
+        /// 开始一个新的活动
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<PeopleActivityDto> StartActivity(StartActivityInput input);
+        /// <summary>
+        /// 结束一个活动并开始另一个新的活动
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<PeopleActivityDto> StopAndStartActivity(StopAndStartActivityInput input);
+        /// <summary>
+        /// 结束一个活动
+        /// </summary>
+        /// <param name="peopleActivityId"></param>
+        /// <returns></returns>
+        Task<PeopleActivityDto> StopActivity(long peopleActivityId);
+        /// <summary>
+        /// 获取当前用户正在进行的活动
+        /// </summary>
+        /// <returns></returns>
+        Task<PeopleActivityDto> GetCurrentActivity();
+        /// <summary>
+        /// 获取用户的活动详情
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<IList<PeopleActivityDto>> GetPeopleActivities(GetPeopleActivitiesInput input);
+        /// <summary>
+        /// 添加一个活动
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<ActivityDto> CreateActivity(CreateActivityInput input);
+        /// <summary>
+        /// 删除一个活动
+        /// </summary>
+        /// <param name="activityId"></param>
+        /// <returns></returns>
+        Task DeleteActivity(long activityId);
+        /// <summary>
+        /// 获取当前用户已使用的所有活动
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<ActivityDto>> GetUsedActivities();
+        /// <summary>
+        /// 获取当前用户未使用的所有活动
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<ActivityDto>> GetUnUsedActivities();
+        /// <summary>
+        /// 给正在进行的活动设置标签
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<IList<ActivityLabelDto>> SetLabel(SetLabelInput input);
+        /// <summary>
+        /// 修改标签分类名称
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryInput input);
+    }
+}
