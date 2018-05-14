@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using JustERP.Application.User.Peoples.Dto;
-using JustERP.Core.User.Activities;
 
 namespace JustERP.Peoples
 {
@@ -41,7 +40,7 @@ namespace JustERP.Peoples
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<ActivityDto> CreateActivity(CreateActivityInput input);
+        Task<ActivityDto> AddActivity(AddActivityInput input);
         /// <summary>
         /// 删除一个活动
         /// </summary>
@@ -49,7 +48,7 @@ namespace JustERP.Peoples
         /// <returns></returns>
         Task DeleteActivity(long activityId);
         /// <summary>
-        /// 获取当前用户已使用的所有活动
+        /// 获取当前用户已使用的所有活动，没有不存在当前用户，则使用系统默认活动
         /// </summary>
         /// <returns></returns>
         Task<IList<ActivityDto>> GetUsedActivities();
@@ -69,6 +68,11 @@ namespace JustERP.Peoples
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryInput input);
+        Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input);
+        /// <summary>
+        /// 获取所有标签分类
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<LabelCategoryDto>> GetLabelCategories();
     }
 }

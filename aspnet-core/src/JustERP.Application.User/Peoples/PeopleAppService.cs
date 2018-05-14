@@ -33,7 +33,7 @@ namespace JustERP.Application.User.Peoples
             throw new System.NotImplementedException();
         }
 
-        public Task<ActivityDto> CreateActivity(CreateActivityInput input)
+        public Task<ActivityDto> AddActivity(AddActivityInput input)
         {
             throw new System.NotImplementedException();
         }
@@ -58,7 +58,7 @@ namespace JustERP.Application.User.Peoples
             throw new System.NotImplementedException();
         }
 
-        public Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryInput input)
+        public Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input)
         {
             throw new System.NotImplementedException();
         }

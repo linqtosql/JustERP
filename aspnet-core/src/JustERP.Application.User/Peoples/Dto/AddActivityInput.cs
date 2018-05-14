@@ -3,10 +3,10 @@ using JustERP.Core.User.Activities;
 
 namespace JustERP.Application.User.Peoples.Dto
 {
-    [AutoMapFrom(typeof(MtLabelCategory))]
-    public class LabelCategoryDto
+    [AutoMapTo(typeof(MtActivity))]
+    public class AddActivityInput
     {
+        public long ActivityId { get; set; }
         public string Name { get; set; }
-        public LabelDto[] Labeles { get; set; }
     }
 }

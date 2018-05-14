@@ -4,10 +4,9 @@ using JustERP.Core.User.Activities;
 
 namespace JustERP.Application.User.Peoples.Dto
 {
-    [AutoMapFrom(typeof(MtActivity))]
-    public class ActivityDto : EntityDto<long>
+    [AutoMapTo(typeof(MtLabelCategory))]
+    public class SetLabelCategoryNameInput : EntityDto<long>
     {
-        public string Icon { get; set; }
         public string Name { get; set; }
     }
 }

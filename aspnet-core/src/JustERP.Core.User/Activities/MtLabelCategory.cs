@@ -11,9 +11,9 @@ namespace JustERP.Core.User.Activities
         public virtual IEnumerable<MtLabel> Labels { get; set; }
         public string ExtensionData { get; set; }
 
-        public void SetPeopleName(string value, long peopleId)
+        public void SetPeopleName(long peopleId)
         {
-            this.SetData($"name_{peopleId}", value);
+            this.SetData($"name_{peopleId}", Name);
         }
 
         public string GetPeopleName(long peopleId)
