@@ -62,5 +62,10 @@ namespace JustERP.Application.User.Peoples
         {
             throw new System.NotImplementedException();
         }
+
+        public Task<IList<LabelCategoryDto>> GetLabelCategories()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
