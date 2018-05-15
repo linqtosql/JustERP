@@ -17,7 +17,7 @@ namespace JustERP.Core.User.Activities
 
         public DateTime BeginTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public int TotalMillisecond { get; set; }
+        public int TotalSeconds { get; set; }
         public virtual MtPeople People { get; set; }
         public virtual MtActivity Activity { get; set; }
         public virtual IEnumerable<MtPeopleActivityLabel> PeopleActivityLabels { get; set; }

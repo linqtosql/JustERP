@@ -9534,3 +9534,222 @@ INFO  2018-05-13 22:12:10,167 [17   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2018-05-13 22:12:10,237 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 127.7623ms 200 application/javascript
 INFO  2018-05-13 22:12:10,583 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
 INFO  2018-05-13 22:12:10,835 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 251.6215ms 200 application/json
+DEBUG 2018-05-15 20:59:11,831 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-05-15 20:59:11,894 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-05-15 20:59:11,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,914 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,915 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,915 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,915 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,916 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,916 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,918 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,918 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:11,925 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-05-15 20:59:12,004 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 20:59:12,004 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 20:59:12,004 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 20:59:12,004 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 20:59:12,321 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 20:59:12,767 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-05-15 20:59:12,807 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-05-15 20:59:12,832 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-05-15 20:59:12,844 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-05-15 20:59:12,860 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-05-15 20:59:12,899 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-05-15 20:59:12,947 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2018-05-15 20:59:12,947 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-05-15 20:59:12,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-05-15 20:59:12,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-05-15 20:59:12,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-05-15 20:59:12,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-05-15 20:59:12,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-05-15 20:59:12,951 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-05-15 20:59:12,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelInput
+DEBUG 2018-05-15 20:59:12,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-05-15 20:59:12,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2018-05-15 20:59:15,301 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2018-05-15 20:59:16,471 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2018-05-15 20:59:16,643 [5    ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2018-05-15 20:59:16,649 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 218.0433ms
+INFO  2018-05-15 20:59:16,660 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1410.1289ms 302 
+INFO  2018-05-15 20:59:16,668 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2018-05-15 20:59:16,697 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.6199ms 200 text/html
+INFO  2018-05-15 20:59:16,712 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-bundle.js  
+INFO  2018-05-15 20:59:16,723 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css  
+INFO  2018-05-15 20:59:16,723 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-standalone-preset.js  
+INFO  2018-05-15 20:59:16,740 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.css was not modified
+INFO  2018-05-15 20:59:16,740 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui-standalone-preset.js was not modified
+INFO  2018-05-15 20:59:16,740 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui-bundle.js was not modified
+INFO  2018-05-15 20:59:16,743 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 31.6902ms 304 application/javascript
+INFO  2018-05-15 20:59:16,743 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 20.83ms 304 text/css
+INFO  2018-05-15 20:59:16,743 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 20.4429ms 304 application/javascript
+INFO  2018-05-15 20:59:17,261 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2018-05-15 20:59:17,536 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 274.921ms 200 application/json
+INFO  2018-05-15 20:59:21,180 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css  
+INFO  2018-05-15 20:59:21,181 [15   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.css was not modified
+INFO  2018-05-15 20:59:21,182 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2295ms 304 text/css
+INFO  2018-05-15 20:59:21,238 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-bundle.js.map  
+INFO  2018-05-15 20:59:21,238 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-standalone-preset.js.map  
+INFO  2018-05-15 20:59:21,239 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1609ms 404 
+INFO  2018-05-15 20:59:21,239 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1615ms 404 
+INFO  2018-05-15 20:59:21,250 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css.map  
+INFO  2018-05-15 20:59:21,251 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.0178ms 404 
+DEBUG 2018-05-15 21:07:08,242 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-05-15 21:07:08,271 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-05-15 21:07:08,285 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,289 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,289 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,290 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,290 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,290 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,291 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,291 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,292 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,292 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,292 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,293 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,293 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,294 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,294 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,294 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,294 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,295 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,299 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-05-15 21:07:08,354 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:08,354 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:08,354 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:08,354 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:08,601 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:08,992 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-05-15 21:07:09,029 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-05-15 21:07:09,053 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-05-15 21:07:09,063 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-05-15 21:07:09,078 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-05-15 21:07:09,111 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-05-15 21:07:09,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2018-05-15 21:07:09,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-05-15 21:07:09,158 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-05-15 21:07:09,158 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelInput
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-05-15 21:07:09,159 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2018-05-15 21:07:32,412 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-05-15 21:07:32,449 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-05-15 21:07:32,474 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,479 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,480 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,480 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,481 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,481 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,482 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,484 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,485 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,485 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,486 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,487 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,488 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,488 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:32,494 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-05-15 21:07:32,566 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:32,566 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:32,566 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:32,566 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 21:07:32,892 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 21:07:33,417 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-05-15 21:07:33,464 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-05-15 21:07:33,497 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-05-15 21:07:33,513 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-05-15 21:07:33,532 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-05-15 21:07:33,575 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-05-15 21:07:33,627 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2018-05-15 21:07:33,627 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-05-15 21:07:33,632 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-05-15 21:07:33,633 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-05-15 21:07:33,633 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-05-15 21:07:33,633 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-05-15 21:07:33,633 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-05-15 21:07:33,633 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-05-15 21:07:33,634 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelInput
+DEBUG 2018-05-15 21:07:33,634 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-05-15 21:07:33,634 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2018-05-15 22:21:28,715 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-05-15 22:21:28,766 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-05-15 22:21:28,782 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,785 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,786 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,786 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,787 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,787 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,787 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,788 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,788 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,788 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,789 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,789 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,789 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,789 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,790 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,790 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,791 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,791 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:28,795 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-05-15 22:21:28,857 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 22:21:28,857 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 22:21:28,857 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 22:21:28,858 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-15 22:21:29,128 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-15 22:21:29,537 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-05-15 22:21:29,576 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-05-15 22:21:29,601 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-05-15 22:21:29,631 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-05-15 22:21:29,645 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-05-15 22:21:29,677 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-05-15 22:21:29,720 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2018-05-15 22:21:29,720 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-05-15 22:21:29,723 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelInput
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-05-15 22:21:29,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2018-05-15 22:21:31,547 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2018-05-15 22:21:32,315 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2018-05-15 22:21:32,464 [15   ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2018-05-15 22:21:32,469 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 199.213ms
+INFO  2018-05-15 22:21:32,478 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 948.394ms 302 
+INFO  2018-05-15 22:21:32,484 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger  
+INFO  2018-05-15 22:21:32,496 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.4358ms 301 
+INFO  2018-05-15 22:21:32,501 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2018-05-15 22:21:32,515 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.2521ms 200 text/html
+INFO  2018-05-15 22:21:32,527 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css  
+INFO  2018-05-15 22:21:32,529 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-standalone-preset.js  
+INFO  2018-05-15 22:21:32,533 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-bundle.js  
+INFO  2018-05-15 22:21:32,542 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2018-05-15 22:21:32,542 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2018-05-15 22:21:32,542 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2018-05-15 22:21:32,550 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 23.171ms 200 text/css
+INFO  2018-05-15 22:21:32,571 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 41.7838ms 200 application/javascript
+INFO  2018-05-15 22:21:32,636 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 106.1244ms 200 application/javascript
+INFO  2018-05-15 22:21:34,162 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2018-05-15 22:21:34,426 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 263.8014ms 200 application/json

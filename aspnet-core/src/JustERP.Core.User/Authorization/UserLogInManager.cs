@@ -4,7 +4,9 @@ using Abp.Authorization;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Events.Bus;
 using Abp.UI;
+using JustERP.Core.User.Authorization.Event;
 using JustERP.Core.User.Pepoles;
 
 namespace JustERP.Core.User.Authorization
@@ -12,17 +14,19 @@ namespace JustERP.Core.User.Authorization
     public class UserLogInManager : ITransientDependency
     {
         private UserClaimsPrincipalFactory _claimsPrincipalFactory;
-        private PeopleManager _expertManager;
+        private PeopleManager _peopleManager;
         private IRepository<MtPeople, long> _expertRepository;
         private IRepository<MtPeopleWechatInfo, long> _wechatInfoRepository;
         private IUnitOfWorkManager UnitOfWorkManager { get; }
-        public UserLogInManager(PeopleManager expertManager,
+
+        public IEventBus EventBus { get; set; }
+        public UserLogInManager(PeopleManager peopleManager,
             UserClaimsPrincipalFactory claimsPrincipalFactory,
             IUnitOfWorkManager unitOfWorkManager,
             IRepository<MtPeople, long> expertRepository,
             IRepository<MtPeopleWechatInfo, long> wechatInfoRepository)
         {
-            _expertManager = expertManager;
+            _peopleManager = peopleManager;
             _claimsPrincipalFactory = claimsPrincipalFactory;
             _expertRepository = expertRepository;
             _wechatInfoRepository = wechatInfoRepository;
@@ -31,7 +35,7 @@ namespace JustERP.Core.User.Authorization
 
         public async Task<UserLoginResult> LoginAsync(string openId = null)
         {
-            var user = await _expertManager.FindByOpenId(openId);
+            var user = await _peopleManager.FindByOpenId(openId);
 
             if (user == null)
             {
@@ -45,14 +49,17 @@ namespace JustERP.Core.User.Authorization
 
         public async Task<UserLoginResult> RegisterAsync(string openId = null)
         {
-            var user = await _expertManager.FindByOpenId(openId);
+            var user = await _peopleManager.FindByOpenId(openId);
             if (user != null)
             {
                 throw new UserFriendlyException("用户已存在");
             }
             var expertAccount = new MtPeople { Openid = openId };
-            await _expertManager.CreateAsync(expertAccount);
+            await _peopleManager.CreateAsync(expertAccount);
+            
             UnitOfWorkManager.Current.SaveChanges();
+
+            await EventBus.TriggerAsync(new RegisterCompleteEventData { Register = expertAccount });
 
             return await LoginAsync(openId);
         }

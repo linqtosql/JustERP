@@ -1,13 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services;
+using Abp.Authorization;
+using Abp.Domain.Repositories;
 using JustERP.Application.User.Peoples.Dto;
+using JustERP.Core.User.Activities;
 using JustERP.Peoples;
 
 namespace JustERP.Application.User.Peoples
 {
+    [AbpAuthorize]
     public class PeopleAppService : ApplicationService, IPeopleAppService
     {
+        private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
+
+        public PeopleAppService(IRepository<MtPeopleActivity, long> peopleActivityRepository)
+        {
+            _peopleActivityRepository = peopleActivityRepository;
+        }
+
         public Task<PeopleActivityDto> StartActivity(StartActivityInput input)
         {
             throw new System.NotImplementedException();
@@ -43,6 +54,7 @@ namespace JustERP.Application.User.Peoples
             throw new System.NotImplementedException();
         }
 
+        [AbpAllowAnonymous]
         public Task<IList<ActivityDto>> GetUsedActivities()
         {
             throw new System.NotImplementedException();
