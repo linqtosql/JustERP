@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using JustERP.Core.User.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
@@ -12,9 +13,11 @@ namespace JustERP.Core.User.Pepoles
         private IRepository<MtPeople, long> _peopleRepository;
         public PeopleManager(
             IRepository<MtPeople, long> peopleRepository,
-            ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors,
-            IServiceProvider services, ILogger<UserManager<MtPeople>> logger) :
-            base(null, null, null, null, null, keyNormalizer, errors, services, logger)
+            IdentityErrorDescriber errors,
+            IServiceProvider services,
+            UserStore store,
+            ILogger<UserManager<MtPeople>> logger) :
+            base(store, null, null, null, null, null, errors, services, logger)
         {
             _peopleRepository = peopleRepository;
         }

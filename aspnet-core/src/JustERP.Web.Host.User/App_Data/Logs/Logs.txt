@@ -10930,3 +10930,107 @@ Parameter name: store
 INFO  2018-05-16 22:41:43,235 [11   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
 INFO  2018-05-16 22:41:43,236 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 72.0923ms
 INFO  2018-05-16 22:41:43,236 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 87.343ms 500 application/json; charset=utf-8
+DEBUG 2018-05-16 22:45:53,952 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-05-16 22:45:53,993 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-05-16 22:45:54,017 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,022 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,023 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,024 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,024 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,025 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,026 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,026 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,027 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,028 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,028 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,029 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,030 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,030 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,031 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,032 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,033 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,033 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,038 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-05-16 22:45:54,138 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-16 22:45:54,138 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-16 22:45:54,138 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-16 22:45:54,138 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-05-16 22:45:54,458 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-05-16 22:45:54,966 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-05-16 22:45:55,021 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-05-16 22:45:55,054 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-05-16 22:45:55,081 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-05-16 22:45:55,099 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-05-16 22:45:55,142 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-05-16 22:45:55,216 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2018-05-16 22:45:55,216 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-05-16 22:45:55,221 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-05-16 22:45:55,221 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelInput
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-05-16 22:45:55,222 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2018-05-16 22:45:57,572 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2018-05-16 22:45:58,574 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) with arguments ((null)) - ModelState is Valid
+INFO  2018-05-16 22:45:58,761 [15   ] Core.Mvc.Internal.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2018-05-16 22:45:58,766 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 237.3096ms
+INFO  2018-05-16 22:45:58,779 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1232.5546ms 302 
+INFO  2018-05-16 22:45:58,787 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/  
+INFO  2018-05-16 22:45:58,818 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.4653ms 200 text/html
+INFO  2018-05-16 22:45:58,837 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-standalone-preset.js  
+INFO  2018-05-16 22:45:58,837 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css  
+INFO  2018-05-16 22:45:58,844 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-bundle.js  
+INFO  2018-05-16 22:45:58,861 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui-standalone-preset.js was not modified
+INFO  2018-05-16 22:45:58,861 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui-bundle.js was not modified
+INFO  2018-05-16 22:45:58,861 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.css was not modified
+INFO  2018-05-16 22:45:58,866 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.6037ms 304 application/javascript
+INFO  2018-05-16 22:45:58,866 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.6766ms 304 application/javascript
+INFO  2018-05-16 22:45:58,866 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.2879ms 304 text/css
+INFO  2018-05-16 22:45:59,528 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2018-05-16 22:45:59,813 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 284.5544ms 200 application/json
+INFO  2018-05-16 22:46:10,481 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:57809/api/TokenAuth/Register?openid=2323232  0
+INFO  2018-05-16 22:46:10,486 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2018-05-16 22:46:10,486 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2018-05-16 22:46:10,516 [15   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2018-05-16 22:46:10,516 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:57809 does not have permission to access the resource.
+INFO  2018-05-16 22:46:10,754 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) with arguments (2323232) - ModelState is Valid
+ERROR 2018-05-16 22:46:10,912 [15   ] Mvc.ExceptionHandling.AbpExceptionFilter - The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at JustERP.Core.User.Authorization.UserStore.SetNormalizedUserNameAsync(MtPeople user, String normalizedName, CancellationToken cancellationToken) in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Core.User\Authorization\UserStore.cs:line 38
+   at Microsoft.AspNetCore.Identity.UserManager`1.<UpdateNormalizedUserNameAsync>d__80.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Identity.UserManager`1.<CreateAsync>d__73.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at JustERP.Core.User.Authorization.UserLogInManager.<RegisterAsync>d__13.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Core.User\Authorization\UserLogInManager.cs:line 57
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at JustERP.Web.Core.User.Controllers.TokenAuthController.<Register>d__8.MoveNext() in G:\Project\JustERP\JustERP\aspnet-core\src\JustERP.Web.Core.User\Controllers\TokenAuthController.cs:line 68
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextExceptionFilterAsync>d__23.MoveNext()
+INFO  2018-05-16 22:46:11,207 [15   ] etCore.Mvc.Internal.ObjectResultExecutor - Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+INFO  2018-05-16 22:46:11,219 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Core.User.Controllers.TokenAuthController.Register (JustERP.Web.Core.User) in 703.098ms
+INFO  2018-05-16 22:46:11,220 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 738.8307ms 500 application/json; charset=utf-8
