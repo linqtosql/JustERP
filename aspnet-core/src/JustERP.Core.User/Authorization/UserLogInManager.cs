@@ -5,7 +5,6 @@ using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Events.Bus;
-using Abp.UI;
 using JustERP.Core.User.Authorization.Event;
 using JustERP.Core.User.Pepoles;
 
@@ -33,7 +32,7 @@ namespace JustERP.Core.User.Authorization
             UnitOfWorkManager = unitOfWorkManager;
         }
 
-        public async Task<UserLoginResult> LoginAsync(string openId = null)
+        public async Task<UserLoginResult> LoginAsync(string openId)
         {
             var user = await _peopleManager.FindByOpenId(openId);
 
@@ -47,12 +46,12 @@ namespace JustERP.Core.User.Authorization
             return result;
         }
 
-        public async Task<UserLoginResult> RegisterAsync(string openId = null)
+        public async Task RegisterAsync(string openId)
         {
             var user = await _peopleManager.FindByOpenId(openId);
             if (user != null)
             {
-                throw new UserFriendlyException("用户已存在");
+                return;
             }
             var expertAccount = new MtPeople { Openid = openId };
             await _peopleManager.CreateAsync(expertAccount);
@@ -60,8 +59,6 @@ namespace JustERP.Core.User.Authorization
             UnitOfWorkManager.Current.SaveChanges();
 
             await EventBus.TriggerAsync(new RegisterCompleteEventData { Register = expertAccount });
-
-            return await LoginAsync(openId);
         }
     }
 }

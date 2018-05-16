@@ -13,6 +13,7 @@ using JustERP.Authentication.External;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Authorization;
 using JustERP.Authorization.Users;
+using JustERP.Core.User.Authorization;
 using JustERP.Models.TokenAuth;
 using JustERP.MultiTenancy;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +23,7 @@ namespace JustERP.Web.Core.User.Controllers
     [Route("api/[controller]/[action]")]
     public class TokenAuthController : JustERPControllerBase
     {
-        private readonly LogInManager _logInManager;
+        private readonly UserLogInManager _logInManager;
         private readonly ITenantCache _tenantCache;
         private readonly TokenAuthConfiguration _configuration;
         private readonly IExternalAuthConfiguration _externalAuthConfiguration;
@@ -30,7 +31,7 @@ namespace JustERP.Web.Core.User.Controllers
         private readonly UserRegistrationManager _userRegistrationManager;
 
         public TokenAuthController(
-            LogInManager logInManager,
+            UserLogInManager logInManager,
             ITenantCache tenantCache,
             TokenAuthConfiguration configuration,
             IExternalAuthConfiguration externalAuthConfiguration,
@@ -46,13 +47,9 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task<AuthenticateResultModel> Authenticate([FromBody] AuthenticateModel model)
+        public async Task<AuthenticateResultModel> Authenticate(string openid)
         {
-            var loginResult = await GetLoginResultAsync(
-                model.UserNameOrEmailAddress,
-                model.Password,
-                GetTenancyNameOrNull()
-            );
+            var loginResult = await GetLoginResultAsync(openid);
 
             var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
 
@@ -61,8 +58,14 @@ namespace JustERP.Web.Core.User.Controllers
                 AccessToken = accessToken,
                 EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
                 ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
-                UserId = loginResult.User.Id
+                UserId = loginResult.UserId
             };
+        }
+
+        [HttpPost]
+        public async Task Register(string openid)
+        {
+            await _logInManager.RegisterAsync(openid);
         }
 
         [HttpGet]
@@ -118,9 +121,9 @@ namespace JustERP.Web.Core.User.Controllers
             return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
         }
 
-        private async Task<AbpLoginResult<Tenant, Authorization.Users.User>> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
+        private async Task<UserLoginResult> GetLoginResultAsync(string openid)
         {
-            var loginResult = await _logInManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
+            var loginResult = await _logInManager.LoginAsync(openid);
 
             switch (loginResult.Result)
             {

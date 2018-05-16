@@ -8,9 +8,9 @@ namespace JustERP.Core.User.Pepoles
     public class MtPeople : AuditedEntity<long>
     {
         private const string DefaultBackground = "#c5c3c6";
-        [Required,MaxLength(32)]
+        [MaxLength(32)]
         public string NickName { get; set; }
-        [Required,MaxLength(128)]
+        [MaxLength(128)]
         public string AvatarImg { get; set; }
         [Required,MaxLength(128)]
         public string Openid { get; set; }
