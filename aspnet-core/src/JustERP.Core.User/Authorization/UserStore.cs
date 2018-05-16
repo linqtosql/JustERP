@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Abp.Dependency;
+using Abp.Domain.Repositories;
 using JustERP.Core.User.Pepoles;
 using Microsoft.AspNetCore.Identity;
 
@@ -8,6 +9,12 @@ namespace JustERP.Core.User.Authorization
 {
     public class UserStore : IUserStore<MtPeople>, ITransientDependency
     {
+        private IRepository<MtPeople, long> _peopleRepository;
+
+        public UserStore(IRepository<MtPeople, long> peopleRepository)
+        {
+            _peopleRepository = peopleRepository;
+        }
         public void Dispose()
         {
 
@@ -40,7 +47,8 @@ namespace JustERP.Core.User.Authorization
 
         public Task<IdentityResult> CreateAsync(MtPeople user, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            _peopleRepository.InsertAsync(user);
+            return null;
         }
 
         public Task<IdentityResult> UpdateAsync(MtPeople user, CancellationToken cancellationToken)
