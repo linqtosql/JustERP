@@ -35,7 +35,7 @@ namespace JustERP.Core.User.Authorization
 
         public Task SetNormalizedUserNameAsync(MtPeople user, string normalizedName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            return Task.CompletedTask;
         }
 
         public Task<IdentityResult> CreateAsync(MtPeople user, CancellationToken cancellationToken)
