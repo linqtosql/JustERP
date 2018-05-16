@@ -45,10 +45,10 @@ namespace JustERP.Core.User.Authorization
             return Task.CompletedTask;
         }
 
-        public Task<IdentityResult> CreateAsync(MtPeople user, CancellationToken cancellationToken)
+        public async Task<IdentityResult> CreateAsync(MtPeople user, CancellationToken cancellationToken)
         {
-            _peopleRepository.InsertAsync(user);
-            return null;
+            await _peopleRepository.InsertAsync(user);
+            return IdentityResult.Success;
         }
 
         public Task<IdentityResult> UpdateAsync(MtPeople user, CancellationToken cancellationToken)
