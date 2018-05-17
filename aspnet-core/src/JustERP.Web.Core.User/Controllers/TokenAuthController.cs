@@ -11,11 +11,9 @@ using Abp.Runtime.Security;
 using Abp.UI;
 using JustERP.Authentication.External;
 using JustERP.Authentication.JwtBearer;
-using JustERP.Authorization;
 using JustERP.Authorization.Users;
 using JustERP.Core.User.Authorization;
 using JustERP.Models.TokenAuth;
-using JustERP.MultiTenancy;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JustERP.Web.Core.User.Controllers

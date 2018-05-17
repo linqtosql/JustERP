@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using JustERP.Application.User.Peoples.Dto;
 using JustERP.Core.User.Activities;
+using JustERP.Core.User.Pepoles;
 using JustERP.Peoples;
+using Microsoft.EntityFrameworkCore;
 
 namespace JustERP.Application.User.Peoples
 {
@@ -13,45 +16,78 @@ namespace JustERP.Application.User.Peoples
     public class PeopleAppService : ApplicationService, IPeopleAppService
     {
         private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
+        private IRepository<MtActivity, long> _activityRepository;
+        private IRepository<MtPeople, long> _peopleRepository;
 
-        public PeopleAppService(IRepository<MtPeopleActivity, long> peopleActivityRepository)
+        private ActivityManager _activityManager;
+
+        public PeopleAppService(
+            IRepository<MtPeopleActivity, long> peopleActivityRepository,
+            IRepository<MtActivity, long> activityRepository,
+            IRepository<MtPeople, long> peopleRepository,
+            ActivityManager activityManager)
         {
             _peopleActivityRepository = peopleActivityRepository;
+            _activityRepository = activityRepository;
+            _peopleRepository = peopleRepository;
+            _activityManager = activityManager;
         }
 
-        public Task<PeopleActivityDto> StartActivity(StartActivityInput input)
+        public async Task<PeopleActivityDto> StartActivity(StartActivityInput input)
         {
-            throw new System.NotImplementedException();
+            var activity = await _activityRepository.GetAsync(input.ActivityId);
+            var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
+
+            var peopleActivity = await _activityManager.StartActivity(people, activity);
+
+            return ObjectMapper.Map<PeopleActivityDto>(peopleActivity);
         }
 
-        public Task<PeopleActivityDto> StopAndStartActivity(StopAndStartActivityInput input)
+        public async Task<PeopleActivityDto> StopActivity(StopActivityInput input)
         {
-            throw new System.NotImplementedException();
+            var peopleActivity = await _peopleActivityRepository.GetAsync(input.PeopleActivityId);
+            peopleActivity = _activityManager.StopActivity(peopleActivity);
+
+            if (input.ActivityId.HasValue)
+            {
+                await StartActivity(new StartActivityInput { ActivityId = input.ActivityId.Value });
+            }
+
+            return ObjectMapper.Map<PeopleActivityDto>(peopleActivity);
         }
 
-        public Task<PeopleActivityDto> StopActivity(long peopleActivityId)
+        public async Task<PeopleActivityDto> GetCurrentActivity()
         {
-            throw new System.NotImplementedException();
+            var currentActivity = await _peopleActivityRepository.FirstOrDefaultAsync(a => a.EndTime == null);
+
+            return ObjectMapper.Map<PeopleActivityDto>(currentActivity);
         }
 
-        public Task<PeopleActivityDto> GetCurrentActivity()
+        public async Task<IList<PeopleActivityDto>> GetPeopleActivities(GetPeopleActivitiesInput input)
         {
-            throw new System.NotImplementedException();
+            var peopleActivities = await
+                _peopleActivityRepository
+                    .GetAllIncluding(a => a.People, a => a.PeopleActivityLabels)
+                    .Where(a => a.PeopleId == AbpSession.UserId)
+                    .ToListAsync();
+
+            return ObjectMapper.Map<IList<PeopleActivityDto>>(peopleActivities);
         }
 
-        public Task<IList<PeopleActivityDto>> GetPeopleActivities(GetPeopleActivitiesInput input)
+        public async Task<ActivityDto> AddActivity(AddActivityInput input)
         {
-            throw new System.NotImplementedException();
+            var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
+            var systemActivity = await _activityRepository.GetAsync(input.ActivityId);
+            var addActivity = ObjectMapper.Map<MtActivity>(systemActivity);
+            addActivity.Name = input.Name;
+            addActivity = await _activityManager.AddActivity(people, addActivity);
+            return ObjectMapper.Map<ActivityDto>(addActivity);
         }
 
-        public Task<ActivityDto> AddActivity(AddActivityInput input)
+        public async Task DeleteActivity(long activityId)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteActivity(long activityId)
-        {
-            throw new System.NotImplementedException();
+            var activity = await _activityRepository.GetAsync(activityId);
+            await _activityManager.DeleteActivity(activity);
         }
 
         [AbpAllowAnonymous]

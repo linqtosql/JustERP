@@ -12,18 +12,13 @@ namespace JustERP.Peoples
         /// <param name="input"></param>
         /// <returns></returns>
         Task<PeopleActivityDto> StartActivity(StartActivityInput input);
-        /// <summary>
-        /// 结束一个活动并开始另一个新的活动
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        Task<PeopleActivityDto> StopAndStartActivity(StopAndStartActivityInput input);
+
         /// <summary>
         /// 结束一个活动
         /// </summary>
-        /// <param name="peopleActivityId"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
-        Task<PeopleActivityDto> StopActivity(long peopleActivityId);
+        Task<PeopleActivityDto> StopActivity(StopActivityInput input);
         /// <summary>
         /// 获取当前用户正在进行的活动
         /// </summary>

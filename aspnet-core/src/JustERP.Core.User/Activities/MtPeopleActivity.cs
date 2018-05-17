@@ -21,5 +21,10 @@ namespace JustERP.Core.User.Activities
         public virtual MtPeople People { get; set; }
         public virtual MtActivity Activity { get; set; }
         public virtual IEnumerable<MtPeopleActivityLabel> PeopleActivityLabels { get; set; }
+
+        public int CalcTotalSeconds()
+        {
+            return !EndTime.HasValue ? 0 : (int)(EndTime.Value - BeginTime).TotalSeconds;
+        }
     }
 }
