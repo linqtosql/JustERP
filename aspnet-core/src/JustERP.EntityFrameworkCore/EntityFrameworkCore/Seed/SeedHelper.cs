@@ -5,6 +5,7 @@ using Abp.Domain.Uow;
 using Abp.EntityFrameworkCore.Uow;
 using Abp.MultiTenancy;
 using JustERP.EntityFrameworkCore.Seed.Host;
+using JustERP.EntityFrameworkCore.Seed.MyTime;
 using JustERP.EntityFrameworkCore.Seed.Tenants;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,9 @@ namespace JustERP.EntityFrameworkCore.Seed
             //Default tenant seed (in host database).
             new DefaultTenantBuilder(context).Create();
             new TenantRoleAndUserBuilder(context, 1).Create();
+
+            //MyTime
+            new InitialMyTimeBuilder(context).Create();
         }
 
         private static void WithDbContext<TDbContext>(IIocResolver iocResolver, Action<TDbContext> contextAction)

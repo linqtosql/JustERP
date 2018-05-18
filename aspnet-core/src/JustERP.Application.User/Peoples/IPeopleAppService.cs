@@ -51,7 +51,7 @@ namespace JustERP.Peoples
         /// 获取当前用户未使用的所有活动
         /// </summary>
         /// <returns></returns>
-        Task<IList<ActivityDto>> GetUnUsedActivities();
+        Task<IList<ActivityDto>> GetSystemActivities();
         /// <summary>
         /// 给正在进行的活动设置标签
         /// </summary>

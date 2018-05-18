@@ -18,6 +18,8 @@ namespace JustERP.Application.User.Peoples
         private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
         private IRepository<MtActivity, long> _activityRepository;
         private IRepository<MtPeople, long> _peopleRepository;
+        private IRepository<MtLabel, long> _labelRepository;
+        private IRepository<MtLabelCategory, long> _labelCategoryRepository;
 
         private ActivityManager _activityManager;
 
@@ -25,12 +27,16 @@ namespace JustERP.Application.User.Peoples
             IRepository<MtPeopleActivity, long> peopleActivityRepository,
             IRepository<MtActivity, long> activityRepository,
             IRepository<MtPeople, long> peopleRepository,
+            IRepository<MtLabel, long> labelRepository,
+            IRepository<MtLabelCategory, long> labelCategoryRepository,
             ActivityManager activityManager)
         {
             _peopleActivityRepository = peopleActivityRepository;
             _activityRepository = activityRepository;
             _peopleRepository = peopleRepository;
             _activityManager = activityManager;
+            _labelRepository = labelRepository;
+            _labelCategoryRepository = labelCategoryRepository;
         }
 
         public async Task<PeopleActivityDto> StartActivity(StartActivityInput input)
@@ -91,14 +97,22 @@ namespace JustERP.Application.User.Peoples
         }
 
         [AbpAllowAnonymous]
-        public Task<IList<ActivityDto>> GetUsedActivities()
+        public async Task<IList<ActivityDto>> GetUsedActivities()
         {
-            throw new System.NotImplementedException();
+            var usedActivities = await _activityRepository.GetAll()
+                .Where(a => a.PeopleId == AbpSession.UserId)
+                .ToListAsync();
+
+            return ObjectMapper.Map<IList<ActivityDto>>(usedActivities);
         }
 
-        public Task<IList<ActivityDto>> GetUnUsedActivities()
+        public async Task<IList<ActivityDto>> GetSystemActivities()
         {
-            throw new System.NotImplementedException();
+            var unUsedActivities = await _activityRepository.GetAll()
+                .Where(a => a.IsSystem)
+                .ToListAsync();
+
+            return ObjectMapper.Map<IList<ActivityDto>>(unUsedActivities);
         }
 
         public Task<IList<ActivityLabelDto>> SetLabel(SetLabelInput input)
@@ -106,14 +120,25 @@ namespace JustERP.Application.User.Peoples
             throw new System.NotImplementedException();
         }
 
-        public Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input)
+        public async Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input)
         {
-            throw new System.NotImplementedException();
+            var labelCategory = await _labelCategoryRepository.GetAsync(input.Id);
+            labelCategory.SetPeopleName(AbpSession.UserId.Value, input.Name);
+            return ObjectMapper.Map<LabelCategoryDto>(labelCategory);
         }
 
-        public Task<IList<LabelCategoryDto>> GetLabelCategories()
+        public async Task<IList<LabelCategoryDto>> GetLabelCategories()
         {
-            throw new System.NotImplementedException();
+            var labels = await _labelRepository
+                .GetAllIncluding(l => l.LabelCategory)
+                .Where(l => l.PeopleId == AbpSession.UserId)
+                .ToListAsync();
+            var groupLabels = labels.GroupBy(l => l.LabelCategory).Select(g => new LabelCategoryDto
+            {
+                Name = g.Key.GetPeopleName(AbpSession.UserId.Value) ?? g.Key.Name,
+                Labeles = ObjectMapper.Map<LabelDto[]>(g.ToArray())
+            }).ToList();
+            return groupLabels;
         }
     }
 }
