@@ -63,7 +63,9 @@ namespace JustERP.Application.User.Peoples
 
         public async Task<PeopleActivityDto> GetCurrentActivity()
         {
-            var currentActivity = await _peopleActivityRepository.FirstOrDefaultAsync(a => a.EndTime == null);
+            var currentActivity = await _peopleActivityRepository
+                .GetAllIncluding(a => a.PeopleActivityLabels)
+                .FirstOrDefaultAsync(a => a.PeopleId == AbpSession.UserId && a.EndTime == null);
 
             return ObjectMapper.Map<PeopleActivityDto>(currentActivity);
         }
@@ -72,8 +74,9 @@ namespace JustERP.Application.User.Peoples
         {
             var peopleActivities = await
                 _peopleActivityRepository
-                    .GetAllIncluding(a => a.People, a => a.PeopleActivityLabels)
+                    .GetAllIncluding(a => a.PeopleActivityLabels)
                     .Where(a => a.PeopleId == AbpSession.UserId)
+                    .OrderByDescending(a => a.Id)
                     .ToListAsync();
 
             return ObjectMapper.Map<IList<PeopleActivityDto>>(peopleActivities);
@@ -82,11 +85,11 @@ namespace JustERP.Application.User.Peoples
         public async Task<ActivityDto> AddActivity(AddActivityInput input)
         {
             var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
-            var systemActivity = await _activityRepository.GetAsync(input.ActivityId);
-            var addActivity = ObjectMapper.Map<MtActivity>(systemActivity);
-            addActivity.Name = input.Name;
-            addActivity = await _activityManager.AddActivity(people, addActivity);
-            return ObjectMapper.Map<ActivityDto>(addActivity);
+            var systemActivity = await _activityRepository.GetAll().AsNoTracking().SingleOrDefaultAsync(a => a.Id == input.ActivityId);
+            systemActivity.Id = 0;
+            systemActivity.Name = input.Name;
+            systemActivity = await _activityManager.AddActivity(people, systemActivity);
+            return ObjectMapper.Map<ActivityDto>(systemActivity);
         }
 
         public async Task DeleteActivity(long activityId)
@@ -100,7 +103,7 @@ namespace JustERP.Application.User.Peoples
         {
             var usedActivities = await _activityRepository.GetAll()
                 .Where(a => a.PeopleId == AbpSession.UserId)
-                .OrderBy(a => a.Turn)
+                .OrderBy(a => a.Id)
                 .ToListAsync();
 
             return ObjectMapper.Map<IList<ActivityDto>>(usedActivities);
@@ -110,14 +113,18 @@ namespace JustERP.Application.User.Peoples
         {
             var unUsedActivities = await _activityRepository.GetAll()
                 .Where(a => a.IsSystem)
+                .OrderBy(a => a.Id)
                 .ToListAsync();
 
             return ObjectMapper.Map<IList<ActivityDto>>(unUsedActivities);
         }
 
-        public Task<IList<ActivityLabelDto>> SetLabel(SetLabelInput input)
+        public async Task SetLabel(SetLabelInput input)
         {
-            throw new System.NotImplementedException();
+            var peopleActivity = await _peopleActivityRepository.GetAsync(input.PeopleActivityId);
+            var labels = ObjectMapper.Map<MtPeopleActivityLabel[]>(input.Labels);
+
+            await _activityManager.SetLabel(peopleActivity, labels);
         }
 
         public async Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input)
@@ -135,6 +142,7 @@ namespace JustERP.Application.User.Peoples
                 .ToListAsync();
             var groupLabels = labels.GroupBy(l => l.LabelCategory).Select(g => new LabelCategoryDto
             {
+                Id = g.Key.Id,
                 Name = g.Key.GetPeopleName(AbpSession.UserId.Value) ?? g.Key.Name,
                 Labeles = ObjectMapper.Map<LabelDto[]>(g.ToArray())
             }).ToList();

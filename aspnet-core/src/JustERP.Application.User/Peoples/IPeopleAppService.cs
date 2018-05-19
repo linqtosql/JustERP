@@ -52,12 +52,13 @@ namespace JustERP.Peoples
         /// </summary>
         /// <returns></returns>
         Task<IList<ActivityDto>> GetSystemActivities();
+
         /// <summary>
         /// 给正在进行的活动设置标签
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<IList<ActivityLabelDto>> SetLabel(SetLabelInput input);
+        Task SetLabel(SetLabelInput input);
         /// <summary>
         /// 修改标签分类名称
         /// </summary>

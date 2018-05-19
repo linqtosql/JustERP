@@ -4,7 +4,7 @@ using JustERP.Core.User.Activities;
 
 namespace JustERP.Application.User.Peoples.Dto
 {
-    [AutoMapFrom(typeof(MtLabel))]
+    [AutoMapFrom(typeof(MtLabel), typeof(MtPeopleActivityLabel))]
     public class LabelDto : EntityDto<long>
     {
         public string Name { get; set; }

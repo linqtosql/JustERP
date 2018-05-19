@@ -1105,16 +1105,17 @@ namespace JustERP.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<long>("LabelId");
+                    b.Property<long>("LabelCategoryId");
 
-                    b.Property<long>("LabelName")
+                    b.Property<string>("LabelName")
+                        .IsRequired()
                         .HasMaxLength(64);
 
                     b.Property<long>("PeopleActivityId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LabelId");
+                    b.HasIndex("LabelCategoryId");
 
                     b.HasIndex("PeopleActivityId");
 
@@ -1433,9 +1434,9 @@ namespace JustERP.Migrations
 
             modelBuilder.Entity("JustERP.Core.User.Activities.MtPeopleActivityLabel", b =>
                 {
-                    b.HasOne("JustERP.Core.User.Activities.MtLabel", "Label")
+                    b.HasOne("JustERP.Core.User.Activities.MtLabelCategory", "LabelCategory")
                         .WithMany()
-                        .HasForeignKey("LabelId")
+                        .HasForeignKey("LabelCategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("JustERP.Core.User.Activities.MtPeopleActivity", "PeopleActivity")

@@ -13,15 +13,18 @@ namespace JustERP.Core.User.Activities
         private IRepository<MtLabel, long> _labelRepository;
         private IRepository<MtActivity, long> _activityRepository;
         private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
+        private IRepository<MtPeopleActivityLabel, long> _activityLabelRepository;
         public ActivityManager(IRepository<MtLabel, long> labelRepository,
             IRepository<MtActivity, long> activityRepository,
+            IRepository<MtPeopleActivityLabel, long> activityLabelRepository,
             IRepository<MtPeopleActivity, long> peopleActivityRepository)
         {
             _labelRepository = labelRepository;
             _activityRepository = activityRepository;
             _peopleActivityRepository = peopleActivityRepository;
+            _activityLabelRepository = activityLabelRepository;
         }
-        
+
         public async void InitLabels(MtPeople people)
         {
             var labelQuery = _labelRepository.GetAll().AsNoTracking();
@@ -37,7 +40,7 @@ namespace JustERP.Core.User.Activities
                 await _labelRepository.InsertAsync(defaultLable);
             }
         }
-        
+
         public async void InitActivities(MtPeople people)
         {
             var activityQuery = _activityRepository.GetAll().AsNoTracking();
@@ -50,6 +53,7 @@ namespace JustERP.Core.User.Activities
             {
                 defaultActivity.Id = 0;
                 defaultActivity.PeopleId = people.Id;
+                defaultActivity.IsSystem = defaultActivity.IsDefault = false;
                 await _activityRepository.InsertAsync(defaultActivity);
             }
         }
@@ -65,6 +69,7 @@ namespace JustERP.Core.User.Activities
                 BeginTime = DateTime.Now
             };
             await _peopleActivityRepository.InsertAsync(peopleActivity);
+            await UnitOfWorkManager.Current.SaveChangesAsync();
             return peopleActivity;
         }
 
@@ -76,16 +81,38 @@ namespace JustERP.Core.User.Activities
             return peopleActivity;
         }
 
-        public Task<MtActivity> AddActivity(MtPeople people, MtActivity activity)
+        public async Task<MtActivity> AddActivity(MtPeople people, MtActivity activity)
         {
             activity.IsSystem = activity.IsDefault = false;
             activity.PeopleId = people.Id;
-            return _activityRepository.InsertAsync(activity);
+            activity = await _activityRepository.InsertAsync(activity);
+            await UnitOfWorkManager.Current.SaveChangesAsync();
+            return activity;
         }
 
         public Task DeleteActivity(MtActivity activity)
         {
             return _activityRepository.DeleteAsync(activity);
+        }
+
+        public async Task SetLabel(MtPeopleActivity peopleActivity, MtPeopleActivityLabel[] labels)
+        {
+            await _activityLabelRepository.DeleteAsync(l => l.PeopleActivityId == peopleActivity.Id);
+            foreach (var label in labels)
+            {
+                label.PeopleActivityId = peopleActivity.Id;
+                await _activityLabelRepository.InsertAsync(label);
+                if (!await _labelRepository.GetAll()
+                    .AnyAsync(l => l.PeopleId == peopleActivity.PeopleId && l.Name == label.LabelName))
+                {
+                    await _labelRepository.InsertAsync(new MtLabel
+                    {
+                        LabelCategoryId = label.LabelCategoryId,
+                        Name = label.LabelName,
+                        PeopleId = peopleActivity.PeopleId
+                    });
+                }
+            }
         }
     }
 }

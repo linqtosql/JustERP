@@ -21,8 +21,4 @@
     <ProjectReference Include="..\JustERP.Web.Core\JustERP.Web.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
 </Project>

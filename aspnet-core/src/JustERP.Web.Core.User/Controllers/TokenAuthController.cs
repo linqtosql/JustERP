@@ -14,6 +14,7 @@ using JustERP.Authentication.JwtBearer;
 using JustERP.Authorization.Users;
 using JustERP.Core.User.Authorization;
 using JustERP.Models.TokenAuth;
+using JustERP.Web.Core.User.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JustERP.Web.Core.User.Controllers
@@ -45,9 +46,9 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task<AuthenticateResultModel> Authenticate(string openid)
+        public async Task<AuthenticateResultModel> Authenticate([FromBody]WeixinLoginModel loginModel)
         {
-            var loginResult = await GetLoginResultAsync(openid);
+            var loginResult = await GetLoginResultAsync(loginModel.OpenId);
 
             var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
 
@@ -61,9 +62,9 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task Register(string openid)
+        public async Task Register([FromBody]WeixinLoginModel registerModel)
         {
-            await _logInManager.RegisterAsync(openid);
+            await _logInManager.RegisterAsync(registerModel.OpenId);
         }
 
         [HttpGet]
