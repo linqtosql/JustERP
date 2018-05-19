@@ -29,7 +29,7 @@ namespace JustERP.Peoples
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<IList<PeopleActivityDto>> GetPeopleActivities(GetPeopleActivitiesInput input);
+        Task<IList<PeopleActivityDto>> GetPeopleActivityHistory(GetPeopleActivitiesInput input);
         /// <summary>
         /// 添加一个活动
         /// </summary>

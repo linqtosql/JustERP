@@ -54,16 +54,18 @@ namespace JustERP.Core.User.Activities
             }
         }
 
-        public Task<MtPeopleActivity> StartActivity(MtPeople people, MtActivity activity)
+        public async Task<MtPeopleActivity> StartActivity(MtPeople people, MtActivity activity)
         {
-            return _peopleActivityRepository.InsertAsync(new MtPeopleActivity
+            var peopleActivity = new MtPeopleActivity
             {
                 PeopleId = people.Id,
                 ActivityIcon = activity.Icon,
                 ActivityId = activity.Id,
                 ActivityName = activity.Name,
                 BeginTime = DateTime.Now
-            });
+            };
+            await _peopleActivityRepository.InsertAsync(peopleActivity);
+            return peopleActivity;
         }
 
         public MtPeopleActivity StopActivity(MtPeopleActivity peopleActivity)

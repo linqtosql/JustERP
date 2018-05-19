@@ -43,6 +43,10 @@ namespace JustERP.Application.User.Peoples
         {
             var activity = await _activityRepository.GetAsync(input.ActivityId);
             var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
+            if (input.PeopleActivityId.HasValue)
+            {
+                await StopActivity(new StopActivityInput { PeopleActivityId = input.PeopleActivityId.Value });
+            }
 
             var peopleActivity = await _activityManager.StartActivity(people, activity);
 
@@ -54,11 +58,6 @@ namespace JustERP.Application.User.Peoples
             var peopleActivity = await _peopleActivityRepository.GetAsync(input.PeopleActivityId);
             peopleActivity = _activityManager.StopActivity(peopleActivity);
 
-            if (input.ActivityId.HasValue)
-            {
-                await StartActivity(new StartActivityInput { ActivityId = input.ActivityId.Value });
-            }
-
             return ObjectMapper.Map<PeopleActivityDto>(peopleActivity);
         }
 
@@ -69,7 +68,7 @@ namespace JustERP.Application.User.Peoples
             return ObjectMapper.Map<PeopleActivityDto>(currentActivity);
         }
 
-        public async Task<IList<PeopleActivityDto>> GetPeopleActivities(GetPeopleActivitiesInput input)
+        public async Task<IList<PeopleActivityDto>> GetPeopleActivityHistory(GetPeopleActivitiesInput input)
         {
             var peopleActivities = await
                 _peopleActivityRepository
@@ -101,6 +100,7 @@ namespace JustERP.Application.User.Peoples
         {
             var usedActivities = await _activityRepository.GetAll()
                 .Where(a => a.PeopleId == AbpSession.UserId)
+                .OrderBy(a => a.Turn)
                 .ToListAsync();
 
             return ObjectMapper.Map<IList<ActivityDto>>(usedActivities);

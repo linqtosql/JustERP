@@ -13,7 +13,7 @@ namespace JustERP.EntityFrameworkCore.Seed.MyTime
         {
             new MtActivity{Id = 1,  Turn = 1, Icon = "icon1.png", IsSystem = true, IsDefault = true, Name = "小米科技"},
             new MtActivity{Id = 2,  Turn = 2, Icon = "icon2.png", IsSystem = true, IsDefault = true, Name = "团队会"},
-            new MtActivity{Id = 3,  Turn = 3, Icon = "icon3.png", IsSystem = true, IsDefault = true, Name = "收费工作"},
+            new MtActivity{Id = 3,  Turn = 3, Icon = "icon3.jpg", IsSystem = true, IsDefault = true, Name = "收费工作"},
             new MtActivity{Id = 4,  Turn = 4, Icon = "icon4.png", IsSystem = true, IsDefault = true, Name = "电话会议"},
             new MtActivity{Id = 5,  Turn = 5, Icon = "icon5.png", IsSystem = true, IsDefault = true, Name = "Allen & Overy"},
             new MtActivity{Id = 6,  Turn = 6, Icon = "icon6.png", IsSystem = true, IsDefault = true, Name = "外出办事"},
