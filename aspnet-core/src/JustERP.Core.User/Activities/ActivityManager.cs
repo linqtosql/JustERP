@@ -95,6 +95,11 @@ namespace JustERP.Core.User.Activities
             return _activityRepository.DeleteAsync(activity);
         }
 
+        public Task DeleteLabel(MtLabel label)
+        {
+            return _labelRepository.DeleteAsync(label);
+        }
+
         public async Task SetLabel(MtPeopleActivity peopleActivity, MtPeopleActivityLabel[] labels)
         {
             await _activityLabelRepository.DeleteAsync(l => l.PeopleActivityId == peopleActivity.Id);

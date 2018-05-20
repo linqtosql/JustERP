@@ -70,16 +70,46 @@ namespace JustERP.Application.User.Peoples
             return ObjectMapper.Map<PeopleActivityDto>(currentActivity);
         }
 
-        public async Task<IList<PeopleActivityDto>> GetPeopleActivityHistory(GetPeopleActivitiesInput input)
+        public async Task<IList<PeopleActivityDto>> GetPeopleActivityHistory(GetActivityHistoryInput input)
         {
-            var peopleActivities = await
-                _peopleActivityRepository
-                    .GetAllIncluding(a => a.PeopleActivityLabels)
-                    .Where(a => a.PeopleId == AbpSession.UserId)
-                    .OrderByDescending(a => a.Id)
-                    .ToListAsync();
+            var peopleActivities = QueryActivities(input);
+            peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
 
-            return ObjectMapper.Map<IList<PeopleActivityDto>>(peopleActivities);
+            return ObjectMapper.Map<IList<PeopleActivityDto>>(await peopleActivities.ToListAsync());
+        }
+
+        private IQueryable<MtPeopleActivity> QueryActivities(GetActivityHistoryInput input)
+        {
+            var peopleActivities = _peopleActivityRepository
+                .GetAllIncluding(a => a.PeopleActivityLabels)
+                .Where(a => a.PeopleId == AbpSession.UserId);
+            if (input.BeginDate.HasValue)
+            {
+                peopleActivities = peopleActivities.Where(a => a.BeginTime >= input.BeginDate.Value);
+            }
+            if (input.EndDate.HasValue)
+            {
+                peopleActivities = peopleActivities.Where(a => a.EndTime <= input.EndDate.Value);
+            }
+            return peopleActivities;
+        }
+
+        public async Task<IList<TotalActivityHistoryDto>> GetTotalActivityHistory(GetActivityHistoryInput input)
+        {
+            var peopleActivities = await QueryActivities(input)
+                .GroupBy(a => new
+                {
+                    a.ActivityName,
+                    a.ActivityIcon
+                })
+                .Select(g => new TotalActivityHistoryDto
+                {
+                    ActivityName = g.Key.ActivityName,
+                    ActivityIcon = g.Key.ActivityIcon,
+                    TotalSeconds = g.Sum(a => a.TotalSeconds)
+                }).ToListAsync();
+
+            return peopleActivities;
         }
 
         public async Task<ActivityDto> AddActivity(AddActivityInput input)
@@ -95,6 +125,7 @@ namespace JustERP.Application.User.Peoples
         public async Task DeleteActivity(long activityId)
         {
             var activity = await _activityRepository.GetAsync(activityId);
+            if (activity.PeopleId != AbpSession.UserId) return;
             await _activityManager.DeleteActivity(activity);
         }
 
@@ -125,6 +156,13 @@ namespace JustERP.Application.User.Peoples
             var labels = ObjectMapper.Map<MtPeopleActivityLabel[]>(input.Labels);
 
             await _activityManager.SetLabel(peopleActivity, labels);
+        }
+
+        public async Task DeleteLabel(long labelId)
+        {
+            var label = await _labelRepository.GetAsync(labelId);
+            if (label.PeopleId != AbpSession.UserId) return;
+            await _activityManager.DeleteLabel(label);
         }
 
         public async Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input)
