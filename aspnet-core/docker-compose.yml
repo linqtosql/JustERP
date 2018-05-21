@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  justerp.web.host.user:
+    image: justerpwebhostuser
+    build:
+      context: .
+      dockerfile: src/JustERP.Web.Host.User/Dockerfile
