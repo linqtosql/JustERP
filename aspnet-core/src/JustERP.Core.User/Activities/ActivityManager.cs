@@ -25,7 +25,7 @@ namespace JustERP.Core.User.Activities
             _activityLabelRepository = activityLabelRepository;
         }
 
-        public async void InitLabels(MtPeople people)
+        public async Task InitLabels(MtPeople people)
         {
             var labelQuery = _labelRepository.GetAll().AsNoTracking();
             if (await labelQuery.AnyAsync(l => l.PeopleId == people.Id))
@@ -41,7 +41,7 @@ namespace JustERP.Core.User.Activities
             }
         }
 
-        public async void InitActivities(MtPeople people)
+        public async Task InitActivities(MtPeople people)
         {
             var activityQuery = _activityRepository.GetAll().AsNoTracking();
             if (await activityQuery.AnyAsync(l => l.PeopleId == people.Id))
@@ -60,6 +60,13 @@ namespace JustERP.Core.User.Activities
 
         public async Task<MtPeopleActivity> StartActivity(MtPeople people, MtActivity activity)
         {
+            var currentActivities = await _peopleActivityRepository.GetAll()
+                .Where(a => a.EndTime == null && a.PeopleId == people.Id)
+                .ToListAsync();
+            foreach (var currentActivity in currentActivities)
+            {
+                StopActivity(currentActivity);
+            }
             var peopleActivity = new MtPeopleActivity
             {
                 PeopleId = people.Id,
@@ -75,6 +82,8 @@ namespace JustERP.Core.User.Activities
 
         public MtPeopleActivity StopActivity(MtPeopleActivity peopleActivity)
         {
+            if (peopleActivity.EndTime.HasValue) return peopleActivity;
+
             peopleActivity.EndTime = DateTime.Now;
             peopleActivity.TotalSeconds = peopleActivity.CalcTotalSeconds();
 

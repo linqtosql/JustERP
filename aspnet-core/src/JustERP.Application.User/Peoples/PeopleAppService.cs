@@ -43,10 +43,6 @@ namespace JustERP.Application.User.Peoples
         {
             var activity = await _activityRepository.GetAsync(input.ActivityId);
             var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
-            if (input.PeopleActivityId.HasValue)
-            {
-                await StopActivity(new StopActivityInput { PeopleActivityId = input.PeopleActivityId.Value });
-            }
 
             var peopleActivity = await _activityManager.StartActivity(people, activity);
 
@@ -74,23 +70,20 @@ namespace JustERP.Application.User.Peoples
         {
             var peopleActivities = QueryActivities(input);
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
+            var activityList = await peopleActivities.ToListAsync();
 
-            return ObjectMapper.Map<IList<PeopleActivityDto>>(await peopleActivities.ToListAsync());
+            return ObjectMapper.Map<IList<PeopleActivityDto>>(activityList);
         }
 
         private IQueryable<MtPeopleActivity> QueryActivities(GetActivityHistoryInput input)
         {
             var peopleActivities = _peopleActivityRepository
                 .GetAllIncluding(a => a.PeopleActivityLabels)
-                .Where(a => a.PeopleId == AbpSession.UserId);
-            if (input.BeginDate.HasValue)
-            {
-                peopleActivities = peopleActivities.Where(a => a.BeginTime >= input.BeginDate.Value);
-            }
-            if (input.EndDate.HasValue)
-            {
-                peopleActivities = peopleActivities.Where(a => a.EndTime <= input.EndDate.Value);
-            }
+                .Where(a => a.PeopleId == AbpSession.UserId &&
+                        (a.BeginTime >= input.BeginDate &&
+                         a.EndTime <= input.EndDate || 
+                        a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null));
+
             return peopleActivities;
         }
 

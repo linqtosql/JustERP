@@ -22,41 +22,29 @@ namespace JustERP.Application.User.Peoples.Dto
                         BeginDate = DateTime.Now.AddDays(-(DateTime.Now.DayOfWeek == DayOfWeek.Sunday
                             ? 6
                             : (int)DateTime.Now.DayOfWeek - 1));
-                        EndDate = BeginDate.Value.AddDays(6);
+                        EndDate = BeginDate.AddDays(6);
                         break;
                 }
                 _dateType = value;
             }
         }
 
-        private DateTime? _beginDate;
+        private DateTime _beginDate;
 
-        public DateTime? BeginDate
+        public DateTime BeginDate
         {
-            get { return _beginDate; }
-            set
-            {
-                if (value != null)
-                {
-                    _beginDate = value.Value.Date;
-                }
-            }
+            get => _beginDate;
+            set => _beginDate = value.Date;
         }
 
-        private DateTime? _endDate;
-        public DateTime? EndDate
+        private DateTime _endDate;
+        public DateTime EndDate
         {
-            get
-            {
-                return _endDate;
-            }
+            get => _endDate;
             set
             {
-                if (value != null)
-                {
-                    var val = value.Value;
-                    _endDate = new DateTime(val.Year, val.Month, val.Day, 23, 59, 59);
-                }
+                var val = value;
+                _endDate = new DateTime(val.Year, val.Month, val.Day, 23, 59, 59);
             }
         }
 

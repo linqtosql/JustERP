@@ -6,10 +6,15 @@ namespace JustERP.Core.User.Activities.EventHandler
 {
     public class InitLabels : IEventHandler<RegisterCompleteEventData>, ITransientDependency
     {
-        public ActivityManager ActivityManager { get; set; }
+        private ActivityManager _activityManager;
+        public InitLabels(ActivityManager activityManager)
+        {
+            _activityManager = activityManager;
+        }
+        
         public void HandleEvent(RegisterCompleteEventData eventData)
         {
-            ActivityManager.InitLabels(eventData.Register);
+            _activityManager.InitLabels(eventData.Register);
         }
     }
 }

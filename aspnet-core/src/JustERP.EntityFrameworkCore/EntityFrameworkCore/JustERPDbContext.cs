@@ -1,4 +1,5 @@
-﻿using Abp.Zero.EntityFrameworkCore;
+﻿using Abp.Auditing;
+using Abp.Zero.EntityFrameworkCore;
 using JustERP.Authorization.Roles;
 using JustERP.Authorization.Users;
 using JustERP.Core.User.Activities;
@@ -54,6 +55,11 @@ namespace JustERP.EntityFrameworkCore
             modelBuilder.Entity<MtPeopleWechatInfo>(b =>
             {
                 b.HasAlternateKey(e => e.Openid);
+            });
+
+            modelBuilder.Entity<AuditLog>(b =>
+            {
+                b.Property(l => l.BrowserInfo).HasMaxLength(512);
             });
         }
     }

@@ -46,7 +46,7 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task<AuthenticateResultModel> Authenticate(WeixinLoginModel loginModel)
+        public async Task<AuthenticateResultModel> Authenticate([FromBody]WeixinLoginModel loginModel)
         {
             var loginResult = await GetLoginResultAsync(loginModel.OpenId);
 
@@ -62,7 +62,7 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task Register(WeixinLoginModel registerModel)
+        public async Task Register([FromBody]WeixinLoginModel registerModel)
         {
             await _logInManager.RegisterAsync(registerModel.OpenId);
         }
