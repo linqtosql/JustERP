@@ -71,7 +71,18 @@ namespace JustERP.Application.User.Peoples
             var peopleActivities = QueryActivities(input);
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
             var activityList = await peopleActivities.ToListAsync();
-            
+
+            activityList.Add(new MtPeopleActivity
+            {
+                TotalSeconds = input.GetTotalSeconds() - activityList.Sum(a => a.TotalSeconds),
+                ActivityName = "未计时",
+                BeginTime = input.BeginDate,
+                EndTime = input.EndDate,
+                PeopleActivityLabels = new List<MtPeopleActivityLabel>
+                {
+                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = "暂停"}
+                }
+            });
 
             return ObjectMapper.Map<IList<PeopleActivityDto>>(activityList);
         }
