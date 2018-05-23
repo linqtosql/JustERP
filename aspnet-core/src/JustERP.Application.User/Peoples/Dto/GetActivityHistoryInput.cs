@@ -48,6 +48,15 @@ namespace JustERP.Application.User.Peoples.Dto
             }
         }
 
+        /// <summary>
+        /// 获取开始与结束时间段内的总计秒数
+        /// </summary>
+        /// <returns></returns>
+        public int GetTotalSeconds()
+        {
+            return (int)(EndDate - BeginDate).TotalSeconds;
+        }
+
         public enum DateTypes
         {
             Today,

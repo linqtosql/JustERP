@@ -71,6 +71,7 @@ namespace JustERP.Application.User.Peoples
             var peopleActivities = QueryActivities(input);
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
             var activityList = await peopleActivities.ToListAsync();
+            
 
             return ObjectMapper.Map<IList<PeopleActivityDto>>(activityList);
         }
@@ -81,7 +82,7 @@ namespace JustERP.Application.User.Peoples
                 .GetAllIncluding(a => a.PeopleActivityLabels)
                 .Where(a => a.PeopleId == AbpSession.UserId &&
                         (a.BeginTime >= input.BeginDate &&
-                         a.EndTime <= input.EndDate || 
+                         a.EndTime <= input.EndDate ||
                         a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null));
 
             return peopleActivities;
