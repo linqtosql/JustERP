@@ -20,6 +20,7 @@ namespace JustERP.Application.User.Peoples
         private IRepository<MtPeople, long> _peopleRepository;
         private IRepository<MtLabel, long> _labelRepository;
         private IRepository<MtLabelCategory, long> _labelCategoryRepository;
+        private IRepository<MtPeopleActivityLabel, long> _activityLabelRepository;
 
         private ActivityManager _activityManager;
 
@@ -29,6 +30,7 @@ namespace JustERP.Application.User.Peoples
             IRepository<MtPeople, long> peopleRepository,
             IRepository<MtLabel, long> labelRepository,
             IRepository<MtLabelCategory, long> labelCategoryRepository,
+            IRepository<MtPeopleActivityLabel, long> activityLabelRepository,
             ActivityManager activityManager)
         {
             _peopleActivityRepository = peopleActivityRepository;
@@ -37,6 +39,7 @@ namespace JustERP.Application.User.Peoples
             _activityManager = activityManager;
             _labelRepository = labelRepository;
             _labelCategoryRepository = labelCategoryRepository;
+            _activityLabelRepository = activityLabelRepository;
         }
 
         public async Task<PeopleActivityDto> StartActivity(StartActivityInput input)
@@ -91,12 +94,34 @@ namespace JustERP.Application.User.Peoples
         {
             var peopleActivities = _peopleActivityRepository
                 .GetAllIncluding(a => a.PeopleActivityLabels)
-                .Where(a => a.PeopleId == AbpSession.UserId &&
-                        (a.BeginTime >= input.BeginDate &&
-                         a.EndTime <= input.EndDate ||
-                        a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null));
+                .Where(a => GetHistoryCondition(input, a));
 
             return peopleActivities;
+        }
+
+        private bool GetHistoryCondition(GetActivityHistoryInput input, MtPeopleActivity a)
+        {
+            return a.PeopleId == AbpSession.UserId &&
+                   (a.BeginTime >= input.BeginDate &&
+                    a.EndTime <= input.EndDate ||
+                    a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null);
+        }
+
+        private async Task<IList<TotalActivityHistoryDto>> GetTotalActivityHistoryByLabel(GetActivityHistoryInput input)
+        {
+            var totalActivity = await _activityLabelRepository.GetAll().AsNoTracking()
+                .Where(l => GetHistoryCondition(input, l.PeopleActivity))
+                .GroupBy(l => new
+                {
+                    l.LabelName
+                })
+                .Select(g => new TotalActivityHistoryDto
+                {
+                    Remark = g.Key.LabelName,
+                    TotalSeconds = g.Sum(l => l.PeopleActivity.TotalSeconds)
+                }).ToListAsync();
+
+            return totalActivity;
         }
 
         public async Task<IList<TotalActivityHistoryDto>> GetTotalActivityHistory(GetActivityHistoryInput input)
