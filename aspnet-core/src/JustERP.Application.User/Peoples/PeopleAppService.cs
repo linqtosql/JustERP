@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
+using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using JustERP.Application.User.Peoples.Dto;
 using JustERP.Core.User.Activities;
@@ -20,7 +21,6 @@ namespace JustERP.Application.User.Peoples
         private IRepository<MtPeople, long> _peopleRepository;
         private IRepository<MtLabel, long> _labelRepository;
         private IRepository<MtLabelCategory, long> _labelCategoryRepository;
-        private IRepository<MtPeopleActivityLabel, long> _activityLabelRepository;
 
         private ActivityManager _activityManager;
 
@@ -30,7 +30,6 @@ namespace JustERP.Application.User.Peoples
             IRepository<MtPeople, long> peopleRepository,
             IRepository<MtLabel, long> labelRepository,
             IRepository<MtLabelCategory, long> labelCategoryRepository,
-            IRepository<MtPeopleActivityLabel, long> activityLabelRepository,
             ActivityManager activityManager)
         {
             _peopleActivityRepository = peopleActivityRepository;
@@ -39,7 +38,6 @@ namespace JustERP.Application.User.Peoples
             _activityManager = activityManager;
             _labelRepository = labelRepository;
             _labelCategoryRepository = labelCategoryRepository;
-            _activityLabelRepository = activityLabelRepository;
         }
 
         public async Task<PeopleActivityDto> StartActivity(StartActivityInput input)
@@ -75,7 +73,19 @@ namespace JustERP.Application.User.Peoples
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
             var activityList = await peopleActivities.ToListAsync();
 
-            activityList.Add(new MtPeopleActivity
+            activityList.Add(GetUnTimingTotal(input, activityList));
+
+            if (input.TotalType.HasValue)
+            {
+                return GetTotalActivityHistory(activityList, input.TotalType.Value);
+            }
+
+            return ObjectMapper.Map<IList<PeopleActivityDto>>(activityList);
+        }
+
+        private MtPeopleActivity GetUnTimingTotal(GetActivityHistoryInput input, List<MtPeopleActivity> activityList)
+        {
+            return new MtPeopleActivity
             {
                 TotalSeconds = input.GetTotalSeconds() - activityList.Sum(a => a.TotalSeconds),
                 ActivityName = "未计时",
@@ -85,9 +95,7 @@ namespace JustERP.Application.User.Peoples
                 {
                     new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = "暂停"}
                 }
-            });
-
-            return ObjectMapper.Map<IList<PeopleActivityDto>>(activityList);
+            };
         }
 
         private IQueryable<MtPeopleActivity> QueryActivities(GetActivityHistoryInput input)
@@ -107,39 +115,49 @@ namespace JustERP.Application.User.Peoples
                     a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null);
         }
 
-        private async Task<IList<TotalActivityHistoryDto>> GetTotalActivityHistoryByLabel(GetActivityHistoryInput input)
+        private IList<PeopleActivityDto> GetTotalActivityHistory(IList<MtPeopleActivity> peopleActivities, TotalActivityTypes totalType)
         {
-            var totalActivity = await _activityLabelRepository.GetAll().AsNoTracking()
-                .Where(l => GetHistoryCondition(input, l.PeopleActivity))
-                .GroupBy(l => new
-                {
-                    l.LabelName
-                })
-                .Select(g => new TotalActivityHistoryDto
-                {
-                    Remark = g.Key.LabelName,
-                    TotalSeconds = g.Sum(l => l.PeopleActivity.TotalSeconds)
-                }).ToListAsync();
+            IEnumerable<PeopleActivityDto> totalByLabel = new List<PeopleActivityDto>();
+            switch (totalType)
+            {
+                case TotalActivityTypes.Activity:
+                    totalByLabel = peopleActivities.GroupBy(a => new
+                    {
+                        a.ActivityName
+                    })
+                    .Select(g => new PeopleActivityDto
+                    {
+                        ActivityName = g.Key.ActivityName,
+                        TotalSeconds = g.Sum(a => a.TotalSeconds)
+                    });
+                    break;
+                case TotalActivityTypes.Label:
+                    totalByLabel = peopleActivities.GroupBy(a => new
+                    {
+                        LabelName = a.PeopleActivityLabels.Select(l => l.LabelName).JoinAsString(",")
+                    })
+                    .Select(g => new PeopleActivityDto
+                    {
+                        Remark = g.Key.LabelName,
+                        TotalSeconds = g.Sum(a => a.TotalSeconds)
+                    });
+                    break;
+                case TotalActivityTypes.ActivityAndLabel:
+                    totalByLabel = peopleActivities.GroupBy(a => new
+                    {
+                        a.ActivityName,
+                        LabelName = a.PeopleActivityLabels.Select(l => l.LabelName).JoinAsString(",")
+                    })
+                    .Select(g => new PeopleActivityDto
+                    {
+                        ActivityName = g.Key.ActivityName,
+                        Remark = g.Key.LabelName,
+                        TotalSeconds = g.Sum(a => a.TotalSeconds)
+                    });
+                    break;
+            }
 
-            return totalActivity;
-        }
-
-        public async Task<IList<TotalActivityHistoryDto>> GetTotalActivityHistory(GetActivityHistoryInput input)
-        {
-            var peopleActivities = await QueryActivities(input)
-                .GroupBy(a => new
-                {
-                    a.ActivityName,
-                    a.ActivityIcon
-                })
-                .Select(g => new TotalActivityHistoryDto
-                {
-                    ActivityName = g.Key.ActivityName,
-                    ActivityIcon = g.Key.ActivityIcon,
-                    TotalSeconds = g.Sum(a => a.TotalSeconds)
-                }).ToListAsync();
-
-            return peopleActivities;
+            return totalByLabel.ToList();
         }
 
         public async Task<ActivityDto> AddActivity(AddActivityInput input)

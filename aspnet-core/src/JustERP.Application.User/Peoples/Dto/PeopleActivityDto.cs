@@ -16,5 +16,6 @@ namespace JustERP.Application.User.Peoples.Dto
         public int TotalSeconds { get; set; }
 
         public Dictionary<long, string> Labels { get; set; }
+        public string Remark { get; set; }
     }
 }

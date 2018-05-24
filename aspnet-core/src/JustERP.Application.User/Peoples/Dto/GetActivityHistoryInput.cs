@@ -57,11 +57,20 @@ namespace JustERP.Application.User.Peoples.Dto
             return (int)(EndDate - BeginDate).TotalSeconds;
         }
 
+        public TotalActivityTypes? TotalType { get; set; }
+
         public enum DateTypes
         {
             Today,
             Yesterday,
             ThisWeek
         }
+    }
+
+    public enum TotalActivityTypes
+    {
+        Activity = 0,
+        Label = 1,
+        ActivityAndLabel = 4
     }
 }

@@ -30,13 +30,6 @@ namespace JustERP.Peoples
         /// <param name="input"></param>
         /// <returns></returns>
         Task<IList<PeopleActivityDto>> GetPeopleActivityHistory(GetActivityHistoryInput input);
-
-        /// <summary>
-        /// 获取用户的活动汇总
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        Task<IList<TotalActivityHistoryDto>> GetTotalActivityHistory(GetActivityHistoryInput input);
         /// <summary>
         /// 添加一个活动
         /// </summary>
