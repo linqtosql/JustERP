@@ -5,6 +5,7 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
+using Abp.Timing;
 using JustERP.Application.User.Peoples.Dto;
 using JustERP.Core.User.Activities;
 using JustERP.Core.User.Pepoles;
@@ -73,7 +74,10 @@ namespace JustERP.Application.User.Peoples
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
             var activityList = await peopleActivities.ToListAsync();
 
-            activityList.Add(GetUnTimingTotal(input, activityList));
+            if (!input.TotalType.HasValue)
+            {
+                activityList.Add(GetUnTimingTotal(input, activityList));
+            }
 
             if (input.TotalType.HasValue)
             {
@@ -85,15 +89,18 @@ namespace JustERP.Application.User.Peoples
 
         private MtPeopleActivity GetUnTimingTotal(GetActivityHistoryInput input, List<MtPeopleActivity> activityList)
         {
+            var totalSecond = input.GetTotalSeconds();
+            var peopleSecond = activityList.Sum(a => a.TotalSeconds);
+            var hasCurrent = activityList.Any(a => a.EndTime == null);
             return new MtPeopleActivity
             {
-                TotalSeconds = input.GetTotalSeconds() - activityList.Sum(a => a.TotalSeconds),
+                TotalSeconds = totalSecond - peopleSecond,
                 ActivityName = "未计时",
                 BeginTime = input.BeginDate,
                 EndTime = input.EndDate,
                 PeopleActivityLabels = new List<MtPeopleActivityLabel>
                 {
-                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = "暂停"}
+                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = hasCurrent? "暂停":"计时中"}
                 }
             };
         }
@@ -157,7 +164,7 @@ namespace JustERP.Application.User.Peoples
                     break;
             }
 
-            return totalByLabel.ToList();
+            return totalByLabel.OrderByDescending(a => a.TotalSeconds).ToList();
         }
 
         public async Task<ActivityDto> AddActivity(AddActivityInput input)

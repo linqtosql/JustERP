@@ -8,8 +8,8 @@ namespace JustERP.Core.User.Activities
 {
     public class MtPeopleActivity : CreationAuditedEntity<long>
     {
-        public long ActivityId { get; set; }
-        public long PeopleId { get; set; }
+        public long? ActivityId { get; set; }
+        public long? PeopleId { get; set; }
         [Required, MaxLength(32)]
         public string ActivityName { get; set; }
         [MaxLength(64), Required]

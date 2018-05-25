@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Abp.Domain.Entities.Auditing;
 using JustERP.Core.User.Pepoles;
 
@@ -18,5 +19,7 @@ namespace JustERP.Core.User.Activities
         public float Turn { get; set; }
 
         public virtual MtPeople People { get; set; }
+
+        public virtual IEnumerable<MtPeopleActivity> PeopleActivities { get; set; }
     }
 }

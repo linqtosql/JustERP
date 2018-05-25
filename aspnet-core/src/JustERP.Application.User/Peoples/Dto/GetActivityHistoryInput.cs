@@ -1,4 +1,5 @@
 ﻿using System;
+using Abp.Timing;
 
 namespace JustERP.Application.User.Peoples.Dto
 {
@@ -13,15 +14,15 @@ namespace JustERP.Application.User.Peoples.Dto
                 switch (value)
                 {
                     case DateTypes.Today:
-                        BeginDate = EndDate = DateTime.Now;
+                        BeginDate = EndDate = Clock.Now;
                         break;
                     case DateTypes.Yesterday:
-                        BeginDate = EndDate = DateTime.Now.AddDays(-1);
+                        BeginDate = EndDate = Clock.Now.AddDays(-1);
                         break;
                     case DateTypes.ThisWeek:
-                        BeginDate = DateTime.Now.AddDays(-(DateTime.Now.DayOfWeek == DayOfWeek.Sunday
+                        BeginDate = Clock.Now.AddDays(-(Clock.Now.DayOfWeek == DayOfWeek.Sunday
                             ? 6
-                            : (int)DateTime.Now.DayOfWeek - 1));
+                            : (int)Clock.Now.DayOfWeek - 1));
                         EndDate = BeginDate.AddDays(6);
                         break;
                 }

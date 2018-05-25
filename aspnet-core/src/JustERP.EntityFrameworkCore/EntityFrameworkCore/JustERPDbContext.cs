@@ -30,21 +30,24 @@ namespace JustERP.EntityFrameworkCore
         {
             base.OnModelCreating(modelBuilder);
 
+
             modelBuilder.Entity<MtPeople>(b =>
             {
-                b.HasMany(e => e.PeopleActivities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.ClientSetNull);
-                b.HasMany(e => e.Activities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.ClientSetNull);
+                b.HasMany(e => e.PeopleActivities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.SetNull);
+                b.HasMany(e => e.Activities).WithOne(e => e.People).HasForeignKey(e => e.PeopleId).OnDelete(DeleteBehavior.SetNull);
 
                 b.HasAlternateKey(e => e.Openid);
             });
 
+            modelBuilder.Entity<MtActivity>(b =>
+            {
+                b.HasMany(e => e.PeopleActivities).WithOne(e => e.Activity).HasForeignKey(e => e.ActivityId).OnDelete(DeleteBehavior.SetNull);
+            });
+
             modelBuilder.Entity<MtPeopleActivity>(b =>
             {
-                b
-                .HasMany(e => e.PeopleActivityLabels)
-                .WithOne(e => e.PeopleActivity)
-                .HasForeignKey(e => e.PeopleActivityId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                b.HasMany(e => e.PeopleActivityLabels).WithOne(e => e.PeopleActivity).HasForeignKey(e => e.PeopleActivityId);
+
             });
 
             modelBuilder.Entity<MtLabelCategory>(b =>

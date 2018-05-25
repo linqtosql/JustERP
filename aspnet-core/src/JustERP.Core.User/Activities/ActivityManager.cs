@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using Abp.Timing;
 using JustERP.Core.User.Pepoles;
 using Microsoft.EntityFrameworkCore;
 
@@ -73,7 +74,7 @@ namespace JustERP.Core.User.Activities
                 ActivityIcon = activity.Icon,
                 ActivityId = activity.Id,
                 ActivityName = activity.Name,
-                BeginTime = DateTime.Now
+                BeginTime = Clock.Now
             };
             await _peopleActivityRepository.InsertAsync(peopleActivity);
             await UnitOfWorkManager.Current.SaveChangesAsync();
@@ -84,7 +85,7 @@ namespace JustERP.Core.User.Activities
         {
             if (peopleActivity.EndTime.HasValue) return peopleActivity;
 
-            peopleActivity.EndTime = DateTime.Now;
+            peopleActivity.EndTime = Clock.Now;
             peopleActivity.TotalSeconds = peopleActivity.CalcTotalSeconds();
 
             return peopleActivity;

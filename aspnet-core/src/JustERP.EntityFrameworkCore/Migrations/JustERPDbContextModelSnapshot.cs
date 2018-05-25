@@ -1073,7 +1073,7 @@ namespace JustERP.Migrations
                         .IsRequired()
                         .HasMaxLength(64);
 
-                    b.Property<long>("ActivityId");
+                    b.Property<long?>("ActivityId");
 
                     b.Property<string>("ActivityName")
                         .IsRequired()
@@ -1087,7 +1087,7 @@ namespace JustERP.Migrations
 
                     b.Property<DateTime?>("EndTime");
 
-                    b.Property<long>("PeopleId");
+                    b.Property<long?>("PeopleId");
 
                     b.Property<int>("TotalSeconds");
 
@@ -1405,7 +1405,8 @@ namespace JustERP.Migrations
                 {
                     b.HasOne("JustERP.Core.User.Pepoles.MtPeople", "People")
                         .WithMany("Activities")
-                        .HasForeignKey("PeopleId");
+                        .HasForeignKey("PeopleId")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
             modelBuilder.Entity("JustERP.Core.User.Activities.MtLabel", b =>
@@ -1423,13 +1424,14 @@ namespace JustERP.Migrations
             modelBuilder.Entity("JustERP.Core.User.Activities.MtPeopleActivity", b =>
                 {
                     b.HasOne("JustERP.Core.User.Activities.MtActivity", "Activity")
-                        .WithMany()
+                        .WithMany("PeopleActivities")
                         .HasForeignKey("ActivityId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("JustERP.Core.User.Pepoles.MtPeople", "People")
                         .WithMany("PeopleActivities")
-                        .HasForeignKey("PeopleId");
+                        .HasForeignKey("PeopleId")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
             modelBuilder.Entity("JustERP.Core.User.Activities.MtPeopleActivityLabel", b =>
@@ -1441,7 +1443,8 @@ namespace JustERP.Migrations
 
                     b.HasOne("JustERP.Core.User.Activities.MtPeopleActivity", "PeopleActivity")
                         .WithMany("PeopleActivityLabels")
-                        .HasForeignKey("PeopleActivityId");
+                        .HasForeignKey("PeopleActivityId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("JustERP.Core.User.Pepoles.MtPeople", b =>
