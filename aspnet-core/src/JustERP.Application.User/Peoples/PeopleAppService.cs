@@ -6,6 +6,7 @@ using Abp.Authorization;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
+using Abp.Timing;
 using JustERP.Application.User.Peoples.Dto;
 using JustERP.Core.User.Activities;
 using JustERP.Core.User.Pepoles;
@@ -17,6 +18,7 @@ namespace JustERP.Application.User.Peoples
     [AbpAuthorize]
     public class PeopleAppService : ApplicationService, IPeopleAppService
     {
+        private const string LabelSeparator = " , ";
         private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
         private IRepository<MtActivity, long> _activityRepository;
         private IRepository<MtPeople, long> _peopleRepository;
@@ -74,7 +76,7 @@ namespace JustERP.Application.User.Peoples
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
             var activityList = await peopleActivities.ToListAsync();
 
-            if (!input.TotalType.HasValue)
+            if (!input.TotalType.HasValue && input.BeginDate.Date != Clock.Now.Date)
             {
                 activityList.Add(GetUnTimingTotal(input, activityList));
             }
@@ -91,16 +93,15 @@ namespace JustERP.Application.User.Peoples
         {
             var totalSecond = input.GetTotalSeconds();
             var peopleSecond = activityList.Sum(a => a.TotalSeconds);
-            var hasCurrent = activityList.Any(a => a.EndTime == null);
             return new MtPeopleActivity
             {
                 TotalSeconds = totalSecond - peopleSecond,
-                ActivityName = "未计时",
+                ActivityName = "未被记录的时间",
                 BeginTime = input.BeginDate,
                 EndTime = input.EndDate,
                 PeopleActivityLabels = new List<MtPeopleActivityLabel>
                 {
-                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = hasCurrent? "暂停":"进行中"}
+                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = "暂停"}
                 }
             };
         }
@@ -141,7 +142,7 @@ namespace JustERP.Application.User.Peoples
                 case TotalActivityTypes.Label:
                     totalByLabel = peopleActivities.GroupBy(a => new
                     {
-                        LabelName = a.PeopleActivityLabels.Select(l => l.LabelName).JoinAsString(",")
+                        LabelName = a.PeopleActivityLabels.Select(l => l.LabelName).JoinAsString(LabelSeparator)
                     })
                     .Select(g => new PeopleActivityDto
                     {
@@ -153,7 +154,7 @@ namespace JustERP.Application.User.Peoples
                     totalByLabel = peopleActivities.GroupBy(a => new
                     {
                         a.ActivityName,
-                        LabelName = a.PeopleActivityLabels.Select(l => l.LabelName).JoinAsString(",")
+                        LabelName = a.PeopleActivityLabels.Select(l => l.LabelName).JoinAsString(LabelSeparator)
                     })
                     .Select(g => new PeopleActivityDto
                     {
