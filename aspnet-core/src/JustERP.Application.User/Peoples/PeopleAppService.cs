@@ -100,7 +100,7 @@ namespace JustERP.Application.User.Peoples
                 EndTime = input.EndDate,
                 PeopleActivityLabels = new List<MtPeopleActivityLabel>
                 {
-                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = hasCurrent? "暂停":"计时中"}
+                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = hasCurrent? "暂停":"进行中"}
                 }
             };
         }
