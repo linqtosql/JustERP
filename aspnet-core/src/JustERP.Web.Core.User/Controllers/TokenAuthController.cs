@@ -8,6 +8,7 @@ using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
+using Abp.Timing;
 using Abp.UI;
 using JustERP.Authentication.External;
 using JustERP.Authentication.JwtBearer;
@@ -135,7 +136,7 @@ namespace JustERP.Web.Core.User.Controllers
 
         private string CreateAccessToken(IEnumerable<Claim> claims, TimeSpan? expiration = null)
         {
-            var now = DateTime.UtcNow;
+            var now = Clock.Now;
 
             var jwtSecurityToken = new JwtSecurityToken(
                 issuer: _configuration.Issuer,

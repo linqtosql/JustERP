@@ -5,7 +5,7 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
-using Abp.Timing;
+using Abp.Runtime.Session;
 using JustERP.Application.User.Peoples.Dto;
 using JustERP.Core.User.Activities;
 using JustERP.Core.User.Pepoles;
@@ -44,7 +44,7 @@ namespace JustERP.Application.User.Peoples
         public async Task<PeopleActivityDto> StartActivity(StartActivityInput input)
         {
             var activity = await _activityRepository.GetAsync(input.ActivityId);
-            var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
+            var people = await _peopleRepository.GetAsync(AbpSession.GetUserId());
 
             var peopleActivity = await _activityManager.StartActivity(people, activity);
 
@@ -63,7 +63,7 @@ namespace JustERP.Application.User.Peoples
         {
             var currentActivity = await _peopleActivityRepository
                 .GetAllIncluding(a => a.PeopleActivityLabels)
-                .FirstOrDefaultAsync(a => a.PeopleId == AbpSession.UserId && a.EndTime == null);
+                .FirstOrDefaultAsync(a => a.PeopleId == AbpSession.GetUserId() && a.EndTime == null);
 
             return ObjectMapper.Map<PeopleActivityDto>(currentActivity);
         }
@@ -116,7 +116,7 @@ namespace JustERP.Application.User.Peoples
 
         private bool GetHistoryCondition(GetActivityHistoryInput input, MtPeopleActivity a)
         {
-            return a.PeopleId == AbpSession.UserId &&
+            return a.PeopleId == AbpSession.GetUserId() &&
                    (a.BeginTime >= input.BeginDate &&
                     a.EndTime <= input.EndDate ||
                     a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null);
@@ -169,7 +169,7 @@ namespace JustERP.Application.User.Peoples
 
         public async Task<ActivityDto> AddActivity(AddActivityInput input)
         {
-            var people = await _peopleRepository.GetAsync(AbpSession.UserId.Value);
+            var people = await _peopleRepository.GetAsync(AbpSession.GetUserId());
             var systemActivity = await _activityRepository.GetAll().AsNoTracking().SingleOrDefaultAsync(a => a.Id == input.ActivityId);
             systemActivity.Id = 0;
             systemActivity.Name = input.Name;
@@ -180,7 +180,7 @@ namespace JustERP.Application.User.Peoples
         public async Task DeleteActivity(long activityId)
         {
             var activity = await _activityRepository.GetAsync(activityId);
-            if (activity.PeopleId != AbpSession.UserId) return;
+            if (activity.PeopleId != AbpSession.GetUserId()) return;
             await _activityManager.DeleteActivity(activity);
         }
 
@@ -216,14 +216,14 @@ namespace JustERP.Application.User.Peoples
         public async Task DeleteLabel(long labelId)
         {
             var label = await _labelRepository.GetAsync(labelId);
-            if (label.PeopleId != AbpSession.UserId) return;
+            if (label.PeopleId != AbpSession.GetUserId()) return;
             await _activityManager.DeleteLabel(label);
         }
 
         public async Task<LabelCategoryDto> SetLabelCategoryName(SetLabelCategoryNameInput input)
         {
             var labelCategory = await _labelCategoryRepository.GetAsync(input.Id);
-            labelCategory.SetPeopleName(AbpSession.UserId.Value, input.Name);
+            labelCategory.SetPeopleName(AbpSession.GetUserId(), input.Name);
             return ObjectMapper.Map<LabelCategoryDto>(labelCategory);
         }
 
@@ -231,12 +231,12 @@ namespace JustERP.Application.User.Peoples
         {
             var labels = await _labelRepository
                 .GetAllIncluding(l => l.LabelCategory)
-                .Where(l => l.PeopleId == AbpSession.UserId)
+                .Where(l => l.PeopleId == AbpSession.GetUserId())
                 .ToListAsync();
             var groupLabels = labels.GroupBy(l => l.LabelCategory).Select(g => new LabelCategoryDto
             {
                 Id = g.Key.Id,
-                Name = g.Key.GetPeopleName(AbpSession.UserId.Value) ?? g.Key.Name,
+                Name = g.Key.GetPeopleName(AbpSession.GetUserId()) ?? g.Key.Name,
                 Labeles = ObjectMapper.Map<LabelDto[]>(g.ToArray())
             }).ToList();
             return groupLabels;
