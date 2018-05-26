@@ -28,7 +28,7 @@ namespace JustERP.Core.User.Authorization
             _activityManager = activityManager;
         }
 
-        public async Task<UserLoginResult> LoginAsync(string openId)
+        public async Task<UserLoginResult> LoginAsync(string openId, string avatarUrl = null, string nickName = null)
         {
             var user = await _peopleManager.FindByOpenId(openId);
 
@@ -36,6 +36,9 @@ namespace JustERP.Core.User.Authorization
             {
                 return await Task.FromResult(new UserLoginResult(AbpLoginResultType.InvalidUserNameOrEmailAddress));
             }
+
+            user.AvatarImg = avatarUrl;
+            user.NickName = nickName;
 
             var principal = await _claimsPrincipalFactory.CreateAsync(user);
             var result = new UserLoginResult(user.Id, principal.Identity as ClaimsIdentity);

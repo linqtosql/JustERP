@@ -49,7 +49,7 @@ namespace JustERP.Web.Core.User.Controllers
         [HttpPost]
         public async Task<AuthenticateResultModel> Authenticate([FromBody]WeixinLoginModel loginModel)
         {
-            var loginResult = await GetLoginResultAsync(loginModel.OpenId);
+            var loginResult = await GetLoginResultAsync(loginModel);
 
             var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
 
@@ -121,9 +121,9 @@ namespace JustERP.Web.Core.User.Controllers
             return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
         }
 
-        private async Task<UserLoginResult> GetLoginResultAsync(string openid)
+        private async Task<UserLoginResult> GetLoginResultAsync(WeixinLoginModel loginModel)
         {
-            var loginResult = await _logInManager.LoginAsync(openid);
+            var loginResult = await _logInManager.LoginAsync(loginModel.OpenId, loginModel.AvatarUrl, loginModel.NickName);
 
             switch (loginResult.Result)
             {

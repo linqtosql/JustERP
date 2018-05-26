@@ -10,7 +10,7 @@ namespace JustERP.Core.User.Pepoles
         private const string DefaultBackground = "#c5c3c6";
         [MaxLength(32)]
         public string NickName { get; set; }
-        [MaxLength(128)]
+        [MaxLength(256)]
         public string AvatarImg { get; set; }
         [Required,MaxLength(128)]
         public string Openid { get; set; }

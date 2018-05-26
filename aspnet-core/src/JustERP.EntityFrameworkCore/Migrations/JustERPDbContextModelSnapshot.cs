@@ -1128,7 +1128,7 @@ namespace JustERP.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AvatarImg")
-                        .HasMaxLength(128);
+                        .HasMaxLength(256);
 
                     b.Property<string>("BackgroundColor")
                         .HasMaxLength(8);
