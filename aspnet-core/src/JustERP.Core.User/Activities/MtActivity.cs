@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Domain.Entities.Auditing;
 using JustERP.Core.User.Pepoles;
 
 namespace JustERP.Core.User.Activities
 {
-    public class MtActivity : AuditedEntity<long>
+    public class MtActivity : AuditedEntity<long>, IDeletionAudited, ILocalizationAudited
     {
         [MaxLength(32), Required]
         public string Name { get; set; }
@@ -21,5 +22,10 @@ namespace JustERP.Core.User.Activities
         public virtual MtPeople People { get; set; }
 
         public virtual IEnumerable<MtPeopleActivity> PeopleActivities { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletionTime { get; set; }
+        public long? DeleterUserId { get; set; }
+        [MaxLength(16)]
+        public string Language { get; set; }
     }
 }

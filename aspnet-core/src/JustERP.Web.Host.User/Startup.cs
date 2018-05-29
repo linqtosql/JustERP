@@ -87,7 +87,7 @@ namespace JustERP.Web.Host.User
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); //Initializes ABP framework.
+            app.UseAbp(options => { options.UseAbpRequestLocalization = true; }); //Initializes ABP framework.
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 
             app.UseStaticFiles();

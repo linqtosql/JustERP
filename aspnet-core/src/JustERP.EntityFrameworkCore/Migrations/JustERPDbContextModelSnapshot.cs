@@ -999,13 +999,22 @@ namespace JustERP.Migrations
 
                     b.Property<long?>("CreatorUserId");
 
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
                     b.Property<string>("Icon")
                         .IsRequired()
                         .HasMaxLength(64);
 
                     b.Property<bool>("IsDefault");
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<bool>("IsSystem");
+
+                    b.Property<string>("Language")
+                        .HasMaxLength(16);
 
                     b.Property<DateTime?>("LastModificationTime");
 
@@ -1030,6 +1039,12 @@ namespace JustERP.Migrations
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<long>("LabelCategoryId");
 

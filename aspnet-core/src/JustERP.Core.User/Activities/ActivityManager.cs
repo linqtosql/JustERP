@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using Abp.Localization;
 using Abp.Timing;
 using JustERP.Core.User.Pepoles;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ namespace JustERP.Core.User.Activities
         private IRepository<MtActivity, long> _activityRepository;
         private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
         private IRepository<MtPeopleActivityLabel, long> _activityLabelRepository;
+
+        public ILanguageManager LanguageManager { get; set; }
         public ActivityManager(IRepository<MtLabel, long> labelRepository,
             IRepository<MtActivity, long> activityRepository,
             IRepository<MtPeopleActivityLabel, long> activityLabelRepository,
@@ -54,6 +57,7 @@ namespace JustERP.Core.User.Activities
                 defaultActivity.Id = 0;
                 defaultActivity.PeopleId = people.Id;
                 defaultActivity.IsSystem = defaultActivity.IsDefault = false;
+                defaultActivity.Language = LanguageManager.CurrentLanguage.Name;
                 await _activityRepository.InsertAsync(defaultActivity);
             }
         }

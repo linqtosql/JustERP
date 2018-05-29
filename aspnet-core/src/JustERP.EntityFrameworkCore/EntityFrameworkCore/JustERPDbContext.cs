@@ -1,4 +1,5 @@
-﻿using Abp.Auditing;
+﻿using System.Threading;
+using Abp.Auditing;
 using Abp.Zero.EntityFrameworkCore;
 using JustERP.Authorization.Roles;
 using JustERP.Authorization.Users;
@@ -20,10 +21,11 @@ namespace JustERP.EntityFrameworkCore
         public virtual DbSet<MtLabelCategory> LabelCategories { get; set; }
         public virtual DbSet<MtPeopleActivityLabel> PeopleActivityLabels { get; set; }
 
+        private string _languageName = null;
         public JustERPDbContext(DbContextOptions<JustERPDbContext> options)
             : base(options)
         {
-
+            _languageName = Thread.CurrentThread.CurrentCulture.Name;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,6 +45,8 @@ namespace JustERP.EntityFrameworkCore
             {
                 b.HasMany(e => e.PeopleActivities).WithOne(e => e.Activity).HasForeignKey(e => e.ActivityId).OnDelete(DeleteBehavior.SetNull);
             });
+
+            modelBuilder.Entity<MtActivity>().HasQueryFilter(activity => activity.Language == _languageName);
 
             modelBuilder.Entity<MtPeopleActivity>(b =>
             {

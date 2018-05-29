@@ -230,17 +230,20 @@ namespace JustERP.Application.User.Peoples
 
         public async Task<IList<LabelCategoryDto>> GetLabelCategories()
         {
-            var labels = await _labelRepository
-                .GetAllIncluding(l => l.LabelCategory)
-                .Where(l => l.PeopleId == AbpSession.GetUserId())
-                .ToListAsync();
-            var groupLabels = labels.GroupBy(l => l.LabelCategory).Select(g => new LabelCategoryDto
+            var labelCategoryDto = await (from c in _labelCategoryRepository.GetAll()
+                                   select new LabelCategoryDto
+                                   {
+                                       Id = c.Id,
+                                       Name = c.GetPeopleName(AbpSession.GetUserId()) ?? c.Name
+                                   }).ToListAsync();
+            foreach (var categoryDto in labelCategoryDto)
             {
-                Id = g.Key.Id,
-                Name = g.Key.GetPeopleName(AbpSession.GetUserId()) ?? g.Key.Name,
-                Labeles = ObjectMapper.Map<LabelDto[]>(g.ToArray())
-            }).ToList();
-            return groupLabels;
+                var labels = from l in _labelRepository.GetAll()
+                             where l.LabelCategoryId == categoryDto.Id && l.PeopleId == AbpSession.GetUserId()
+                             select l;
+                categoryDto.Labeles = ObjectMapper.Map<LabelDto[]>(labels);
+            }
+            return labelCategoryDto;
         }
     }
 }

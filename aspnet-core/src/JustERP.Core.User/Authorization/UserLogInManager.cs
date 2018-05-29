@@ -48,17 +48,16 @@ namespace JustERP.Core.User.Authorization
         public async Task RegisterAsync(string openId)
         {
             var user = await _peopleManager.FindByOpenId(openId);
-            if (user != null)
+            if (user == null)
             {
-                return;
+                user = new MtPeople { Openid = openId };
+                await _peopleManager.CreateAsync(user);
+
+                UnitOfWorkManager.Current.SaveChanges();
             }
-            var expertAccount = new MtPeople { Openid = openId };
-            await _peopleManager.CreateAsync(expertAccount);
 
-            UnitOfWorkManager.Current.SaveChanges();
-
-            await _activityManager.InitLabels(expertAccount);
-            await _activityManager.InitActivities(expertAccount);
+            await _activityManager.InitLabels(user);
+            await _activityManager.InitActivities(user);
             //await EventBus.TriggerAsync(new RegisterCompleteEventData { Register = expertAccount });
         }
     }
