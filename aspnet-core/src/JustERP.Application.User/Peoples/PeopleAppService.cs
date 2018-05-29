@@ -41,6 +41,8 @@ namespace JustERP.Application.User.Peoples
             _activityManager = activityManager;
             _labelRepository = labelRepository;
             _labelCategoryRepository = labelCategoryRepository;
+            
+            LocalizationSourceName = "JustERP";
         }
 
         public async Task<PeopleActivityDto> StartActivity(StartActivityInput input)
@@ -92,16 +94,17 @@ namespace JustERP.Application.User.Peoples
         private MtPeopleActivity GetUnTimingTotal(GetActivityHistoryInput input, List<MtPeopleActivity> activityList)
         {
             var totalSecond = input.GetTotalSeconds();
+
             var peopleSecond = activityList.Sum(a => a.TotalSeconds);
             return new MtPeopleActivity
             {
                 TotalSeconds = totalSecond - peopleSecond,
-                ActivityName = "未被记录的时间",
+                ActivityName = L("TimeNotRecorded"),
                 BeginTime = input.BeginDate,
                 EndTime = input.EndDate,
                 PeopleActivityLabels = new List<MtPeopleActivityLabel>
                 {
-                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = "暂停"}
+                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = L("Paused")}
                 }
             };
         }
@@ -231,11 +234,11 @@ namespace JustERP.Application.User.Peoples
         public async Task<IList<LabelCategoryDto>> GetLabelCategories()
         {
             var labelCategoryDto = await (from c in _labelCategoryRepository.GetAll()
-                                   select new LabelCategoryDto
-                                   {
-                                       Id = c.Id,
-                                       Name = c.GetPeopleName(AbpSession.GetUserId()) ?? c.Name
-                                   }).ToListAsync();
+                                          select new LabelCategoryDto
+                                          {
+                                              Id = c.Id,
+                                              Name = c.GetPeopleName(AbpSession.GetUserId()) ?? c.Name
+                                          }).ToListAsync();
             foreach (var categoryDto in labelCategoryDto)
             {
                 var labels = from l in _labelRepository.GetAll()
