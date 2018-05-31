@@ -46,7 +46,7 @@ namespace JustERP.EntityFrameworkCore
                 b.HasMany(e => e.PeopleActivities).WithOne(e => e.Activity).HasForeignKey(e => e.ActivityId).OnDelete(DeleteBehavior.SetNull);
             });
 
-            modelBuilder.Entity<MtActivity>().HasQueryFilter(activity => activity.Language == _languageName);
+            modelBuilder.Entity<MtActivity>().HasQueryFilter(activity => activity.Language == _languageName && !activity.IsDeleted);
 
             modelBuilder.Entity<MtPeopleActivity>(b =>
             {

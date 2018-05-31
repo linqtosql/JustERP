@@ -41,7 +41,7 @@ namespace JustERP.Application.User.Peoples
             _activityManager = activityManager;
             _labelRepository = labelRepository;
             _labelCategoryRepository = labelCategoryRepository;
-            
+
             LocalizationSourceName = "JustERP";
         }
 
@@ -85,7 +85,7 @@ namespace JustERP.Application.User.Peoples
 
             if (input.TotalType.HasValue)
             {
-                return GetTotalActivityHistory(activityList, input.TotalType.Value);
+                return GetTotalActivityHistory(activityList, input.TotalType.Value, input.OrderBy);
             }
 
             return ObjectMapper.Map<IList<PeopleActivityDto>>(activityList);
@@ -126,7 +126,7 @@ namespace JustERP.Application.User.Peoples
                     a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null);
         }
 
-        private IList<PeopleActivityDto> GetTotalActivityHistory(IList<MtPeopleActivity> peopleActivities, TotalActivityTypes totalType)
+        private IList<PeopleActivityDto> GetTotalActivityHistory(IList<MtPeopleActivity> peopleActivities, TotalActivityTypes totalType, HistoryOrderBy? orderBy = null)
         {
             IEnumerable<PeopleActivityDto> totalByLabel = new List<PeopleActivityDto>();
             switch (totalType)
@@ -167,8 +167,17 @@ namespace JustERP.Application.User.Peoples
                     });
                     break;
             }
+            switch (orderBy)
+            {
+                case HistoryOrderBy.ActivityName:
+                    totalByLabel = totalByLabel.OrderBy(t => t.ActivityName);
+                    break;
+                case HistoryOrderBy.Label:
+                    totalByLabel = totalByLabel.OrderByDescending(t => t.Remark);
+                    break;
+            }
 
-            return totalByLabel.OrderByDescending(a => a.TotalSeconds).ToList();
+            return totalByLabel.ToList();
         }
 
         public async Task<ActivityDto> AddActivity(AddActivityInput input)

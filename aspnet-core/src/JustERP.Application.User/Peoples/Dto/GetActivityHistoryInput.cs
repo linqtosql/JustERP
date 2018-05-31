@@ -60,6 +60,8 @@ namespace JustERP.Application.User.Peoples.Dto
 
         public TotalActivityTypes? TotalType { get; set; }
 
+        public HistoryOrderBy? OrderBy { get; set; }
+
         public enum DateTypes
         {
             Today,
@@ -68,10 +70,17 @@ namespace JustERP.Application.User.Peoples.Dto
         }
     }
 
+    public enum HistoryOrderBy
+    {
+        ActivityName = 0,
+        Label = 1
+    }
+
     public enum TotalActivityTypes
     {
         Activity = 0,
         Label = 1,
+        LabelAndActivity = 3,
         ActivityAndLabel = 4
     }
 }
