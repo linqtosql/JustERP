@@ -202,7 +202,7 @@ namespace JustERP.Application.User.Peoples
         {
             var usedActivities = await _activityRepository.GetAll()
                 .Where(a => a.PeopleId == AbpSession.UserId)
-                .OrderBy(a => a.Id)
+                .OrderBy(a => a.Turn)
                 .ToListAsync();
 
             return ObjectMapper.Map<IList<ActivityDto>>(usedActivities);
@@ -212,7 +212,7 @@ namespace JustERP.Application.User.Peoples
         {
             var unUsedActivities = await _activityRepository.GetAll()
                 .Where(a => a.IsSystem)
-                .OrderBy(a => a.Id)
+                .OrderBy(a => a.Turn)
                 .ToListAsync();
 
             return ObjectMapper.Map<IList<ActivityDto>>(unUsedActivities);

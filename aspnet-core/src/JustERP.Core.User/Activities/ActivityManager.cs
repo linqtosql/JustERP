@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
@@ -15,6 +16,29 @@ namespace JustERP.Core.User.Activities
         private IRepository<MtActivity, long> _activityRepository;
         private IRepository<MtPeopleActivity, long> _peopleActivityRepository;
         private IRepository<MtPeopleActivityLabel, long> _activityLabelRepository;
+        private static Dictionary<string, List<MtActivity>> DefaultActivity = new Dictionary<string, List<MtActivity>>
+        {
+            {"zh-CN",new List<MtActivity>
+            {
+                new MtActivity{Language = "zh-CN", Turn = 1, Icon = "bfkh.png", Name = "客户 1"},
+                new MtActivity{Language = "zh-CN", Turn = 2, Icon = "bfkh.png", Name = "客户 2"},
+                new MtActivity{Language = "zh-CN", Turn = 3, Icon = "bfkh.png", Name = "客户 3"},
+                new MtActivity{Language = "zh-CN", Turn = 4, Icon = "ywhy.png", Name = "方案演示"},
+                new MtActivity{Language = "zh-CN", Turn = 5, Icon = "xzh.png", Name = "内部会议"},
+                new MtActivity{Language = "zh-CN", Turn = 6, Icon = "yth.jpg", Name = "培训"},
+                new MtActivity{Language = "zh-CN", Turn = 7, Icon = "cc.png", Name = "出差"}
+            }},
+            {"en",new List<MtActivity>
+            {
+                new MtActivity{Language = "en", Turn = 1, Icon = "bfkh.png", Name = "Client 1"},
+                new MtActivity{Language = "en", Turn = 2, Icon = "bfkh.png", Name = "Client 2"},
+                new MtActivity{Language = "en", Turn = 3, Icon = "bfkh.png", Name = "Client 3"},
+                new MtActivity{Language = "en", Turn = 4, Icon = "ywhy.png", Name = "Presentation"},
+                new MtActivity{Language = "en", Turn = 5, Icon = "xzh.png", Name = "Internal mtg"},
+                new MtActivity{Language = "en", Turn = 6, Icon = "yth.jpg", Name = "Training"},
+                new MtActivity{Language = "en", Turn = 7, Icon = "cc.png", Name = "Biz trip"}
+            }}
+        };
 
         public ILanguageManager LanguageManager { get; set; }
         public ActivityManager(IRepository<MtLabel, long> labelRepository,
@@ -51,7 +75,8 @@ namespace JustERP.Core.User.Activities
             {
                 return;
             }
-            var defaultActivities = await activityQuery.Where(l => l.IsSystem && l.IsDefault).ToListAsync();
+            //var defaultActivities = await activityQuery.Where(l => l.IsSystem && l.IsDefault).ToListAsync();
+            var defaultActivities = DefaultActivity[LanguageManager.CurrentLanguage.Name];
             foreach (var defaultActivity in defaultActivities)
             {
                 defaultActivity.Id = 0;
@@ -98,6 +123,7 @@ namespace JustERP.Core.User.Activities
         {
             activity.IsSystem = activity.IsDefault = false;
             activity.PeopleId = people.Id;
+            activity.Turn = 1 + await _activityRepository.GetAll().Where(a => a.PeopleId == people.Id).MaxAsync(a => a.Turn);
             activity = await _activityRepository.InsertAsync(activity);
             await UnitOfWorkManager.Current.SaveChangesAsync();
             return activity;

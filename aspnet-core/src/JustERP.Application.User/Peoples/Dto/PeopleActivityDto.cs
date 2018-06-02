@@ -11,8 +11,8 @@ namespace JustERP.Application.User.Peoples.Dto
         public long ActivityId { get; set; }
         public string ActivityIcon { get; set; }
         public string ActivityName { get; set; }
-        public string BeginTime { get; set; }
-        public string EndTime { get; set; }
+        public long BeginTime { get; set; }
+        public long? EndTime { get; set; }
         public int TotalSeconds { get; set; }
 
         public Dictionary<long, string> Labels { get; set; }

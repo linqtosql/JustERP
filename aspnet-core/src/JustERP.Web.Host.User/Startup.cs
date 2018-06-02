@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Linq;
 using Abp.Extensions;
+using Abp.Timing;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 
@@ -31,6 +32,8 @@ namespace JustERP.Web.Host.User
 
         public Startup(IHostingEnvironment env)
         {
+            //使用Utc支持多时区
+            Clock.Provider = ClockProviders.Utc;
             _appConfiguration = env.GetAppConfiguration();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
