@@ -85,7 +85,6 @@
     <text name="TenantIdIsNotActive{0}">TenantId {0} is not active</text>
     <text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
 
-    <text name="TimeNotRecorded" value="Time not recorded" />
-    <text name="Paused" value="Paused" />
+    <text name="TimeNotRecorded" value="No records" />
   </texts>
 </localizationDictionary>

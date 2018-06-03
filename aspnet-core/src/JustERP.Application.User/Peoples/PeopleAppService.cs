@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Authorization;
@@ -104,26 +106,28 @@ namespace JustERP.Application.User.Peoples
                 EndTime = input.EndDate,
                 PeopleActivityLabels = new List<MtPeopleActivityLabel>
                 {
-                    new MtPeopleActivityLabel{LabelCategoryId = 1,LabelName = L("Paused")}
+                    new MtPeopleActivityLabel{LabelCategoryId = 1}
                 }
             };
         }
 
         private IQueryable<MtPeopleActivity> QueryActivities(GetActivityHistoryInput input)
         {
+            Expression<Func<MtPeopleActivity, bool>> condition = a => (a.BeginTime >= input.BeginDate &&
+                                                                       a.EndTime <= input.EndDate) ||
+                                                                       (a.BeginTime >= input.BeginDate &&
+                                                                       a.BeginTime <= input.EndDate &&
+                                                                       a.EndTime == null);
+            if (input.TotalType.HasValue)
+            {
+                condition = a => a.BeginTime >= input.BeginDate &&
+                                 a.EndTime <= input.EndDate;
+            }
             var peopleActivities = _peopleActivityRepository
                 .GetAllIncluding(a => a.PeopleActivityLabels)
-                .Where(a => GetHistoryCondition(input, a));
-
+                .Where(a => a.PeopleId == AbpSession.GetUserId());
+            peopleActivities = peopleActivities.Where(condition);
             return peopleActivities;
-        }
-
-        private bool GetHistoryCondition(GetActivityHistoryInput input, MtPeopleActivity a)
-        {
-            return a.PeopleId == AbpSession.GetUserId() &&
-                   (a.BeginTime >= input.BeginDate &&
-                    a.EndTime <= input.EndDate ||
-                    a.BeginTime >= input.BeginDate && a.BeginTime <= input.EndDate && a.EndTime == null);
         }
 
         private IList<PeopleActivityDto> GetTotalActivityHistory(IList<MtPeopleActivity> peopleActivities, TotalActivityTypes totalType, HistoryOrderBy? orderBy = null)

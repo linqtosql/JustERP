@@ -9,25 +9,7 @@ namespace JustERP.Application.User.Peoples.Dto
         public DateTypes DateType
         {
             get => _dateType;
-            set
-            {
-                switch (value)
-                {
-                    case DateTypes.Today:
-                        BeginDate = EndDate = Clock.Now;
-                        break;
-                    case DateTypes.Yesterday:
-                        BeginDate = EndDate = Clock.Now.AddDays(-1);
-                        break;
-                    case DateTypes.ThisWeek:
-                        BeginDate = Clock.Now.AddDays(-(Clock.Now.DayOfWeek == DayOfWeek.Sunday
-                            ? 6
-                            : (int)Clock.Now.DayOfWeek - 1));
-                        EndDate = BeginDate.AddDays(6);
-                        break;
-                }
-                _dateType = value;
-            }
+            set => _dateType = value;
         }
 
         private DateTime _beginDate;
@@ -46,6 +28,31 @@ namespace JustERP.Application.User.Peoples.Dto
             {
                 var val = value;
                 _endDate = new DateTime(val.Year, val.Month, val.Day, 23, 59, 59);
+            }
+        }
+
+        private DateTime _clientDateTime;
+        public DateTime ClientDateTime
+        {
+            get { return _clientDateTime; }
+            set
+            {
+                _clientDateTime = value;
+                switch (DateType)
+                {
+                    case DateTypes.Today:
+                        BeginDate = EndDate = _clientDateTime;
+                        break;
+                    case DateTypes.Yesterday:
+                        BeginDate = EndDate = _clientDateTime.AddDays(-1);
+                        break;
+                    case DateTypes.ThisWeek:
+                        BeginDate = _clientDateTime.AddDays(-(_clientDateTime.DayOfWeek == DayOfWeek.Sunday
+                            ? 6
+                            : (int)Clock.Now.DayOfWeek - 1));
+                        EndDate = BeginDate.AddDays(6);
+                        break;
+                }
             }
         }
 
