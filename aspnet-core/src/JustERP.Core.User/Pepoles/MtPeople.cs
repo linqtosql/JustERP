@@ -16,6 +16,9 @@ namespace JustERP.Core.User.Pepoles
         public string Openid { get; set; }
         [MaxLength(8)]
         public string BackgroundColor { get; set; } = DefaultBackground;
+        public int TimezoneOffset { get; set; }
+        [MaxLength(64)]
+        public string TimezoneInfo { get; set; }
         public virtual MtPeopleWechatInfo PeopleWechatInfo { get; set; }
         public virtual IEnumerable<MtActivity> Activities { get; set; }
         public virtual IEnumerable<MtPeopleActivity> PeopleActivities { get; set; }

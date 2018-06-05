@@ -28,17 +28,19 @@ namespace JustERP.Core.User.Authorization
             _activityManager = activityManager;
         }
 
-        public async Task<UserLoginResult> LoginAsync(string openId, string avatarUrl = null, string nickName = null)
+        public async Task<UserLoginResult> LoginAsync(LoginModel loginModel)
         {
-            var user = await _peopleManager.FindByOpenId(openId);
+            var user = await _peopleManager.FindByOpenId(loginModel.OpenId);
 
             if (user == null)
             {
                 return await Task.FromResult(new UserLoginResult(AbpLoginResultType.InvalidUserNameOrEmailAddress));
             }
 
-            user.AvatarImg = avatarUrl;
-            user.NickName = nickName;
+            user.AvatarImg = loginModel.AvatarUrl;
+            user.NickName = loginModel.NickName;
+            user.TimezoneOffset = loginModel.TimezoneOffset;
+            user.TimezoneInfo = loginModel.TimezoneInfo;
 
             var principal = await _claimsPrincipalFactory.CreateAsync(user);
             var result = new UserLoginResult(user.Id, principal.Identity as ClaimsIdentity);

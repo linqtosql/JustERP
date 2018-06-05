@@ -1165,6 +1165,11 @@ namespace JustERP.Migrations
 
                     b.Property<long?>("PeopleWechatInfoId");
 
+                    b.Property<string>("TimezoneInfo")
+                        .HasMaxLength(64);
+
+                    b.Property<int>("TimezoneOffset");
+
                     b.HasKey("Id");
 
                     b.HasAlternateKey("Openid");

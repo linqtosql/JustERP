@@ -15,7 +15,6 @@ using JustERP.Authentication.JwtBearer;
 using JustERP.Authorization.Users;
 using JustERP.Core.User.Authorization;
 using JustERP.Models.TokenAuth;
-using JustERP.Web.Core.User.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JustERP.Web.Core.User.Controllers
@@ -47,7 +46,7 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task<AuthenticateResultModel> Authenticate([FromBody]WeixinLoginModel loginModel)
+        public async Task<AuthenticateResultModel> Authenticate([FromBody]LoginModel loginModel)
         {
             var loginResult = await GetLoginResultAsync(loginModel);
 
@@ -63,7 +62,7 @@ namespace JustERP.Web.Core.User.Controllers
         }
 
         [HttpPost]
-        public async Task Register([FromBody]WeixinLoginModel registerModel)
+        public async Task Register([FromBody]LoginModel registerModel)
         {
             await _logInManager.RegisterAsync(registerModel.OpenId);
         }
@@ -121,9 +120,9 @@ namespace JustERP.Web.Core.User.Controllers
             return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
         }
 
-        private async Task<UserLoginResult> GetLoginResultAsync(WeixinLoginModel loginModel)
+        private async Task<UserLoginResult> GetLoginResultAsync(LoginModel loginModel)
         {
-            var loginResult = await _logInManager.LoginAsync(loginModel.OpenId, loginModel.AvatarUrl, loginModel.NickName);
+            var loginResult = await _logInManager.LoginAsync(loginModel);
 
             switch (loginResult.Result)
             {

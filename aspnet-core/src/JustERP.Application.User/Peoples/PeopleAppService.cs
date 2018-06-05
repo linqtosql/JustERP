@@ -80,7 +80,7 @@ namespace JustERP.Application.User.Peoples
             peopleActivities = peopleActivities.OrderByDescending(a => a.Id);
             var activityList = await peopleActivities.ToListAsync();
 
-            if (!input.TotalType.HasValue && input.BeginDate.Date != Clock.Now.Date)
+            if (!input.TotalType.HasValue && input.DateType != GetActivityHistoryInput.DateTypes.Today)
             {
                 activityList.Add(GetUnTimingTotal(input, activityList));
             }
