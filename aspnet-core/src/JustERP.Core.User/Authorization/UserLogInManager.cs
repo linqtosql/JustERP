@@ -40,7 +40,6 @@ namespace JustERP.Core.User.Authorization
             user.AvatarImg = loginModel.AvatarUrl;
             user.NickName = loginModel.NickName;
             user.TimezoneOffset = loginModel.TimezoneOffset;
-            user.TimezoneInfo = loginModel.TimezoneInfo;
 
             var principal = await _claimsPrincipalFactory.CreateAsync(user);
             var result = new UserLoginResult(user.Id, principal.Identity as ClaimsIdentity);
