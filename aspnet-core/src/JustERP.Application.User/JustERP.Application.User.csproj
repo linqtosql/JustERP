@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Senparc.Weixin.WxOpen" Version="1.9.1" />
+    <PackageReference Include="Senparc.Weixin.WxOpen" Version="1.10.5" />
   </ItemGroup>
 
   <ItemGroup>
