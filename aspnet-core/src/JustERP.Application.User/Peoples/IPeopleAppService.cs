@@ -43,6 +43,12 @@ namespace JustERP.Peoples
         /// <returns></returns>
         Task DeleteActivity(long activityId);
         /// <summary>
+        /// 修改活动名称
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task ChangeActivityName(ChangeActivityNameInput input);
+        /// <summary>
         /// 获取当前用户已使用的所有活动，没有不存在当前用户，则使用系统默认活动
         /// </summary>
         /// <returns></returns>

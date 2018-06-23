@@ -18552,3 +18552,138 @@ INFO  2018-06-07 22:26:44,527 [19   ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2018-06-07 22:26:44,538 [18   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
 INFO  2018-06-07 22:26:44,551 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Application.User.Peoples.PeopleAppService.GetLabelCategories (JustERP.Application.User) in 74.8705ms
 INFO  2018-06-07 22:26:44,566 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 124.4644ms 200 application/json; charset=utf-8
+DEBUG 2018-06-23 15:40:50,755 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-06-23 15:40:50,801 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-06-23 15:40:50,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,824 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,825 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,825 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,825 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,826 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,826 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,826 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,826 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,827 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,827 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,828 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:50,831 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-06-23 15:40:50,890 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:40:50,890 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:40:50,890 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:40:50,890 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:40:51,174 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:40:51,588 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-06-23 15:40:51,629 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-06-23 15:40:51,659 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-06-23 15:40:51,679 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-06-23 15:40:51,694 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-06-23 15:40:51,732 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-06-23 15:40:51,786 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2018-06-23 15:40:51,786 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-06-23 15:40:51,790 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-06-23 15:40:51,790 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ChangeActivityNameInput
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelInput
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-06-23 15:40:51,791 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2018-06-23 15:40:55,442 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/  
+INFO  2018-06-23 15:40:56,456 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User)
+INFO  2018-06-23 15:40:56,550 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) - Validation state: Valid
+INFO  2018-06-23 15:40:56,554 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 2.1254ms.
+INFO  2018-06-23 15:40:56,852 [11   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2018-06-23 15:40:56,862 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action JustERP.Web.Host.User.Controllers.HomeController.Index (JustERP.Web.Host.User) in 401.5767ms
+INFO  2018-06-23 15:40:56,922 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1484.7805ms 302 
+INFO  2018-06-23 15:40:56,924 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger  
+INFO  2018-06-23 15:40:56,937 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.4011ms 301 
+INFO  2018-06-23 15:40:56,940 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/index.html  
+INFO  2018-06-23 15:40:56,977 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.7675ms 200 text/html
+INFO  2018-06-23 15:40:57,006 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-standalone-preset.js  
+INFO  2018-06-23 15:40:57,010 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-bundle.js  
+INFO  2018-06-23 15:40:57,011 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css  
+INFO  2018-06-23 15:40:57,067 [12   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2018-06-23 15:40:57,100 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2018-06-23 15:40:57,107 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 101.794ms 200 application/javascript
+INFO  2018-06-23 15:40:57,107 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 96.3108ms 200 text/css
+INFO  2018-06-23 15:40:57,255 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2018-06-23 15:40:57,256 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 245.0061ms 200 application/javascript
+INFO  2018-06-23 15:40:57,913 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2018-06-23 15:40:58,018 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/favicon-32x32.png  
+INFO  2018-06-23 15:40:58,020 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2018-06-23 15:40:58,020 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.0873ms 200 image/png
+INFO  2018-06-23 15:40:58,058 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/favicon-16x16.png  
+INFO  2018-06-23 15:40:58,062 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+INFO  2018-06-23 15:40:58,062 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.9119ms 200 image/png
+INFO  2018-06-23 15:40:58,239 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 326.0592ms 200 application/json;charset=utf-8
+DEBUG 2018-06-23 15:48:40,491 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-06-23 15:48:40,516 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-06-23 15:48:40,533 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Web.Host.User.JustERPWebHostUserModule, JustERP.Web.Host.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,536 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreUserModule, JustERP.Web.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPApplicationUserModule, JustERP.Application.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.Core.User.JustERPCoreUserModule, JustERP.Core.User, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPCoreModule, JustERP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,539 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,540 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.JustERPWebCoreModule, JustERP.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,540 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.EntityFrameworkCore.JustERPEntityFrameworkModule, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,540 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,542 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: JustERP.SignalR.JustERPSignalRModule, JustERP.SignalR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,542 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:40,545 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-06-23 15:48:40,604 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:48:40,604 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:48:40,604 [1    ] o.Configuration.LanguageManagementConfig - Converted JustERP (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:48:40,604 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-06-23 15:48:40,877 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: JustERP.EntityFrameworkCore.JustERPDbContext, JustERP.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-06-23 15:48:41,268 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-06-23 15:48:41,309 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-06-23 15:48:41,335 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-06-23 15:48:41,346 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: JustERP
+DEBUG 2018-06-23 15:48:41,363 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-06-23 15:48:41,397 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-06-23 15:48:41,441 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2018-06-23 15:48:41,441 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityDto
+DEBUG 2018-06-23 15:48:41,444 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelDto
+DEBUG 2018-06-23 15:48:41,444 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.AddActivityInput
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ChangeActivityNameInput
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelCategoryDto
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.LabelDto
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.PeopleActivityDto
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.SetLabelCategoryNameInput
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.ActivityLabelInput
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Application.User.Peoples.Dto.StartActivityInput
+DEBUG 2018-06-23 15:48:41,445 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - JustERP.Models.TokenAuth.ExternalLoginProviderInfoModel
+INFO  2018-06-23 15:48:45,798 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/index.html  
+INFO  2018-06-23 15:48:46,360 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 566.7218ms 200 text/html
+INFO  2018-06-23 15:48:46,395 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui.css  
+INFO  2018-06-23 15:48:46,402 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-standalone-preset.js  
+INFO  2018-06-23 15:48:46,402 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/swagger-ui-bundle.js  
+INFO  2018-06-23 15:48:46,428 [13   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui-bundle.js was not modified
+INFO  2018-06-23 15:48:46,428 [7    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui.css was not modified
+INFO  2018-06-23 15:48:46,428 [6    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger-ui-standalone-preset.js was not modified
+INFO  2018-06-23 15:48:46,438 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.8036ms 304 application/javascript
+INFO  2018-06-23 15:48:46,438 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.9568ms 304 text/css
+INFO  2018-06-23 15:48:46,438 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.508ms 304 application/javascript
+INFO  2018-06-23 15:48:47,158 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/v1/swagger.json  
+INFO  2018-06-23 15:48:47,206 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/favicon-32x32.png  
+INFO  2018-06-23 15:48:47,226 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2018-06-23 15:48:47,226 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 20.0063ms 200 image/png
+INFO  2018-06-23 15:48:47,250 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:57809/swagger/favicon-16x16.png  
+INFO  2018-06-23 15:48:47,251 [13   ] NetCore.StaticFiles.StaticFileMiddleware - The file /favicon-16x16.png was not modified
+INFO  2018-06-23 15:48:47,251 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8899ms 304 image/png
+INFO  2018-06-23 15:48:47,421 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 265.4274ms 200 application/json;charset=utf-8

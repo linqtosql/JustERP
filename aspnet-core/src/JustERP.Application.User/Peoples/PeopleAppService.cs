@@ -8,7 +8,6 @@ using Abp.Authorization;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
-using Abp.Timing;
 using JustERP.Application.User.Peoples.Dto;
 using JustERP.Core.User.Activities;
 using JustERP.Core.User.Pepoles;
@@ -199,6 +198,13 @@ namespace JustERP.Application.User.Peoples
             var activity = await _activityRepository.GetAsync(activityId);
             if (activity.PeopleId != AbpSession.GetUserId()) return;
             await _activityManager.DeleteActivity(activity);
+        }
+
+        public async Task ChangeActivityName(ChangeActivityNameInput input)
+        {
+            var peopleActivity = await _activityRepository.GetAsync(input.ActivityId);
+            peopleActivity.Name = input.Name;
+            await _activityManager.UpdateActivity(peopleActivity);
         }
 
         [AbpAllowAnonymous]
