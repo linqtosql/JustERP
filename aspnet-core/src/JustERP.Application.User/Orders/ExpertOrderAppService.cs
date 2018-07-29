@@ -64,11 +64,10 @@ namespace JustERP.Application.User.Orders
         {
             var order = await _orderRepository.GetAsync(input.ExpertOrderId);
             var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
-            var wechatInfo = await _expertWechatRepository.SingleAsync(w => w.Openid == expert.OpenId);
 
             await OrderPaymentManager.CreateOrder(new LhzxExpertOrderPayment
             {
-                Account = wechatInfo.Nickname,
+                Account = expert.Name,
                 PaymentChannel = (int)PaymentChannels.Wechat
             }, order);
 
