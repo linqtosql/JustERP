@@ -62,18 +62,25 @@ namespace JustERP.Application.User.Orders
 
         public async Task<UnifiedOrderDto> CreateOrderPayment(CreateOrderPaymentInput input)
         {
-            var order = await _orderRepository.GetAsync(input.ExpertOrderId);
-            var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
-
-            await OrderPaymentManager.CreateOrder(new LhzxExpertOrderPayment
+            try
             {
-                Account = expert.Name,
-                PaymentChannel = (int)PaymentChannels.Wechat
-            }, order);
+                var order = await _orderRepository.GetAsync(input.ExpertOrderId);
+                var expert = await _expertRepository.GetAsync(AbpSession.UserId.Value);
 
-            var unifiedOrderDto = await WechatAppService.Unifiedorder(
-                new CreateUnifiedOrderInput(order.OrderNo, "联合咨询服务费", order.Amount, expert.OpenId));
-            return unifiedOrderDto;
+                await OrderPaymentManager.CreateOrder(new LhzxExpertOrderPayment
+                {
+                    Account = expert.Name,
+                    PaymentChannel = (int)PaymentChannels.Wechat
+                }, order);
+
+                var unifiedOrderDto = await WechatAppService.Unifiedorder(
+                    new CreateUnifiedOrderInput(order.OrderNo, "联合咨询服务费", order.Amount, expert.OpenId));
+                return unifiedOrderDto;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public async Task<List<ExpertOrderDto>> GetLoggedIndExpertOrders(GetExpertOrdersInput input)
@@ -241,6 +248,10 @@ namespace JustERP.Application.User.Orders
 
         public async Task<ExpertOrderDto> CommentOrder(CommentOrderInput input)
         {
+            var hasComments = await _commentRepository.GetAll()
+                .AnyAsync(e => e.ExpertOrderId == input.ExpertOrderId && e.ParentId == null);
+            if (hasComments)
+                throw new UserFriendlyException("您已评论");
             var order = await _orderRepository.GetAsync(input.ExpertOrderId);
             var commenter = _expertRepository.GetAsync(input.CommenterExpertId);
             var expert = _expertRepository.GetAsync(order.ServerExpertId);

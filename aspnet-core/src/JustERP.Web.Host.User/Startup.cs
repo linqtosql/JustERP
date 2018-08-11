@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
 using Castle.Facilities.Logging;
@@ -12,12 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Linq;
 using Abp.Extensions;
+using Abp.Timing;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 using JustERP.SignalR.Hub;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.FileProviders;
 
 #if FEATURE_SIGNALR
 using Owin;
@@ -46,6 +43,9 @@ namespace JustERP.Web.Host.User
             services.AddMvc(options =>
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory(DefaultCorsPolicyName));
+            }).AddJsonOptions(options =>
+            {
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
             });
 
             IdentityRegistrar.Register(services);
@@ -95,6 +95,8 @@ namespace JustERP.Web.Host.User
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            Clock.Provider = ClockProviders.Unspecified;
+
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); //Initializes ABP framework.
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 
