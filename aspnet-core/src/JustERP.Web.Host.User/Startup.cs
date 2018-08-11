@@ -10,11 +10,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Linq;
+using System.Reflection;
 using Abp.Extensions;
+using Abp.Json;
 using Abp.Timing;
 using JustERP.Authentication.JwtBearer;
 using JustERP.Configuration;
 using JustERP.SignalR.Hub;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Serialization;
 
 #if FEATURE_SIGNALR
 using Owin;
@@ -43,9 +47,13 @@ namespace JustERP.Web.Host.User
             services.AddMvc(options =>
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory(DefaultCorsPolicyName));
-            }).AddJsonOptions(options =>
+            });
+            services.PostConfigure<MvcJsonOptions>(options =>
             {
-                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                options.SerializerSettings.ContractResolver = new CustomContractResolver
+                {
+                    NamingStrategy = new CamelCaseNamingStrategy()
+                };
             });
 
             IdentityRegistrar.Register(services);
@@ -90,6 +98,23 @@ namespace JustERP.Web.Host.User
                     f => f.UseAbpLog4Net().WithConfig("log4net.config")
                 );
             });
+        }
+
+        class CustomContractResolver : AbpContractResolver
+        {
+            
+            protected override void ModifyProperty(MemberInfo member, JsonProperty property)
+            {
+                if (property.PropertyType != typeof(DateTime) && property.PropertyType != typeof(DateTime?))
+                {
+                    return;
+                }
+
+                property.Converter = new AbpDateTimeConverter()
+                {
+                    DateTimeFormat = "yyyy/MM/dd HH:mm:ss"
+                };
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -145,7 +170,7 @@ namespace JustERP.Web.Host.User
             {
                 //options.InjectOnCompleteJavaScript("/swagger/ui/abp.js");
                 //options.InjectOnCompleteJavaScript("/swagger/ui/on-complete.js");
-                
+
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "JustERP API V1");
             });
 

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Abp.Timing;
 using AutoMapper;
 using JustERP.Core.User.Experts;
@@ -45,6 +46,10 @@ namespace JustERP.Application.User.Experts.Dto
                 .ForMember(e => e.Avatar, opt => opt.MapFrom(e => e.CommenterExpert.Avatar))
                 .ForMember(e => e.Organization, opt => opt.MapFrom(e => e.CommenterExpert.Organization))
                 .ForMember(e => e.Post, opt => opt.MapFrom(e => e.CommenterExpert.Post));
+
+            CreateMap<CreateExpertWorkSettingInput, LhzxExpertWorkSetting>()
+                .ForMember(e => e.StartTime, opt => opt.MapFrom(e => DateTime.Parse(e.StartTime)))
+                .ForMember(e => e.EndTime, opt => opt.MapFrom(e => DateTime.Parse(e.EndTime)));
         }
     }
 }

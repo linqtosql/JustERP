@@ -29,7 +29,7 @@ namespace JustERP.SignalR.Hub
 
         public async Task JoinGroup(string groupName)
         {
-            await Groups.AddAsync(Context.ConnectionId, groupName);
+            await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
             await Clients.Group(groupName).SendAsync("JoinGroup", AbpSession.UserId);
         }
 
@@ -40,7 +40,7 @@ namespace JustERP.SignalR.Hub
 
         public async Task LeaveGroup(string groupName)
         {
-            await Groups.RemoveAsync(Context.ConnectionId, groupName);
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
             await Clients.OthersInGroup(groupName).SendAsync("LeaveGroup", AbpSession.UserId);
         }
 

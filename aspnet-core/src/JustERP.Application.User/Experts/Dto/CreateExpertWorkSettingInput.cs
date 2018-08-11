@@ -9,7 +9,7 @@ namespace JustERP.Application.User.Experts.Dto
     public class CreateExpertWorkSettingInput : EntityDto<long>
     {
         public int Week { get; set; }
-        public DateTime? StartTime { get; set; }
-        public DateTime? EndTime { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
     }
 }
