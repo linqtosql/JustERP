@@ -103,9 +103,11 @@ namespace JustERP.Web.Core.User.Controllers
             {
                 Directory.CreateDirectory(basePath);
             }
-            var fileName = $"{Guid.NewGuid().ToString()}.wx";
+            var fileName = $"{Guid.NewGuid().ToString()}.mp3";
             var filePath = $"{basePath}\\{fileName}";
             var mediaFile = await _wechatAppService.GetMediaAndSaveAsync(mediaId, filePath);
+
+            
 
             var cos = new CosCloud(CosAppId, CosAppSecretId, CosAppSecretKey);
             var uploadResult = cos.UploadFile(CosBucketName, $"{CosDirectory}/{fileName}", mediaFile);
