@@ -106,7 +106,7 @@ namespace JustERP.Core.User.Experts
             if (await _expertRepository.GetAll().AnyAsync(e => e.Id == expert.Id && e.ExpertAccount.UserName == anonymExpert.UserName))
                 throw new UserFriendlyException("您不能添加自己");
             if (await _anonymousRepository.GetAll().AnyAsync(e => e.UserName == anonymExpert.UserName))
-                throw new UserFriendlyException("您已添加过该用户");
+                throw new UserFriendlyException("您已添加过该未注册用户");
 
             var inserted = await _anonymousRepository.InsertAsync(anonymExpert);
             return inserted;

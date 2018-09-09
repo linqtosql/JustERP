@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.UI;
@@ -17,18 +18,27 @@ namespace JustERP.Core.User.Payments
 
         public async Task<LhzxExpertOrderPayment> CreateOrder(LhzxExpertOrderPayment orderPayment, LhzxExpertOrder order)
         {
-            var existsPayment = await _orderPaymentRepository.FirstOrDefaultAsync(p => p.ExpertOrderId == order.Id);
-            if (existsPayment != null && existsPayment.Status == (int)PaymentStatus.PayComplete)
+            try
             {
-                throw new UserFriendlyException("订单已支付，请刷新页面查看");
+                var existsPayment = await _orderPaymentRepository.FirstOrDefaultAsync(p => p.ExpertOrderId == order.Id);
+                if (existsPayment != null && existsPayment.Status == (int)PaymentStatus.PayComplete)
+                {
+                    throw new UserFriendlyException("订单已支付，请刷新页面查看");
+                }
+                await _orderPaymentRepository.DeleteAsync(p => p.ExpertOrderId == order.Id);
+                CurrentUnitOfWork.SaveChanges();
+
+                orderPayment.Create(order);
+
+                await _orderPaymentRepository.InsertAsync(orderPayment);
+
+                return orderPayment;
             }
-            await _orderPaymentRepository.DeleteAsync(p => p.ExpertOrderId == order.Id);
-
-            orderPayment.Create(order);
-
-            await _orderPaymentRepository.InsertAsync(orderPayment);
-
-            return orderPayment;
+            catch (Exception e)
+            {
+                Logger.Error(e.Message);
+                throw new UserFriendlyException("订单状态已更新，请重新查看订单");
+            }
         }
 
         /// <summary>
